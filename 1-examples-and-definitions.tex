@@ -1,2 +1,93 @@
 \section{Examples and Definitions}
 \label{sec:examples-and-definitions}
+
+There are two ways to view groups, \emph{algebra} and \emph{symmetry}. We first build intuition by looking at an example in symmetry.
+
+\begin{example}[Equilateral Triangle]
+    An equilateral triangle has rotational symmetries and reflective symmetries. Note that there is the \emph{trivial symmetry} which is the \emph{identity}, that does not move the triangle and keeps it in place.
+
+    An equilateral triangle has 6 symmetries.
+\end{example}
+
+Natural questions arise: what are the symmetries of a square, a regular pentagon, or in general, a regular \(n\)-gon?
+
+We can define 'multiplication' on symmetries, specifically by composing the symmetries:
+
+We note the following features (and non-features) arise in the previous example. \bigbreak
+
+\noindent
+\textbf{Important features.}
+\begin{itemize}
+    \item There is an \emph{identity}.
+    \item Every symmetry has an \emph{inverse}.
+    \item Symmetries can be \emph{composed} (to form another symmetry).
+    \item Composition of symmetries are \emph{associative}.
+\end{itemize}
+
+\noindent
+\textbf{Non-feature.} The symmetries need not commute.
+
+\subsection{Introduction to the Algebraic Standpoint}
+\label{sec:algebraic-standpoint}
+
+\begin{definition}[Binary Operation]
+    A \emph{binary operation} on a set \(X\) is a function
+    \[
+        \cdot : X \times X \to X
+    \]
+    where \(X \times X\) is the \emph{Cartesian product} given by
+    \[
+        X \times X = \set{\circPara{x_1, x_2}}{x_1, x_2 \in X}.
+    \]
+    
+    We denote
+    \[
+        \circPara{x_1, x_2} \mapsto x_1 \cdot x_2.
+    \]
+\end{definition}
+
+\begin{definition}[Group]
+    A \emph{group} is a triple
+    \[
+        \circPara{G, \cdot, e}
+    \]
+    where
+    \begin{itemize}
+        \item \(G\) is a set,
+        \item \(\cdot\) is a binary operation on \(G\), and
+        \item \(e\) is an element of \(G\), denoted as \(e \in G\),
+    \end{itemize}
+    such that the following 4 axioms are satisfied:
+    \begin{enumerate}
+        \item \emph{Closure}. For all \(a, b \in G\), \(a \cdot b \in G\).
+        \item \emph{Associativity}. For all \(a, b, c \in G\), \(
+        \circPara{\circPara{a \cdot b} \cdot c} = \circPara{a \cdot \circPara{b \cdot c}}\).
+        \item \emph{(Right) Identity}. For all \(a \in G\), \(a \cdot e = a\).
+        \item \emph{(Right) Inverses}. For all \(a \in G\), there exists some \(b \in G\), such that \(a \cdot b = e\).
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}[Remark on Closure]
+    The closure axiom is redundant, since \(\cdot\) being a binary operation means that \(G\) has to be closed under \(\cdot\)
+\end{remark}
+
+A group is an algebraic structure with one operation.
+
+\begin{example}[Equilateral Triangle]
+    The symmetries of an equilateral triangle forms a group, with respect to composition, and the identity symmetry is the identity element.
+\end{example}
+
+\begin{example}[Integers]
+    \(\circPara{\ZZ, +, 0}\) forms a group.
+\end{example}
+
+\begin{proposition}[Properties on Inverses and Identities]
+    Let \(\circPara{G, \cdot, e}\) be a group. Let \(a, b, b', e' \in G\).
+
+    \begin{enumerate}
+        \item \emph{Right-inverses are also left-inverses.} If \(a \cdot b = e\), then \(b \cdot a = e\).
+        \item \emph{A right-identity is also a left-identity.} \(e \cdot a = a\).
+        \item \emph{Inverses are unique.} If \(a, b, b'\) are such that \(a \cdot b = e\) and \(a \cdot b' = e\), then \(b = b'\).
+        \item \emph{The identity is unique.} If \(a \cdot e' = a\), then \(e' = e\).
+    \end{enumerate}
+\end{proposition}
