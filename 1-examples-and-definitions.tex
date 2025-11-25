@@ -30,26 +30,32 @@ We note the following features (and non-features) arise in the previous example.
 \subsection{Introduction to the Algebraic Standpoint}
 \label{sec:algebraic-standpoint}
 
+We first define what it means to have a binary operation on a set -- this forms the foundation for algebra.
+
 \begin{definition}[Binary Operation]
+    \label{def:binary-operation}
     A \emph{binary operation} on a set \(X\) is a function
     \[
         \cdot : X \times X \to X
     \]
     where \(X \times X\) is the \emph{Cartesian product} given by
     \[
-        X \times X = \set{\circPara{x_1, x_2}}{x_1, x_2 \in X}.
+        X \times X = \set{\para{x_1, x_2}}{x_1, x_2 \in X}.
     \]
     
     We denote
     \[
-        \circPara{x_1, x_2} \mapsto x_1 \cdot x_2.
+        \para{x_1, x_2} \mapsto x_1 \cdot x_2.
     \]
 \end{definition}
 
+Now we are ready to define a group as an algebraic structure, using the following axioms.
+
 \begin{definition}[Group]
+    \label{def:group}
     A \emph{group} is a triple
     \[
-        \circPara{G, \cdot, e}
+        \para{G, \cdot, e}
     \]
     where
     \begin{itemize}
@@ -61,7 +67,7 @@ We note the following features (and non-features) arise in the previous example.
     \begin{enumerate}
         \item \emph{Closure}. For all \(a, b \in G\), \(a \cdot b \in G\).
         \item \emph{Associativity}. For all \(a, b, c \in G\), \(
-        \circPara{\circPara{a \cdot b} \cdot c} = \circPara{a \cdot \circPara{b \cdot c}}\).
+        \para{\para{a \cdot b} \cdot c} = \para{a \cdot \para{b \cdot c}}\).
         \item \emph{(Right) Identity}. For all \(a \in G\), \(a \cdot e = a\).
         \item \emph{(Right) Inverses}. For all \(a \in G\), there exists some \(b \in G\), such that \(a \cdot b = e\).
     \end{enumerate}
@@ -71,18 +77,20 @@ We note the following features (and non-features) arise in the previous example.
     The closure axiom is redundant, since \(\cdot\) being a binary operation means that \(G\) has to be closed under \(\cdot\)
 \end{remark}
 
-A group is an algebraic structure with one operation.
+A group is an \textbf{algebraic structure with one operation}.
 
-\begin{example}[Equilateral Triangle]
-    The symmetries of an equilateral triangle forms a group, with respect to composition, and the identity symmetry is the identity element.
-\end{example}
+\begin{examples}[Equilateral Triangle]
+    \begin{itemize}
+        \item \emph{Equilateral triangle.} The symmetries of an equilateral triangle forms a group, with respect to composition, and the identity symmetry is the identity element.
+        \item \emph{Integers.} \(\para{\ZZ, +, 0}\) forms a group.
+    \end{itemize}
+\end{examples}
 
-\begin{example}[Integers]
-    \(\circPara{\ZZ, +, 0}\) forms a group.
-\end{example}
+Some authors define the identity to be a two-sided identity, and the inverse to be a two-sided inverse. Indeed, this must be the case, and the identity and the inverse of an element must be unique, as in \autoref{prop:inverse-identity}.
 
 \begin{proposition}[Properties on Inverses and Identities]
-    Let \(\circPara{G, \cdot, e}\) be a group. Let \(a, b, b', e' \in G\).
+    \label{prop:inverse-identity}
+    Let \(\para{G, \cdot, e}\) be a group. Let \(a, b, b', e' \in G\).
 
     \begin{enumerate}
         \item \emph{Right-inverses are also left-inverses.} If \(a \cdot b = e\), then \(b \cdot a = e\).
@@ -91,3 +99,342 @@ A group is an algebraic structure with one operation.
         \item \emph{The identity is unique.} If \(a \cdot e' = a\), then \(e' = e\).
     \end{enumerate}
 \end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item We have
+        \begin{align*}
+            b &= b \cdot e && \text{Identity Axiom} \\
+            &= b \cdot \para{a \cdot b} && \text{Assumption} \\
+            &= \para{b \cdot a} \cdot b. && \text{Associativity Axiom}
+        \end{align*}
+
+        By the Inverse Axiom, there exists \(c \in G\) such that \(b \cdot c = e\).
+
+        We now right-multiply both sides by \(c\), giving
+        \begin{align*}
+            e &= b \cdot c && \text{Assumption on }c \\
+            &= \para{\para{b \cdot a} \cdot b} \cdot c \\
+            &= \para{b \cdot a} \cdot \para{b \cdot c} && \text{Associativity Axiom} \\
+            &= \para{b \cdot a} \cdot e && \text{Assumption on }c \\
+            &= b \cdot a. && \text{Identity Axiom}
+        \end{align*}
+
+        \item By the Inverse Axiom and the first part, there exists \(b \in G\) such that \(a \cdot b = b \cdot a = e\).
+        
+        Now, we have
+        \begin{align*}
+            e \cdot a &= \para{a \cdot b} \cdot a && \text{Assumption} \\
+            &= a \cdot \para{b \cdot a} && \text{Associativity Axiom} \\
+            &= a \cdot e && \text{Assumption} \\
+            &= a. && \text{Identity Axiom}
+        \end{align*}
+
+        \item We have from the previous parts, that
+        \begin{align*}
+            b' &= e \cdot b' && \text{\autoref{prop:inverse-identity}, Part 2} \\
+            &= \para{b \cdot a} \cdot b' && \text{\autoref{prop:inverse-identity}, Part 1, and Assumption} \\
+            &= b \cdot \para{a \cdot b'} && \text{Associativity Axiom} \\
+            &= b \cdot e && \text{Assumption} \\
+            &= b && \text{Identity Axiom}.
+        \end{align*}
+
+        \item By the Inverse Axiom, and \autoref{prop:inverse-identity} Part 1, there exists \(b \in G\) such that \(b \cdot a = e\). We are given that \(a \cdot e' = a\), and hence \(b \cdot \para{a \cdot e'} = b \cdot a\).
+
+        Hence,
+        \begin{align*}
+            e &= \para{b \cdot a} \cdot e' && \text{Associativity Axiom} \\
+            &= e \cdot e' \\
+            &= e' && \text{\autoref{prop:inverse-identity} Part 2}.
+        \end{align*}
+    \end{enumerate}    
+\end{proof}
+
+Part 3 of \autoref{prop:inverse-identity} tells us that inverses are unique.
+
+\begin{notation}
+    If \(a \cdot b = e\), we write \(b = a \inverse\).
+\end{notation}
+
+Part 1 of the same proposition tells us that
+\[
+    a \cdot a \inverse = a \inverse \cdot a = e
+\]
+which in turn means that
+\[
+    \para{a \inverse} \inverse = a.
+\]
+
+\begin{notation}
+    We may extend this notation for
+    \begin{itemize}
+        \item \(a^0 = e\),
+        \item \(a^n = a^{n - 1} \cdot a\) for any \(n \in \NN\).
+    \end{itemize}
+
+    Similarly, for negative integers \(n < 0\), we define
+    \[
+        a^n = \para{a \inverse}^{-n}.
+    \]
+\end{notation}
+
+We may show that \(a^m \cdot a^n = a^{m + n}\) and \(\para{a^m}^n = a^{mn}\), that is, the exponentiation satisfies the rules we are familiar with.
+
+Recall that it is \emph{not} necessarily true that \(a \cdot b = b \cdot a\) for all \(a, b \in G\).
+
+Hence, it is \emph{not} necessarily true that
+\[
+    \para{a \cdot b}\inverse = a \inverse \cdot b \inverse.
+\]
+
+However, we notice that
+\begin{align*}
+    \para{a \cdot b} \cdot \para{a \inverse \cdot b \inverse} &= \para{\para{a \cdot b} \cdot b\inverse} \cdot a\inverse \\
+    &= \para{a \cdot \para{b \cdot b\inverse}} \cdot a\inverse \\
+    &= \para{a \cdot e} \cdot a\inverse \\
+    &= a \cdot a\inverse \\
+    &= e.
+\end{align*}
+
+Hence, we have that
+\[
+    \para{a \cdot b}\inverse = b \inverse \cdot a \inverse.
+\]
+
+We give a special name for those groups which are commutative.
+
+\begin{definition}[Commutativity, Abelian Group]
+    \label{def:abelian-group}
+    If \((G, \cdot, e)\) is a group, and
+    \[
+        a \cdot b = b \cdot a
+    \]
+    for all \(a, b \in G\), then \(G\) is \emph{commutative}, and \(G\) is called an \emph{abelian group}.
+\end{definition}
+
+\begin{example}[Trivial Group]
+    If \(G = \brce{e}\) and \(\cdot: \para{e, e} \mapsto e\), then \(\para{G, \cdot, e}\) is the \emph{trivial group}.
+\end{example}
+
+\begin{examples}[Familiar Examples from Arithemetic]
+    \begin{enumerate}
+        \item \(\para{\ZZ, +, 0}\), \(\para{\QQ, +, 0}\), \(\para{\RR, +, 0}\) and \(\para{\CC, +, 0}\) are all \emph{abelian} groups.
+        
+        The inverse of \(x\) in these groups are \(-x\) -- this is known as the \emph{additive notation}.
+
+        \item \(\para{\NN, +, 0}\) is \emph{not} a group, since it does not satisfy the Inverse Axiom.
+        
+        \item \(\para{\QQ, \times, 1}\) is \emph{not} a group because \(0 \in \QQ\) has no inverse. However, \(\para{\QQ \setminus \brce{0}, \times, 1}\) is an \emph{abelian group}, and we denote this as \(\QQ\multiplicative\).
+        
+        Similarly, \(\para{\RR \setminus \brce{0}, \times, 1}\) and \(\para{\CC \setminus \brce{0}, \times, 1}\) are as well, and we denote them as \(\RR\multiplicative\) and \(\CC\multiplicative\) respectively.
+    \end{enumerate}
+\end{examples}
+
+\subsection{Definitions on Finite Groups}
+\label{sec:def-finite-groups}
+
+Most examples of groups given above are infinite, apart from the trivial group.
+
+We would like to define the size of a group, and the definition is as in 
+
+\begin{definition}[Order of a Group, Finite Group]
+    \label{def:order-group}
+
+    The \emph{order} of a group \(\para{G, \cdot, e}\) is the number of elements of \(G\), denoted by \(\abs{G}\) or \(\size G\).
+
+    If \(\abs{G} < \infinity\), then we say \(\para{G, \cdot, e}\) is a \emph{finite} group.
+\end{definition}
+
+\begin{examples}
+    \begin{enumerate}
+        \item For any \(n \in \NN\), let \(C_n = \set{z \in \CC}{z^n = 1}\), then \(\para{C_n, \times, 1}\) is an abelian group.
+        \item Let \(\ZZ_n = \brce{0, 1, \cdots, n - 1}\). We let for \(a, b \in \ZZ_n\), we have
+        \[
+            a +_n b = (a + b) \modulo n.
+        \]
+
+        We can see \(\para{\ZZ_n, +_n, 0}\) is an abelian group.
+    \end{enumerate}
+\end{examples}
+
+\subsection{Symmetric Groups}
+\label{sec:symmetric-groups}
+
+Symmetries on a set (with no additional constraints) are naturally interpreted as permutations, and we give a formal definition below.
+
+\begin{definition}[Bijection, Permutation]
+    \label{def:bijection-permutation}
+    Let \(X, Y\) be sets. A \emph{bijection} is a map \(X \to Y\) that has an inverse \(g: Y \to X\) such that
+    \[
+        f \circ g = \identity_Y, g \circ f = \identity_X
+    \]
+    where
+    \[
+        \identity_S: S \to S, x \mapsto x
+    \]
+    for all \(x \in S\) is the \emph{identity map}.
+
+    Here,
+    \[
+        \para{f \circ g}\para{x} = f \para{g \para{x}}
+    \]
+    by definition of composition.
+
+    A bijection \(X \to X\) is called a \emph{permutation}.
+\end{definition}
+
+\begin{definition}[Symmetry Group]
+    \label{def:symmetry-group}
+    \(\Sym\para{X}\) is defined to be the set of permutations of a set \(X\).
+\end{definition}
+
+To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:composition-associative}.
+
+\begin{lemma}[Composition is Associative]
+    \label{lem:composition-associative}
+
+    Consider maps of sets
+    \[
+        f: W \to X, g: X \to Y, h: Y \to Z,
+    \]
+    we have
+    \[
+        \para{h \circ g} \circ f = h \circ \para{g \circ f}.
+    \]
+\end{lemma}
+
+\begin{proof}
+    For any \(w \in W\), we have
+    \begin{align*}
+        \para{\para{h \circ g} \circ f} \para{w} &= \para{h \circ g} \para{f\para{w}} \\
+        &= h \para{g \para{f \para{w}}} \\
+        &= h \para{\para{g \circ f} \para{w}} \\
+        &= \para{h \circ \para{g \circ f}} \para{w}
+    \end{align*}
+    as required.
+\end{proof}
+
+\begin{proposition}
+    \label{prop:symmetry-group}
+
+    For any set \(X\), \(\para{\Sym\para{X}, \circ, \identity_X}\) is a group.
+\end{proposition}
+
+\begin{proof}
+    Closure is automatic, and associativity follows from \autoref{lem:composition-associative}.
+
+    The identity on \(X\), \(\identity_X\) provides an identity elements.
+
+    Inverses exist by definition.
+\end{proof}
+
+\begin{definition}[\(S_n\)]
+    \label{def:s-n}
+
+    If \(X = \brce{1, 2, \ldots, n}\), we write \(S_n = \Sym\para{X}\).
+\end{definition}
+
+\begin{examples}
+    \begin{itemize}
+        \item \(S_3\) may represent the groups to rearrange three flower pits.
+        \item \(S_{52}\) may represent the group of ways to shuffle a deck of cards.
+    \end{itemize}
+\end{examples}
+
+\begin{remark}
+    We note that \(\abs{S_n} = n!\) by basic combinatorics.
+\end{remark}
+
+\begin{notation}
+    Writing \(\para{G, \cdot, e}\) for a group is often cumbersome. Henceforth, we will normally just write \(G\) for the group.
+    
+    If we would like to emphasise that \(e\) is the identity element of \(G\), we will write \(e_G\) for \(e\).
+
+    Likewise, we can write \(\cdot_G\) for the operation on \(G\).
+\end{notation}
+
+\subsection{Subgroups}
+\label{sec:subgroups}
+
+Sometimes we want to restrict our attention to smaller groups rather than the whole group, for instance, \(\ZZ\) inside \(\RR\), or the rotations that preserve a triangle, instead of all symmetries of the plane.
+
+\begin{definition}[Subgroup]
+    \label{def:subgroup}
+
+    Let \(G\) be a group, and \(H \subseteq G\). If we have
+    \begin{itemize}
+        \item \emph{Identity.} \(e \in H\);
+        \item \emph{Closure.} \(a \cdot b \in H\) for all \(a, b \in H\);
+        \item \emph{Inverse.} \(a \in H\) implies \(a\inverse \in H\);
+    \end{itemize}
+    we say \(H\) is a \emph{subgroup} of \(G\), and we write \(H \leq G\).
+\end{definition}
+
+\begin{remark}
+    If \(G\) is a group, then any subgroup \(H \leq G\) is itself a group. Note associativity is not required -- it is inherited from \(G\).
+\end{remark}
+
+\begin{examples}
+    \begin{enumerate}
+        \item Every group \(G\) is a subgroup of itself.
+
+        \item For any group \(G\),
+        \[
+            1_G = \brce{e_G}
+        \]
+        is the \emph{trivial subgroup}.
+
+        \item \(\ZZ \subseteq \QQ \subseteq \RR \subseteq \CC\), and in fact
+        \[
+            \ZZ \leq \QQ \leq \RR \leq \ZZ.
+        \]
+
+        \item For \(n = 0, 1, 2, 3, \cdots,\) let
+        \[
+            n\ZZ = \set{nk}{k \in \ZZ} = \brce{\cdots, -2n, -n, 0, n, 2, \cdots}.
+        \]
+
+        Now, we have
+        \begin{itemize}
+            \item \(0 \in \ZZ\).
+            \item Let \(x = nk, y = nl \in n\ZZ\) for \(k, l \in \ZZ\).
+            
+            Then \(x + y = nk + nl = n \para{k + l} \in n\ZZ\).
+            \item Let \(x = nk \in n\ZZ\) for \(k \in \ZZ\).
+            
+            Then \(-x = -nk = n \cdot \para{-k} \in n\ZZ\).
+        \end{itemize}
+
+        Hence, \(n\ZZ \leq \ZZ\).
+
+        We will see in \autoref{prop:subgroups-of-integers} that all subgroups of \(\ZZ\) are of this form.
+    \end{enumerate}
+\end{examples}
+
+\begin{remark}
+    All subgroups of a group \(G\) that are not trivial (\(1_G\)) or the group \(G\) itself are referred to as its \emph{proper subgroups}.
+\end{remark}
+
+\begin{proposition}
+    \label{prop:subgroups-of-integers}
+
+    If \(H \leq \ZZ\), then \(H = n\ZZ\) for some \(n = 0, 1, 2, \cdots\).
+\end{proposition}
+
+\begin{proof}
+    If \(H = \brce{0}\) then \(H = 0\ZZ\) is indeed of this form.
+
+    Otherwise, \(H \neq \brce{0}\), we may choose \(n \in H \setminus \brce{0}\) to be the smallest positive \(n \in H\).
+
+    Note that if \(x \in H\) and \(x < 0\), then \(-x \in H\) and \(x > 0\). Therefore, such positive number \(n\) must exist.
+
+    By induction, we may show that \(nk \in H\) for all \(k = 1, 2, 3, \cdots\), and \(-n \in H\), so \(-nk \in H\) for all \(k = 1, 2, 3, \cdots\).
+
+    This gives us \(n\ZZ \subseteq H\), and we next show \(n\ZZ = H\) by contradiction. Suppose \(n \ZZ \neq H\), so there is some \(x \in H\) such that \(x \notin n\ZZ\).
+
+    Dividing by \(n\) and taking the remainder (integer division), we get \(x = nq + r\) for some integers \(q, r \in \ZZ\), where \(0 < r < n\).
+
+    But we know \(r = x - nq\) and \(x \in H, nq \in n\ZZ \subseteq H\) so \(r \in H\), and this contradicts that \(n\) is the smallest.
+
+    So \(n\ZZ = H\) as desired.
+\end{proof}
