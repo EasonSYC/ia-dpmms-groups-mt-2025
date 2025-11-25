@@ -33,7 +33,7 @@ We note the following features (and non-features) arise in the previous example.
 We first define what it means to have a binary operation on a set -- this forms the foundation for algebra.
 
 \begin{definition}[Binary Operation]
-    \label{def:binary-operation}
+    \label{def:binary-operation}%
     A \emph{binary operation} on a set \(X\) is a function
     \[
         \cdot : X \times X \to X
@@ -52,7 +52,7 @@ We first define what it means to have a binary operation on a set -- this forms 
 Now we are ready to define a group as an algebraic structure, using the following axioms.
 
 \begin{definition}[Group]
-    \label{def:group}
+    \label{def:group}%
     A \emph{group} is a triple
     \[
         \para{G, \cdot, e}
@@ -89,7 +89,7 @@ A group is an \textbf{algebraic structure with one operation}.
 Some authors define the identity to be a two-sided identity, and the inverse to be a two-sided inverse. Indeed, this must be the case, and the identity and the inverse of an element must be unique, as in \autoref{prop:inverse-identity}.
 
 \begin{proposition}[Properties on Inverses and Identities]
-    \label{prop:inverse-identity}
+    \label{prop:inverse-identity}%
     Let \(\para{G, \cdot, e}\) be a group. Let \(a, b, b', e' \in G\).
 
     \begin{enumerate}
@@ -204,7 +204,7 @@ Hence, we have that
 We give a special name for those groups which are commutative.
 
 \begin{definition}[Commutativity, Abelian Group]
-    \label{def:abelian-group}
+    \label{def:abelian-group}%
     If \((G, \cdot, e)\) is a group, and
     \[
         a \cdot b = b \cdot a
@@ -238,8 +238,7 @@ Most examples of groups given above are infinite, apart from the trivial group.
 We would like to define the size of a group, and the definition is as in 
 
 \begin{definition}[Order of a Group, Finite Group]
-    \label{def:order-group}
-
+    \label{def:order-group}%
     The \emph{order} of a group \(\para{G, \cdot, e}\) is the number of elements of \(G\), denoted by \(\abs{G}\) or \(\size G\).
 
     If \(\abs{G} < \infinity\), then we say \(\para{G, \cdot, e}\) is a \emph{finite} group.
@@ -263,7 +262,7 @@ We would like to define the size of a group, and the definition is as in
 Symmetries on a set (with no additional constraints) are naturally interpreted as permutations, and we give a formal definition below.
 
 \begin{definition}[Bijection, Permutation]
-    \label{def:bijection-permutation}
+    \label{def:bijection-permutation}%
     Let \(X, Y\) be sets. A \emph{bijection} is a map \(X \to Y\) that has an inverse \(g: Y \to X\) such that
     \[
         f \circ g = \identity_Y, g \circ f = \identity_X
@@ -284,15 +283,14 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
 \end{definition}
 
 \begin{definition}[Symmetry Group]
-    \label{def:symmetry-group}
+    \label{def:symmetry-group}%
     \(\Sym\para{X}\) is defined to be the set of permutations of a set \(X\).
 \end{definition}
 
 To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:composition-associative}.
 
 \begin{lemma}[Composition is Associative]
-    \label{lem:composition-associative}
-
+    \label{lem:composition-associative}%
     Consider maps of sets
     \[
         f: W \to X, g: X \to Y, h: Y \to Z,
@@ -315,8 +313,7 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
 \end{proof}
 
 \begin{proposition}
-    \label{prop:symmetry-group}
-
+    \label{prop:symmetry-group}%
     For any set \(X\), \(\para{\Sym\para{X}, \circ, \identity_X}\) is a group.
 \end{proposition}
 
@@ -329,8 +326,7 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
 \end{proof}
 
 \begin{definition}[\(S_n\)]
-    \label{def:s-n}
-
+    \label{def:s-n}%
     If \(X = \brce{1, 2, \ldots, n}\), we write \(S_n = \Sym\para{X}\).
 \end{definition}
 
@@ -359,8 +355,7 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
 Sometimes we want to restrict our attention to smaller groups rather than the whole group, for instance, \(\ZZ\) inside \(\RR\), or the rotations that preserve a triangle, instead of all symmetries of the plane.
 
 \begin{definition}[Subgroup]
-    \label{def:subgroup}
-
+    \label{def:subgroup}%
     Let \(G\) be a group, and \(H \subseteq G\). If we have
     \begin{itemize}
         \item \emph{Identity.} \(e \in H\);
@@ -416,8 +411,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 \end{remark}
 
 \begin{proposition}
-    \label{prop:subgroups-of-integers}
-
+    \label{prop:subgroups-of-integers}%
     If \(H \leq \ZZ\), then \(H = n\ZZ\) for some \(n = 0, 1, 2, \cdots\).
 \end{proposition}
 
