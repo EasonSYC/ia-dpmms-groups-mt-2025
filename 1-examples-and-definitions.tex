@@ -520,12 +520,134 @@ Let \(\CC\) be the complex plane, equipped with the usual notion of distance (th
     \abs{z - w} = \sqrt{\para{z_1 - w_1}^2 + \para{z_2 - w_2}^2}.
 \]
 
+\begin{figure}[ht!]
+    \centering
+    \caption{Distance on \(\CC\)}
+    \label{fig:distance-on-C}
+\end{figure}
+
 We consider a certain group of symmetries that preserves distances.
 
 \begin{definition}[Isometry]
+    \label{def:isometry}%
     For any subset \(X \subseteq \CC\), an \emph{isometry} of \(X\) is a bijection \(f: X \to X\) that preserves distance, that is,
     \[
         \abs{f\para{x} - f\para{y}} = \abs{x - y}
     \]
     for all \(x, y \in X\).
 \end{definition}
+
+\begin{proposition}[Isometry Groups in \(\CC\)]
+    \label{prop:isometry-group-in-C}%
+    Let \(X \subseteq \CC\). The set of isometries of \(X\), denoted as \(\Isom\para{X}\), is a subgroup of \(\Sym\para{X}\):
+    \[
+        \Isom\para{X} \leq \Sym\para{X}.
+    \]
+
+    In particular, \(\Isom\para{X}\) is a group.
+\end{proposition}
+
+\begin{proof}
+    We check the definition of a subgroup. Let \(f, h \in \Isom\para{X}\), and \(x, y \in X\).
+
+    \begin{itemize}
+        \item We see that \(\identity_{X} \in \Isom\para{X}\) since \(\identity_{X}\) is a bijection \(X \to X\), and
+        \[
+            \abs{\identity\para{x} - \identity\para{y}} = \abs{x - y},
+        \]
+        so it is indeed an isometry.
+
+        \item Since \(f, g\) are isometries,
+        \begin{align*}
+            \abs{f\para{g \para{x}} - f\para{g \para{y}}} &= \abs{g\para{x} - g\para{y}} && f \in \Isom\para{X} \\
+            &= \abs{x - y}, && g \in \Isom\para{X}
+        \end{align*}
+        so \(f \circ h \in \Isom\para{X}\).
+
+        \item If \(f \in \Isom\para{X}\), let \(x' = f\inverse\para{x}\) and \(y' = f\inverse\para{y}\), then
+        \begin{align*}
+            \abs{x' - y'} &= \abs{f\para{x'} - f\para{y'}} && f \in \Isom\para{X} \\
+            &= \abs{f \circ f\inverse \para{x} - f \circ f\inverse \para{y}} \\
+            &= \abs{\identity_{X} \para{x} - \identity_{X} \para{y}} \\
+            &= \abs{x - y},
+        \end{align*}
+        so \(f \inverse \in \Isom\para{X}\), as desired.
+    \end{itemize}
+\end{proof}
+
+\begin{definition}[Dihedral Group]
+    Let \(X_n \subseteq \CC\) be the \(n\)-gon with vertices
+    \[
+        \set{e^{\frac{2 \pi i}{n}}}{k = 0, 1, \ldots, n - 1}
+    \]
+    for \(n \geq 3\), as in \autoref{fig:regular-n-gon-on-C}.
+
+    The \emph{\(n\)-th Dihedral Group} \(D_{2n}\) is defined as
+    \[
+        D_{2n} = \Isom\para{X_n}.
+    \]
+\end{definition}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{The regular \(n\)-gon on \(\CC\)}
+    \label{fig:regular-n-gon-on-C}
+\end{figure}
+
+\begin{example}[\(D_6\)]
+    \(D_{2 \cdot 3} = D_6\) is the symmetry group of the equilateral triangle that we studied at the start.
+\end{example}
+
+\begin{theorem}[Size of Dihedral Group]
+    \label{thm:size-of-dihedral-group}%
+    \(\abs{D_{2n}} = 2n\).
+\end{theorem}
+
+The proof will give us a good description of all the elements in \(D_{2n}\). However, we first provide some geometric lemmas, the first of which is a basic fact from Euclidean geometry.
+
+\begin{lemma}[Kite Lemma]
+    \label{lem:kite-lemma}%
+    Let \(x_1, y_1, x_2, y_2 \in \CC\). If \(\abs{x_1 - y_1} = \abs{x_1 - y_2}\), and \(\abs{x_2 - y_1} = \abs{x_2 - y_2}\), then
+    \[
+        \para{x_2 - x_1} \perp \para{y_2 - y_1}.
+    \]
+\end{lemma}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{The Kite Lemma}
+    \label{fig:kite-lemma}
+\end{figure}
+
+\begin{proof}
+    Referring to \autoref{fig:kite-lemma}, let \(z\) be the intersection of \(x_1 x_2\) and \(y_1 y_2\). By symmetry, we have \(\angle x_1 z y_1 = \angle x_1 z y_2\).
+
+    However, \(y_1 y_2\) is a straight line, so \(\angle x_1 z y_1 + \angle x_1 z y_2 = \pi\), and therefore \(\angle x_1 z y_1 = \frac{\pi}{2}\), as desired.
+\end{proof}
+
+\begin{lemma}[Three-Point Lemma]
+    \label{lem:three-point-lemma}%
+    Let \(X \subseteq \CC\) and \(f \in \Isom\para{X}\). If there exist some \(x_1, x_2, x_3 \in X\) that are not co-linear, such that
+    \[
+        x_i = f\para{x_i}
+    \]
+    for \(i = 1, 2, 3\), then \(f = \identity_{X}\).
+\end{lemma}
+
+\begin{proof}
+    We prove by contradiction. Suppose that \(f\para{y} \neq y\) for some \(y \in X\), then
+    \[
+        \abs{f\para{y} - x_i} = \abs{f\para{y} - f\para{x_i}} = \abs{y - x_i}
+    \]
+    by the hypothesis and that \(f \in \Isom\para{X}\), for \(i = 1, 2, 3\).
+
+    We apply \autoref{lem:kite-lemma} (the Kite Lemma) with \(y_1 = y, y_2 = f\para{y}\), and hence \(\para{x_2 - x_1}\) is perpendicular to \(\para{f\para{y} - y} \neq 0\).
+
+    Similarly, \(\para{x_3 - x_1}\) is perpendicular to \(\para{f\para{y} - y} \neq 0\).
+
+    Hence, \(x_1, x_2, x_3\) lie on a line, which contradicts with \(x_1, x_2, x_3\) being not co-linear.
+\end{proof}
+
+\begin{remark}
+    There is equally a \(\para{n + 1}\)-point lemma valid in \(\RR^n\) equipped with the usual notion of distance.
+\end{remark}
