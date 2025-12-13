@@ -651,3 +651,189 @@ The proof will give us a good description of all the elements in \(D_{2n}\). How
 \begin{remark}
     There is equally a \(\para{n + 1}\)-point lemma valid in \(\RR^n\) equipped with the usual notion of distance.
 \end{remark}
+
+Now, to prove \autoref{thm:size-of-dihedral-group} (that \(\abs{D_{2n}} = 2n\)), we define \emph{2 elements} of \(D_{2n}\):
+\begin{align*}
+    r\para{z} &= e^{\frac{2 \pi i}{n}} z, && \text{a rotation} \\
+    s\para{z} &= \conjugate{z}. && \text{a reflection} \\
+\end{align*}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Two Elements of \(D_{2n}\)}
+    \label{fig:two-elements-of-d-2n}
+\end{figure}
+
+We claim that in particular,
+\[
+    D_{2n} = \brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}
+\]
+and that these two elements generate the dihedral group,
+\[
+    D_{2n} = \ang{r, s}.
+\]
+
+The proof structure would be a typical subset-superset proof, i.e.
+\begin{enumerate}
+    \item \(\brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}\);
+    \item \(D_{2n} \subseteq \brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}\).
+\end{enumerate}
+
+\begin{proof}
+    First, we show that \(r, s \in D_{2n}\). Indeed, for any \(x, y \in \CC\),
+    \begin{align*}
+        \abs{r\para{x} - r\para{y}} &= \abs{e^{\frac{2 \pi i}{n}} x - e^{\frac{2 \pi i}{n}} y} \\
+        &= \abs{e^{\frac{2 \pi i}{n}}} \abs{x - y} \\
+        &= \abs{X - y}
+    \end{align*}
+    so \(r\) is indeed an isometry of \(\CC\).
+
+    Also, applying \(r\) to a particular vertex,
+    \begin{align*}
+        r\para{e^{\frac{2 \pi i k}{n}}} &= e^{\frac{2 \pi i}{n}} \cdot e^{\frac{2 \pi i k}{n}} \\
+        &= e^{\frac{2 \pi i}{n} \para{k + 1}}
+    \end{align*}
+    is another vertex.
+
+    So \(r\) sends vertices of \(X_n\) to vertices of \(X_n\), and preserves \(X_n\).
+
+    Similarly, for any \(x, y \in \CC\),
+    \begin{align*}
+        \abs{s \para{x} - s \para{y}} &= \abs{\conjugate{x} - \conjugate{y}} \\
+        &= \abs{\conjugate{x - y}} \\
+        &= \abs{x - y}
+    \end{align*}
+    so \(s\) is an isometry on \(\CC\).
+
+    Furthermore, applying \(s\) to a vertex of \(X_n\), we have
+    \begin{align*}
+        s\para{e^{\frac{2 \pi i k}{n}}} &= e^{- \frac{2 \pi i k}{n}} \\
+        &= e^{\frac{2 \pi i \para{n - k}}{n}}
+    \end{align*}
+    is another vertex of \(X_n\).
+
+    Therefore, we have shown that \(\brce{r, s} \subseteq D_{2n}\), and therefore, by induction,
+    \[\brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}.\]
+
+    To show that indeed these elements are all the elements of \(D_{2n}\), we let \(f \in D_{2n}\) be an isometry on \(X_n\), and consider its action of three points on the polygon, as in \autoref{fig:three-points-on-polygon}.
+
+    \begin{figure}[ht!]
+        \centering
+        \caption{Three Points on the Polygon}
+        \label{fig:three-points-on-polygon}
+    \end{figure}
+
+    Namely, let \(x = 1, y = e^{\frac{2 \pi i}{n}}, z = e^{- \frac{2 \pi i}{n}}\).
+
+    Since \(f \in D_{2n}\), \(f(x)\) is a vertex of \(X_n\), so
+    \[
+        f\para{x} = e^{\frac{2 \pi i k}{n}}
+    \]
+    for some \(k = 0, 1, \ldots, n - 1\).
+
+    Therefore,
+    \begin{align*}
+        r^{-k} \circ f \para{x} &= r^{-k} \para{e^{\frac{2 \pi i k}{n}}} \\
+        &= e^{- \frac{2 \pi i k}{n}} \cdot e^{\frac{2 \pi i k}{n}} \\
+        &= 1 \\
+        &= x.
+    \end{align*}
+
+    Now, \(r^{-k} \circ f \in D_{2n}\) since \(r^{-k}, f \in D_{2n}\). Therefore,
+    \begin{align*}
+        \abs{r^{-k} \circ f \para{y} - x} &= \abs{r^{-k} \circ f \para{y} - r^{-k} \circ f \para{x}} \\
+        &= \abs{y - x},
+    \end{align*}
+    so \(r^{-k} \circ f \para{y} \in \brce{y, z}\), and similarly \(r^{-k} \circ f \para{z} \in \brce{y, z}\) but \(r^{-k} \circ f \para{y} \neq r^{-k} \circ f \para{z}\).
+
+    Therefore, there are \(2\) cases here:
+    \begin{enumerate}
+        \item \(r^{-k} \circ f \para{y} = y, r^{-k} \circ f \para{z} = z.\) Then \(r^{-k} \circ f\) fixes \(x, y\) and \(z\), which are three non-collinear points. This means
+        \[
+            r^{-k} \circ f = \identity_{X_n}
+        \]
+        by \autoref{lem:three-point-lemma} (the three-point lemma), and hence
+        \[
+            f = r^k \in \brce{e, r, \ldots, r^{n - 1}} \subseteq \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
+        \]
+
+        \item We have
+        \begin{align*}
+            r^{-k} \circ f \para{x} &= x = s\para{x}, \\
+            r^{-k} \circ f \para{y} &= z = s\para{y}, \\
+            r^{-k} \circ f \para{z} &= y = s\para{z}.
+        \end{align*}
+
+        Hence, left-multiplying both sides by \(s\inverse = s\), we have that \(s\inverse \circ r^{-k} \circ f\) fixes \(x, y, z\).
+
+        Hence, by \autoref{lem:three-point-lemma} (the three-point lemma),
+        \[
+            s\inverse \circ r^{-k} \circ f = \identity_{X_n}
+        \]
+        and hence
+        \[
+            f = r^k s \in \brce{s, rs, \ldots, r^{n - 1}s} \subseteq \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s},
+        \]
+        as required.
+    \end{enumerate}
+
+    So far, we have shown that
+    \[
+        D_{2n} = \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
+    \]
+
+    Now, we show that the right-hand side has size \(2n\), so we check all elements on the right-hand side are distinct from each other.
+
+    First, if \(0 \leq k, l < n\) such that \(r^k = r^l\), then in particular, \(r^k \para{1} = r^l \para{1}\), and hence \(e^{\frac{2 \pi i k}{n}} = e^{\frac{2 \pi i l}{n}}\), and hence \(k = l\).
+
+    If \(r^{k} = s\), then
+    \[
+        e^{\frac{2 \pi i k}{n}} = r^{k} \para{1} = s \para{1} = 1,
+    \]
+    so \(k = 0\), and \(s = r^{0} = \identity\). But then
+    \[
+        z = s\para{y} = \identity\para{y} = y,
+    \]
+    which is impossible. So \(r^{k} \neq s\) for any \(k\).
+
+    Finally, if \(r^{k} = r^{l} s\), then \(s = r^{k - l}\), which is impossible by previous case; if \(r^{k} s = r^{l} s\), then \(r^{k} = r^{l}\), then \(k = l\).
+
+    So indeed, we finished proving that \(\abs{D_{2n}} = 2n\).
+\end{proof}
+
+To understand the group operation on \(D_{2n}\), we need to understand the different ways to multiply \(r\) and \(s\), which leads to \autoref{lem:dihedral-relation}.
+
+\begin{lemma}[Dihedral Relation]
+    \label{lem:dihedral-relation}%
+    For \(r, s \in D_{2n}\) as above, we have
+    \[
+        s r = r^{-1} s.
+    \]
+\end{lemma}
+
+\begin{proof}
+    By \autoref{lem:three-point-lemma} (the three-point lemma), it suffices to check that the two expressions do the same thing to \(x, y\) and \(z\).
+
+    Indeed,
+    \begin{align*}
+        sr\para{x} &= \conjugate{e^{\frac{2 \pi i}{n}}} \\
+        &= e^{-\frac{2 \pi i}{n}} \\
+        &= r\inverse \para{x} \\
+        &= r\inverse s \para{x},
+    \end{align*}
+    \begin{align*}
+        sr\para{y} &= \conjugate{e^{\frac{2 \pi 2 i}{n}}} \\
+        &= e^{-\frac{2 \pi 2 i}{n}} \\
+        &= r\inverse \para{e^{- \frac{2 \pi i}{n}}} \\
+        &= r\inverse s \para{y},
+    \end{align*}
+    and
+    \begin{align*}
+        sr\para{z} &= \conjugate{1} \\
+        &= 1 \\
+        &= r\inverse \para{e^{\frac{2 \pi i}{n}}} \\
+        &= r\inverse s \para{z}.
+    \end{align*}
+
+    Hence, \(sr = r\inverse s\).
+\end{proof}
