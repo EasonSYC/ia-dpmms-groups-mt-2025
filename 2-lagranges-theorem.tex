@@ -1,2 +1,250 @@
 \section{Lagrange's Theorem}
 \label{sec:lagranges-theorem}
+
+This very important theorem in group theory helps us to think about the order of groups and subgroups.
+
+\begin{theorem}[Lagrange's Theorem, Weak Version]
+    \label{thm:lagrange-weak}%
+    If \(H \subgroup G\), and \(\abs{G} < \infinity\), then
+    \[
+        \abs{H} \divides \abs{G}.
+    \]
+\end{theorem}
+
+The proof is to 'cut' \(G\) up into 'copies' of \(H\), which are called \emph{cosets}.
+
+\subsection{Cosets}
+\label{sec:cosets}
+
+\begin{definition}[Left Coset]
+    \label{def:left-coset}%
+    Let \(H \subgroup G\) and \(g \in G\). The corresponding \emph{left-coset} is
+    \[
+        gH = \set{gh}{h \in H} \subseteq G,
+    \]
+    and the set of all left cosets of \(H\) in \(G\) is
+    \[
+        G / H = \set{gH}{g \in G}.
+    \]
+\end{definition}
+
+\begin{remark}
+    We may equally define right-cosets as
+    \[
+        Hg = \set{hg}{h \in H}
+    \]
+    and the set of all right cosets of \(H\) in \(G\) as
+    \[
+        H \backslash G = \set{Hg}{g \in G}.
+    \]
+
+    They provide equivalent formulations, and we use left-cosets from now onwards.
+\end{remark}
+
+\begin{lemma}[Cosets Partition]
+    \label{lem:cosets-partition}%
+    If \(H \subgroup G\), the left-cosets of \(H\) \emph{partition} \(G\). That is,
+    \begin{enumerate}
+        \item \(G\) is the union of all left-cosets:
+        \[
+            G = \bigcup_{gH \in G / H} \para{gH};
+        \]
+        \item Cosets are either disjoint or equal: for any \(g_1 H, g_2 H \in G / H\), if \(g_1 H \cap g_2 H \neq \emptyset\), then \(g_1 H = g_2 H\).
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}
+        \item For any \(g \in G\), we have \(g = g \cdot e \in gH\), so
+        \[
+            \bigcup gH = G
+        \]
+        as required.
+
+        \item Suppose that \(g_1 H \cap g_2 H \neq \emptyset\), let \(k \in g_1 H \cap g_2 H\) lie in the intersection. Then for some \(h_1, h_2 \in H\),
+        \[
+            k = g_1 h_1 = g_2 h_2.
+        \]
+
+        Therefore,
+        \[
+            g_1 = \para{g_2 h_2} h_1\inverse = g_2 \para{h_2 h_1\inverse}
+        \]
+        so \(g_1 \in g_2 H\).
+
+        Furthermore, for any \(h \in H\), we have
+        \begin{align*}
+            g_1 h &= \para{g_2 \para{h_2 h_1\inverse}} h \\
+            &= g_2 \para{\para{h_2 h_1\inverse} h} \\
+            &\in g_2 H,
+        \end{align*}
+        and therefore \(g_1 H \subseteq g_2 H\).
+
+        Symmetrically, we have \(g_2 H \subseteq g_1 H\), so \(g_1 H = g_2 H\) as required.
+    \end{enumerate}
+\end{proof}
+
+Therefore, we may visualise that cosets partition as in \autoref{fig:cosets-partition}.
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Cosets of a subset partition a group}
+    \label{fig:cosets-partition}
+\end{figure}
+
+But in fact, those cosets have the same size!
+
+\begin{lemma}[Cosets have same size as subgroup]
+    \label{lem:cosets-size}%
+    Let \(H \subgroup G\), then there is a bijection
+    \[
+        H \to gH
+    \]
+    for any \(g \in G\).
+\end{lemma}
+
+\begin{proof}
+    We take the naive map \(h \mapsto gh\), and this has inverse
+    \[
+        gH \to H, gh \mapsto \para{g\inverse \para{gh}} = h.
+    \]
+\end{proof}
+
+Therefore, the picture is more like \autoref{fig:cosets-partition-equally}.
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Cosets of a subset partition a group equally}
+    \label{fig:cosets-partition-equally}
+\end{figure}
+
+\begin{definition}[Index of Subgroup]
+    \label{def:index-of-subgroup}%
+    The \emph{index} of a subgroup \(H \subgroup G\) is the size of the set of left-cosets
+    \[
+        \abs{G : H} = \abs{G / H}.
+    \]
+\end{definition}
+
+We may show that the index of a subgroup is the same, whether using left-cosets or right-cosets. In fact, there is always a bijection between \(G / H\) and \(H \backslash G\), even in the infinite case.
+
+\subsection{Lagrange's Theorem and its Consequences}
+\label{sec:lagrange-consequences}
+
+We are ready to state the stronger version of \autoref{thm:lagrange-weak} (Lagrange's Theorem).
+
+\begin{theorem}[Lagrange's Theorem]
+    \label{thm:lagrange}%
+    If \(\abs{G} < \infinity\), then
+    \[
+        \abs{G} = \abs{G : H} \abs{H}
+    \]
+    for any \(H \subgroup G\).
+\end{theorem}
+
+\begin{proof}
+    By \autoref{lem:cosets-partition}, the set of left cosets partition \(G\), hence
+    \begin{align*}
+        \abs{G} &= \sum_{gH \in G / H} \abs{gH} \\
+        &= \sum_{gH \in G / H} \abs{H} && \text{\autoref{lem:cosets-size}} \\
+        &= \abs{H} \abs{G : H}
+    \end{align*}
+    as desired.
+\end{proof}
+
+We next give some group-theoretic consequences of \autoref{thm:lagrange} (Lagrange's Theorem).
+
+\begin{corollary}[Order of Element Divides Order of Group]
+    \label{cor:order-of-element-divides}%
+    If \(\abs{G} < \infty\), then
+    \[
+        \ord\para{g} \divides \abs{G}
+    \]
+    for any \(g \in G\).
+\end{corollary}
+
+\begin{proof}
+    Recall that \(\ord\para{g} = \abs{\ang{g}}\) and that \(\ang{g} \subgroup G\), and we have \(\abs{\ang{g}} \divides \abs{G}\) by \autoref{thm:lagrange} (Lagrange's Theorem).
+\end{proof}
+
+\begin{corollary}[Element raised to the Order of Group]
+    \label{cor:element-to-order}%
+    If \(\abs{G} < \infty\), then
+    \[
+        g^{\abs{G}} = e
+    \]
+    for any \(g \in G\).
+\end{corollary}
+
+\begin{proof}
+    \autoref{cor:order-of-element-divides} shows that
+    \[
+        \abs{G} = k \ord \para{g}
+    \]
+    for some \(k \in \ZZ\).
+
+    Hence,
+    \begin{align*}
+        g^{\abs{G}} &= g^{k \ord \para{g}} \\
+        &= \para{g^{\ord \para{g}}}^{k} \\
+        &= e^k \\
+        &= e.
+    \end{align*}
+\end{proof}
+
+\begin{corollary}[Groups of Prime Order are Cyclic]
+    \label{cor:group-prime-order}%
+    If \(\abs{G}\) is prime, then \(G\) is cyclic, and \emph{any} element \(g \neq e\) generates \(G\).
+\end{corollary}
+
+\begin{proof}
+    We choose any \(g \in G\), \(g \neq e\). Then by \autoref{cor:order-of-element-divides}
+    \[
+        \ord \para{g} \divides \abs{G}.
+    \]
+
+    Therefore, since \(\abs{G}\) is prime, either \(\ord \para{g} = 1\) or \(\ord \para{g} = \abs{G}\).
+
+    Since \(g \neq e\), we have \(\ord \para{g} \neq 1\), and hence \(\ord \para{g} = \abs{G}\).
+
+    Therefore, \(\ang{g} = G\), so \(g\) generates \(G\) and \(G\) is cyclic.
+\end{proof}
+
+\subsection{Fermat--Euler Theorem}
+\label{sec:femat-euler}
+
+We can apply these results to elementary number theory, and this gives an important result in Numbers and Sets.
+
+\begin{definition}[Euler Totient Function]
+    \label{def:euler-totient}%
+    The \emph{Euler Totient Function} is defined as
+    \[
+        \totient\para{n} = \abs{\set{x \in \ZZ_{n}}{\gcd\para{x, n} = 1}}.
+    \]
+\end{definition}
+
+Let \(\times_{n}\) denote multiplication modulo \(n\) on \(\ZZ_n\), which is associative with identity \(1 \in \ZZ_n\).
+
+Recall that, by the division algorithm, \(x \in \ZZ_n\) has a multiplicative inverse modulo \(n\), if and only if there exists \(y, m \in \ZZ\) such that \(xy + mn = 1\), if and only if \(\gcd\para{x, n} = 1\).
+
+Therefore,
+\[
+    \ZZ_n^{\times} = \set{x \in \ZZ_n}{\gcd\para{x, n} = 1}
+\]
+is a group with operation \(\times_n\).
+
+\begin{theorem}[Fermat--Euler Theorem]
+    \label{thm:fermat-euler}%
+    Let \(x, n \in \ZZ\). If \(\gcd\para{x, n} = 1\), then
+    \[
+        x^{\totient\para{n}} \equiv 1 \pmod{n}.
+    \]
+\end{theorem}
+
+\begin{proof}
+    By \autoref{cor:element-to-order}, we have
+    \[
+        x^{\abs{\ZZ_n^{\times}}} = 1,
+    \]
+    and from definition of the totient function, \(\totient\para{n} = \abs{\ZZ_n^{\times}}\), so the result follows.
+\end{proof}
