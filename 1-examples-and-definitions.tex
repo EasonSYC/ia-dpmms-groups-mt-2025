@@ -402,11 +402,11 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
         \item \emph{Closure.} \(a \cdot b \in H\) for all \(a, b \in H\);
         \item \emph{Inverse.} \(a \in H\) implies \(a\inverse \in H\);
     \end{itemize}
-    we say \(H\) is a \emph{subgroup} of \(G\), and we write \(H \leq G\).
+    we say \(H\) is a \emph{subgroup} of \(G\), and we write \(H \subgroup G\).
 \end{definition}
 
 \begin{remark}
-    If \(G\) is a group, then any subgroup \(H \leq G\) is itself a group. Note associativity is not required -- it is inherited from \(G\).
+    If \(G\) is a group, then any subgroup \(H \subgroup G\) is itself a group. Note associativity is not required -- it is inherited from \(G\).
 \end{remark}
 
 \begin{examples}
@@ -415,13 +415,13 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         \item For any group \(G\),
         \[
-            1_G = \brce{e_G}
+            \trivialgp_G = \brce{e_G}
         \]
         is the \emph{trivial subgroup}.
 
         \item \(\ZZ \subseteq \QQ \subseteq \RR \subseteq \CC\), and in fact
         \[
-            \ZZ \leq \QQ \leq \RR \leq \ZZ.
+            \ZZ \subgroup \QQ \subgroup \RR \subgroup \ZZ.
         \]
 
         \item For \(n = 0, 1, 2, 3, \cdots,\) let
@@ -440,19 +440,19 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
             Then \(-x = -nk = n \cdot \para{-k} \in n\ZZ\).
         \end{itemize}
 
-        Hence, \(n\ZZ \leq \ZZ\).
+        Hence, \(n\ZZ \subgroup \ZZ\).
 
         We will see in \autoref{prop:subgroups-of-integers} that all subgroups of \(\ZZ\) are of this form.
     \end{enumerate}
 \end{examples}
 
 \begin{remark}
-    All subgroups of a group \(G\) that are not trivial (\(1_G\)) or the group \(G\) itself are referred to as its \emph{proper subgroups}.
+    All subgroups of a group \(G\) that are not trivial (\(\trivialgp_G\)) or the group \(G\) itself are referred to as its \emph{proper subgroups}.
 \end{remark}
 
 \begin{proposition}
     \label{prop:subgroups-of-integers}%
-    If \(H \leq \ZZ\), then \(H = n\ZZ\) for some \(n = 0, 1, 2, \cdots\).
+    If \(H \subgroup \ZZ\), then \(H = n\ZZ\) for some \(n = 0, 1, 2, \cdots\).
 \end{proposition}
 
 \begin{proof}
@@ -477,14 +477,14 @@ We give more examples of subgroups here.
 
 \begin{examples}[More Examples of Subgroups]
     \begin{enumerate}
-        \item If \(H, K \leq G\), then \(H \cap K \leq G\). (See Example Sheet 1, Question 2).
+        \item If \(H, K \subgroup G\), then \(H \cap K \subgroup G\). (See Example Sheet 1, Question 2).
         \item Similarly, for any family of subgroups,
         \[
-            H_i \leq G
+            H_i \subgroup G
         \]
         for \(i \in I\), an arbitrary index set (could be uncountable). We have
         \[
-            \bigcap_{i \in I} H_i = \set{a \in G}{\forall i \in I: a \in H_i} \leq G.
+            \bigcap_{i \in I} H_i = \set{a \in G}{\forall i \in I: a \in H_i} \subgroup G.
         \]
     \end{enumerate}
 \end{examples}
@@ -495,7 +495,7 @@ Specifically, the second example allows us to define a 'smallest group' containi
     \label{def:generating-set}%
     Let \(X\) be a subset of a group \(G\). Then we define
     \[
-        \ang{X} = \bigcup_{X \subseteq H \leq G} H
+        \ang{X} = \bigcup_{X \subseteq H \subgroup G} H
     \]
     is the smallest subgroup of \(G\) containing \(X\).
 
@@ -541,7 +541,7 @@ We consider a certain group of symmetries that preserves distances.
     \label{prop:isometry-group-in-C}%
     Let \(X \subseteq \CC\). The set of isometries of \(X\), denoted as \(\Isom\para{X}\), is a subgroup of \(\Sym\para{X}\):
     \[
-        \Isom\para{X} \leq \Sym\para{X}.
+        \Isom\para{X} \subgroup \Sym\para{X}.
     \]
 
     In particular, \(\Isom\para{X}\) is a group.
@@ -836,4 +836,505 @@ To understand the group operation on \(D_{2n}\), we need to understand the diffe
     \end{align*}
 
     Hence, \(sr = r\inverse s\).
+\end{proof}
+
+\subsection{Homomorphisms and Isomorphisms}
+\label{sec:homomorphism-isomorphism}
+
+Some groups are not literally (set-theoretically) equal, but none-the-less having the same structure.
+
+\begin{example}[Groups that seem equal]
+    We would say that \(\Sym\para{\text{deck of cards}}\) are somehow equal to \(\Sym\para{\text{52 undergraduate students}}\) in a way, since they all represent permutations on 52 objects.
+\end{example}
+
+\begin{definition}[Homomorphism]
+    \label{def:homomorphism}%
+    A map between groups \(\phi: G \to H\) is called a \emph{homomorphism} if it preserves the group structure, the operation:
+    \[
+        \phi\para{g \cdot_{G} g'} = \phi\para{g} \cdot_{H} \phi\para{g'}
+    \]
+    for all \(g, g' \in G\).
+\end{definition}
+
+\begin{examples}[Examples of Homomorphisms]
+    \begin{enumerate}
+        \item For any two groups \(G, H\), the map
+        \[
+            \phi: G \to H, g \mapsto e_{H}
+        \]
+        is a homomorphism. This is the \emph{trivial homomorphism}.
+        
+        \item If \(H \subgroup G\), the map
+        \[
+            i: H \to G, h \mapsto h
+        \]
+        is a homomorphism. This is the \emph{inclusion homomorphism}.
+
+        \item Recall \(C_n = \set{z \in \CC}{z^n = 1}\) for \(n \in \NN\). If \(n \divides m\), then the map
+        \[
+            \phi: C_m \to C_n, z \mapsto z^{\frac{m}{n}}
+        \]
+        is a homomorphism.
+
+        \item Since \(\det \para{AB} = \det \para{A} \det \para{B}\), the determinant
+        \[
+            \det: \GL_2\para{\RR} \to \para{\RR \setminus \brce{0}, \times} = \RR\multiplicative, A \mapsto \det A
+        \]
+        is a homomorphism.
+    \end{enumerate}
+\end{examples}
+
+Homomorphisms between groups must map certain elements to certain elements.
+
+\begin{lemma}[Homomorphisms Preserve the Identity and Inverses]
+    \label{lem:homomorphism-preserve-identity-inverse}%
+    If \(\phi: G \to H\) is a homomorphism, then
+    \begin{enumerate}
+        \item \(\phi\para{e_G} = e_H\),
+        \item \(\phi\para{g\inverse} = \phi\para{g}\inverse\) for all \(g \in G\).
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}
+        \item We have
+        \begin{align*}
+            \phi\para{e_G} \cdot \phi\para{e_G} &= \phi\para{e_G \cdot e_G} && \phi \text{ is a homomorphism} \\
+            &= \phi\para{e_G}
+        \end{align*}
+        and hence \(\phi\para{e_G} = e_H\) by \autoref{prop:inverse-identity} that the inverse is unique.
+
+        \item We have
+        \begin{align*}
+            \phi\para{g} \cdot \phi\para{g \inverse} &= \phi\para{g \cdot g\inverse} && \phi \text{ is a homomorphism} \\
+            &= \phi\para{e_G} \\
+            &= e_H,
+        \end{align*}
+        so \(\phi\para{g \inverse} = \phi\para{g}\inverse\) by the definition of the inverse.
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}[Isomorphism]
+    \label{def:isomorphism}%
+    If a homomorphism \(\phi: G \to H\) is also a \emph{bijection} (a map with an inverse), then \(\phi\) is an \emph{isomorphism}, and we write
+    \[
+        G \isomorphic H. 
+    \]
+\end{definition}
+
+From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
+
+\begin{examples}[Examples of Isomorphic Groups]
+    \begin{enumerate}
+        \item Recall that
+        \[
+            C_n = \set{z \in \CC}{z^n = 1}
+        \]
+        and
+        \[
+            \ZZ_n = \brce{0, 1, \ldots, n - 1}
+        \]
+        equipped with \(+_n\).
+
+        Let
+        \[
+            \phi: \ZZ_n \to C_n, k \mapsto e^{\frac{2 \pi i k}{n}}.
+        \]
+
+        Clearly, \(\phi\) is bijective. Furthermore, for any \(k, l \in \ZZ_{n}\), we have
+        \[
+            k + l = np + \para{k +_n l}
+        \]
+        for some \(p \in \ZZ\).
+
+        Hence,
+        \begin{align*}
+            \phi\para{k +_n l} &= e^{\frac{2 \pi i \para{k +_n l}}{n}} && \text{by definition of }\phi \\
+            &= e^{\frac{2 \pi i \para{k +_n l}}{n}} \cdot e^{\frac{2 \pi i p n}{n}} \\
+            &= e^{\frac{2 \pi i}{n} \para{k + l}} \\
+            &= e^{\frac{2 \pi i k}{n}} e^{\frac{2 \pi i l}{n}} \\
+            &= \phi{k} \cdot \phi{l}
+        \end{align*}
+        so \(\phi\) is indeed a homomorphism.
+
+        So \(\phi\) is in fact an isomorphism, and
+        \[
+            \ZZ_{n} \isomorphic C_n
+        \]
+        for all \(n\).
+
+        \item We have
+        \[
+            \para{\RR, +, 0} \isomorphic \para{\RR_{>0}, \times, 1}
+        \]
+        by considering the exponentiation function
+        \[
+            \exp: \RR \to \RR_{>0}, x \mapsto e^x.
+        \]
+
+        By laws on exponentiation, \(\exp\) is indeed a homomorphism, and it has \(\log\) as its inverse, so is bijective, and hence isomorphisms.
+    \end{enumerate}
+\end{examples}
+
+\autoref{lem:homomorphism-isomorphism} allows us to think that isomorphic groups are the same/
+
+\begin{lemma}[Properties on Homomorphisms and Isomorphisms]
+    \label{lem:homomorphism-isomorphism}%
+    \begin{enumerate}
+        \item If \(\phi: G \to H\) is an isomorphism, so is \(\phi \inverse\).
+        \item If
+        \[
+            G \overrightarrow{\phi} H \overrightarrow{\psi} K
+        \]
+        and \(\phi\) and \(\psi\) are both homomorphisms, then
+        \[
+            \psi \circ \phi: G \to K
+        \]
+        is also a homomorphism.
+        \item \(\isomorphic\) is an equivalence relation.
+    \end{enumerate}
+\end{lemma}
+
+We saw that every subgroup leads to an inclusion homomorphism. It is also true that homomorphisms give subgroups.
+
+\begin{definition}[Image and Kernel]
+    \label{def:image-kernel}%
+    Let \(\phi: G \to H\) be a homomorphism.
+
+    \begin{enumerate}
+        \item The \emph{image} of \(\phi\) is
+        \[
+            \img \phi = \set{h \in H}{\exists g \in G: \phi\para{g} = h} \subseteq H.
+        \]
+        \item The \emph{kernel} of \(\phi\) is
+        \[
+            \ker \phi = \set{g \in G}{\phi\para{g} = e_H} \subseteq G.
+        \]
+    \end{enumerate}
+\end{definition}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Image and Kernel}
+    \label{fig:image-and-kernel}
+\end{figure}
+
+\begin{proposition}[Image and Kernel are Subgroups]
+    If \(\phi: G \to H\) is a homomorphism, then
+    \[
+        \img \phi \subgroup H, \ker \phi \subgroup G
+    \]
+\end{proposition}
+
+\begin{proof}
+    We verify the subgroup axioms.
+
+    \begin{enumerate}
+        \item For \(\img \phi\),
+        \begin{itemize}
+            \item \(e_H = \phi\para{e_G}\) and \(e_G \in G\), so \(e_H \in \img \phi\).
+            \item For \(\phi\para{g_1}, \phi\para{g_2} \in \img \phi\), where \(g_1, g_2 \in G\), we have
+            \[
+                \phi\para{g_1} \cdot \phi\para{g_2} = \phi\para{g_1 \cdot g_2} \in \img \phi
+            \]
+            since \(g_1 \cdot g_2 \in G\).
+            \item If \(\phi \para{g} \in \img \phi\) for some \(g \in G\),
+            \[
+                \phi\para{g}\inverse = \phi\para{g\inverse} \in \img \phi
+            \]
+            since \(g\inverse \in G\).
+        \end{itemize}
+
+        So \(\img \phi \subgroup H\).
+        
+        \item For \(\ker \phi\),
+        \begin{itemize}
+            \item \(\phi\para{e_G} = e_H\), so \(e_G \in \ker \phi\).
+            \item If \(g_1, g_2 \in \ker \phi\),
+            \[
+                \phi\para{g_1 \cdot g_2} = \phi\para{g_1} \cdot \phi\para{g_2} = e_H \cdot e_H = e_H
+            \]
+            so \(g_1 \cdot g_2 \in \ker \phi\).
+            \item If \(g \in \ker \phi\),
+            \[
+                \phi\para{g\inverse} = \phi\para{g}\inverse = e_H\inverse = e_H
+            \]
+            so \(g \inverse \in \ker \phi\).
+        \end{itemize}
+
+        So \(\ker \phi \subgroup G\).
+    \end{enumerate}
+\end{proof}
+
+\begin{remarks}
+    We can use the image and kernel to determine whether a homomorphism is an isomorphism. Let \(\phi: G \to H\) be a homomorphism.
+    \begin{enumerate}
+        \item \(\phi\) is \emph{surjective} if and only if \(\img \phi = H\).
+        \item \(\phi\) is \emph{injective} if and only if \(\ker \phi = \trivialgp_{G}\).
+    \end{enumerate}
+\end{remarks}
+
+We prove the second remark.
+
+\begin{proof}
+    If \(\phi\) is injective, then
+    \[
+        \ker \phi = \phi\inverse\para{e_H}
+    \]
+    has \(\leq 1\) element, which must be \(e_G\).
+
+    Conversely, suppose \(\ker \phi = \trivialgp_G\). If \(\phi\para{g_1} = \phi\para{g_2}\), then
+    \[
+        \phi\para{g_1 g_2\inverse} = \phi\para{g_1} \phi\para{g_2}\inverse = e_H
+    \]
+    and hence
+    \[
+        g_1 g_2\inverse \in \ker \phi = \trivialgp_G.
+    \]
+
+    Therefore, \(g_1 g_2\inverse = e_G\), and \(g_1 = g_2\), therefore \(\phi\) is injective.
+\end{proof}
+
+\begin{remark}
+    Combining the previous remark, we see a homomorphism \(\phi: G \to H\) is an isomorphism if and only if \(\img \phi = H\) and \(\ker \phi = \trivialgp_G\).
+\end{remark}
+
+\subsection{Cyclic Groups}
+\label{sec:cyclic-groups}
+
+The groups \(C_n \isomorphic \ZZ_n\) that we described above has a special property.
+
+\begin{definition}[Cyclic Group]
+    \label{def:cyclic-group}%
+    A group \(G\) is \emph{cyclic} if there is \(g \in G\) and that
+    \[
+        G = \set{g^k}{k \in \ZZ} = \ang{g}.
+    \]
+
+    That is, \(\brce{g}\) generates \(G\), and \(g\) is called a \emph{generator} of \(G\).
+\end{definition}
+
+\begin{examples}[Examples of Cyclic Groups]
+    \begin{enumerate}
+        \item \(C_n\) is cyclic with generator \(e^{\frac{2 \pi i}{n}}\).
+        \item \(\ZZ\) is cyclic with generator \(1\).
+        \item \(\ZZ_n\) is cyclic since \(\ZZ_n \isomorphic C_n\).
+    \end{enumerate}
+\end{examples}
+
+We will see in \autoref{thm:classification-cyclic-groups} that these are in fact all the cyclic groups (up to isomorphism).
+
+\begin{theorem}[Classification of Cyclic Groups]
+    \label{thm:classification-cyclic-groups}%
+    If \(G\) is cyclic, then
+    \begin{itemize}
+        \item \(G \isomorphic C_n\) for some \(n \in \NN\); or
+        \item \(G \isomorphic \ZZ\).
+    \end{itemize}
+\end{theorem}
+
+\begin{proof}
+    Let \(G\) by a cyclic group with generator \(g\), and let
+    \[
+        S = \set{k \in \NN}{g^k = e}
+    \]
+    and let
+    \[
+        n = \begin{cases}
+            \min S, & S \neq \emptyset, \\
+            \infinity, & S = \emptyset,
+        \end{cases}
+        \in \NN \cup \brce{\infinity}.
+    \]
+
+    \begin{itemize}
+        \item If \(n = \infty\), we let
+        \[
+            \phi: \ZZ \to G, k \mapsto g^k,
+        \]
+        we would like to show that \(\phi\) is an isomorphism.
+
+        Since
+        \begin{align*}
+            \phi \para{k + l} &= g^{k + l} \\
+            &= g^k g^l \\
+            &= \phi \para{k} \phi \para{l},
+        \end{align*}
+        \(\phi\) is a homomorphism. \(\phi\) is surjective since \(G\) is cyclic, and from the definition of a cyclic group.
+
+        We show \(\phi\) is injective by contradiction. Suppose \(0 \neq k \in \ker \phi\), then since \(\ker \phi \subgroup \ZZ\), we may replace \(k\) by \(-k\), so we assume \(k > 0\).
+
+        Then \(k \in S\), so \(S \neq \emptyset\), which gives a contradiction. So \(\ker \phi = \brce{0}\), and \(\phi\) is injective.
+
+        Therefore, \(\phi\) gives an isomorphism \(\ZZ \to G\), we have \(G \isomorphic \ZZ\).
+
+        \item If \(n \in \NN\), we define
+        \[
+        \phi: \ZZ_n \to G, k \mapsto g^k.
+        \]
+
+        Since \(k + l = qn + \para{k +_n l}\) for some \(q \in \ZZ\), we have
+        \begin{align*}
+            \phi \para{k} \phi \para{l} &= g^k g^l \\
+            &= g^{k + l} \\
+            &= g^{qn + \para{k +_n l}} \\
+            &= g^{k +_n l} && g^n = e \\
+            &= \phi \para{k +_n l},
+        \end{align*}
+        so \(\phi\) is a homomorphism. To show \(\ZZ_n \isomorphic G\), it remains to show that \(\phi\) is a bijection.
+
+        Since \(G\) is cyclic, every element can be written as \(g^k\) for some \(k \in \ZZ\). Conducting integer division of \(k\) by \(n\) gives
+        \[
+            k = nq + r
+        \]
+        for some \(q \in \ZZ\) and \(r \in \ZZ_n\). Therefore,
+        \begin{align*}
+            g^k &= g^{nq + r} \\
+            &= \para{g^n}^q g^r \\
+            &= g^r && g^n = e \\
+            &= \phi\para{r}
+        \end{align*}
+        so \(\phi\) is surjective.
+
+        To prove that \(\phi\) is injective, suppose \(\phi\para{k} = e\) where \(k \in \ker \phi\), for some \(k \in \ZZ_{n}\). Then \(k \in S\), so \(k = 0, 1, \ldots, n - 1\).
+
+        But if \(k \in \NN\), then \(k \geq n\), since \(n\) is the minimal element in \(S\) for \(\NN\).
+
+        Therefore, it follows that \(k = 0\), and hence
+        \[
+            \ker \phi = \brce{0}
+        \]
+        showing that \(\phi\) is injective.
+
+        Hence,
+        \[
+            G \isomorphic \ZZ_n \isomorphic C_n
+        \]
+        as required.
+    \end{itemize}
+\end{proof}
+
+Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for \emph{any} cyclic group of order \(n\), and \(C_\infinity\) for \(\ZZ\).
+
+\begin{definition}[Order of an Element]
+    \label{def:order-of-element}%
+    The subgroup generated by an element \(g \in G\)
+    \[
+        \ang{g} = \set{g^k}{k \in \ZZ} \subgroup G
+    \]
+    is cyclic, so
+    \[
+        \ang{g} \isomorphic C_n
+    \]
+    for some \(n \in \NN \cup \brce{\infty}\).
+
+    The \emph{order} of an element \(g \in G\), is the \(n\) above, and we denote this as
+    \[
+        n = \ord \para{g} = o\para{g}.
+    \]
+\end{definition}
+
+\subsection{Dihedral Groups Revisited}
+\label{sec:dihedral-group-revisited}
+\begin{remark}
+    First, whenever \(x, y \in G\) satisfy \autoref{lem:dihedral-relation} (the dihedral relation), here \(G\) not necessarily being dihedral,
+    \[
+        xy = y x\inverse,
+    \]
+    then for any \(l > 0\), we have
+    \begin{align*}
+        y x^{-l} &= \para{y x \inverse} x^{1 - l} \\
+        &= x \para{y x^{1 - l}} \\
+        &= \cdots\\
+        &= x^l y
+    \end{align*}
+    by induction on \(l\).
+
+    If \(y^2 = e\), we also have
+    \begin{align*}
+        y x^l &= y \para{x^l y} y \\
+        &= y \para{y x^{-l}} y \\
+        &= x^{-l} y
+    \end{align*}
+    for \(l > 0\). Therefore, \(y x^l = x^{-l} y\) for any \(l \in \ZZ\).
+\end{remark}
+
+\begin{lemma}[Homomorphism from Dihedral Group]
+    \label{lem:homomorphism-dihedral-group}
+    Let \(G\) be a group and \(a, b \in G\) satisfy
+    \begin{enumerate}
+        \item \(a^n = e\): \(a\) is a 'rotation';
+        \item \(b^2 = e\): \(b\) is a 'reflection'; and
+        \item \(ab = b a\inverse\): \(a, b\) satisfy \autoref{lem:dihedral-relation} (the dihedral relation),
+    \end{enumerate}
+    then
+    \[
+    \phi \para{r^k} = a^k, \phi \para{s} = b
+    \]
+    defines a homomorphism
+    \[
+        \phi: D_{2n} \to G
+    \]
+    with \(r \mapsto a\) and \(s \mapsto b\).
+\end{lemma}
+
+\begin{proof}
+    We check that \(\phi\) does indeed give a homomorphism by considering the different elements in \(D_{2n}\).
+
+    \begin{enumerate}
+        \item For two rotations,
+        \begin{align*}
+            \phi\para{r^k} \phi\para{r^l} &= a^k a^l \\
+            &= a^{k + l} \\
+            &= a^{k +_n l} \\
+            &= \phi\para{r^{k +_n l}}.
+        \end{align*}
+        \item For a rotation and a reflection,
+        \begin{align*}
+            \phi\para{r^k} \phi\para{r^l s} &= a^k a^l b \\
+            &= a^{k +_n l} n \\
+            &= \phi\para{r^{k +_n l} s}.
+        \end{align*}
+        \item For a reflection and a rotation,
+        \begin{align*}
+            \phi\para{r^k s} \phi\para{r^l} &= a^k b a^l \\
+            &= a^{k - l} b && \text{dihedral relation} \\
+            &= \phi\para{r^{k - l} s} \\
+            &= \phi\para{r^k r^{-l} s} \\
+            &= \phi\para{r^k s r^l}. && \text{dihedral relation}
+        \end{align*}
+        \item For two reflections,
+        \begin{align*}
+            \phi\para{r^k s} \phi\para{r^l s} &= a^k b a^l b \\
+            &= a^{k - l} b^2 \\
+            &= a^{k - l} \\
+            &= \phi\para{r^{k - l}} \\
+            &= \phi\para{r^{k - l} s s} \\
+            &= \phi\para{r^{k} s r^{l} s}.
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+Finally, \autoref{prop:group-isomorphic-dihedral} gives a useful condition to show a group being isomorphic to the dihedral group.
+
+\begin{proposition}[Groups Isomorphic to the Dihedral Group]
+    \label{prop:group-isomorphic-dihedral}%
+    If a group \(G\) has a generating set \(\brce{a, b}\) such that
+    \begin{enumerate}
+        \item \(a^n = e\),
+        \item \(b^2 = 2\),
+        \item \(ab = b a \inverse\),
+        \item \(\abs{G} = 2n\),
+    \end{enumerate}
+    then \(G \isomorphic D_{2n}\).
+\end{proposition}
+
+\begin{proof}
+    By \autoref{lem:homomorphism-dihedral-group}, this gives a homomorphism \(\phi: D_{2n} \to G\).
+
+    \(\phi\) is surjective since \(\brce{a, b}\) generates \(G\). Also, since
+    \[
+        \abs{D_{2n}} = 2n = \abs{G},
+    \]
+    such a surjective map must be a bijection, so this gives an isomorphism, \(G \isomorphic D_{2n}\).
 \end{proof}
