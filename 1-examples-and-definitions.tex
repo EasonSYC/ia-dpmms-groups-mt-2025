@@ -625,7 +625,7 @@ The proof will give us a good description of all the elements in \(D_{2n}\). How
     However, \(y_1 y_2\) is a straight line, so \(\angle x_1 z y_1 + \angle x_1 z y_2 = \pi\), and therefore \(\angle x_1 z y_1 = \frac{\pi}{2}\), as desired.
 \end{proof}
 
-\begin{lemma}[Three-Point Lemma]
+\begin{lemma}[Three--Point Lemma]
     \label{lem:three-point-lemma}%
     Let \(X \subseteq \CC\) and \(f \in \Isom\para{X}\). If there exist some \(x_1, x_2, x_3 \in X\) that are not co-linear, such that
     \[
@@ -752,7 +752,7 @@ The proof structure would be a typical subset-superset proof, i.e.
         \[
             r^{-k} \circ f = \identity_{X_n}
         \]
-        by \autoref{lem:three-point-lemma} (the three-point lemma), and hence
+        by \autoref{lem:three-point-lemma} (the three--point lemma), and hence
         \[
             f = r^k \in \brce{e, r, \ldots, r^{n - 1}} \subseteq \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
         \]
@@ -766,7 +766,7 @@ The proof structure would be a typical subset-superset proof, i.e.
 
         Hence, left-multiplying both sides by \(s\inverse = s\), we have that \(s\inverse \circ r^{-k} \circ f\) fixes \(x, y, z\).
 
-        Hence, by \autoref{lem:three-point-lemma} (the three-point lemma),
+        Hence, by \autoref{lem:three-point-lemma} (the three--point lemma),
         \[
             s\inverse \circ r^{-k} \circ f = \identity_{X_n}
         \]
@@ -812,7 +812,7 @@ To understand the group operation on \(D_{2n}\), we need to understand the diffe
 \end{lemma}
 
 \begin{proof}
-    By \autoref{lem:three-point-lemma} (the three-point lemma), it suffices to check that the two expressions do the same thing to \(x, y\) and \(z\).
+    By \autoref{lem:three-point-lemma} (the three--point lemma), it suffices to check that the two expressions do the same thing to \(x, y\) and \(z\).
 
     Indeed,
     \begin{align*}
@@ -984,7 +984,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
         \item If \(\phi: G \to H\) is an isomorphism, so is \(\phi \inverse\).
         \item If
         \[
-            G \overrightarrow{\phi} H \overrightarrow{\psi} K
+            G \xrightarrow{\phi} H \xrightarrow{\psi} K
         \]
         and \(\phi\) and \(\psi\) are both homomorphisms, then
         \[
