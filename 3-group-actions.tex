@@ -156,7 +156,7 @@ The left regular action allows us to think of groups as subgroups of symmetric g
 We in fact can learn a huge amount about groups by thinking about group actions.
 
 \begin{definition}[Orbits and Stabilisers]
-    \label{def:orbit-stabliser}%
+    \label{def:orbit-stabiliser}%
     Let \(G \actson X\) and let \(x \in X\).
     \begin{enumerate}
         \item The \emph{orbit} of \(x\) is the set
@@ -416,5 +416,196 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
     \label{fig:symmetries-of-a-cube}
 \end{figure}
 
+The next theorem is a different kind of application of \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem). The proof is not very intuitive, but gives a very important result in group theory.
+
+\begin{theorem}[Cauchy's Theorem]
+    \label{thm:cauchy}
+    If \(\abs{G} < \infinity\), and \(p\) is a prime that divides \(\abs{G}\), then there is a \(g \in G\) such that
+    \[
+        \ord\para{g} = p.
+    \]
+\end{theorem}
+
+\begin{proof}
+    Consider the set \(X\) of \(p\)-tuples
+    \[
+        X = \set{\para{g_1, \ldots, g_p}}{g_i \in G, g_1 g_2 \cdots g_p = e}.
+    \]
+
+    We define an action of \(C_p\) on \(X\), where
+    \[
+        C_p = \brce{1, t, t^2, \ldots, t^{p - 1}} = \ang{t}
+    \]
+    as follows. Let
+    \[
+        t^k \para{g_1, \ldots, g_p} = \para{g_{k + 1}, \ldots, g_p, g_1, \ldots, g_k}.
+    \]
+
+    It is easy to see that
+    \[
+        \para{t^k \cdot t^l} \para{g_1, \ldots, g_p} = \para{t^k} \para{t^l \para{g_1, \ldots, g_p}}.
+    \]
+
+    We also need to check that
+    \[
+        \para{g_{k + 1}, \ldots, g_p, g_1, \ldots, g_k} \in X.
+    \]
+
+    Suppose that
+    \[
+        a = g_1 \cdots g_k, b = g_{k + 1} \cdots g_p,
+    \]
+    we have \(ab = e\), and hence \(b = a\inverse\), therefore
+    \[
+        ba = g_{k + 1} \cdots g_p g_1 \cdots g_k = e
+    \]
+    as required. This means we indeed defined an action \(C_p \actson X\).
+
+    We now compute the size of \(X\). We may decide \(g_1, \ldots, g_{p - 1} \in G\) to be arbitrary elements, then \(g_p\) has to be determined uniquely, namely
+    \[
+        g_p = g_{p - 1}\inverse \cdots g_2\inverse g_1\inverse
+    \]
+    such that
+    \[
+        \para{g_1, \ldots, g_{p - 1}, g_p} \in X.
+    \]
+
+    Therefore,
+    \[
+        \abs{X} = \abs{G}^{p - 1}.
+    \]
+
+    From \autoref{prop:stabilisers-subgroups-orbits-partition}, \(C_p \actson X\) partition \(X\) into orbits
+    \[
+        X = \orb\para{x_1} \cup \orb\para{x_2} \cup \cdots \cup \orb\para{x_k}.
+    \]
+
+    Hence, by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), for each \(j = 1, 2, \ldots, k\),
+    \[
+        \abs{\orb\para{x_j}} \divides \abs{C_p} = p
+    \]
+    so either the size of \(\orb\para{x_j}\) is \(1\), or \(p\).
+
+    Let \(l\) be the number of orbits with size \(1\). After re-numbering, we may assume that
+    \[
+        \abs{\orb\para{x_j}} = \begin{cases}
+            1, & 1 \leq j \leq l, \\
+            p, & j > l.
+        \end{cases}
+    \]
+
+    Since the orbits partition \(X\),
+    \begin{align*}
+        \abs{G}^{p - 1} &= \abs{X} \\
+        &= \sum_{j = 1}^{k} \abs{\orb\para{x_j}} \\
+        &= \sum_{j = 1}^{l} \abs{\orb{\para{x_j}}} + \sum_{j = l + 1}^{k} \abs{\orb{\para{x_j}}} \\
+        &= l + p \cdot \para{k - l}.
+    \end{align*}
+
+    Since \(p \divides \abs{G}\), it follows that \(p \divides l\).
+
+    Now, note that \(x = \para{g_1, \ldots, g_p}\) has an orbit of size \(1\) if and only if \(g_1 = g_2 = \cdots = g_p\).
+
+    In particular, there is at least one such element giving such an orbit, namely
+    \[
+        \para{e, e, \ldots, e} \in X.
+    \]
+
+    So \(l > 0\). Since \(p \divides l\), it follows that
+    \[
+        l \geq p > 1,
+    \]
+    so there is at least \(1\) more orbit
+    \[
+        \para{g, g, \ldots, g} \in X
+    \]
+    with \(g \neq e\).
+
+    The definition of \(X\) implies that \(g^p = e\), and hence we can see \(\ord\para{g} \divides p\), and hence \(\ord\para{g} = p\) since \(p\) is prime and \(g \neq e\), as required.
+\end{proof}
+
+This is a proof that is not very intuitive, but the result is very useful.
+
 \subsection{Conjugation}
 \label{sec:conjugation}
+
+\begin{definition}[Conjugate, Conjugacy Class]
+    \label{def:conjugate-ccl}%
+    Let \(G\) be a group, and \(g \in G\). For any \(h \in G\), the element \(hgh\inverse \in G\) is called \emph{the conjugate of \(g\) by \(h\)}.
+
+    The \emph{conjugacy class} of \(g \in G\) is
+    \[
+        \ccl_{G}\para{g} = \set{hgh\inverse}{h \in G}.
+    \]
+\end{definition}
+
+The intuition behind this definition is that \(hgh\inverse\) has the same 'shape' as \(g\), and \(hgh\inverse\) corresponds to a 'change in coordinates' of \(g\) by \(h\). Conjugacy classes partition the group.
+
+\begin{example}[Conjugacy in an Abelian Group]
+    If \(G\) is abelian, then for any \(g, h \in G\),
+    \[
+        hgh\inverse = ghh\inverse = ge = g,
+    \]
+    so the only element conjugate to \(g\) is \(g\) itself. All conjugacy classes have size \(1\). (This condition is equivalent to a group being abelian.)
+\end{example}
+
+Conjugacy classes of reflections in a dihedral group demonstrates the intuition of 'size' well.
+
+\begin{example}[Conjugacy Classes of Reflections in Dihedral Group]
+    In Sheet 2, Q6, \(D_{2n}\) has \(1\) conjugacy class of reflections if \(n\) is odd, and \(2\) if \(n\) is even.
+    
+    As in \autoref{fig:ccl-dihedral}, when \(n = 6\), there are two 'types' of reflections, those whose axis run through vertices, and those who run through midpoints of edges. When \(n = 5\), there is only one 'type' of reflection: their axis all run through a vertex and a midpoint of an edge.
+\end{example}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Conjugacy in Dihedral Groups}
+    \label{fig:ccl-dihedral}
+\end{figure}
+
+Conjugation defines another action of \(G \actson G\):
+\[
+    g \star \gamma = g \gamma g\inverse
+\]
+for \(g \in G, \gamma \in X = G\). This is \textbf{very different} to the left regular action. In terms of language in actions,
+\[
+    \ccl_{G} \para{g} = \orb_{G\star} \para{g}.
+\]
+
+From the example on abelian groups, we see that conjugating to an element itself is closely related to commutativity:
+\[
+    hgh\inverse = g \iff hg = gh.
+\]
+
+This leads to \autoref{def:centraliser-centre}.
+
+\begin{definition}[Centraliser, Centre]
+    \label{def:centraliser-centre}%
+    The \emph{centraliser} of \(g \in G\) is
+    \[
+        C_G\para{g} = \set{h \in G}{h g h\inverse = g}.
+    \]
+
+    It is the elements that \emph{commute with \(g\)}.
+
+    The \emph{centre} of \(G\) is
+    \[
+        Z\para{G} = \set{h \in G}{\forall g \in G, hg = gh} = \bigcap_{g \in G} C_G \para{g}.
+    \]
+
+    It is the elements that \emph{commute with everything in \(G\)}.
+\end{definition}
+
+Using the language of the conjugation action, we have
+\[
+    C_G\para{g} = \stab_{G\star} \para{g}
+\]
+and hence \(C_G\para{g} \subgroup G\) forms a group. Since \(Z\para{G}\) is an intersection of subgroups, it is itself a subgroup: \(Z\para{G} \subgroup G\).
+
+\begin{remark}
+    Another useful way to think of the centre is
+    \[
+        Z\para{G} = \bigcup_{g \in G, \abs{\ccl\para{g}} = 1} \ccl\para{g} = \bigcup_{g \in G, \abs{\ccl\para{g}} = 1} \brce{g},
+    \]
+    i.e. the union of the conjugacy classes with size one. (We will see later that this means \(Z\para{G} \normalsub G\).)
+\end{remark}
