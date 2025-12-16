@@ -1,2 +1,243 @@
 \section{Finite Groups}
 \label{sec:finite-groups}
+
+We have already seen several useful theorems on finite groups, e.g. \autoref{thm:lagrange} (Lagrange's Theorem), \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), \autoref{thm:cayley} (Cayley's Theorem) and \autoref{thm:cauchy} (Cauchy's Theorem).
+
+In this section we will be thinking of small examples of finite groups. Namely, we proceed na\"{i}vely, classifying all groups up to order \(8\).
+
+\subsection{Groups up to Order 3}
+\label{sec:groups-up-to-order-3}
+
+\begin{itemize}
+    \item If \(\abs{G} = 1\), then \(G\) must be trivial: \(G \isomorphic \trivialgp\).
+    \item If \(\abs{G} = 2\), since \(2\) is a prime, by \autoref{cor:group-prime-order}, \(G \isomorphic C_2\).
+    \item If \(\abs{G} = 3\), since \(3\) is a prime, by \autoref{cor:group-prime-order}, \(G \isomorphic C_3\).
+\end{itemize}
+
+\subsection{Groups of Order 4}
+\label{sec:groups-of-order-4}
+
+We have \(C_4\) as an example of a group of order \(4\). For another group of this order, we first define the following.
+
+\begin{definition}[Direct Product]
+    \label{def:direct-product}%
+    If \(G, H\) are groups, the \emph{direct product} is
+    \[
+        G \times H = \set{\para{g, h}}{g \in G, h \in H}
+    \]
+    equipped with the group operation
+    \[
+        \para{g_1, h_1} \cdot_{G \times H} \para{g_2, h_2} = \para{g_1 \cdot_G g_2, h_1 \cdot_H h_2}.
+    \]
+
+    Note that the element \(e_G, e_H\) is the identity, and for the inverse
+    \[
+        \para{g, h}\inverse = \para{g\inverse, h\inverse}.
+    \]
+\end{definition}
+
+The direct product of two groups is a group, and it is easy to see for any group \(G, H, K\),
+\begin{itemize}
+    \item \(G \times H \isomorphic H \times G\): the direct product is \emph{commutative} up to isomorphism;
+    \item \(\para{G \times H} \times K \isomorphic G \times \para{H \times K}\): the direct product is \emph{associative} up to isomorphism;
+    \item \(\trivialgp \times G \isomorphic G \times \trivialgp \isomorphic G\): the trivial group is the \emph{identity} up to isomorphism;
+    \item If \(G \isomorphic H\), then \(G \times K \isomorphic H \times K\): we may replace elements in the direct product up to isomorphism;
+    \item \(\abs{G \times H} = \abs{G} \times \abs{H}\): the order of the direct product is the product of the orders;
+    \item \(\ord\para{g, h} = \lcm\brce{\ord\para{g}, \ord\para{h}}\): the order of an element is the least common multiple of the order of the separate elements.
+\end{itemize}
+
+\begin{example}[The Klein--4 Group]
+    The group
+    \[
+        K_4 = C_2 \times C_2
+    \]
+    is called the \emph{Klein--4 Group}. It can be thought of the dihedral group \(D_4\).
+
+    For any \(\para{a, b} \in K_4\), we have
+    \[
+        \para{a, b}^2 = \para{a^2, b^2} = \para{e, e} = e,
+    \]
+    so every element has order \(1\) or order \(2\). In particular, \(K_4 \notisomorphic C_4\).
+\end{example}
+
+To show these are the only groups of order \(4\), it is useful to introduce a theorem regarding direct products.
+
+\begin{theorem}[Direct Product Theorem]
+    \label{thm:dpt-direct-product-theorem}%
+    If \(H_1, H_2 \subgroup G\), and
+    \begin{enumerate}
+        \item \(H_1 \cap H_2 = \brce{e}\): \(H_1\) and \(H_2\) \emph{intersect trivially};
+        \item \(h_1 h_2 = h_2 h_1\) for all \(h_1 \in H_1, h_2 \in H_2\): elements in \(H_1\) and \(H_2\) \emph{commute}; and
+        \item \(G = H_1 H_2\): for all \(g \in G\), \(g = h_1 h_2\) for some \(h_1 \in H_1\) and \(h_2 \in H_2\);
+    \end{enumerate}
+    then \(G \isomorphic H_1 \times H_2\).
+\end{theorem}
+
+\begin{proof}
+    We consider the na\"{i}ve map
+    \[
+        \phi: H_1 \times H_2 \to G, \para{h_1, h_2} \mapsto h_1 h_2.
+    \]
+
+    We show that \(\phi\) is an isomorphism.
+
+    \emph{\(\phi\) is a homomorphism.} For any \(\para{h_1, h_2}, \para{h_1', h_2'} \in H_1 \times H_2\), we have
+    \begin{align*}
+        \phi\para{\para{h_1, h_2}} \phi\para{\para{h_1', h_2'}} &= \para{h_1 h_2} \para{h_1' h_2'} \\
+        &= \para{h_1 h_1'} \para{h_2 h_2'} && \text{by condition (iii)} \\
+        &= \phi\para{\para{h_1 h_1', h_2 h_2'}} \\
+        &= \phi\para{\para{h_1, h_2} \cdot \para{h_1', h_2'}}.
+    \end{align*}
+
+    \emph{\(\phi\) is injective.} Recall this is equivalent to showing that the kernel \(\ker \phi = \trivialgp\) is trivial.
+
+    Suppose \(\para{h_1, h_2} \in H_1 \times H_2\) is such that \(\phi\para{\para{h_1, h_2}} = e = h_1 h_2\), i.e. \(\para{h_1, h_2} \in \ker\phi\).
+
+    Then we have
+    \[
+        H_1 \ni h_1 = h_2\inverse \in H_2
+    \]
+    so \(h_2\inverse = h_1 \in H_1 \cap H_2 = \trivialgp\) by condition (i). Hence, \(h_1 = h_2 = e\) and \(\para{h_1, h_2} = \para{e, e}\), showing \(\ker \phi = \trivialgp\) as desired.
+
+    \emph{\(\phi\) is surjective.} This is from condition (iii).
+
+    This shows \(\phi\) is an isomorphism, as desired.
+\end{proof}
+
+\begin{remark}
+    Condition (iii) is to show \(\phi\) is surjective, and in the case where \(H_1, H_2 \leq G\) is finite, we have if \(H_1 \cap H_2 = \trivialgp\), then
+    \[
+        \abs{\set{h_1 h_2}{h_1 \in H_1, h_2 \in H_2}} = \abs{H_1 H_2} = \abs{H_1} \abs{H_2},
+    \]
+    so we may replace condition (iii) with \(\abs{G} = \abs{H_1} \abs{H_2}\) to show that the mapping is surjective.
+\end{remark}
+
+\begin{remark}
+    For any group \(G \isomorphic H_1 \times H_2\), we may choose the natural copies of \(H_1\) and \(H_2\) in \(G\), \(H_1'\) and \(H_2'\):
+    \[
+        H_1' = H_1 \times \trivialgp = \set{\para{h_1, e}}{h_1 \in H_1} \isomorphic H_1
+    \]
+    and
+    \[
+        H_2' = \trivialgp \times H_2 = \set{\para{e, h_2}}{h_2 \in H_2} \isomorphic H_2,
+    \]
+    and we have \(G \isomorphic H_1' \times H_2'\). \(H_1'\) and \(H_2'\) here satisfy the condition for \autoref{thm:dpt-direct-product-theorem} (direct product theorem). Therefore, this theorem is, in a sense, 'if and only if', up to isomorphism.
+\end{remark}
+
+Now we are ready to classify all groups of order 4.
+
+\begin{lemma}[Groups of Order 4]
+    \label{lem:groups-of-order-4}%
+    If \(\abs{G} = 4\), then \(G \isomorphic C_4\) or \(G \isomorphic C_2 \times C_2\).
+\end{lemma}
+
+\begin{proof}
+    By \autoref{cor:order-of-element-divides} (corollary of Lagrange's Theorem), every non-trivial element in \(G\) has order \(2\) or \(4\).
+    
+    \begin{itemize}
+        \item If there is some \(g \in G\) such that \(\ord\para{g} = 4\), then \(G = \ang{g} \isomorphic C_4\).
+        \item Otherwise, every non-trivial element has order \(2\). Let \(a, b \in G\) be distinct elements such that \(\ord{a} = \ord{b} = 2\).
+        
+        Let \(H_1 = \ang{a} \isomorphic C_2\), \(H_2 = \ang{b} \isomorphic C_2\). We aim to show that \(G \isomorphic H_1 \times H_2 \isomorphic C_2 \times C_2\).
+
+        First, \(H_1 \cap H_2 = \trivialgp_{G}\) since \(a \neq b\), giving condition (i). Then, \(\abs{G} = \abs{H_1} \abs{H_2}\), which gives condition (iii).
+
+        Finally, since \(\ord\para{ab} = 2\) (since \(ab \neq e\)), then
+        \[
+            ab = \para{ab}\inverse = b\inverse a\inverse = ba,
+        \]
+        as required for (ii).
+
+        Therefore, \(G \isomorphic C_2 \times C_2\) by \autoref{thm:dpt-direct-product-theorem} (direct product theorem), as desired.
+    \end{itemize}
+\end{proof}
+
+It is useful to see when/whether a direct product of cyclic groups is cyclic -- in the example above \(C_2 \times C_2 \notisomorphic C_4\), but we will soon see that \(C_2 \times C_3 \isomorphic C_6\).
+
+\begin{theorem}[Chinese Remainder Theorem]
+    \label{thm:crt-chinese-remainder-theorem}%
+    If \(\gcd\brce{m, n} = 1\), then
+    \[
+        C_m \times C_n \isomorphic C_{mn}.
+    \]
+\end{theorem}
+
+\begin{proof}
+    Let \(C_{mn} = \ang{g}\). Let
+    \[
+        H_1 = \ang{g^n} \isomorphic C_m, H_2 = \ang{g^m} \isomorphic C_n,
+    \]
+    we check the hypothesis of \autoref{thm:dpt-direct-product-theorem} (direct product theorem).
+
+    \emph{(i).} Note that \(g^k \in H_1\) if and only if \(n \divides k\), and similarly, \(g^k \in H_2\) if and only if \(m \divides k\).
+
+    Hence, \(g^k \in H_1 \cap H_2\) if and only if \(m \divides k\) and \(n \divides k\). This is equivalent to
+    \[
+        \lcm\brce{m, n} \divides k,
+    \]
+    and since \(\gcd\brce{m, n} = 1\), we have \(\lcm\brce{m, n} = mn\), and hence this is equivalent to
+    \[
+        mn \divides k,
+    \]
+    which is equivalent to \(g^k = e\).
+
+    \emph{(ii).} Cyclic groups are abelian.
+
+    \emph{(iii).} \(\abs{C_{mn}} = \abs{C_m} \abs{C_n}\) so this is immediate.
+\end{proof}
+
+\subsection{Groups of Order 5}
+\label{sec:groups-of-order-5}
+
+If \(\abs{G} = 5\), since \(5\) is a prime, by \autoref{cor:group-prime-order}, \(G \isomorphic C_5\).
+
+\subsection{Groups of Order 6}
+\label{sec:groups-of-order-6}
+
+We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the cyclic group \(C_6 \isomorphic C_2 \times C_3\). In fact, through some experiment, we may see that they are the only ones.
+
+\begin{lemma}[Groups of Order 6]
+    \label{lem:groups-of-order-6}%
+    If \(\abs{G} = 6\), then \(G \isomorphic C_6\) or \(G \isomorphic D_6\).
+\end{lemma}
+
+\begin{proof}
+    By \autoref{thm:cauchy} (Cauchy's Theorem), there are \(r, s \in G\) such that \(\ord\para{r} = 3, \ord\para{s} = 2\).
+
+    Since \(\abs{\ang{r}} = 3\), we have from \autoref{thm:lagrange} (Lagrange's Theorem), that \(\abs{G : \ang{r}} = 2\), i.e. there are two cosets of \(\ang{r}\). One of them is \(\ang{r}\), and since \(s \in \ang{r}\), the other left coset is \(s\ang{r}\). Similarly, for right cosets, the right coset other than the trivial one is \(\ang{r}s\). Therefore, we have
+    \[
+        s\ang{r} = G \setminus \ang{r} = \ang{r} s.
+    \]
+
+    \autoref{fig:elements-in-group-of-order-6} gives a visualisation of this result.
+
+    \begin{figure}[ht!]
+        \centering
+
+        \caption{Visualisation of Elements in \(G\) where \(\abs{G} = 6\)}
+        \label{fig:elements-in-group-of-order-6}
+    \end{figure}
+
+    Hence, \(sr = r^i s\) for some \(i = 0, 1, 2\).
+
+    \begin{itemize}
+        \item \(i = 0\). Then \(sr = s\), so \(r = e\) which is impossible since \(\ord\para{r} = 3\).
+        \item \(i = 1\). Then \(sr = rs\), so elements in \(\ang{r}\) and \(\ang{s}\) commute. By \autoref{thm:dpt-direct-product-theorem} (direct product theorem),
+        \[
+            G \isomorphic \ang{r} \times \ang{s} \isomorphic C_3 \times C_2 \isomorphic C_6.
+        \]
+        \item \(i = 2\). Then \(sr = r^2 s = r\inverse s\) give the \emph{dihedral relation}. Therefore, by \autoref{prop:group-isomorphic-dihedral}, we have \(G \isomorphic D_6\).
+    \end{itemize}
+\end{proof}
+
+\begin{remark}
+    Another obvious group of order \(6\) is \(S_3\), but in fact \(S_3 \isomorphic D_6\) since it is non-abelian with order \(6\). (Consider permutations on vertices of triangle.)
+\end{remark}
+
+\subsection{Groups of Order 7}
+\label{sec:groups-of-order-7}
+
+If \(\abs{G} = 7\), since \(7\) is a prime, by \autoref{cor:group-prime-order}, \(G \isomorphic C_7\).
+
+\subsection{Groups of Order 8}
+\label{sec:groups-of-order-8}
