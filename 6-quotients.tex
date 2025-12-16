@@ -1,2 +1,297 @@
 \section{Quotients}
 \label{sec:quotients}
+
+\subsection{Normal Subgroups}
+\label{sec:normal-subgroups}
+
+Let \(\phi: G \to H\) be a homomorphism, then \(\ker \phi \subgroup G\) is always a special kind of subgroup.
+
+\begin{definition}[Normal Subgroup]
+    \label{def:normal-subgroup}%
+    A subgroup \(H \subgroup G\) is called \emph{normal} if \(g h g\inverse \in H\) for any \(h \in H\) and \(g \in G\). If so, we write \(H \normalsub G\).
+\end{definition}
+
+\begin{examples}[Examples of Normal Subgroups]
+    \begin{enumerate}
+        \item \(\trivialgp \normalsub G\) and \(G \normalsub G\) for any group \(G\).
+        \item All subgroups of an abelian group is normal. If \(G\) is abelian, and \(H \subgroup G\), then \(H \normalsub G\).
+        \item \(\ang{r} \normalsub D_{2n}\) since
+        \[
+            s r^k s\inverse = r^{-k} \in \ang{r}
+        \]
+        by \autoref{lem:dihedral-relation} (the dihedral relation). But \(\ang{s}\) is \emph{not} normal since
+        \[
+            r s r \inverse = s r^{-2} \notin \ang{s}.
+        \]
+        \item Suppose \(\phi: G \to G'\) is a homomorphism. If \(h \in \ker \phi\), \(g \in G\), then
+        \[
+            \phi\para{g h g\inverse} = e
+        \]
+        and hence \(g h g\inverse \in \ker \phi\), so \(\ker \phi \normalsub G\).
+    \end{enumerate}
+\end{examples}
+
+From the definition, we can see that normal subgroups are subgroups which are precisely unions of conjugation classes: indeed, the condition for a subgroup to be normal is that all \(h \in H \normalsub G\) satisfy \(\ccl\para{h} \subseteq H\).
+
+Another way to think of normal subgroups is that their left and right cosets are equivalent.
+
+\begin{lemma}[Left and Right Cosets of Normal Subgroup are the same]
+    \label{lem:left-right-coset-normal}%
+    Suppose \(H \subgroup G\). Then \(H \normalsub G\) if and only if \(gH = Hg\) for all \(g \in G\).
+\end{lemma}
+
+Intuitively, this is true, since the definition of a normal subgroup is equivalent to that \(gHg\inverse \subseteq H\) and \(g\inverse H g \subseteq H \iff H \subseteq g H g\inverse\) for all \(g \in G\), and is hence equivalent to \(gHg\inverse = H\), equivalent to \(gH = Hg\) for all \(g \in G\).
+
+\begin{proof}
+    \begin{itemize}
+        \item \(\implies\). Let \(h \in H\) and \(g \in G\). Since \(H\normalsub G\), we have \(g h g\inverse \in H\). Hence,
+        \[
+            gh = \para{ghg\inverse} g \in Hg,
+        \]
+        so \(gH \subseteq Hg\), and similarly \(Hg \subseteq gH\), so \(gH = Hg\) as desired.
+        \item \(\impliedby\). Suppose \(gH = Hg\). Let \(h \in H\), then
+        \[
+            gh \in gH = Hg,
+        \]
+        so there exists \(h' \in H\) such that
+        \[
+            gh = h' g
+        \]
+        and hence
+        \[
+            ghg\inverse = h' \in H
+        \]
+        as desired.
+    \end{itemize}
+\end{proof}
+
+From here, we can see that the second condition in \autoref{thm:dpt-direct-product-theorem} (direct product theorem) that elements in \(H_1\) and \(H_2\) commute can be replaced by \(H_1, H_2 \normalsub G\), given that \(H_1 \cap H_2 = \trivialgp\) and that \(G = H_1 H_2\).
+
+Indeed, if \(H_1\) and \(H_2\) are normal in \(G\), then for any \(h_1 \in H_1\) and \(\eta_2 \in H_2\), we have
+\[
+    h_1 h_2 \in h_1 H_2 = H_2 h_1
+\]
+so
+\[
+    h_1 h_2 = \eta_2 h_1
+\]
+for some \(h'_2 \in H_2\). Then,
+\[
+    h_1 h_2 \eta_2\inverse = \eta_2 h_1 \eta_2\inverse \in H_1
+\]
+since \(H_1 \normalsub G\), and hence \(h_2 \eta_2\inverse \in H_1\), the only possibility being \(\eta_2 = h_2\), so \(h_1 h_2 = h_2 h_1\).
+
+Conversely, if \(G = H_1 H_2\) and elements in \(H_1\) and \(H_2\) commute, let \(g = h_1 h_2 \in G\) for \(h_1 \in H_1\) and \(h_2 \in H_2\), let \(\eta_1 \in H_1\) and \(\eta_2 \in H_2\), we have
+\begin{align*}
+    g \eta_1 g\inverse &= h_1 h_2 \eta_1 h_2\inverse h_1\inverse \\
+    &= h_1 \eta_1 h_2 h_2\inverse h_1\inverse \\
+    &= h_1 \eta_1 h_1\inverse \\
+    &\in H_1,
+\end{align*}
+and
+\begin{align*}
+    g \eta_2 g\inverse &= h_1 h_2 \eta_2 h_2\inverse h_1\inverse \\
+    &= h_2 h_1 \eta_2 h_1\inverse h_2\inverse \\
+    &= h_2 \eta_2 h_1 h_1\inverse h_2\inverse \\
+    &= h_2 \eta_2 h_2\inverse \\
+    &\in H_2,
+\end{align*}
+so indeed \(H_1, H_2 \normalsub G\).
+
+\subsection{Quotient Groups and the First Isomorphism Theorem}
+\label{sec:quotient-groups-isomorphism-theorem}
+
+Now, normal subgroups allow us to make the set of cosets a group of its own.
+
+\begin{theorem}[Quotient Group]
+    \label{thm:quotient-group}%
+    If \(H \normalsub G\), the set of (left) cosets \(G / H\) forms a group with operation
+    \[
+        \para{g_1 H} \para{g_2 H} = \para{g_1 g_2} H.
+    \]
+\end{theorem}
+
+\begin{proof}
+    We first check that the operation is well-defined. Suppose \(g_1 H = g_1' H\) and \(g_2 H = g_2' H\). Note that \(g_2 H = g_2' H\) if and only if \(H g_2 = H g_2'\) by \autoref{lem:left-right-coset-normal}, since \(H \normalsub G\). That is, there are \(h_1, h_2 \in H\), such that
+    \[
+        g_1 = g_1' h_1, g_2 = h_2 g_2'.
+    \]
+
+    Hence,
+    \[
+        g_1 g_2 = \para{g_1' h_1} \para{h_2 g_2'} = g_1 \para{h_1 h_2} g_2' = g_1 g_2' h_3
+    \]
+    again by \autoref{lem:left-right-coset-normal}, for some \(h_3 \in H\).
+
+    Therefore, \(g_1 g_2 \in g_1' g_2' H\), and hence \(g_1 g_2 H = g_1' g_2' H\), showing the operation is well-defined.
+
+    \emph{Associativity} is obvious by definition.
+
+    \emph{Identity} is \(H = eH\).
+
+    \emph{Inverse} of \(gH\) is \(g\inverse H\):
+    \[
+        \para{gH} \para{g\inverse H} = \para{g g\inverse} H = eH = H
+    \]
+    so \(\para{gH}\inverse = \para{g\inverse H}\), as required.
+\end{proof}
+
+\begin{definition}[Quotient Group, Quotient Map]
+    \label{def:quotient-group-map}
+    If \(H \normalsub G\), then the quotient \(G / H\) provided by \autoref{thm:quotient-group} is called the \emph{quotient of \(G\) by \(H\)}.
+    
+    The map
+    \[
+        \phi_{H}: G \to G/H, g \mapsto gH
+    \]
+    is the \emph{quotient map}.
+\end{definition}
+
+\begin{remark}
+    The quotient map satisfies \(\ker \phi_{H} = H\). This show that normal subgroups are precisely kernels of homomorphisms from the given group.
+\end{remark}
+
+\begin{examples}[Examples of Quotient Groups]
+    \begin{enumerate}
+        \item For any group \(G\), \(G / \trivialgp \isomorphic G\), and \(G / G \isomorphic \trivialgp\).
+        \item Since \(\ZZ\) is abelian, \(n\ZZ \normalsub \ZZ\) for any \(n \neq 0\). We see that \(\ZZ / n \ZZ\) is cyclic of order \(n\), with generator \(1 + n\ZZ\), so
+        \[
+            \ZZ / n\ZZ \isomorphic C_n.
+        \]
+        \item All subgroups of index \(2\) are normal. Let \(G\) be a group and \(H \subgroup G\) with \(\abs{G : H} = 2\). Then, for any \(g \notin H\), we have
+        \[
+            gH = G \setminus H = Hg
+        \]
+        and \(eH = He\), so \(H \normalsub G\) by \autoref{lem:left-right-coset-normal}. Furthermore,
+        \[
+            G / H \isomorphic C_2.
+        \]
+        \item In particular, \(C_n \isomorphic \ang{r} \normalsub D_{2n}\), and \(D_{2n} / C_n \isomorphic C_2\).
+    \end{enumerate}
+\end{examples}
+
+\begin{remark}
+    Note that \(C_4 / C_2 \isomorphic C_2 \isomorphic K_4 / C_2\), but \(C_4 \notisomorphic K_4\). In particular, for groups \(A, B\) and \(C\),
+    \[
+        A / B \isomorphic C \notimplies A \isomorphic B \times C.
+    \]
+
+    However, it is indeed true that
+    \[
+        A \isomorphic B \times C \implies A / B \isomorphic C, A / C \isomorphic B.
+    \]
+
+    This can be easily shown by considering the projection map and applying \autoref{thm:first-isomorphism} (first isomorphism theorem) introduced below.
+\end{remark}
+    
+\begin{theorem}[First Isomorphism theorem]
+    \label{thm:first-isomorphism}%
+    If \(\phi: G \to H\) is a homomorphism, then
+    \[
+        G / \ker \phi \isomorphic \img \phi.
+    \]
+\end{theorem}
+
+\begin{proof}
+    Since \(\ker \phi \normalsub G\), we see \(G / \ker \phi\) is indeed a group. We define a map corresponding to \(\phi\) as
+    \[
+        \bar{\phi}: G / \ker \phi \to \img \phi, g \ker \phi \mapsto \phi \para{g}.
+    \]
+
+    We would like to show this is a well-defined isomorphism.
+
+    \emph{\(\bar{\phi}\) is well-defined.} Suppose \(g_1 \ker \phi = g_2 \ker \phi\) for some \(g_1, g_2 \in G\). Then
+    \[
+        g_1 = g_2 k
+    \]
+    for some \(k \in \ker \phi\). Then,
+    \begin{align*}
+            \bar{\phi} \para{g_1 \ker \phi} &= \phi\para{g_1} \\
+            &= \phi\para{g_2 k} \\
+            &= \phi\para{g_2} \phi\para{k} \\
+            &= \phi\para{g_2} e \\
+            &= \phi\para{g_2} \\
+            &= \bar{\phi} \para{g_2 \ker \phi}
+    \end{align*}
+    showing the map \(\bar{\phi}\) is well-defined as desired.
+
+    \emph{\(\bar{\phi}\) is a homomorphism.} This inherits from \(\phi\) being a homomorphism: for any \(g_1, g_2 \in G\),
+    \begin{align*}
+        \bar{\phi} \para{\para{g_1 \ker \phi} \para{g_2 \ker \phi}} &= \bar{\phi} \para{\para{g_1 g_2} \ker \phi} \\
+        &= \phi \para{g_1 g_2} \\
+        &= \phi \para{g_1} \phi \para{g_2} \\
+        &= \bar{\phi} \para{g_1 \ker \phi} \bar{\phi} \para{g_2 \ker \phi}.
+    \end{align*}
+
+    \emph{\(\bar{\phi}\) is injective.} Suppose that \(\bar{\phi} \para{g \ker \phi} = e\) for some \(g \in G\).
+    
+    Then \(\phi\para{g} = \bar{\phi} \para{g \ker \phi} = e\), which shows that \(g \in \ker \phi\), and \(g \ker \phi = \ker \phi\).
+
+    Therefore, \(\ker \bar{\phi} = \brce{\ker \phi} \isomorphic \trivialgp_{G / \ker \phi}\), showing \(\bar{\phi}\) is injective.
+
+    \emph{\(\bar{\phi}\) is surjective.} A typical element of \(\img \phi\) is \(\phi\para{g}\), and we have
+    \[
+        \bar{\phi} \para{g \ker \phi} = \phi\para{g}.
+    \]
+
+    Therefore, \(\bar{\phi}\) defines an isomorphism, so
+    \[
+        G / \ker \phi \isomorphic \img \phi.
+    \]
+\end{proof}
+
+\autoref{thm:first-isomorphism} (first isomorphism theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\phi: G \to K\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
+
+\begin{examples}[Applications of \autoref{thm:first-isomorphism} (first isomorphism theorem)]
+    \begin{enumerate}
+        \item The map
+        \[
+            \phi: \ZZ \to \CC\multiplicative, k \mapsto e^{\frac{2\pi i k}{n}}
+        \]
+        is a homomorphism with \(\img \phi \isomorphic C_n\) and \(\ker \phi = n\ZZ\), so
+        \[
+            \ZZ / n\ZZ \isomorphic \img \phi \isomorphic C_n
+        \]
+        by \autoref{thm:first-isomorphism} (first isomorphism theorem).
+
+        \item Similarly,
+        \[
+            \phi: \RR \to \CC\multiplicative, t \mapsto e^{2 \pi i t}
+        \]
+        is a homomorphism with
+        \[
+            \img \phi = \set{z \in \CC}{\abs{z} = 1} = \U\para{1}
+        \]
+        and
+        \[
+            \ker \phi = \ZZ,
+        \]
+        and hence
+        \[
+            \RR / \ZZ \isomorphic \U\para{1}.
+        \]
+    \end{enumerate}
+\end{examples}
+
+\subsection{Simple Groups}
+\label{sec:simple-groups}
+
+Taking quotients using normal subgroups allow us to break groups down into smaller pieces, but there are some groups where are no proper normal subgroups, and we cannot break them into smaller groups. Those are analogues to primes in elementary number theory for groups.
+
+\begin{definition}[Simple Groups]
+    A group \(G\) is \emph{simple} if the only normal subgroups are \(\trivialgp\) and \(G\) itself. Equivalently, all homomorphisms
+    \[
+        \phi: G \to H
+    \]
+    are either trivial with \(\ker \phi = G\), or injective with \(\ker \phi = \trivialgp\).
+\end{definition}
+
+\begin{example}[Simple Abelian Groups]
+    \(C_p\) is simple whenever \(p\) is a prime. Since any subgroup of an abelian group is simple, a simple abelian group must have no proper subgroups, and for finite groups, \(C_p\) for prime \(p\)s are all of those.
+
+    If \(G\) is an infinite abelian group and \(e \neq x \in G\) has infinite order, then \(\ang{x^2} \subgroup G\) is a proper subgroup; if \(x\) has finite order, then \(\ang{x}\) is a proper subgroup. Therefore, there are no infinite simple abelian groups. 
+\end{example}
+
+Non-abelian simple groups are more complicated, and we will see the first of those examples in the next chapter on permutations, namely \(A_3\).
+
+It is worth noting that mathematicians have fully classified finite simple groups, and this is an extremely remarkable result in group theory. The above-mentioned families of \(C_p\) for prime \(p\) and \(A_n\) for \(n \geq 5\) are two families of those, with the rest being 16 families of 'Simple Groups of Lie Type', and 26 'Sporadic Groups' (including the famous Monster Group).
