@@ -241,3 +241,180 @@ If \(\abs{G} = 7\), since \(7\) is a prime, by \autoref{cor:group-prime-order}, 
 
 \subsection{Groups of Order 8}
 \label{sec:groups-of-order-8}
+
+We already know the groups \(C_2 \times C_2 \times C_2\), \(C_2 \times C_4\) and \(C_8\) as abelian groups of order 8, and \(D_8\) which is non-abelian, and by examining the order of elements, we can easily see none of them are isomorphic to each other.
+
+Another example of a group of order 8 is the quaternion group \(Q_8\).
+
+\begin{examples}[The Quaternion Group \(Q_8\)]
+    The \emph{quaternion group} is
+    \begin{align*}
+        Q_8 &= \brce{
+            \begin{pmatrix}
+                \pm 1 & 0 \\ 0 & \pm 1
+            \end{pmatrix},
+            \begin{pmatrix}
+                \pm i & 0 \\ 0 & \mp i
+            \end{pmatrix},
+            \begin{pmatrix}
+                0 & \pm 1 \\ \mp 1 & 0
+            \end{pmatrix},
+            \begin{pmatrix}
+                0 & \pm i \\ \pm i & 0
+            \end{pmatrix}} \\
+        &\leq \SU\para{2} \leq \SL_2\para{\CC} \leq \GL_2\para{C}.
+    \end{align*}
+
+    This is a group under matrix multiplication.
+
+    We usually use Hamilton's notation to simplify this: let
+    \begin{align*}
+        1 &= \begin{pmatrix}
+            1 & 0 \\ 0 & 1
+        \end{pmatrix}, \\
+        i &= \begin{pmatrix}
+            i & 0 \\ 0 & -i
+        \end{pmatrix},\\
+        j &= \begin{pmatrix}
+            0 & 1 \\ -1 & 0
+        \end{pmatrix},\\
+        k &= \begin{pmatrix}
+            0 & i \\ i & 0
+        \end{pmatrix},
+    \end{align*}
+    then we have
+    \[
+        Q_i = \brce{\pm 1, \pm i, \pm j, \pm k}
+    \]
+    satisfying
+    \begin{itemize}
+        \item \(i^2 = j^2 = k^2 = -1\),
+        \item \(\para{-1} i = -i\), etc.,
+        \item \(ij = k, jk = i, ki = j\), and
+        \item \(\para{-1}\) commutes with everything.
+    \end{itemize}
+\end{examples}
+
+Note since \(ji = -k \neq k = ij\), \(Q_8\) is \emph{non-abelian}, so
+\[
+    Q_8 \notisomorphic C_2 \times C_2 \times C_2, C_2 \times C_4, C_8,
+\]
+and since \(D_8\) has 5 elements of order 2, while \(Q_8\) only has 1 (\(-1\)), we see
+\[
+    Q_8 \notisomorphic D_8.
+\]
+
+In fact these are all groups of order 8.
+
+\begin{lemma}[Groups of Order 8]
+    \label{lem:groups-of-order-8}%
+    If \(\abs{G} = 8\), then \(G\) is isomorphic to one of the following:
+    \[
+        C_2 \times C_2 \times C_2, C_2 \times C_4, C_8, D_8, Q_8.
+    \]
+\end{lemma}
+
+\begin{proof}
+    By \autoref{cor:order-of-element-divides} (corollary of Lagrange's Theorem), every element of \(G\) has order \(1\), \(2\), \(4\) or \(8\). We conduct casework on the order of the elements in the group.
+
+    \begin{itemize}
+        \item If there is an element of order \(8\), then \(G \isomorphic C_8\).
+        
+        \item Suppose that every non-trivial element has order \(2\). Then choosing non-trivial elements
+        \[
+            a, b \neq a, c \neq a, c \neq b, c \neq ab
+        \]
+        gives by \autoref{thm:dpt-direct-product-theorem} (direct product theorem) that
+        \begin{align*}
+            G &\isomorphic \ang{a} \times \ang{b} \times \ang{c} \\
+            &\isomorphic C_2 \times C_2 \times C_2.
+        \end{align*}
+
+        \item We now suppose that there is an \(a \in G\) such that \(\ord\para{a} = 4\). Let \(b \in G \setminus \ang{a}\), and we have from \autoref{thm:lagrange} (Lagrange's Theorem) that
+        \[
+            \abs{G : \ang{a}} = 2
+        \]
+        so
+        \[
+            b\ang{a} = G \setminus \ang{a} = \ang{a} b.
+        \]
+
+        Therefore,
+        \[
+            b a = a^i b
+        \]
+        for some \(i = 0, 1, 2, 3\).
+
+        \begin{itemize}
+            \item If \(i = 0\), we have \(ba = eb = e\), which gives \(a = e\). This is impossible.
+            \item If \(i = 1\), we have \(ba = ab\), and hence by induction, \(b a^j = a^j b\) for all \(j\), therefore \(G\) is abelian. We leave this case here.
+            \item If \(i = 2\), we have \(ba = a^2 b\), and hence
+            \[
+                b a b\inverse = a^2,
+            \]
+            and the left-hand side has order 4:
+            \[
+                \ord\para{b a b \inverse} = \ord\para{a} = 4,
+            \]
+            while the right-hand side has order 2. This is impossible.
+            \item If \(i = 3\), this gives \(ba = a^3 b = a\inverse b\), the dihedral relation. We leave this case here.
+        \end{itemize}
+
+        On the other hand, note that if \(b^2 \in b \ang{a}\), then \(b \in \ang{a}\), which is not true. So \(b^2 \in \ang{a}\), and we get several cases here.
+        \begin{itemize}
+            \item \(b^2 = e\). We leave this for future discussion.
+            \item \(b^2 = a\). Hence, \(\ord\para{b} = 8\), and hence \(G = \ang{b} \isomorphic C_8\).
+            \item \(b^2 = a^2\). We leave this for future discussion.
+            \item \(b^2 = a^3 = a\inverse\). Hence, \(\ord\para{b} = 8\), and hence \(G = \ang{b} \isomorphic C_8\).
+        \end{itemize}
+
+        Now, we have 4 remaining combinations to discuss.
+        \begin{itemize}
+            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (direct product theorem), since \(\ang{b} \isomorphic C_2\), \(\ang{a} \isomorphic C_4\), and \(\ang{a} \cap \ang{b} = \brce{e}\), we have
+            \[
+                G \isomorphic C_2 \times C_4.
+            \]
+            \item \(G\) being abelian, and \(b^2 = a^2\), and therefore \(\para{a b \inverse}^2 = e\), so \(\ord \para{a b \inverse} = 2\). Similarly, by \autoref{thm:dpt-direct-product-theorem} (direct product theorem), we have \(G \isomorphic C_2 \times C_4\).
+            \item \(\ord\para{a} = 4\), \(\ord\para{b} = 2\), \(ba = a\inverse b\). By \autoref{prop:group-isomorphic-dihedral}, we see \(G \isomorphic D_8\).
+            \item \(\ord\para{a} = 4\), \(b^2 = a^2\) and \(b a = a \inverse b\). We set \(i = a\), \(j = b\), \(k = ab\), \(-1 = a^2 b^2\), then this defines an isomorphism \(Q_8 \to G\) as in \autoref{tab:quartonian-group-isomorphism}.
+
+            \begin{table}[ht!]
+                \centering
+                \begin{tabular}{cc}
+                    \(Q_8\) & \(G\) \\
+                    \hline
+                    \(e\) & \(e\) \\
+                    \(i\) & \(a\) \\
+                    \(-1\) & \(a^2\) \\
+                    \(-i\) & \(a^3\) \\
+                    \(j\) & \(b\) \\
+                    \(k\) & \(a b\) \\
+                    \(-j\) & \(a^2 b\) \\
+                    \(-k\) & \(a^3 b\)
+                \end{tabular}
+                \caption{Isomorphism of Elements in \(Q_8\) and \(G\)}
+                \label{tab:quartonian-group-isomorphism}
+            \end{table}
+        \end{itemize}
+    \end{itemize}
+\end{proof}
+
+In summary, \autoref{tab:groups-up-to-order-8} gives a table of all groups up to order 8, up to isomorphism.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{cl}
+        \(\abs{G}\) & \(G\) \\
+        \hline
+        1 & \(\trivialgp\) \\
+        2 & \(C_2 \isomorphic S_2\) \\
+        3 & \(C_3 \isomorphic A_3\) \\
+        4 & \(C_4, C_2 \times C_2 \isomorphic D_4 \isomorphic K_4\) \\
+        5 & \(C_5\) \\
+        6 & \(C_6 \isomorphic C_2 \times C_3, D_6 \isomorphic S_3\) \\
+        7 & \(C_7\) \\
+        8 & \(C_8, C_4 \times C_2, C_2 \times C_2 \times C_2, D_8, Q_8\)
+    \end{tabular}
+    \caption{Groups of Order up to 8 up to Isomorphism}
+    \label{tab:groups-up-to-order-8}
+\end{table}
