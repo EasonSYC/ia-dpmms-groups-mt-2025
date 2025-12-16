@@ -76,7 +76,7 @@ We first define what it means to have a binary operation on a set -- this forms 
     \label{def:binary-operation}%
     A \emph{binary operation} on a set \(X\) is a function
     \[
-        \cdot : X \times X \to X
+        \functiondomain{\cdot}{X \times X}{X}
     \]
     where \(X \times X\) is the \emph{Cartesian product} given by
     \[
@@ -85,7 +85,7 @@ We first define what it means to have a binary operation on a set -- this forms 
     
     We denote
     \[
-        \para{x_1, x_2} \mapsto x_1 \cdot x_2.
+        \functionmap{\para{x_1, x_2}}{x_1 \cdot x_2.}
     \]
 \end{definition}
 
@@ -253,7 +253,7 @@ We give a special name for those groups which are commutative.
 \end{definition}
 
 \begin{example}[Trivial Group]
-    If \(G = \brce{e}\) and \(\cdot: \para{e, e} \mapsto e\), then \(\para{G, \cdot, e}\) is the \emph{trivial group}.
+    If \(G = \brce{e}\) and \(\functionmap{\cdot}{\para{e, e}}{e}\), then \(\para{G, \cdot, e}\) is the \emph{trivial group}.
 \end{example}
 
 \begin{examples}[Familiar Examples from Arithemetic]
@@ -303,13 +303,13 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
 
 \begin{definition}[Bijection, Permutation]
     \label{def:bijection-permutation}%
-    Let \(X, Y\) be sets. A \emph{bijection} is a map \(X \to Y\) that has an inverse \(g: Y \to X\) such that
+    Let \(X, Y\) be sets. A \emph{bijection} is a map \(\functiondomain{f}{X}{Y}\) that has an inverse \(\functiondomain{g}{Y}{X}\) such that
     \[
         f \circ g = \identity_Y, g \circ f = \identity_X
     \]
     where
     \[
-        \identity_S: S \to S, x \mapsto x
+        \function{\identity_S}{S}{S}{x}{x}
     \]
     for all \(x \in S\) is the \emph{identity map}.
 
@@ -333,7 +333,7 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
     \label{lem:composition-associative}%
     Consider maps of sets
     \[
-        f: W \to X, g: X \to Y, h: Y \to Z,
+        \functiondomain{f}{W}{X}, \functiondomain{g}{X}{Y}, \functiondomain{h}{Y}{Z},
     \]
     we have
     \[
@@ -530,7 +530,7 @@ We consider a certain group of symmetries that preserves distances.
 
 \begin{definition}[Isometry]
     \label{def:isometry}%
-    For any subset \(X \subseteq \CC\), an \emph{isometry} of \(X\) is a bijection \(f: X \to X\) that preserves distance, that is,
+    For any subset \(X \subseteq \CC\), an \emph{isometry} of \(X\) is a bijection \(\functiondomain{f}{X}{X}\) that preserves distance, that is,
     \[
         \abs{f\para{x} - f\para{y}} = \abs{x - y}
     \]
@@ -849,7 +849,7 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
 
 \begin{definition}[Homomorphism]
     \label{def:homomorphism}%
-    A map between groups \(\phi: G \to H\) is called a \emph{homomorphism} if it preserves the group structure, the operation:
+    A map between groups \(\functiondomain{\phi}{G}{H}\) is called a \emph{homomorphism} if it preserves the group structure, the operation:
     \[
         \phi\para{g \cdot_{G} g'} = \phi\para{g} \cdot_{H} \phi\para{g'}
     \]
@@ -860,25 +860,25 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
     \begin{enumerate}
         \item For any two groups \(G, H\), the map
         \[
-            \phi: G \to H, g \mapsto e_{H}
+            \function{\phi}{G}{H}{g}{e_{H}}
         \]
         is a homomorphism. This is the \emph{trivial homomorphism}.
         
         \item If \(H \subgroup G\), the map
         \[
-            i: H \to G, h \mapsto h
+            \function{i}{H}{G}{h}{h}
         \]
         is a homomorphism. This is the \emph{inclusion homomorphism}.
 
         \item Recall \(C_n = \set{z \in \CC}{z^n = 1}\) for \(n \in \NN\). If \(n \divides m\), then the map
         \[
-            \phi: C_m \to C_n, z \mapsto z^{\frac{m}{n}}
+            \function{\phi}{C_m}{C_n}{z}{z^{\frac{m}{n}}}
         \]
         is a homomorphism.
 
         \item Since \(\det \para{AB} = \det \para{A} \det \para{B}\), the determinant
         \[
-            \det: \GL_2\para{\RR} \to \para{\RR \setminus \brce{0}, \times} = \RR\multiplicative, A \mapsto \det A
+            \function{\det}{\GL_2\para{\RR}}{\para{\RR \setminus \brce{0}, \times} = \RR\multiplicative}{A}{\det A}
         \]
         is a homomorphism.
     \end{enumerate}
@@ -888,7 +888,7 @@ Homomorphisms between groups must map certain elements to certain elements.
 
 \begin{lemma}[Homomorphisms Preserve the Identity and Inverses]
     \label{lem:homomorphism-preserve-identity-inverse}%
-    If \(\phi: G \to H\) is a homomorphism, then
+    If \(\functiondomain{\phi}{G}{H}\) is a homomorphism, then
     \begin{enumerate}
         \item \(\phi\para{e_G} = e_H\),
         \item \(\phi\para{g\inverse} = \phi\para{g}\inverse\) for all \(g \in G\).
@@ -916,7 +916,7 @@ Homomorphisms between groups must map certain elements to certain elements.
 
 \begin{definition}[Isomorphism]
     \label{def:isomorphism}%
-    If a homomorphism \(\phi: G \to H\) is also a \emph{bijection} (a map with an inverse), then \(\phi\) is an \emph{isomorphism}, and we write
+    If a homomorphism \(\functiondomain{\phi}{G}{H}\) is also a \emph{bijection} (a map with an inverse), then \(\phi\) is an \emph{isomorphism}, and we write
     \[
         G \isomorphic H. 
     \]
@@ -938,7 +938,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
 
         Let
         \[
-            \phi: \ZZ_n \to C_n, k \mapsto e^{\frac{2 \pi i k}{n}}.
+            \function{\phi}{\ZZ_n}{C_n}{k}{e^{\frac{2 \pi i k}{n}}.}
         \]
 
         Clearly, \(\phi\) is bijective. Furthermore, for any \(k, l \in \ZZ_{n}\), we have
@@ -969,7 +969,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
         \]
         by considering the exponentiation function
         \[
-            \exp: \RR \to \RR_{>0}, x \mapsto e^x.
+            \function{\exp}{\RR}{\RR_{>0}}{x}{e^x.}
         \]
 
         By laws on exponentiation, \(\exp\) is indeed a homomorphism, and it has \(\log\) as its inverse, so is bijective, and hence isomorphisms.
@@ -981,14 +981,14 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
 \begin{lemma}[Properties on Homomorphisms and Isomorphisms]
     \label{lem:homomorphism-isomorphism}%
     \begin{enumerate}
-        \item If \(\phi: G \to H\) is an isomorphism, so is \(\phi \inverse\).
+        \item If \(\functiondomain{\phi}{G}{H}\) is an isomorphism, so is \(\phi \inverse\).
         \item If
         \[
             G \xrightarrow{\phi} H \xrightarrow{\psi} K
         \]
         and \(\phi\) and \(\psi\) are both homomorphisms, then
         \[
-            \psi \circ \phi: G \to K
+            \functiondomain{\psi \circ \phi}{G}{K}
         \]
         is also a homomorphism.
         \item \(\isomorphic\) is an equivalence relation.
@@ -999,7 +999,7 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
 
 \begin{definition}[Image and Kernel]
     \label{def:image-kernel}%
-    Let \(\phi: G \to H\) be a homomorphism.
+    Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism.
 
     \begin{enumerate}
         \item The \emph{image} of \(\phi\) is
@@ -1020,7 +1020,7 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
 \end{figure}
 
 \begin{proposition}[Image and Kernel are Subgroups]
-    If \(\phi: G \to H\) is a homomorphism, then
+    If \(\functiondomain{\phi}{G}{H}\) is a homomorphism, then
     \[
         \img \phi \subgroup H, \ker \phi \subgroup G
     \]
@@ -1067,7 +1067,7 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
 \end{proof}
 
 \begin{remarks}
-    We can use the image and kernel to determine whether a homomorphism is an isomorphism. Let \(\phi: G \to H\) be a homomorphism.
+    We can use the image and kernel to determine whether a homomorphism is an isomorphism. Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism.
     \begin{enumerate}
         \item \(\phi\) is \emph{surjective} if and only if \(\img \phi = H\).
         \item \(\phi\) is \emph{injective} if and only if \(\ker \phi = \trivialgp_{G}\).
@@ -1096,7 +1096,7 @@ We prove the second remark.
 \end{proof}
 
 \begin{remark}
-    Combining the previous remark, we see a homomorphism \(\phi: G \to H\) is an isomorphism if and only if \(\img \phi = H\) and \(\ker \phi = \trivialgp_G\).
+    Combining the previous remark, we see a homomorphism \(\functiondomain{\phi}{G}{H}\) is an isomorphism if and only if \(\img \phi = H\) and \(\ker \phi = \trivialgp_G\).
 \end{remark}
 
 \subsection{Cyclic Groups}
@@ -1150,7 +1150,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
     \begin{itemize}
         \item If \(n = \infty\), we let
         \[
-            \phi: \ZZ \to G, k \mapsto g^k,
+            \function{\phi}{\ZZ}{G}{k}{g^k,}
         \]
         we would like to show that \(\phi\) is an isomorphism.
 
@@ -1170,7 +1170,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
 
         \item If \(n \in \NN\), we define
         \[
-        \phi: \ZZ_n \to G, k \mapsto g^k.
+            \function{\phi}{\ZZ_n}{G}{k}{g^k.}
         \]
 
         Since \(k + l = qn + \para{k +_n l}\) for some \(q \in \ZZ\), we have
@@ -1273,7 +1273,7 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \]
     defines a homomorphism
     \[
-        \phi: D_{2n} \to G
+        \functiondomain{\phi}{D_{2n}}{G}
     \]
     with \(r \mapsto a\) and \(s \mapsto b\).
 \end{lemma}
@@ -1330,7 +1330,7 @@ Finally, \autoref{prop:group-isomorphic-dihedral} gives a useful condition to sh
 \end{proposition}
 
 \begin{proof}
-    By \autoref{lem:homomorphism-dihedral-group}, this gives a homomorphism \(\phi: D_{2n} \to G\).
+    By \autoref{lem:homomorphism-dihedral-group}, this gives a homomorphism \(\functiondomain{\phi}{D_{2n}}{G}\).
 
     \(\phi\) is surjective since \(\brce{a, b}\) generates \(G\). Also, since
     \[

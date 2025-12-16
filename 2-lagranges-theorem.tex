@@ -104,9 +104,13 @@ But in fact, those cosets have the same size!
 \end{lemma}
 
 \begin{proof}
-    We take the na\"{i}ve map \(h \mapsto gh\), and this has inverse
+    We take the na\"{i}ve map
     \[
-        gH \to H, gh \mapsto \para{g\inverse \para{gh}} = h.
+        \function{\phi}{H}{gH}{h}{gh,}
+    \]
+    and this has inverse
+    \[
+        \function{\phi\inverse}{gH}{H}{gh}{\para{g\inverse \para{gh}} = h.}
     \]
 \end{proof}
 

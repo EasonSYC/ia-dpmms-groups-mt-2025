@@ -4,7 +4,7 @@
 \subsection{Normal Subgroups}
 \label{sec:normal-subgroups}
 
-Let \(\phi: G \to H\) be a homomorphism, then \(\ker \phi \subgroup G\) is always a special kind of subgroup.
+Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism, then \(\ker \phi \subgroup G\) is always a special kind of subgroup.
 
 \begin{definition}[Normal Subgroup]
     \label{def:normal-subgroup}%
@@ -23,7 +23,7 @@ Let \(\phi: G \to H\) be a homomorphism, then \(\ker \phi \subgroup G\) is alway
         \[
             r s r \inverse = s r^{-2} \notin \ang{s}.
         \]
-        \item Suppose \(\phi: G \to G'\) is a homomorphism. If \(h \in \ker \phi\), \(g \in G\), then
+        \item Suppose \(\functiondomain{\phi}{G}{G'}\) is a homomorphism. If \(h \in \ker \phi\), \(g \in G\), then
         \[
             \phi\para{g h g\inverse} = e
         \]
@@ -142,7 +142,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
     
     The map
     \[
-        \phi_{H}: G \to G/H, g \mapsto gH
+        \function{\phi_{H}}{G}{G/H}{g}{gH}
     \]
     is the \emph{quotient map}.
 \end{definition}
@@ -186,7 +186,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
     
 \begin{theorem}[First Isomorphism theorem]
     \label{thm:first-isomorphism}%
-    If \(\phi: G \to H\) is a homomorphism, then
+    If \(\functiondomain{\phi}{G}{H}\) is a homomorphism, then
     \[
         G / \ker \phi \isomorphic \img \phi.
     \]
@@ -195,7 +195,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 \begin{proof}
     Since \(\ker \phi \normalsub G\), we see \(G / \ker \phi\) is indeed a group. We define a map corresponding to \(\phi\) as
     \[
-        \bar{\phi}: G / \ker \phi \to \img \phi, g \ker \phi \mapsto \phi \para{g}.
+        \function{\bar{\phi}}{G / \ker \phi}{\img \phi}{g \ker \phi}{\phi \para{g}.}
     \]
 
     We would like to show this is a well-defined isomorphism.
@@ -240,13 +240,13 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
     \]
 \end{proof}
 
-\autoref{thm:first-isomorphism} (first isomorphism theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\phi: G \to K\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
+\autoref{thm:first-isomorphism} (first isomorphism theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\functiondomain{\phi}{G}{K}\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
 
 \begin{examples}[Applications of \autoref{thm:first-isomorphism} (first isomorphism theorem)]
     \begin{enumerate}
         \item The map
         \[
-            \phi: \ZZ \to \CC\multiplicative, k \mapsto e^{\frac{2\pi i k}{n}}
+            \function{\phi}{\ZZ}{\CC\multiplicative}{k}{e^{\frac{2\pi i k}{n}}}
         \]
         is a homomorphism with \(\img \phi \isomorphic C_n\) and \(\ker \phi = n\ZZ\), so
         \[
@@ -256,7 +256,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
         \item Similarly,
         \[
-            \phi: \RR \to \CC\multiplicative, t \mapsto e^{2 \pi i t}
+            \function{\phi}{\RR}{\CC\multiplicative}{t}{e^{2 \pi i t}}
         \]
         is a homomorphism with
         \[
@@ -281,7 +281,7 @@ Taking quotients using normal subgroups allow us to break groups down into small
 \begin{definition}[Simple Groups]
     A group \(G\) is \emph{simple} if the only normal subgroups are \(\trivialgp\) and \(G\) itself. Equivalently, all homomorphisms
     \[
-        \phi: G \to H
+        \functiondomain{\phi}{G}{H}
     \]
     are either trivial with \(\ker \phi = G\), or injective with \(\ker \phi = \trivialgp\).
 \end{definition}

@@ -10,7 +10,7 @@ We return to the aspect where we started, that groups describe symmetries. Group
     \label{def:group-action}%
     An \emph{action} of a group \(G\) on a set \(X\) is a map
     \[
-        \alpha: G \times X \to X, \para{g, x} \mapsto \alpha\para{g, x} = gx
+        \function{\alpha}{G \times X}{X}{\para{g, x}}{\alpha\para{g, x} = gx}
     \]
     satisfying
     \begin{enumerate}
@@ -48,18 +48,18 @@ We return to the aspect where we started, that groups describe symmetries. Group
 
 We may think of group actions in another useful way.
 
-\begin{theorem}[Actions Define Homomorphism]
+\begin{theorem}[Actions Define Homomorphisms]
     \label{thm:action-homomorphism}%
     An action of a group \(G\) on a set \(X\) is the same as a homomorphism
     \[
-        \phi: G \to \Sym\para{X}.
+        \functiondomain{\phi}{G}{\Sym\para{X}}.
     \]
 \end{theorem}
 
 \begin{proof}
     Suppose \(G \actson X\). Consider the map
     \[
-        t_g: X \to X, x \mapsto gx
+        \function{t_g}{X}{X}{x}{gx}
     \]
     for any \(g \in G\). Now,
     \begin{align*}
@@ -80,7 +80,7 @@ We may think of group actions in another useful way.
 
     Therefore, we define
     \[
-        \phi: G \to \Sym\para{X}, g \mapsto t_{g},
+        \function{\phi}{G}{\Sym\para{X}}{g}{t_{g},}
     \]
     and we prove that \(\phi\) is a homomorphism. Take \(g, h \in G\), we have
     \[
@@ -102,7 +102,7 @@ We may think of group actions in another useful way.
 
     Conversely, given a homomorphism
     \[
-        \phi: G \to \Sym\para{X}
+        \functiondomain{\phi}{G}{\Sym\para{X}}
     \]
     we may define an action \(G \actson X\) by \(gx = \phi\para{g} x\). We check this is indeed an action:
     \begin{enumerate}
@@ -128,12 +128,12 @@ The left regular action allows us to think of groups as subgroups of symmetric g
 \begin{proof}
     We choose in particular \(X = G\), and the left regular action gives \(G \actson X = G\). By \autoref{thm:action-homomorphism}, this is equivalent to a homomorphism
     \[
-        \phi: G \to \Sym\para{X}.
+        \functiondomain{\phi}{G}{\Sym\para{X}}
     \]
 
     Let \(H = \img \para{\phi} \subgroup \Sym\para{X}\) be a subgroup. Then we may think of \(\phi\) as a \emph{surjective} homomorphism
     \[
-        \phi: G \to H,
+        \functiondomain{\phi}{G}{\Sym\para{H}},
     \]
     and we claim that this is injective. Indeed, take \(g \in \ker\para{\phi}\), then \(\phi\para{g} = \identity_{X}\), and therefore
     \[
