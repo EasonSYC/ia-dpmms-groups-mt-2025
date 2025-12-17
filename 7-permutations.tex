@@ -14,6 +14,14 @@ In particular, for this section, we are interested in the case where \(X\) is fi
 
 \begin{figure}[ht!]
     \centering
+    \begin{tikzcd}[row sep = tiny]
+        \arrow[from=1-1, to=1-2, shift left=3ex, phantom, "\sigma"]
+        \arrow[from=1-4, to=1-5, shift left=3ex, phantom, "\tau"]
+        \arrow[from=1-7, to=1-8, shift left=3ex, phantom, "\rho"]
+        1 \arrow[rdd] & 1 & & 1 \arrow[rd] & 1 & & 1 \arrow[r]  & 1 \\
+        2 \arrow[ru]  & 2 & & 2 \arrow[ru] & 2 & & 2 \arrow[r]  & 2 \\
+        3 \arrow[ru]  & 3 & & 3 \arrow[r]  & 3 & & 3 \arrow[ru] & 3
+    \end{tikzcd}
     \caption{Examples of Elements in \(S_3\)}
     \label{fig:examples-elements-s3}
 \end{figure}
@@ -24,6 +32,14 @@ In particular, for this section, we are interested in the case where \(X\) is fi
 
 \begin{figure}[ht!]
     \centering
+        \begin{tikzcd}[row sep = tiny]
+        \arrow[from=1-1, to=1-2, shift left=3ex, phantom, "\sigma"]
+        \arrow[from=1-2, to=1-3, shift left=3ex, phantom, "\tau"]
+        \arrow[from=3-1, to=3-3, shift right=3ex, phantom, "\tau \circ \sigma"]
+        1 \arrow[mapsto, r] & 3 \arrow[mapsto, r] & 3 \\
+        2 \arrow[mapsto, r] & 1 \arrow[mapsto, r] & 2 \\
+        3 \arrow[mapsto, r] & 2 \arrow[mapsto, r] & 1
+    \end{tikzcd}
     \caption{Composition of Permutations in \(S_3\)}
     \label{fig:composition-of-permutations-s3}
 \end{figure}
