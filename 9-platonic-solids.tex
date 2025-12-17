@@ -1,2 +1,229 @@
 \section{Platonic Solids}
 \label{sec:platonic-solids}
+
+Amazingly, while there are infinitely many regular 2-dimensional polygons, in 3 dimensions, there are only 5 polyhedrons, which are called \emph{platonic solids}.
+
+\begin{definition}[Platonic Solid]
+    \label{def:platonic-solid}%
+    A convex polyhedron \(X \subseteq \RR^3\) is a \emph{platonic solid} if
+    \begin{itemize}
+        \item every face is a regular \(n\)-gon;
+        \item \(G = \Isom\para{X}\) acts transitively on the faces; and
+        \item if \(x \in X\) is the midpoint of a face, then
+        \[
+            \stab_{G} \para{x} \isomorphic D_{2n}.
+        \]
+    \end{itemize}
+\end{definition}
+
+There are (up to similarity) 5 platonic solids, as shown in \autoref{fig:platonic-solids}:
+\begin{itemize}
+    \item the \emph{tetrahedron} (4 triangular faces, 4 vertices);
+    \item the \emph{cube} (6 square faces, 8 vertices);
+    \item the \emph{octahedron} (8 triangular faces, 6 vertices);
+    \item the \emph{dodecahedron} (12 pentagonal faces, 20 vertices); and
+    \item the \emph{icosahedron} (20 triangular faces, 12 vertices).
+\end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{The 5 Platonic Solids}
+    \label{fig:platonic-solids}
+\end{figure}
+
+Two solids \(X, Y\) are \emph{dual} if \(Y\) can be constructed from \(X\) by putting vertices in the centres of each face, and joining vertices in adjacent faces by edges.
+
+\begin{examples}[Dual Platonic Solids]
+    \begin{itemize}
+        \item The cube and the octahedron are dual, as shown in \autoref{fig:duality-cube-octahedron}.
+        \item The tetrahedron is dual with itself.
+        \item The dodecahedron and the icosahedron are dual.
+    \end{itemize}
+\end{examples}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Cube and Octahedron are Dual}
+    \label{fig:duality-cube-octahedron}
+\end{figure}
+
+In particular, if \(X\) and \(Y\) are dual, then
+\[
+    \Isom\para{X} \isomorphic \Isom\para{Y}
+\]
+so we only 3 isometry groups to identity.
+
+Before we continue, note that the isometry group of any such platonic solid \(G\) satisfies \(G \subgroup \Or\para{3}\), and hence \(G_0 = G \cap \SO\para{3}\) being the subgroup preserving orientation satisfies that
+\[
+    G_0 = \ker \para{\functiondomain{\rightbar{\det}_{G}}{G}{C_2}}
+\]
+and hence by \autoref{thm:first-isomorphism} (first isomorphism theorem)
+\[
+    \abs{G : G_0} = \im \para{\rightbar{\det}_{G}} \leq 2.
+\]
+
+For any platonic solid, there are reflectional symmetries which belong to \(\Or\para{3} \setminus \SO\para{3}\), so we must have
+\[
+    \abs{G : G_0} = 2
+\]
+and hence by \autoref{sec:lagranges-theorem} (Lagrange's theorem),
+\[
+    \abs{G} = 2 \abs{G_0}
+\]
+
+\begin{example}[Symmetries of Tetrahedron]
+    Let \(G = \Isom\para{\text{tetrahedron}}\). From \autoref{def:platonic-solid}, \(G\) acts transitively on the \(4\) surfaces, and each stabiliser has size \(6\), so by \autoref{cor:orbit-stabiliser} (orbit--stabiliser theorem), we have
+    \[
+        \abs{G} = 4 \times 6 = 24.
+    \]
+
+    Furthermore, \(G\) acts on the \(4\) vertices, defining a homomorphism
+    \[
+        \functiondomain{\theta}{G}{S_4}.
+    \]
+
+    We prove that \(\theta\) is injective. Suppose for some \(g \in G\), that
+    \[
+        \theta\para{g} = e.
+    \]
+
+    Then \(g\) fixes the \(4\) vertices which are not co-planar, and hence by the 3-dimensional version (four point lemma) of \autoref{lem:three-point-lemma} (three point lemma), we have \(g = \identity\).
+    
+    Hence, \(\theta\) is injective, and by comparing sizes, we see
+    \[
+        G \isomorphic S_4.
+    \]
+\end{example}
+
+To identify the group of \emph{rotational symmetries}
+\[
+    G_0 = G \cap \SO\para{3}
+\]
+where the tetrahedron is centred on the origin, we conjecture \(G_0 \isomorphic A_4\).
+
+\begin{lemma}[Uniqueness of Index 2 Subgoup of \(S_n\)]
+    If \(H \subgroup S_n\) and \(\abs{S_n : H} = 2\), then \(H = A_n\).
+\end{lemma}
+
+\begin{proof}
+    Because \(\abs{S_n : H} = 2\), then \(H \subgroup S_n\) is normal, hence \(H \normalsub S_n\), and by taking quotients,
+    \[
+        S_n / H \isomorphic C_2.
+    \]
+
+    We therefore have the quotient map as a surjective homomorphism
+    \[
+        \functiondomain{\theta}{S_n}{C_2 = \brce{\pm 1}}
+    \]
+    and hence \(\ker \theta = H\).
+
+    Since transpositions generate \(S_n\) and \(\theta\) is surjective, there is some transposition \(\tau_0\) such that
+    \[
+        \theta \para{\tau_0} = -1.
+    \]
+
+    Since all transpositions are conjugate to \(\tau_0\), for any transposition \(\tau\),
+    \[
+        \tau = \sigma \tau_0 \sigma\inverse
+    \]
+    for some \(\sigma \in S_n\), then
+    \begin{align*}
+        \theta \para{\sigma \tau_0 \sigma\inverse} &= \theta\para{\sigma} \theta\para{\tau_0} \theta\para{\sigma}\inverse \\
+        &= \theta\para{\tau_0} \\
+        &= -1,
+    \end{align*}
+    so \(\theta\) and \(\sign\) (the sign homomorphism) agree on a generating set of \(S_n\), and hence they are identical, so
+    \[
+        H = \ker \theta = \ker \sign = A_n.
+    \]
+\end{proof}
+
+Therefore, in particular, we have \(\abs{G : G_0} = 2\), so
+\[
+    G_0 \isomorphic A_4.
+\]
+
+\begin{example}[Cube/Octahedron]
+    Let \(G = \Isom\para{\text{cube}}\). Similarly, applying \autoref{cor:orbit-stabiliser} (orbit--stabiliser theorem) on the midpoints of faces gives
+    \[
+        \abs{G} = 6 \times 8 = 48.
+    \]
+
+    In particular, the index 2 normal subgroup
+    \[
+        \abs{G_0} = 24.
+    \]
+
+    Notice that \(G \actson\) set of 4 long diagonals of the cube, so we obtain a homomorphism
+    \[
+        \functiondomain{\theta}{G_0}{S_4}.
+    \]
+
+    Instead, we show this time that \(\theta\) is surjective, and since transpositions generate \(S_4\) from \autoref{thm:transposition-generate}, it suffices to show that any transposition is contained in \(\img \theta\). Indeed, from \autoref{fig:transpositions-are-in-image-cube}, we see that a rotation about an axis through midpoint of two opposite edges maps to a transposition under \(\theta\), and we get
+    \[
+        \binom{4}{2} = 6 = \frac{12}{2}
+    \]
+    transpositions, which are all of them. Hence, \(\img \theta = S_4\) indeed. By comparing sizes, we have \(G_0 \isomorphic S_4\).
+
+    Now, notice that \(-\identityM \notin G_0\) but \(-\identityM \in G\) and commutes with everything in \(G_0 \isomorphic S_4\). So by \autoref{thm:dpt-direct-product-theorem} (direct product theorem), we have
+    \[
+        G \isomorphic S_4 \times C_2.
+    \]
+\end{example}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Transpositions of Diagonals are Mapped Onto}
+    \label{fig:transpositions-are-in-image-cube}
+\end{figure}
+
+Finally, we examine the isometry group of a dodecahedron/icosahedron. (This is non-examinable in the course.)
+
+\begin{example}[Dodecahedron/Icosahedron]
+    Let \(G = \Isom \para{\text{dodecahedron}}\) and \(G_0\) be the rotational subgroup with index 2.
+
+    Similar to the examples above, we have
+    \[
+        \abs{G} = 12 \times 10 = 120, \abs{G_0} = 60.
+    \]
+
+    By drawing diagonals on the faces, as shown in \autoref{fig:cubes-in-dodecahedron}, we may inscribe 5 cubes into the dodecahedron.
+
+    Since the 5 cubes are built symmetrically from the geometry of the dodecahedron, we see that
+    \[
+        G_0 \actson 5 \text{ cubes}.
+    \]
+
+    This leads to a homomorphism
+    \[
+        \functiondomain{\theta}{G_0}{S_5}.
+    \]
+
+    Now, notice rotation around an axis through opposite pair of vertices lead to a \(3\)-cycle in \(S_5\). There are \(10\) diagonals between opposite pairs of vertices, and we get \(10\) inverse pairs of \(3\)-cycles this way, which must then be all \(20\) \(3\)-cycles in \(S_5\).
+
+    Since the set of \(3\)-cycles form a conjugacy class in \(A_5\), by Sheet 4, Q2, the subgroup generated by a conjugacy class is normal, and hence using the fact that \(A_5\) is simple, these \(3\)-cycles must then generate the whole of \(A_5\).
+
+    This shows that
+    \[
+        A_5 \subgroup \img \theta,
+    \]
+    but we have
+    \[
+        60 = \abs{G_0} \geq \abs{\img \theta} \geq \abs{A_5} = 60
+    \]
+    so all the equal signs must be taken at the same time, and hence \(\theta\) is an injective homomorphism, with \(\img \theta = A_5\), and hence by \autoref{thm:first-isomorphism} (first isomorphism theorem), we have
+    \[
+        G_0 \isomorphic A_5.
+    \]
+
+    Similar to the cubes, \(-\identityM\) is a symmetry of the dodecahedron that commutes with everything. So \autoref{thm:dpt-direct-product-theorem} (direct product theorem) implies that
+    \[
+        G \isomorphic A_5 \times C_2.
+    \]
+\end{example}
+
+\begin{figure}[ht!]
+    \centering
+    \caption{Cubes Inscribed into Dodecahedron}
+    \label{fig:cubes-in-dodecahedron}
+\end{figure}
