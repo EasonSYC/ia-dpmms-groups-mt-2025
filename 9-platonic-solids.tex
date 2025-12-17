@@ -27,6 +27,11 @@ There are (up to similarity) 5 platonic solids, as shown in \autoref{fig:platoni
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[scale=0.5]{platonic-solids/1-tetrahedron.pdf}
+    \includegraphics[scale=1.2]{platonic-solids/2-cube.pdf}
+    \includegraphics[scale=0.9]{platonic-solids/3-octahedron.pdf}
+    \includegraphics{platonic-solids/4-dodecahedron.pdf}
+    \includegraphics{platonic-solids/5-icosahedron.pdf}
     \caption{The 5 Platonic Solids}
     \label{fig:platonic-solids}
 \end{figure}
@@ -43,6 +48,7 @@ Two solids \(X, Y\) are \emph{dual} if \(Y\) can be constructed from \(X\) by pu
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[scale=2]{platonic-solids/6-duality.pdf}
     \caption{Cube and Octahedron are Dual}
     \label{fig:duality-cube-octahedron}
 \end{figure}
@@ -159,7 +165,7 @@ Therefore, in particular, we have \(\abs{G : G_0} = 2\), so
         \functiondomain{\theta}{G_0}{S_4}.
     \]
 
-    Instead, we show this time that \(\theta\) is surjective, and since transpositions generate \(S_4\) from \autoref{thm:transposition-generate}, it suffices to show that any transposition is contained in \(\img \theta\). Indeed, from \autoref{fig:transpositions-are-in-image-cube}, we see that a rotation about an axis through midpoint of two opposite edges maps to a transposition under \(\theta\), and we get
+    Instead, we show this time that \(\theta\) is surjective, and since transpositions generate \(S_4\) from \autoref{thm:transposition-generate}, it suffices to show that any transposition is contained in \(\img \theta\). Indeed, from \autoref{fig:diagonals-of-cube-and-transpositions}, we see that a rotation about an axis through midpoint of two opposite edges maps to a transposition under \(\theta\), and we get
     \[
         \binom{4}{2} = 6 = \frac{12}{2}
     \]
@@ -173,8 +179,9 @@ Therefore, in particular, we have \(\abs{G : G_0} = 2\), so
 
 \begin{figure}[ht!]
     \centering
-    \caption{Transpositions of Diagonals are Mapped Onto}
-    \label{fig:transpositions-are-in-image-cube}
+    \includegraphics{platonic-solids/7-cube-lines.pdf}
+    \caption{Diagonals of the Cube and Transpositions}
+    \label{fig:diagonals-of-cube-and-transpositions}
 \end{figure}
 
 Finally, we examine the isometry group of a dodecahedron/icosahedron. (This is non-examinable in the course.)
@@ -187,7 +194,7 @@ Finally, we examine the isometry group of a dodecahedron/icosahedron. (This is n
         \abs{G} = 12 \times 10 = 120, \abs{G_0} = 60.
     \]
 
-    By drawing diagonals on the faces, as shown in \autoref{fig:cubes-in-dodecahedron}, we may inscribe 5 cubes into the dodecahedron.
+    By drawing diagonals on the faces, as shown in \autoref{fig:cubes-in-dodecahedron}, we may inscribe 5 cubes into the dodecahedron. (This diagram shows one of them, using one diagonal on each of the \(12\) faces, and there are \(5\) diagonals in a pentagon, so there are \(5\) such cubes.)
 
     Since the 5 cubes are built symmetrically from the geometry of the dodecahedron, we see that
     \[
@@ -224,6 +231,7 @@ Finally, we examine the isometry group of a dodecahedron/icosahedron. (This is n
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[scale=2]{platonic-solids/8-cubes-dodecahedron.pdf}
     \caption{Cubes Inscribed into Dodecahedron}
     \label{fig:cubes-in-dodecahedron}
 \end{figure}
