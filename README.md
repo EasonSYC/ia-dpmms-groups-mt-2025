@@ -1,3 +1,3 @@
-# cambridge-notes-template
+# ia-dpmms-groups-mt-2025
 
-Template for typesetting my Cambridge notes.
+My notes for Cambridge Maths Part IA DPMMS Groups course, Michaelmas Term 2025, Lectured by Professor Henry Wilton.
