@@ -11,7 +11,7 @@ Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism, then \(\ker \phi \subgrou
     A subgroup \(H \subgroup G\) is called \emph{normal} if \(g h g\inverse \in H\) for any \(h \in H\) and \(g \in G\). If so, we write \(H \normalsub G\).
 \end{definition}
 
-\begin{examples}[Examples of Normal Subgroups]
+\begin{examples*}[Examples of Normal Subgroups]
     \begin{enumerate}
         \item \(\trivialgp \normalsub G\) and \(G \normalsub G\) for any group \(G\).
         \item All subgroups of an abelian group is normal. If \(G\) is abelian, and \(H \subgroup G\), then \(H \normalsub G\).
@@ -29,7 +29,7 @@ Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism, then \(\ker \phi \subgrou
         \]
         and hence \(g h g\inverse \in \ker \phi\), so \(\ker \phi \normalsub G\).
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 From the definition, we can see that normal subgroups are subgroups which are precisely unions of conjugation classes: indeed, the condition for a subgroup to be normal is that all \(h \in H \normalsub G\) satisfy \(\ccl\para{h} \subseteq H\).
 
@@ -151,7 +151,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
     The quotient map satisfies \(\ker \phi_{H} = H\). This show that normal subgroups are precisely kernels of homomorphisms from the given group.
 \end{remark}
 
-\begin{examples}[Examples of Quotient Groups]
+\begin{examples*}[Examples of Quotient Groups]
     \begin{enumerate}
         \item For any group \(G\), \(G / \trivialgp \isomorphic G\), and \(G / G \isomorphic \trivialgp\).
         \item Since \(\ZZ\) is abelian, \(n\ZZ \normalsub \ZZ\) for any \(n \neq 0\). We see that \(\ZZ / n \ZZ\) is cyclic of order \(n\), with generator \(1 + n\ZZ\), so
@@ -168,7 +168,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \]
         \item In particular, \(C_n \isomorphic \ang{r} \normalsub D_{2n}\), and \(D_{2n} / C_n \isomorphic C_2\).
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 \begin{remark}
     Note that \(C_4 / C_2 \isomorphic C_2 \isomorphic K_4 / C_2\), but \(C_4 \notisomorphic K_4\). In particular, for groups \(A, B\) and \(C\),
@@ -242,7 +242,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
 \autoref{thm:first-isomorphism} (first isomorphism theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\functiondomain{\phi}{G}{K}\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
 
-\begin{examples}[Applications of \autoref{thm:first-isomorphism} (first isomorphism theorem)]
+\begin{examples*}[Applications of \autoref{thm:first-isomorphism} (first isomorphism theorem)]
     \begin{enumerate}
         \item The map
         \[
@@ -271,7 +271,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
             \RR / \ZZ \isomorphic \U\para{1}.
         \]
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 \subsection{Simple Groups}
 \label{sec:simple-groups}
@@ -286,11 +286,11 @@ Taking quotients using normal subgroups allow us to break groups down into small
     are either trivial with \(\ker \phi = G\), or injective with \(\ker \phi = \trivialgp\).
 \end{definition}
 
-\begin{example}[Simple Abelian Groups]
+\begin{example*}[Simple Abelian Groups]
     \(C_p\) is simple whenever \(p\) is a prime. Since any subgroup of an abelian group is simple, a simple abelian group must have no proper subgroups, and for finite groups, \(C_p\) for prime \(p\)s are all of those.
 
     If \(G\) is an infinite abelian group and \(e \neq x \in G\) has infinite order, then \(\ang{x^2} \subgroup G\) is a proper subgroup; if \(x\) has finite order, then \(\ang{x}\) is a proper subgroup. Therefore, there are no infinite simple abelian groups. 
-\end{example}
+\end{example*}
 
 Non-abelian simple groups are more complicated, and we will see the first of those examples in the next chapter on permutations, namely \(A_3\).
 

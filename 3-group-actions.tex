@@ -21,7 +21,7 @@ We return to the aspect where we started, that groups describe symmetries. Group
     We write \(G \actson X\) to indicate that \(G\) acts on \(X\).
 \end{definition}
 
-\begin{examples}[Examples of Group Actions]
+\begin{examples*}[Examples of Group Actions]
     \begin{enumerate}
         \item For any group \(G\) and set \(X\), the action
         \[
@@ -44,7 +44,7 @@ We return to the aspect where we started, that groups describe symmetries. Group
         \]
         for \(g \in G\), \(\gamma \in X = G\). This is the \emph{left regular action}.
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 We may think of group actions in another useful way.
 
@@ -249,7 +249,7 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \end{enumerate}
 \end{proof}
 
-\begin{example}[\(D_{2n} \actson X_n\), the regular \(n\)-gon]
+\begin{example*}[\(D_{2n} \actson X_n\), the regular \(n\)-gon]
     As in \autoref{fig:dihedral-group-action-hexagon} for the hexagon case, for any \(j\),
     \begin{align*}
         r^j s \para{x} &= r^j \para{x} \\
@@ -270,7 +270,7 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \[
         \stab_{D_{2n}}\para{x} = \brce{r, s}.
     \]
-\end{example}
+\end{example*}
 
 \begin{figure}[ht!]
     \centering
@@ -315,7 +315,7 @@ We first prove a corollary of this theorem, naming the counting version of this.
 
 Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we first give an example of the counting version of this.
 
-\begin{example}[\(D_{2n} \actson X_n\)]
+\begin{example*}[\(D_{2n} \actson X_n\)]
     We see that if \(x \in X_n\) is a vertex, then
     \[
         \abs{\orb_{D_{2n}} \para{x}} = n
@@ -329,7 +329,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
     \[
         \abs{D_{2n}} = 2n.
     \]
-\end{example}
+\end{example*}
 
 \begin{proof}[of \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem)]
     We write
@@ -386,7 +386,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
     \end{itemize}
 \end{proof}
 
-\begin{example}[Symmetries of a Cube]
+\begin{example*}[Symmetries of a Cube]
     Let \(G\) be the group of isometries of a cube.
 
     As in \autoref{fig:symmetries-of-a-cube}, let \(x\) be the centre of a face of a cube. Then
@@ -408,7 +408,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
         &= 6 \cdot 8 \\
         &= 48.
     \end{align*}
-\end{example}
+\end{example*}
 
 \begin{figure}[ht!]
     \centering
@@ -541,21 +541,21 @@ This is a proof that is not very intuitive, but the result is very useful.
 
 The intuition behind this definition is that \(hgh\inverse\) has the same 'shape' as \(g\), and \(hgh\inverse\) corresponds to a 'change in coordinates' of \(g\) by \(h\). Conjugacy classes partition the group.
 
-\begin{example}[Conjugacy in an Abelian Group]
+\begin{example*}[Conjugacy in an Abelian Group]
     If \(G\) is abelian, then for any \(g, h \in G\),
     \[
         hgh\inverse = ghh\inverse = ge = g,
     \]
     so the only element conjugate to \(g\) is \(g\) itself. All conjugacy classes have size \(1\). (This condition is equivalent to a group being abelian.)
-\end{example}
+\end{example*}
 
 Conjugacy classes of reflections in a dihedral group demonstrates the intuition of 'size' well.
 
-\begin{example}[Conjugacy Classes of Reflections in Dihedral Group]
+\begin{example*}[Conjugacy Classes of Reflections in Dihedral Group]
     In Sheet 2, Q6, \(D_{2n}\) has \(1\) conjugacy class of reflections if \(n\) is odd, and \(2\) if \(n\) is even.
     
     As in \autoref{fig:ccl-dihedral}, when \(n = 6\), there are two 'types' of reflections, those whose axis run through vertices, and those who run through midpoints of edges. When \(n = 5\), there is only one 'type' of reflection: their axis all run through a vertex and a midpoint of an edge.
-\end{example}
+\end{example*}
 
 \begin{figure}[ht!]
     \centering

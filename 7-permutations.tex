@@ -26,9 +26,9 @@ In particular, for this section, we are interested in the case where \(X\) is fi
     \label{fig:examples-elements-s3}
 \end{figure}
 
-\begin{example}[Example of Elements in \(S_3\)]
+\begin{example*}[Example of Elements in \(S_3\)]
     For \(X = \brce{1, 2, 3}\), we have \(\Sym\para{X} \isomorphic S_3\). In the example \autoref{fig:examples-elements-s3}, we have \(\sigma, \tau \in \Sym\para{X}\) and \(\rho \notin \Sym\para{X}\).
-\end{example}
+\end{example*}
 
 \begin{figure}[ht!]
     \centering
@@ -44,9 +44,9 @@ In particular, for this section, we are interested in the case where \(X\) is fi
     \label{fig:composition-of-permutations-s3}
 \end{figure}
 
-\begin{example}[Composition of Permutations in \(S_3\)]
+\begin{example*}[Composition of Permutations in \(S_3\)]
     As shown in \autoref{fig:composition-of-permutations-s3}, we may compose the permutation \(\sigma\) and \(\tau\) from right to left.
-\end{example}
+\end{example*}
 
 \subsection{Cycles and Transpositions}
 \label{sec:cycles-and-transpositions}
@@ -67,16 +67,16 @@ In particular, for this section, we are interested in the case where \(X\) is fi
     \]
 \end{definition}
 
-\begin{example}[Cycle Notation]
+\begin{example*}[Cycle Notation]
     For the example permutations in \autoref{fig:examples-elements-s3}, we have
     \[
         \sigma = \perm{132} = \perm{321}, \tau = \perm{12}.
     \]
-\end{example}
+\end{example*}
 
 Multiplication of cycles are calculated from right to left.
 
-\begin{examples}[Multiplication of Cycles]
+\begin{examples*}[Multiplication of Cycles]
     \begin{itemize}
         \item As in \autoref{fig:composition-of-permutations-s3}, we have
         \[
@@ -87,7 +87,7 @@ Multiplication of cycles are calculated from right to left.
             \perm{1432}\perm{243} = \perm{1423}.
         \]
     \end{itemize}
-\end{examples}
+\end{examples*}
 
 The notation we use for a particular cycle is not unique: in particular, we can conduct cyclic permutations on a cycle:
 \[
@@ -113,13 +113,13 @@ Disjoint cycles commute:
     \end{enumerate}
 \end{theorem}
 
-\begin{example}
+\begin{example*}
     As an example we have
     \begin{align*}
         \perm{12}\perm{34}\perm{56}\perm{123456} &= \para{1} \perm{246} \para{3} \para{5} \\
         &= \perm{246}.
     \end{align*}
-\end{example}
+\end{example*}
 
 \begin{proof}
     We consider the action of \(\ang{\sigma}\) on \(X = \brce{1, 2, \ldots, n}\) by permutations. This partition \(X\) into orbits
@@ -334,7 +334,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \abs{S_n} = 2 \abs{A_n}.
 \]
 
-\begin{example}[\(S_3\) and \(A_3\)]
+\begin{example*}[\(S_3\) and \(A_3\)]
     In
     \[
         S_3 = \brce{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
@@ -351,7 +351,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \[
         A_3 = \brce{e, \perm{123}, \perm{132}} \isomorphic C_3.
     \]
-\end{example}
+\end{example*}
 
 \begin{remark}
     We can use the cycle type to determine the sign of a permutation. Notice a cycle can be decomposed into transpositions
@@ -367,13 +367,13 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
     More generally, a \(\para{k_1, k_2, \ldots, k_l}\)-cycle is even if and only if the number of \(k_i\)s that are even, is even.
 \end{remark}
 
-\begin{example}
+\begin{example*}
     \begin{itemize}
         \item \(\perm{12}\perm{34}\), a \(\para{2, 2}\)-cycle, is even.
 
         \item \(\perm{12}\perm{34}\perm{56}\), a \(\para{2, 2, 2}\)-cycle, is odd.
     \end{itemize}
-\end{example}
+\end{example*}
 
 \subsection{Conjugation in Symmetric and Alternating Groups}
 \label{sec:conjugation-in-sn-an}
@@ -450,7 +450,7 @@ Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that con
 
 This allows us to easily count size of conjugacy classes in \(S_n\).
 
-\begin{examples}[Size of Conjugacy Classes in \(S_3\) and \(S_4\)]
+\begin{examples*}[Size of Conjugacy Classes in \(S_3\) and \(S_4\)]
     \begin{enumerate}
         \item For
         \[
@@ -467,7 +467,7 @@ This allows us to easily count size of conjugacy classes in \(S_n\).
             \abs{\ccl_{S_4} \para{\perm{12} \perm{34}}} = \frac{1}{2} \binom{4}{2} = 3.
         \]
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 Recall by \autoref{cor:orbit-stabiliser} (orbit--stabiliser theorem), under the conjugation action, we have
 \[
@@ -475,7 +475,7 @@ Recall by \autoref{cor:orbit-stabiliser} (orbit--stabiliser theorem), under the 
 \]
 for \(\gamma \in S_n\). Therefore, it is also easy to count the sizes of the centralisers, which contain the elements that commute with a particular element.
 
-\begin{example}[Size of Centraliser in \(S_4\)]
+\begin{example*}[Size of Centraliser in \(S_4\)]
     For \(\perm{12}\perm{34} \in S_4\), we have
     \begin{align*}
         \abs{C_{S_4} \para{\perm{12} \perm{34}}} &= \abs{S_4} / \abs{\ccl_{S_4} \para{\perm{12} \perm{34}}} \\
@@ -488,13 +488,13 @@ for \(\gamma \in S_n\). Therefore, it is also easy to count the sizes of the cen
             e, \perm{12}, \perm{34}, \perm{12}\perm{34}, \perm{13}\perm{24}, \perm{14}\perm{23}, \perm{1423}, \perm{1324}
         }.
     \]
-\end{example}
+\end{example*}
 
 As an example, we list all the conjugacy classes in \(S_4\).
 
-\begin{example}[Conjugacy Classes in \(S_4\)]
+\begin{example*}[Conjugacy Classes in \(S_4\)]
     \autoref{tab:conjugacy-class-s4} gives all conjugacy classes in \(S_4\).
-\end{example}
+\end{example*}
 
 \begin{table}[ht!]
     \centering
@@ -604,7 +604,7 @@ Counting conjugacy classes in \(A_n\) can also be done with some thought.
 
 This makes it possible to determine conjugacy classes in \(A_n\).
 
-\begin{example}[Conjugacy Classes in \(A_4\)]
+\begin{example*}[Conjugacy Classes in \(A_4\)]
     The even elements of \(S_4\) are \(e\), \(\para{2, 2}\)-cycles, and \(3\)-cycles.
 
     Since there is an odd number of \(\para{2, 2}\)-cycles, the conjugacy class of \(\perm{12}\perm{34}\) cannot split and remains intact in \(A_4\).
@@ -620,7 +620,7 @@ This makes it possible to determine conjugacy classes in \(A_n\).
     so the conjugacy class splits. (Alternatively, this means the centraliser cannot split into two equal parts, one of which in \(S_4\) but not \(A_4\), and one of which in \(A_4\), so it must be entirely contained in \(A_4\).)
 
     \autoref{tab:conjugacy-class-a4} gives a summary of this discussion.
-\end{example}
+\end{example*}
 
 \begin{table}[ht!]
     \centering
@@ -640,9 +640,9 @@ This makes it possible to determine conjugacy classes in \(A_n\).
 
 Now we study conjugacy classes in \(S_5\) and \(A_5\).
 
-\begin{example}[Conjugacy Classes in \(S_5\)]
+\begin{example*}[Conjugacy Classes in \(S_5\)]
     \autoref{tab:conjugacy-class-s5} gives conjugacy classes in \(S_5\).
-\end{example}
+\end{example*}
 
 \begin{table}[ht!]
     \centering
@@ -663,7 +663,7 @@ Now we study conjugacy classes in \(S_5\) and \(A_5\).
     \label{tab:conjugacy-class-s5}
 \end{table}
 
-\begin{example}[Conjugacy Classes in \(A_5\)]
+\begin{example*}[Conjugacy Classes in \(A_5\)]
     The typical elements \(e, \perm{123}, \perm{12}\perm{34}, \perm{12345}\) are in \(A_5\).
     \begin{itemize}
         \item The conjugacy class for \(e\) does not split.
@@ -676,7 +676,7 @@ Now we study conjugacy classes in \(S_5\) and \(A_5\).
     \end{itemize}
 
     \autoref{tab:conjugacy-class-a5} gives a summary of this discussion.
-\end{example}
+\end{example*}
 
 \begin{table}[ht!]
     \centering

@@ -10,13 +10,13 @@ There are two ways to view groups, \emph{algebra} and \emph{symmetry}. We first 
     \label{fig:equilateral-triangle-symmetry}
 \end{figure}
 
-\begin{example}[Equilateral Triangle]
+\begin{example*}[Equilateral Triangle]
     As in \autoref{fig:equilateral-triangle-symmetry}, an equilateral triangle has rotational symmetries and reflective symmetries.
     
     Note that there is the \emph{trivial symmetry} which is the \emph{identity}, that does not move the triangle and keeps it in place.
 
     An equilateral triangle has 6 symmetries, as listed in \autoref{fig:equilateral-triangle-symmetry-list}
-\end{example}
+\end{example*}
 
 \begin{figure}[ht!]
     \centering
@@ -119,12 +119,12 @@ Now we are ready to define a group as an algebraic structure, using the followin
 
 A group is an \textbf{algebraic structure with one operation}.
 
-\begin{examples}
+\begin{examples*}
     \begin{itemize}
         \item \emph{Equilateral triangle.} The symmetries of an equilateral triangle forms a group, with respect to composition, and the identity symmetry is the identity element.
         \item \emph{Integers.} \(\para{\ZZ, +, 0}\) forms a group.
     \end{itemize}
-\end{examples}
+\end{examples*}
 
 Some authors define the identity to be a two-sided identity, and the inverse to be a two-sided inverse. Indeed, this must be the case, and the identity and the inverse of an element must be unique, as in \autoref{prop:inverse-identity}.
 
@@ -252,11 +252,11 @@ We give a special name for those groups which are commutative.
     for all \(a, b \in G\), then \(G\) is \emph{commutative}, and \(G\) is called an \emph{abelian group}.
 \end{definition}
 
-\begin{example}[Trivial Group]
+\begin{example*}[Trivial Group]
     If \(G = \brce{e}\) and \(\functionmap{\cdot}{\para{e, e}}{e}\), then \(\para{G, \cdot, e}\) is the \emph{trivial group}.
-\end{example}
+\end{example*}
 
-\begin{examples}[Familiar Examples from Arithemetic]
+\begin{examples*}[Familiar Examples from Arithemetic]
     \begin{enumerate}
         \item \(\para{\ZZ, +, 0}\), \(\para{\QQ, +, 0}\), \(\para{\RR, +, 0}\) and \(\para{\CC, +, 0}\) are all \emph{abelian} groups.
         
@@ -268,7 +268,7 @@ We give a special name for those groups which are commutative.
         
         Similarly, \(\para{\RR \setminus \brce{0}, \times, 1}\) and \(\para{\CC \setminus \brce{0}, \times, 1}\) are as well, and we denote them as \(\RR\multiplicative\) and \(\CC\multiplicative\) respectively.
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 Most examples of groups given above are infinite, apart from the trivial group.
 
@@ -281,7 +281,7 @@ We would like to define the size of a group, and the definition is as in  \autor
     If \(\abs{G} < \infty\), then we say \(\para{G, \cdot, e}\) is a \emph{finite} group.
 \end{definition}
 
-\begin{examples}
+\begin{examples*}
     \begin{enumerate}
         \item For any \(n \in \NN\), let \(C_n = \set{z \in \CC}{z^n = 1}\), then \(\para{C_n, \times, 1}\) is an abelian group.
         \item Let \(\ZZ_n = \brce{0, 1, \cdots, n - 1}\). We let for \(a, b \in \ZZ_n\), we have
@@ -291,7 +291,7 @@ We would like to define the size of a group, and the definition is as in  \autor
 
         We can see \(\para{\ZZ_n, +_n, 0}\) is an abelian group.
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 \subsection{Symmetric Groups}
 \label{sec:symmetric-groups}
@@ -367,12 +367,12 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
     If \(X = \brce{1, 2, \ldots, n}\), we write \(S_n = \Sym\para{X}\).
 \end{definition}
 
-\begin{examples}
+\begin{examples*}
     \begin{itemize}
         \item \(S_3\) may represent the groups to rearrange three flower pits.
         \item \(S_{52}\) may represent the group of ways to shuffle a deck of cards.
     \end{itemize}
-\end{examples}
+\end{examples*}
 
 \begin{remark}
     We note that \(\abs{S_n} = n!\) by basic combinatorics.
@@ -406,7 +406,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
     If \(G\) is a group, then any subgroup \(H \subgroup G\) is itself a group. Note associativity is not required -- it is inherited from \(G\).
 \end{remark}
 
-\begin{examples}
+\begin{examples*}
     \begin{enumerate}
         \item Every group \(G\) is a subgroup of itself.
 
@@ -441,7 +441,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         We will see in \autoref{prop:subgroups-of-integers} that all subgroups of \(\ZZ\) are of this form.
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 \begin{remark}
     All subgroups of a group \(G\) that are not trivial (\(\trivialgp_G\)) or the group \(G\) itself are referred to as its \emph{proper subgroups}.
@@ -472,7 +472,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
 We give more examples of subgroups here.
 
-\begin{examples}[More Examples of Subgroups]
+\begin{examples*}[More Examples of Subgroups]
     \begin{enumerate}
         \item If \(H, K \subgroup G\), then \(H \cap K \subgroup G\). (See Example Sheet 1, Question 2).
         \item Similarly, for any family of subgroups,
@@ -484,7 +484,7 @@ We give more examples of subgroups here.
             \bigcap_{i \in I} H_i = \set{a \in G}{\forall i \in I: a \in H_i} \subgroup G.
         \]
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 Specifically, the second example allows us to define a 'smallest group' containing a set as follows.
 
@@ -591,9 +591,9 @@ We consider a certain group of symmetries that preserves distances.
     \label{fig:regular-n-gon-on-C}
 \end{figure}
 
-\begin{example}[\(D_6\)]
+\begin{example*}[\(D_6\)]
     \(D_{2 \cdot 3} = D_6\) is the symmetry group of the equilateral triangle that we studied at the start.
-\end{example}
+\end{example*}
 
 \begin{theorem}[Size of Dihedral Group]
     \label{thm:size-of-dihedral-group}%
@@ -840,9 +840,9 @@ To understand the group operation on \(D_{2n}\), we need to understand the diffe
 
 Some groups are not literally (set-theoretically) equal, but none-the-less having the same structure.
 
-\begin{example}[Groups that seem equal]
+\begin{example*}[Groups that seem equal]
     We would say that \(\Sym\para{\text{deck of cards}}\) are somehow equal to \(\Sym\para{\text{52 undergraduate students}}\) in a way, since they all represent permutations on 52 objects.
-\end{example}
+\end{example*}
 
 \begin{definition}[Homomorphism]
     \label{def:homomorphism}%
@@ -853,7 +853,7 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
     for all \(g, g' \in G\).
 \end{definition}
 
-\begin{examples}[Examples of Homomorphisms]
+\begin{examples*}[Examples of Homomorphisms]
     \begin{enumerate}
         \item For any two groups \(G, H\), the map
         \[
@@ -879,7 +879,7 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
         \]
         is a homomorphism.
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 Homomorphisms between groups must map certain elements to certain elements.
 
@@ -921,7 +921,7 @@ Homomorphisms between groups must map certain elements to certain elements.
 
 From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
 
-\begin{examples}[Examples of Isomorphic Groups]
+\begin{examples*}[Examples of Isomorphic Groups]
     \begin{enumerate}
         \item Recall that
         \[
@@ -971,7 +971,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
 
         By laws on exponentiation, \(\exp\) is indeed a homomorphism, and it has \(\log\) as its inverse, so is bijective, and hence isomorphisms.
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 \autoref{lem:homomorphism-isomorphism} allows us to think that isomorphic groups are the same/
 
@@ -1111,13 +1111,13 @@ The groups \(C_n \isomorphic \ZZ_n\) that we described above has a special prope
     That is, \(\brce{g}\) generates \(G\), and \(g\) is called a \emph{generator} of \(G\).
 \end{definition}
 
-\begin{examples}[Examples of Cyclic Groups]
+\begin{examples*}[Examples of Cyclic Groups]
     \begin{enumerate}
         \item \(C_n\) is cyclic with generator \(e^{\frac{2 \pi i}{n}}\).
         \item \(\ZZ\) is cyclic with generator \(1\).
         \item \(\ZZ_n\) is cyclic since \(\ZZ_n \isomorphic C_n\).
     \end{enumerate}
-\end{examples}
+\end{examples*}
 
 We will see in \autoref{thm:classification-cyclic-groups} that these are in fact all the cyclic groups (up to isomorphism).
 
