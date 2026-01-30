@@ -55,7 +55,7 @@ gives an identity. However, we know not all matrices are invertible.
     is the \emph{special linear group of \(n \times n\) matrices over \(RR\)}.
 \end{definition}
 
-By \autoref{thm:first-isomorphism} (first isomorphism theorem), we have
+By \autoref{thm:first-isomorphism} (First Isomorphism Theorem), we have
 \[
     \SL_n\para{\RR} \normalsub \GL_n\para{\RR}
 \]
@@ -170,7 +170,7 @@ Recall that multiplication in \(\mobius\) looks similar to multiplication of \(2
     \[
         \CC\multiplicative = \set{\begin{pmatrix}
             \lambda & 0 \\ 0 & \lambda
-        \end{pmatrix}}{\lambda \in \CC\multiplicative} \subgroup \GL_2\para{\CC}.
+        \end{pmatrix}}{\lambda \in \CC \setminus \brce{0}} \subgroup \GL_2\para{\CC}.
     \]
 
     Then \(\CC\multiplicative \normalsub \GL_2\para{\CC}\), and
@@ -202,7 +202,7 @@ Recall that multiplication in \(\mobius\) looks similar to multiplication of \(2
         \ker \phi = \CC\multiplicative \normalsub \GL_2\para{\CC}.
     \]
 
-    The result then directly follows from \autoref{thm:first-isomorphism} (first isomorphism theorem).
+    The result then directly follows from \autoref{thm:first-isomorphism} (First Isomorphism Theorem).
 \end{proof}
 
 \subsection{Orthogonal Groups}
@@ -218,7 +218,7 @@ be the \emph{Euclidean norm}.
     \label{def:orthogonal-group}%
     The \emph{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_r\para{\RR}\) that preserve distance in \(\RR^n\):
     \[
-        \Or\para{n} = \set{\vm{M} \in \GL_n\para{\RR}}{\forall \vm{v} \in \RR^n, \norm{\vm{Mv}} = \norm{\vm{v}}}.
+        \Or\para{n} = \set{\vm{M} \in \GL_n\para{\RR}}{\forall \vm{v} \in \RR^n: \norm{\vm{Mv}} = \norm{\vm{v}}}.
     \]
 \end{definition}
 
@@ -250,10 +250,10 @@ We can characterise \(\Or\para{n}\) using the dot product.
     \label{lem:orthogonal-dot-product}%
     Orthogonal matrices are precisely those matrices preserving the dot product, i.e.,
     \[
-        \Or\para{n} = \set{\vm{M} \in \GL_n\para{\RR}}{\forall \vm{x}, \vm{y} \in \RR^n, \para{\vm{Mx}} \cdot \para{\vm{My}} = \vm{x} \cdot \vm{y}}.
+        \Or\para{n} = \set{\vm{M} \in \GL_n\para{\RR}}{\forall \vm{x}, \vm{y} \in \RR^n: \para{\vm{Mx}} \cdot \para{\vm{My}} = \vm{x} \cdot \vm{y}}.
     \]
 
-    Equivalently, for \(\vm{M} in \GL_{n} \para{\RR}\), \(\vm{M} \in \Or\para{n}\) if and only if \(\vm{M}\) preserves dot product.
+    Equivalently, for \(\vm{M} \in \GL_{n} \para{\RR}\), \(\vm{M} \in \Or\para{n}\) if and only if \(\vm{M}\) preserves dot product.
 \end{lemma}
 
 \begin{proof}
@@ -267,10 +267,10 @@ We can characterise \(\Or\para{n}\) using the dot product.
 
     \(\implies\). Conversely, for any \(\vm{M} \in \Or\para{n}\) and \(\vm{x}, \vm{y} \in \RR^n\), we have
     \begin{align*}
-        2 \para{\vm{Mx} \cdot \vm{My}} &= \norm{\vm{Mx}}^2 + \norm{\vm{My}}^2 - \norm{\vm{Mx} - \vm{My}}^2 && \text{by \autoref{lem:polarisation-identity} (polarisation identity)} \\
+        2 \para{\vm{Mx} \cdot \vm{My}} &= \norm{\vm{Mx}}^2 + \norm{\vm{My}}^2 - \norm{\vm{Mx} - \vm{My}}^2 && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)} \\
         &= \norm{\vm{Mx}}^2 + \norm{\vm{My}}^2 - \norm{\vm{M} \para{\vm{x} - \vm{y}}}^2 \\
         &= \norm{\vm{x}}^2 + \norm{\vm{y}}^2 - \norm{\vm{x} - \vm{y}}^2 && \vm{M} \in \Or\para{n} \\
-        &= 2 \para{\vm{x} \cdot \vm{y}}. && \text{by \autoref{lem:polarisation-identity} (polarisation identity)}
+        &= 2 \para{\vm{x} \cdot \vm{y}}. && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)}
     \end{align*}
 
     Therefore, \(\para{\vm{Mx}} \cdot \para{\vm{My}} = \vm{x} \cdot \vm{y}\), and \(\vm{M}\) preserves dot product as desired.
@@ -352,7 +352,7 @@ and hence \(\det \vm{M} = \pm 1\).
     \]
 \end{definition}
 
-Note that such restriction of the determinant is surjective, hence by \autoref{thm:first-isomorphism} (first isomorphism theorem), we have
+Note that such restriction of the determinant is surjective, hence by \autoref{thm:first-isomorphism} (First Isomorphism Theorem), we have
 \[
     \abs{\Or\para{n} : \SO\para{n}} = \abs{\ker \rightbar{\det}_{\Or\para{n}}} = 2.
 \]

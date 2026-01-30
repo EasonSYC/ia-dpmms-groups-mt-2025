@@ -39,7 +39,7 @@ The direct product of two groups is a group, and it is easy to see for any group
 \begin{itemize}
     \item \(G \times H \isomorphic H \times G\): the direct product is \emph{commutative} up to isomorphism;
     \item \(\para{G \times H} \times K \isomorphic G \times \para{H \times K}\): the direct product is \emph{associative} up to isomorphism;
-    \item \(\trivialgp \times G \isomorphic G \times \trivialgp \isomorphic G\): the trivial group is \textbf{an} \emph{identity} up to isomorphism (for infinite groups, the identity \textbf{need not} be trivial, for example \(\RR \times \RR \isomorphic \RR\), since they are isomorphic when viewed as \(\QQ\)-vector spaces);
+    \item \(\trivialgp \times G \isomorphic G \times \trivialgp \isomorphic G\): the trivial group is \textbf{an} \emph{identity} up to isomorphism (for infinite groups, \(G \times H \isomorphic G\) \textbf{does not require} \(H\) to be trivial, for example \(\RR \times \RR \isomorphic \RR\), since they are isomorphic when viewed as \(\QQ\)-vector spaces);
     \item If \(G \isomorphic H\), then \(G \times K \isomorphic H \times K\): we may replace elements in the direct product up to isomorphism;
     \item \(\abs{G \times H} = \abs{G} \times \abs{H}\): the order of the direct product is the product of the orders;
     \item \(\ord\para{g, h} = \lcm\brce{\ord\para{g}, \ord\para{h}}\): the order of an element is the least common multiple of the order of the separate elements.
@@ -131,7 +131,7 @@ To show these are the only groups of order \(4\), it is useful to introduce a th
     \[
         H_2' = \trivialgp \times H_2 = \set{\para{e, h_2}}{h_2 \in H_2} \isomorphic H_2,
     \]
-    and we have \(G \isomorphic H_1' \times H_2'\). \(H_1'\) and \(H_2'\) here satisfy the condition for \autoref{thm:dpt-direct-product-theorem} (direct product theorem). Therefore, this theorem is, in a sense, 'if and only if', up to isomorphism.
+    and we have \(G \isomorphic H_1' \times H_2'\). \(H_1'\) and \(H_2'\) here satisfy the condition for \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem). Therefore, this theorem is, in a sense, `if and only if', up to isomorphism.
 \end{remark}
 
 Now we are ready to classify all groups of order 4.
@@ -142,7 +142,7 @@ Now we are ready to classify all groups of order 4.
 \end{lemma}
 
 \begin{proof}
-    By \autoref{cor:order-of-element-divides} (corollary of Lagrange's Theorem), every non-trivial element in \(G\) has order \(2\) or \(4\).
+    By \autoref{cor:order-of-element-divides} (Corollary of Lagrange's Theorem), every non-trivial element in \(G\) has order \(2\) or \(4\).
     
     \begin{itemize}
         \item If there is some \(g \in G\) such that \(\ord\para{g} = 4\), then \(G = \ang{g} \isomorphic C_4\).
@@ -158,7 +158,7 @@ Now we are ready to classify all groups of order 4.
         \]
         as required for (ii).
 
-        Therefore, \(G \isomorphic C_2 \times C_2\) by \autoref{thm:dpt-direct-product-theorem} (direct product theorem), as desired.
+        Therefore, \(G \isomorphic C_2 \times C_2\) by \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), as desired.
     \end{itemize}
 \end{proof}
 
@@ -177,7 +177,7 @@ It is useful to see when/whether a direct product of cyclic groups is cyclic -- 
     \[
         H_1 = \ang{g^n} \isomorphic C_m, H_2 = \ang{g^m} \isomorphic C_n,
     \]
-    we check the hypothesis of \autoref{thm:dpt-direct-product-theorem} (direct product theorem).
+    we check the hypothesis of \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem).
 
     \emph{(i).} Note that \(g^k \in H_1\) if and only if \(n \divides k\), and similarly, \(g^k \in H_2\) if and only if \(m \divides k\).
 
@@ -218,7 +218,7 @@ We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the c
 
     \begin{itemize}
         \item \(i = 0\). Then \(sr = s\), so \(r = e\) which is impossible since \(\ord\para{r} = 3\).
-        \item \(i = 1\). Then \(sr = rs\), so elements in \(\ang{r}\) and \(\ang{s}\) commute. By \autoref{thm:dpt-direct-product-theorem} (direct product theorem),
+        \item \(i = 1\). Then \(sr = rs\), so elements in \(\ang{r}\) and \(\ang{s}\) commute. By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem),
         \[
             G \isomorphic \ang{r} \times \ang{s} \isomorphic C_3 \times C_2 \isomorphic C_6.
         \]
@@ -306,7 +306,7 @@ In fact these are all groups of order 8.
 \end{lemma}
 
 \begin{proof}
-    By \autoref{cor:order-of-element-divides} (corollary of Lagrange's Theorem), every element of \(G\) has order \(1\), \(2\), \(4\) or \(8\). We conduct casework on the order of the elements in the group.
+    By \autoref{cor:order-of-element-divides} (Corollary of Lagrange's Theorem), every element of \(G\) has order \(1\), \(2\), \(4\) or \(8\). We conduct casework on the order of the elements in the group.
 
     \begin{itemize}
         \item If there is an element of order \(8\), then \(G \isomorphic C_8\).
@@ -315,7 +315,7 @@ In fact these are all groups of order 8.
         \[
             a, b \neq a, c \neq a, c \neq b, c \neq ab
         \]
-        gives by \autoref{thm:dpt-direct-product-theorem} (direct product theorem) that
+        gives by \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem) that
         \begin{align*}
             G &\isomorphic \ang{a} \times \ang{b} \times \ang{c} \\
             &\isomorphic C_2 \times C_2 \times C_2.
@@ -361,11 +361,11 @@ In fact these are all groups of order 8.
 
         Now, we have 4 remaining combinations to discuss.
         \begin{itemize}
-            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (direct product theorem), since \(\ang{b} \isomorphic C_2\), \(\ang{a} \isomorphic C_4\), and \(\ang{a} \cap \ang{b} = \brce{e}\), we have
+            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\ang{b} \isomorphic C_2\), \(\ang{a} \isomorphic C_4\), and \(\ang{a} \cap \ang{b} = \brce{e}\), we have
             \[
                 G \isomorphic C_2 \times C_4.
             \]
-            \item \(G\) being abelian, and \(b^2 = a^2\), and therefore \(\para{a b \inverse}^2 = e\), so \(\ord \para{a b \inverse} = 2\). Similarly, by \autoref{thm:dpt-direct-product-theorem} (direct product theorem), we have \(G \isomorphic C_2 \times C_4\).
+            \item \(G\) being abelian, and \(b^2 = a^2\), and therefore \(\para{a b \inverse}^2 = e\), so \(\ord \para{a b \inverse} = 2\). Similarly, by \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), we have \(G \isomorphic C_2 \times C_4\).
             \item \(\ord\para{a} = 4\), \(\ord\para{b} = 2\), \(ba = a\inverse b\). By \autoref{prop:group-isomorphic-dihedral}, we see \(G \isomorphic D_8\).
             \item \(\ord\para{a} = 4\), \(b^2 = a^2\) and \(b a = a \inverse b\). We set \(i = a\), \(j = b\), \(k = ab\), \(-1 = a^2 b^2\), then this defines an isomorphism \(Q_8 \to G\) as in \autoref{tab:quartonian-group-isomorphism}.
 

@@ -219,7 +219,7 @@ A transposition of the form \(\perm{i {i + 1}}\) is called \emph{adjacent}, and 
 \begin{proof}
     Assume \(j > i\). The proof is by induction on \(\para{j - i}\).
     
-    \emph{Base Case.} When \(j = i + 1\), we have \(\para{ij} = \para{i {i + 1}}\) is itself an adjacent transposition as desired.
+    \emph{Base Case.} When \(j = i + 1\), we have \(\perm{ij} = \perm{i {i + 1}}\) is itself an adjacent transposition as desired.
 
     \emph{Inductive Step.} If \(j > i + 1\), notice that
     \[
@@ -325,7 +325,7 @@ This allows us to split the elements of \(S_n\) into two types, those with \(\si
     is the \emph{alternating group with \(n\) elements}.
 \end{definition}
 
-Note that by applying \autoref{thm:first-isomorphism} (first isomorphism theorem) on the sign homomorphism, for \(n \geq 2\), this homomorphism is surjective, and hence
+Note that by applying \autoref{thm:first-isomorphism} (First Isomorphism Theorem) on the sign homomorphism, for \(n \geq 2\), this homomorphism is surjective, and hence
 \[
     S_n / A_n \isomorphic C_2
 \]
@@ -378,7 +378,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
 \subsection{Conjugation in Symmetric and Alternating Groups}
 \label{sec:conjugation-in-sn-an}
 
-Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that conjugacy of two elements means that they have the same 'shape', and the na\"{i}ve idea in \(S_n\) is indeed correct: two elements in \(S_n\) are conjugate if and only if they have the same cycle type, as we will see in \autoref{thm:conjugacy-class-sn}.
+Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that conjugacy of two elements means that they have the same `shape', and the na\"{i}ve idea in \(S_n\) is indeed correct: two elements in \(S_n\) are conjugate if and only if they have the same cycle type, as we will see in \autoref{thm:conjugacy-class-sn}.
 
 \begin{theorem}[Conjugacy Classes in \(S_n\)]
     \label{thm:conjugacy-class-sn}
@@ -397,7 +397,7 @@ Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that con
         \[
             \sigma_1 \para{a_j^i} = a_{j +_{l_i} 1}^i, \sigma_2 \para{b_j^i} = b_{j +_{l_i} 1}^i
         \]
-        so define the 'change of basis' permutation \(\tau \in S_n\) be
+        so define the `change of basis' permutation \(\tau \in S_n\) be
         \[
             \tau \para{a_j^i} = b_j^i,
         \]
@@ -469,7 +469,7 @@ This allows us to easily count size of conjugacy classes in \(S_n\).
     \end{enumerate}
 \end{examples*}
 
-Recall by \autoref{cor:orbit-stabiliser} (orbit--stabiliser theorem), under the conjugation action, we have
+Recall by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), under the conjugation action, we have
 \[
     \abs{C_{S_n} \para{\gamma}} = \abs{S_n} / \abs{\ccl_{S_n} \para{\gamma}}
 \]
@@ -532,7 +532,7 @@ Counting conjugacy classes in \(A_n\) can also be done with some thought.
 \end{lemma}
 
 \begin{proof}
-    Applying \autoref{cor:orbit-stabiliser} (orbit--stabiliser theorem) on \(S_n\) and \(A_n\) gives
+    Applying \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem) on \(S_n\) and \(A_n\) gives
     \begin{align*}
         \abs{S_n} &= \abs{\ccl_{S_n} \para{\gamma}} \abs{C_{S_n} \para{\gamma}}, \\
         \abs{A_n} &= \abs{\ccl_{A_n} \para{\gamma}} \abs{C_{A_n} \para{\gamma}},
@@ -552,7 +552,7 @@ Counting conjugacy classes in \(A_n\) can also be done with some thought.
         \abs{\img\para{\rightbar{\sign}_{C_{S_n}\para{\gamma}}}} \in \brce{1, 2}.
     \]
 
-    Hence, by \autoref{thm:first-isomorphism} (first isomorphism theorem) and \autoref{thm:lagrange} (Lagrange's Theorem), we have
+    Hence, by \autoref{thm:first-isomorphism} (First Isomorphism Theorem) and \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \[
         \abs{C_{S_n} \para{\gamma}} / \abs{C_{A_n} \para{\gamma}} \in \brce{1, 2}.
     \]

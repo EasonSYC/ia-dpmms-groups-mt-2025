@@ -19,7 +19,7 @@ Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism, then \(\ker \phi \subgrou
         \[
             s r^k s\inverse = r^{-k} \in \ang{r}
         \]
-        by \autoref{lem:dihedral-relation} (the dihedral relation). But \(\ang{s}\) is \emph{not} normal since
+        by \autoref{lem:dihedral-relation} (Dihedral Relation). But \(\ang{s}\) is \emph{not} normal since
         \[
             r s r \inverse = s r^{-2} \notin \ang{s}.
         \]
@@ -65,7 +65,7 @@ Intuitively, this is true, since the definition of a normal subgroup is equivale
     \end{itemize}
 \end{proof}
 
-From here, we can see that the second condition in \autoref{thm:dpt-direct-product-theorem} (direct product theorem) that elements in \(H_1\) and \(H_2\) commute can be replaced by \(H_1, H_2 \normalsub G\), given that \(H_1 \cap H_2 = \trivialgp\) and that \(G = H_1 H_2\).
+From here, we can see that the second condition in \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem) that elements in \(H_1\) and \(H_2\) commute can be replaced by \(H_1, H_2 \normalsub G\), given that \(H_1 \cap H_2 = \trivialgp\) and that \(G = H_1 H_2\).
 
 Indeed, if \(H_1\) and \(H_2\) are normal in \(G\), then for any \(h_1 \in H_1\) and \(\eta_2 \in H_2\), we have
 \[
@@ -178,10 +178,10 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
     However, it is indeed true that
     \[
-        A \isomorphic B \times C \implies A / B \isomorphic C, A / C \isomorphic B.
+        A \isomorphic B \times C \implies A / \para{B \times \trivialgp} \isomorphic C, A / \para{\trivialgp \times C} \isomorphic B.
     \]
 
-    This can be easily shown by considering the projection map and applying \autoref{thm:first-isomorphism} (first isomorphism theorem) introduced below.
+    This can be easily shown by considering the projection map and applying \autoref{thm:first-isomorphism} (First Isomorphism Theorem) introduced below.
 \end{remark}
     
 \begin{theorem}[First Isomorphism theorem]
@@ -240,9 +240,9 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
     \]
 \end{proof}
 
-\autoref{thm:first-isomorphism} (first isomorphism theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\functiondomain{\phi}{G}{K}\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
+\autoref{thm:first-isomorphism} (First Isomorphism Theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\functiondomain{\phi}{G}{K}\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
 
-\begin{examples*}[Applications of \autoref{thm:first-isomorphism} (first isomorphism theorem)]
+\begin{examples*}[Applications of \autoref{thm:first-isomorphism} (First Isomorphism Theorem)]
     \begin{enumerate}
         \item The map
         \[
@@ -252,7 +252,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \[
             \ZZ / n\ZZ \isomorphic \img \phi \isomorphic C_n
         \]
-        by \autoref{thm:first-isomorphism} (first isomorphism theorem).
+        by \autoref{thm:first-isomorphism} (First Isomorphism Theorem).
 
         \item Similarly,
         \[
@@ -294,4 +294,4 @@ Taking quotients using normal subgroups allow us to break groups down into small
 
 Non-abelian simple groups are more complicated, and we will see the first of those examples in the next chapter on permutations, namely \(A_3\).
 
-It is worth noting that mathematicians have fully classified finite simple groups, and this is an extremely remarkable result in group theory. The above-mentioned families of \(C_p\) for prime \(p\) and \(A_n\) for \(n \geq 5\) are two families of those, with the rest being 16 families of 'Simple Groups of Lie Type', and 26 'Sporadic Groups' (including the famous Monster Group).
+It is worth noting that mathematicians have fully classified finite simple groups, and this is an extremely remarkable result in group theory. The above-mentioned families of \(C_p\) for prime \(p\) and \(A_n\) for \(n \geq 5\) are two families of those, with the rest being 16 families of `Simple Groups of Lie Type', and 26 `Sporadic Groups' (including the famous Monster Group).

@@ -1,7 +1,7 @@
 \section{M\"{o}bius Group}
 \label{sec:mobius-group}
 
-This section is about a fantastically interesting group. It is \emph{almost} a group of bijections on \(\CC\), but we need to formally define a 'point at infinity.
+This section is about a fantastically interesting group. It is \emph{almost} a group of bijections on \(\CC\), but we need to formally define a `point at infinity'.
 
 \subsection{M\"{o}bius Transformations}
 
@@ -13,7 +13,7 @@ This section is about a fantastically interesting group. It is \emph{almost} a g
     \]
 \end{definition}
 
-The geometric explanation of a 'sphere' is as follows. Consider the map defined in \autoref{fig:stereographic-projection-riemann-sphere}, the \emph{stereographic projection}
+The geometric explanation of a `sphere' is as follows. Consider the map defined in \autoref{fig:stereographic-projection-riemann-sphere}, the \emph{stereographic projection}
 \[
     \functiondomain{\pi}{\CC}{S^2}.
 \]
@@ -24,7 +24,7 @@ The geometric explanation of a 'sphere' is as follows. Consider the map defined 
     \label{fig:stereographic-projection-riemann-sphere}
 \end{figure}
 
-This identifies \(\CC\) with all the points of the sphere, except for the 'North Pole' of the sphere, which corresponds to \(\infty\).
+This identifies \(\CC\) with all the points of the sphere, except for the `North Pole' of the sphere, which corresponds to \(\infty\).
 
 \begin{remark}
     In geometry terms, we may also think of this as the \emph{complex projective line}, \(\CP^{1}\).
@@ -139,7 +139,7 @@ One important way to study M\"{o}bius transformations is via their \emph{fixed p
     \]
 \end{definition}
 
-Recall that for \(\Isom\para{\CC}\), there is \autoref{lem:three-point-lemma} (the three--point lemma). There is a similar lemma for the M\"{o}bius group.
+Recall that for \(\Isom\para{\CC}\), there is \autoref{lem:three-point-lemma} (Three--Point Lemma). There is a similar lemma for the M\"{o}bius group.
 
 \begin{lemma}[Three--Point Lemma for \(\mobius\)]
     \label{lem:three-point-mobius}%
@@ -234,7 +234,7 @@ We can see that any M\"{o}bius transformation has at least \(1\) fixed point in 
     Then the map \(\mu = \beta\inverse \circ \alpha \in \mobius\) gives a construction as desired.
 \end{proof}
 
-From \autoref{lem:three-point-mobius} (the three--point lemma for M\"{o}bius group), we see that the \(\mu\) given by \autoref{lem:triple-transitive} is \emph{unique}. We say the action \(\mobius \actson \CC\compactify\) is \textbf{sharply triply transitive}.
+From \autoref{lem:three-point-mobius} (Three--Point Lemma for the M\"{o}bius Group), we see that the \(\mu\) given by \autoref{lem:triple-transitive} is \emph{unique}. We say the action \(\mobius \actson \CC\compactify\) is \textbf{sharply triply transitive}.
 
 This property allows us to give the following definition, which will show significance later when the geometry of the Riemann Sphere is discussed.
 
@@ -250,7 +250,7 @@ This property allows us to give the following definition, which will show signif
     \]
 \end{definition}
 
-Similar to what we did in dihedral groups, we may use \autoref{lem:three-point-mobius} (the three--point lemma for M\"{o}bius group) to find a generating set for \(\mobius\).
+Similar to what we did in dihedral groups, we may use \autoref{lem:three-point-mobius} (Three--Point Lemma for the M\"{o}bius Group) to find a generating set for \(\mobius\).
 
 \begin{proposition}[Generating Set for \(\mobius\)]
     \label{prop:generating-set-mobius}%
@@ -265,7 +265,7 @@ Similar to what we did in dihedral groups, we may use \autoref{lem:three-point-m
 Instead of showing this by explicit construction by elementary algebra, we show this similarly to what we did for dihedral groups.
 
 \begin{proof}
-    Let \(\mu \in \mobius\), and \(z_1 = \mu\para{0}\), \(z_2 = \mu\para{1}\), and \(z_3 = \mu\para{\infty}\). We 'decompose' \(\mu\) by the following three steps.
+    Let \(\mu \in \mobius\), and \(z_1 = \mu\para{0}\), \(z_2 = \mu\para{1}\), and \(z_3 = \mu\para{\infty}\). We `decompose' \(\mu\) by the following three steps.
 
     \begin{enumerate}
         \item Construct \(\mu_1\) such that \(\mu_1 \para{z_3} = \infty\). If \(z_3 = \infty\), we take \(\mu_1 = \identity_{\CC\compactify}\), or if \(z_3 \neq \infty\), take
@@ -301,7 +301,7 @@ Instead of showing this by explicit construction by elementary algebra, we show 
             1 &\mapsto z_2, \\
             \infty &\mapsto z_3,
         \end{align*}
-        which are the same as \(\mu\). Therefore, by \autoref{lem:three-point-mobius} (the three--point lemma for M\"{o}bius group), we have
+        which are the same as \(\mu\). Therefore, by \autoref{lem:three-point-mobius} (Three--Point Lemma for the M\"{o}bius Group), we have
         \[
             \mu = \mu_1\inverse \circ \mu_2\inverse \circ \mu_3\inverse,
         \]
@@ -337,7 +337,7 @@ We consider the geometry that M\"{o}bius maps preserve.
     \label{fig:circles-in-riemann-sphere}
 \end{figure}
 
-To visualise this, a circle in \(\CC\compactify\) gives a Euclidean straight line in \(\CC\) when it is a circle passing through the 'North Pole' of the Riemann sphere.
+To visualise this, a circle in \(\CC\compactify\) gives a Euclidean straight line in \(\CC\) when it is a circle passing through the `North Pole' of the Riemann sphere.
 
 \begin{theorem}[M\"{o}bius Transformations Preserve Circles]
     \label{thm:mobius-preserve-circles}%
