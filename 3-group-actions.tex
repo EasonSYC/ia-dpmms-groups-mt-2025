@@ -161,18 +161,18 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \begin{enumerate}
         \item The \emph{orbit} of \(x\) is the set
         \[
-            \orb_{G}\para{x} = Gx = \set{y \in X}{\exists g \in G: y = gx}.
+            \Orb_{G}\para{x} = Gx = \set{y \in X}{\exists g \in G: y = gx}.
         \]
         \item The \emph{stabiliser} of \(x\) is the set
         \[
-            \stab_{G}\para{x} = \set{g \in G}{g\para{x} = x}.
+            \Stab_{G}\para{x} = \set{g \in G}{g\para{x} = x}.
         \]
     \end{enumerate}
 
     Note some authors use \(G_x\) for stabilisers, where \(x\) is a subscript.
 
     \begin{itemize}
-        \item If \(\orb_{G}\para{x} = X\), we say the action is \emph{transitive}. (We will see soon that this statement is equivalent with for \emph{all} \(x \in X\) or for \emph{some} \(x \in X\).)
+        \item If \(\Orb_{G}\para{x} = X\), we say the action is \emph{transitive}. (We will see soon that this statement is equivalent with for \emph{all} \(x \in X\) or for \emph{some} \(x \in X\).)
         \item If every element \(g \in G\) (except the identity \(g = e\)) has an \(x \in X\) such that \(gx \neq x\), then we say the action is \emph{faithful}.
     \end{itemize}
 \end{definition}
@@ -185,46 +185,46 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \label{prop:stabilisers-subgroups-orbits-partition}%
     Suppose \(G \actson X\). Then
     \begin{enumerate}
-        \item \(\stab_{G} \para{x} \subgroup G\) for any \(x \in X\).
+        \item \(\Stab_{G} \para{x} \subgroup G\) for any \(x \in X\).
         \item The orbits
         \[
-            \set{\orb_{G}\para{y}}{y \in X}
+            \set{\Orb_{G}\para{y}}{y \in X}
         \]
         form a partition of \(X\).
     \end{enumerate}
 \end{proposition}
 
 \begin{remark}
-    The second part of \autoref{prop:stabilisers-subgroups-orbits-partition} tells us that if \(\orb\para{x} = X\) for some \(x \in X\), then there is only one orbit, and hence \(\orb\para{x} = X\) for all \(x \in X\).
+    The second part of \autoref{prop:stabilisers-subgroups-orbits-partition} tells us that if \(\Orb\para{x} = X\) for some \(x \in X\), then there is only one orbit, and hence \(\Orb\para{x} = X\) for all \(x \in X\).
 \end{remark}
 
 \begin{proof}
     \begin{enumerate}
-        \item We check that \(\stab_{G} \para{x}\) satisfies \autoref{def:subgroup} (Subgroup). If \(g, h \in \stab_{G}\para{x}\), then
+        \item We check that \(\Stab_{G} \para{x}\) satisfies \autoref{def:subgroup} (Subgroup). If \(g, h \in \Stab_{G}\para{x}\), then
         \begin{align*}
             \para{gh} x &= g\para{h\para{x}} && \text{\autoref{def:group-action} (Group Action)} \\
-            &= g\para{x} && h \in \stab_{G} \para{x} \\
-            &= x, && g \in \stab_{G} \para{x}
+            &= g\para{x} && h \in \Stab_{G} \para{x} \\
+            &= x, && g \in \Stab_{G} \para{x}
         \end{align*}
-        so \(gh \in \stab_{G} \para{x}\).
+        so \(gh \in \Stab_{G} \para{x}\).
 
-        Also, \(ex = x\) from \autoref{def:group-action} (the definition of a group action), so \(e \in \stab_G \para{x}\).
+        Also, \(ex = x\) from \autoref{def:group-action} (the definition of a group action), so \(e \in \Stab_G \para{x}\).
 
-        Finally, fir \(g \in \stab_G \para{x}\),
+        Finally, fir \(g \in \Stab_G \para{x}\),
         \begin{align*}
-            g\inverse x &= g\inverse \para{gx} && g \in \stab_{G} \para{x} \\
+            g\inverse x &= g\inverse \para{gx} && g \in \Stab_{G} \para{x} \\
             &= \para{g\inverse g} x && \text{\autoref{def:group-action} (Group Action)} \\
             &= ex \\
             &= x, && \text{\autoref{def:group-action} (Group Action)}
         \end{align*}
-        so \(g\inverse \in \stab_{G} \para{x}\).
+        so \(g\inverse \in \Stab_{G} \para{x}\).
 
-        Hence, \(\stab_{G} \para{x} \subgroup G\).
+        Hence, \(\Stab_{G} \para{x} \subgroup G\).
 
         \item The proof is similar to the proof of \autoref{lem:cosets-partition} (Cosets Partition).
         \begin{itemize}
-            \item For any \(x \in X\), \(x = ex\) for \(e \in G\), so \(x \in \orb_G \para{x}\), so indeed orbits cover \(X\).
-            \item If \(\orb_{G} \para{x_1} \cap \orb_{G} \para{x_2} \neq \emptyset\), then there is \(y = g_1 x_1 = g_2 x_2\) for some \(g_1, g_2 \in G\).
+            \item For any \(x \in X\), \(x = ex\) for \(e \in G\), so \(x \in \Orb_G \para{x}\), so indeed orbits cover \(X\).
+            \item If \(\Orb_{G} \para{x_1} \cap \Orb_{G} \para{x_2} \neq \emptyset\), then there is \(y = g_1 x_1 = g_2 x_2\) for some \(g_1, g_2 \in G\).
         
             Hence,
             \begin{align*}
@@ -232,17 +232,17 @@ We in fact can learn a huge amount about groups by thinking about group actions.
                 &= g_1 \inverse \para{g_1 x_1} \\
                 &= g_1 \inverse \para{g_2 x_2} \\
                 &= \para{g_1 \inverse g_2} x_2 \\
-                &\in \orb_{G} \para{x_2}.
+                &\in \Orb_{G} \para{x_2}.
             \end{align*}
 
             Moreover, any \(g x_1\) can be written as
             \[
-                g x_1 = g \para{g_1\inverse g_2} x_2 \in \orb_{G} \para{x_2}.
+                g x_1 = g \para{g_1\inverse g_2} x_2 \in \Orb_{G} \para{x_2}.
             \]
 
-            Hence, \(\orb_{G} \para{x_1} \subseteq \orb_{G} \para{x_2}\). Likewise, \(\orb_{G} \para{x_2} \subseteq \orb_{G} \para{x_1}\), so we have
+            Hence, \(\Orb_{G} \para{x_1} \subseteq \Orb_{G} \para{x_2}\). Likewise, \(\Orb_{G} \para{x_2} \subseteq \Orb_{G} \para{x_1}\), so we have
             \[
-                \orb_{G} \para{x_1} = \orb_{G} \para{x_2}
+                \Orb_{G} \para{x_1} = \Orb_{G} \para{x_2}
             \]
             as desired.
         \end{itemize}
@@ -258,7 +258,7 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \end{align*}
     so
     \begin{align*}
-        \orb_{D_{2n}}\para{x} &= \set{e^{\frac{2 \pi i j}{n}}}{0 \leq j < n} \\
+        \Orb_{D_{2n}}\para{x} &= \set{e^{\frac{2 \pi i j}{n}}}{0 \leq j < n} \\
         &= \brce{n\text{-th roots of unity}}.
     \end{align*}
 
@@ -268,7 +268,7 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \]
     so
     \[
-        \stab_{D_{2n}}\para{x} = \brce{r, s}.
+        \Stab_{D_{2n}}\para{x} = \brce{r, s}.
     \]
 \end{example*}
 
@@ -282,11 +282,11 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \label{thm:orbit-stabiliser}%
     Suppose \(G \actson X\). Let \(x \in X\), the map
     \[
-        g \stab_{G}\para{x} \mapsto gx
+        g \Stab_{G}\para{x} \mapsto gx
     \]
     defines a well-defined bijection
     \[
-        G / \stab_{G}\para{x} \to \orb_{G}\para{x}.
+        G / \Stab_{G}\para{x} \to \Orb_{G}\para{x}.
     \]
 \end{theorem}
 
@@ -296,18 +296,18 @@ We first prove a corollary of this theorem, naming the counting version of this.
     \label{cor:orbit-stabiliser}%
     If \(G \actson X\) and \(x \in X\), then
     \[
-        \abs{G} = \abs{\orb_{G}\para{x}} \abs{\stab_{G}\para{x}}.
+        \abs{G} = \abs{\Orb_{G}\para{x}} \abs{\Stab_{G}\para{x}}.
     \]
 \end{corollary}
 
 \begin{proof}
     \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem) gives
     \[
-        \abs{\orb_{G} \para{x}} = \abs{G / \stab_{G} \para{x}},
+        \abs{\Orb_{G} \para{x}} = \abs{G / \Stab_{G} \para{x}},
     \]
     and \autoref{thm:lagrange} (Lagrange's Theorem) gives
     \[
-        \abs{G / \stab_{G} \para{x}} = \abs{G} / \abs{\stab_{G} \para{x}}.
+        \abs{G / \Stab_{G} \para{x}} = \abs{G} / \abs{\Stab_{G} \para{x}}.
     \]
 
     This gives the result as desired.
@@ -318,11 +318,11 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 \begin{example*}[\(D_{2n} \actson X_n\)]
     We see that if \(x \in X_n\) is a vertex, then
     \[
-        \abs{\orb_{D_{2n}} \para{x}} = n
+        \abs{\Orb_{D_{2n}} \para{x}} = n
     \]
     and
     \[
-        \abs{\stab_{D_{2n}} \para{x}} = 2.
+        \abs{\Stab_{D_{2n}} \para{x}} = 2.
     \]
 
     This gives an easy (but circular) `proof' that
@@ -334,7 +334,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 \begin{proof}[of \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem)]
     We write
     \[
-        S = \stab_{G} \para{x},
+        S = \Stab_{G} \para{x},
     \]
     and define
     \[
@@ -358,7 +358,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
         \end{align*}
         since \(s \in S\) gives \(sx = x\), as required.
 
-        \item \textbf{\(\phi\) is surjective.} For any \(gx \in \orb_{G} \para{x}\), \(g \in G\), we note
+        \item \textbf{\(\phi\) is surjective.} For any \(gx \in \Orb_{G} \para{x}\), \(g \in G\), we note
         \[
             \phi\para{gS} = gx
         \]
@@ -373,7 +373,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
             &= ex \\
             &= x,
         \end{align*}
-        so \(s \in \stab_{G} \para{x}\), and hence \(s \in S\).
+        so \(s \in \Stab_{G} \para{x}\), and hence \(s \in S\).
 
         Therefore,
         \begin{align*}
@@ -391,20 +391,20 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 
     As in \autoref{fig:symmetries-of-a-cube}, let \(x\) be the centre of a face of a cube. Then
     \[
-        \abs{\orb_{G} \para{x}} = 6,
+        \abs{\Orb_{G} \para{x}} = 6,
     \]
     while
     \[
-        \stab_{G}\para{x} \isomorphic D_8,
+        \Stab_{G}\para{x} \isomorphic D_8,
     \]
     so
     \[
-       \abs{\stab_{G}\para{x}} = 8.
+       \abs{\Stab_{G}\para{x}} = 8.
     \]
 
     Therefore,
     \begin{align*}
-        \abs{G} &= \abs{\orb_{G} \para{x}} \abs{\stab_{G} \para{x}} \\
+        \abs{G} &= \abs{\Orb_{G} \para{x}} \abs{\Stab_{G} \para{x}} \\
         &= 6 \cdot 8 \\
         &= 48.
     \end{align*}
@@ -477,18 +477,18 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
 
     From \autoref{prop:stabilisers-subgroups-orbits-partition}, \(C_p \actson X\) partition \(X\) into orbits
     \[
-        X = \orb\para{x_1} \cup \orb\para{x_2} \cup \cdots \cup \orb\para{x_k}.
+        X = \Orb\para{x_1} \cup \Orb\para{x_2} \cup \cdots \cup \Orb\para{x_k}.
     \]
 
     Hence, by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), for each \(j = 1, 2, \ldots, k\),
     \[
-        \abs{\orb\para{x_j}} \divides \abs{C_p} = p
+        \abs{\Orb\para{x_j}} \divides \abs{C_p} = p
     \]
-    so either the size of \(\orb\para{x_j}\) is \(1\), or \(p\).
+    so either the size of \(\Orb\para{x_j}\) is \(1\), or \(p\).
 
     Let \(l\) be the number of orbits with size \(1\). After re-numbering, we may assume that
     \[
-        \abs{\orb\para{x_j}} = \begin{cases}
+        \abs{\Orb\para{x_j}} = \begin{cases}
             1, & 1 \leq j \leq l, \\
             p, & j > l.
         \end{cases}
@@ -497,8 +497,8 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
     Since the orbits partition \(X\),
     \begin{align*}
         \abs{G}^{p - 1} &= \abs{X} \\
-        &= \sum_{j = 1}^{k} \abs{\orb\para{x_j}} \\
-        &= \sum_{j = 1}^{l} \abs{\orb{\para{x_j}}} + \sum_{j = l + 1}^{k} \abs{\orb{\para{x_j}}} \\
+        &= \sum_{j = 1}^{k} \abs{\Orb\para{x_j}} \\
+        &= \sum_{j = 1}^{l} \abs{\Orb{\para{x_j}}} + \sum_{j = l + 1}^{k} \abs{\Orb{\para{x_j}}} \\
         &= l + p \cdot \para{k - l}.
     \end{align*}
 
@@ -569,7 +569,7 @@ Conjugation defines another action of \(G \actson G\):
 \]
 for \(g \in G, \gamma \in X = G\). This is \textbf{very different} to the left regular action. In terms of language in actions,
 \[
-    \ccl_{G} \para{g} = \orb_{G\star} \para{g}.
+    \ccl_{G} \para{g} = \Orb_{G\star} \para{g}.
 \]
 
 From the example on abelian groups, we see that conjugating to an element itself is closely related to commutativity:
@@ -598,7 +598,7 @@ This leads to \autoref{def:centraliser-centre}.
 
 Using the language of the conjugation action, we have
 \[
-    C_G\para{g} = \stab_{G\star} \para{g}
+    C_G\para{g} = \Stab_{G\star} \para{g}
 \]
 and hence \(C_G\para{g} \subgroup G\) forms a group. Since \(Z\para{G}\) is an intersection of subgroups, it is itself a subgroup: \(Z\para{G} \subgroup G\).
 
