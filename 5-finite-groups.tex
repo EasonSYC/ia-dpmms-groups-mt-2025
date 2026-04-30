@@ -145,10 +145,10 @@ Now we are ready to classify all groups of order 4.
     By \autoref{cor:order-of-element-divides} (Corollary of Lagrange's Theorem), every non-trivial element in \(G\) has order \(2\) or \(4\).
     
     \begin{itemize}
-        \item If there is some \(g \in G\) such that \(\ord\para{g} = 4\), then \(G = \ang{g} \isomorphic C_4\).
+        \item If there is some \(g \in G\) such that \(\ord\para{g} = 4\), then \(G = \angBrac{g} \isomorphic C_4\).
         \item Otherwise, every non-trivial element has order \(2\). Let \(a, b \in G\) be distinct elements such that \(\ord{a} = \ord{b} = 2\).
         
-        Let \(H_1 = \ang{a} \isomorphic C_2\), \(H_2 = \ang{b} \isomorphic C_2\). We aim to show that \(G \isomorphic H_1 \times H_2 \isomorphic C_2 \times C_2\).
+        Let \(H_1 = \angBrac{a} \isomorphic C_2\), \(H_2 = \angBrac{b} \isomorphic C_2\). We aim to show that \(G \isomorphic H_1 \times H_2 \isomorphic C_2 \times C_2\).
 
         First, \(H_1 \cap H_2 = \trivialgp_{G}\) since \(a \neq b\), giving condition (i). Then, \(\abs{G} = \abs{H_1} \abs{H_2}\), which gives condition (iii).
 
@@ -173,9 +173,9 @@ It is useful to see when/whether a direct product of cyclic groups is cyclic -- 
 \end{theorem}
 
 \begin{proof}
-    Let \(C_{mn} = \ang{g}\). Let
+    Let \(C_{mn} = \angBrac{g}\). Let
     \[
-        H_1 = \ang{g^n} \isomorphic C_m, H_2 = \ang{g^m} \isomorphic C_n,
+        H_1 = \angBrac{g^n} \isomorphic C_m, H_2 = \angBrac{g^m} \isomorphic C_n,
     \]
     we check the hypothesis of \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem).
 
@@ -209,18 +209,18 @@ We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the c
 \begin{proof}
     By \autoref{thm:cauchy} (Cauchy's Theorem), there are \(r, s \in G\) such that \(\ord\para{r} = 3, \ord\para{s} = 2\).
 
-    Since \(\abs{\ang{r}} = 3\), we have from \autoref{thm:lagrange} (Lagrange's Theorem), that \(\abs{G : \ang{r}} = 2\), i.e. there are two cosets of \(\ang{r}\). One of them is \(\ang{r}\), and since \(s \in \ang{r}\), the other left coset is \(s\ang{r}\). Similarly, for right cosets, the right coset other than the trivial one is \(\ang{r}s\). Therefore, we have
+    Since \(\abs{\angBrac{r}} = 3\), we have from \autoref{thm:lagrange} (Lagrange's Theorem), that \(\abs{G : \angBrac{r}} = 2\), i.e. there are two cosets of \(\angBrac{r}\). One of them is \(\angBrac{r}\), and since \(s \in \angBrac{r}\), the other left coset is \(s\angBrac{r}\). Similarly, for right cosets, the right coset other than the trivial one is \(\angBrac{r}s\). Therefore, we have
     \[
-        s\ang{r} = G \setminus \ang{r} = \ang{r} s.
+        s\angBrac{r} = G \setminus \angBrac{r} = \angBrac{r} s.
     \]
 
     Hence, \(sr = r^i s\) for some \(i = 0, 1, 2\).
 
     \begin{itemize}
         \item \(i = 0\). Then \(sr = s\), so \(r = e\) which is impossible since \(\ord\para{r} = 3\).
-        \item \(i = 1\). Then \(sr = rs\), so elements in \(\ang{r}\) and \(\ang{s}\) commute. By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem),
+        \item \(i = 1\). Then \(sr = rs\), so elements in \(\angBrac{r}\) and \(\angBrac{s}\) commute. By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem),
         \[
-            G \isomorphic \ang{r} \times \ang{s} \isomorphic C_3 \times C_2 \isomorphic C_6.
+            G \isomorphic \angBrac{r} \times \angBrac{s} \isomorphic C_3 \times C_2 \isomorphic C_6.
         \]
         \item \(i = 2\). Then \(sr = r^2 s = r\inverse s\) give the \emph{dihedral relation}. Therefore, by \autoref{prop:group-isomorphic-dihedral}, we have \(G \isomorphic D_6\).
     \end{itemize}
@@ -317,17 +317,17 @@ In fact these are all groups of order 8.
         \]
         gives by \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem) that
         \begin{align*}
-            G &\isomorphic \ang{a} \times \ang{b} \times \ang{c} \\
+            G &\isomorphic \angBrac{a} \times \angBrac{b} \times \angBrac{c} \\
             &\isomorphic C_2 \times C_2 \times C_2.
         \end{align*}
 
-        \item We now suppose that there is an \(a \in G\) such that \(\ord\para{a} = 4\). Let \(b \in G \setminus \ang{a}\), and we have from \autoref{thm:lagrange} (Lagrange's Theorem) that
+        \item We now suppose that there is an \(a \in G\) such that \(\ord\para{a} = 4\). Let \(b \in G \setminus \angBrac{a}\), and we have from \autoref{thm:lagrange} (Lagrange's Theorem) that
         \[
-            \abs{G : \ang{a}} = 2
+            \abs{G : \angBrac{a}} = 2
         \]
         so
         \[
-            b\ang{a} = G \setminus \ang{a} = \ang{a} b.
+            b\angBrac{a} = G \setminus \angBrac{a} = \angBrac{a} b.
         \]
 
         Therefore,
@@ -351,17 +351,17 @@ In fact these are all groups of order 8.
             \item If \(i = 3\), this gives \(ba = a^3 b = a\inverse b\), the dihedral relation. We leave this case here.
         \end{itemize}
 
-        On the other hand, note that if \(b^2 \in b \ang{a}\), then \(b \in \ang{a}\), which is not true. So \(b^2 \in \ang{a}\), and we get several cases here.
+        On the other hand, note that if \(b^2 \in b \angBrac{a}\), then \(b \in \angBrac{a}\), which is not true. So \(b^2 \in \angBrac{a}\), and we get several cases here.
         \begin{itemize}
             \item \(b^2 = e\). We leave this for future discussion.
-            \item \(b^2 = a\). Hence, \(\ord\para{b} = 8\), and hence \(G = \ang{b} \isomorphic C_8\).
+            \item \(b^2 = a\). Hence, \(\ord\para{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).
             \item \(b^2 = a^2\). We leave this for future discussion.
-            \item \(b^2 = a^3 = a\inverse\). Hence, \(\ord\para{b} = 8\), and hence \(G = \ang{b} \isomorphic C_8\).
+            \item \(b^2 = a^3 = a\inverse\). Hence, \(\ord\para{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).
         \end{itemize}
 
         Now, we have 4 remaining combinations to discuss.
         \begin{itemize}
-            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\ang{b} \isomorphic C_2\), \(\ang{a} \isomorphic C_4\), and \(\ang{a} \cap \ang{b} = \brce{e}\), we have
+            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\angBrac{b} \isomorphic C_2\), \(\angBrac{a} \isomorphic C_4\), and \(\angBrac{a} \cap \angBrac{b} = \brce{e}\), we have
             \[
                 G \isomorphic C_2 \times C_4.
             \]

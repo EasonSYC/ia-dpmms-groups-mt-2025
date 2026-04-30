@@ -15,13 +15,13 @@ Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism, then \(\ker \phi \subgrou
     \begin{enumerate}
         \item \(\trivialgp \normalsub G\) and \(G \normalsub G\) for any group \(G\).
         \item All subgroups of an abelian group is normal. If \(G\) is abelian, and \(H \subgroup G\), then \(H \normalsub G\).
-        \item \(\ang{r} \normalsub D_{2n}\) since
+        \item \(\angBrac{r} \normalsub D_{2n}\) since
         \[
-            s r^k s\inverse = r^{-k} \in \ang{r}
+            s r^k s\inverse = r^{-k} \in \angBrac{r}
         \]
-        by \autoref{lem:dihedral-relation} (Dihedral Relation). But \(\ang{s}\) is \emph{not} normal since
+        by \autoref{lem:dihedral-relation} (Dihedral Relation). But \(\angBrac{s}\) is \emph{not} normal since
         \[
-            r s r \inverse = s r^{-2} \notin \ang{s}.
+            r s r \inverse = s r^{-2} \notin \angBrac{s}.
         \]
         \item Suppose \(\functiondomain{\phi}{G}{G'}\) is a homomorphism. If \(h \in \ker \phi\), \(g \in G\), then
         \[
@@ -166,7 +166,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \[
             G / H \isomorphic C_2.
         \]
-        \item In particular, \(C_n \isomorphic \ang{r} \normalsub D_{2n}\), and \(D_{2n} / C_n \isomorphic C_2\).
+        \item In particular, \(C_n \isomorphic \angBrac{r} \normalsub D_{2n}\), and \(D_{2n} / C_n \isomorphic C_2\).
     \end{enumerate}
 \end{examples*}
 
@@ -183,7 +183,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
     This can be easily shown by considering the projection map and applying \autoref{thm:first-isomorphism} (First Isomorphism Theorem) introduced below.
 
-    However, note that if \(H_1, H_2\) are isomorphic normal subgroups of \(G\), this does \emph{not} necessarily imply that \(G / H_1 \isomorphic G / H_2\). An infinite example would be \(\ZZ / n\ZZ\) where \(n\) can be any integer, and a finite one would be considering \(C_2 \times C_4\) where \(C_2 = \ang{a}\) and \(C_4 = \ang{b}\), and taking the quotient by \(\ang{\para{a, e}}\), or \(\ang{\para{e, b^2}}\) -- the former produces \(C_4\) and the latter produces \(C_2 \times C_2\).
+    However, note that if \(H_1, H_2\) are isomorphic normal subgroups of \(G\), this does \emph{not} necessarily imply that \(G / H_1 \isomorphic G / H_2\). An infinite example would be \(\ZZ / n\ZZ\) where \(n\) can be any integer, and a finite one would be considering \(C_2 \times C_4\) where \(C_2 = \angBrac{a}\) and \(C_4 = \angBrac{b}\), and taking the quotient by \(\angBrac{\para{a, e}}\), or \(\angBrac{\para{e, b^2}}\) -- the former produces \(C_4\) and the latter produces \(C_2 \times C_2\).
 \end{remark}
     
 \begin{theorem}[First Isomorphism theorem]
@@ -291,7 +291,7 @@ Taking quotients using normal subgroups allow us to break groups down into small
 \begin{example*}[Simple Abelian Groups]
     \(C_p\) is simple whenever \(p\) is a prime. Since any subgroup of an abelian group is simple, a simple abelian group must have no proper subgroups, and for finite groups, \(C_p\) for prime \(p\)s are all of those.
 
-    If \(G\) is an infinite abelian group and \(e \neq x \in G\) has infinite order, then \(\ang{x^2} \subgroup G\) is a proper subgroup; if \(x\) has finite order, then \(\ang{x}\) is a proper subgroup. Therefore, there are no infinite simple abelian groups. 
+    If \(G\) is an infinite abelian group and \(e \neq x \in G\) has infinite order, then \(\angBrac{x^2} \subgroup G\) is a proper subgroup; if \(x\) has finite order, then \(\angBrac{x}\) is a proper subgroup. Therefore, there are no infinite simple abelian groups. 
 \end{example*}
 
 Non-abelian simple groups are more complicated, and we will see the first of those examples in the next chapter on permutations, namely \(A_3\).
