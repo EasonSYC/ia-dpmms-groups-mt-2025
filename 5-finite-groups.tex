@@ -209,7 +209,7 @@ We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the c
 \begin{proof}
     By \autoref{thm:cauchy} (Cauchy's Theorem), there are \(r, s \in G\) such that \(\ord\para{r} = 3, \ord\para{s} = 2\).
 
-    Since \(\abs{\angBrac{r}} = 3\), we have from \autoref{thm:lagrange} (Lagrange's Theorem), that \(\abs{G : \angBrac{r}} = 2\), i.e. there are two cosets of \(\angBrac{r}\). One of them is \(\angBrac{r}\), and since \(s \in \angBrac{r}\), the other left coset is \(s\angBrac{r}\). Similarly, for right cosets, the right coset other than the trivial one is \(\angBrac{r}s\). Therefore, we have
+    Since \(\abs{\angBrac{r}} = 3\), we have from \autoref{thm:lagrange} (Lagrange's Theorem), that \(\abs{G : \angBrac{r}} = 2\), i.e. there are two cosets of \(\angBrac{r}\). One of them is \(\angBrac{r}\), and since \(s \notin \angBrac{r}\), the other left coset is \(s\angBrac{r}\). Similarly, for right cosets, the right coset other than the trivial one is \(\angBrac{r}s\). Therefore, we have
     \[
         s\angBrac{r} = G \setminus \angBrac{r} = \angBrac{r} s.
     \]
