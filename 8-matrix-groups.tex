@@ -52,7 +52,7 @@ gives an identity. However, we know not all matrices are invertible.
     \[
         \SL_n\para{\RR} = \ker \det = \set{\vm{M} \in \matrixset_n \para{\RR}}{\det \vm{M} = 1}
     \]
-    is the \emph{special linear group of \(n \times n\) matrices over \(RR\)}.
+    is the \emph{special linear group of \(n \times n\) matrices over \(\RR\)}.
 \end{definition}
 
 By \autoref{thm:first-isomorphism} (First Isomorphism Theorem), we have
@@ -216,7 +216,7 @@ be the \emph{Euclidean norm}.
 
 \begin{definition}[Orthogonal Group]
     \label{def:orthogonal-group}%
-    The \emph{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_r\para{\RR}\) that preserve distance in \(\RR^n\):
+    The \emph{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_n\para{\RR}\) that preserve distance in \(\RR^n\):
     \[
         \Or\para{n} = \set{\vm{M} \in \GL_n\para{\RR}}{\forall \vm{v} \in \RR^n: \norm{\vm{Mv}} = \norm{\vm{v}}}.
     \]
@@ -429,7 +429,7 @@ We study some properties on those reflections.
 \end{proof}
 
 \begin{remark}
-    To see that reflections are in \(\SO\para{n} \setminus \Or\para{n}\) indeed, let \(\norm{\vm{v}} = 1\), and we pick an orthonormal basis
+    To see that reflections are in \(\Or\para{n} \setminus \SO\para{n}\) indeed, let \(\norm{\vm{v}} = 1\), and we pick an orthonormal basis
     \[
         \brce{\vm{v}_1, \vm{v}_2, \ldots, \vm{v}_{n - 1}}
     \]
@@ -451,7 +451,7 @@ We study some properties on those reflections.
     Therefore, \(\det S_{\vm{v}} = -1\), and \(S_{\vm{v}} \notin \SO\para{n}\).
 \end{remark}
 
-Reflections are in general not the only elements of \(\SO\para{n} \setminus \Or\para{n}\), specifically for \(n \geq 3\). A significant reason we study those reflections is they provide a useful generating set for \(\Or\para{n}\). Even stronger, we have \autoref{thm:reflections-generate}.
+Reflections are in general not the only elements of \(\Or\para{n} \setminus \SO\para{n}\), specifically for \(n \geq 3\). A significant reason we study those reflections is they provide a useful generating set for \(\Or\para{n}\). Even stronger, we have \autoref{thm:reflections-generate}.
 
 \begin{theorem}[Reflections Generate \(\Or\para{n}\)]
     \label{thm:reflections-generate}%
