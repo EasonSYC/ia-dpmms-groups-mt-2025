@@ -9,7 +9,7 @@ This section is about a fantastically interesting group. It is \emph{almost} a g
     \label{def:riemann-sphere}%
     The \emph{Riemann Sphere} is
     \[
-        \CC\compactify = \CC \cup \brce{\infty}.
+        \CC\compactify = \CC \cup \Bqty{\infty}.
     \]
 \end{definition}
 
@@ -38,7 +38,7 @@ This identifies \(\CC\) with all the points of the sphere, except for the `North
         \item If \(c \neq 0\), then
         \[
             \functionmap{\mu}{z}{\begin{cases}
-                \frac{az + b}{cz + d}, & z \in \CC \setminus \brce{-\frac{d}{c}}, \\
+                \frac{az + b}{cz + d}, & z \in \CC \setminus \Bqty{-\frac{d}{c}}, \\
                 \infty, & z = - \frac{d}{c} \\
                 \frac{a}{c}, & z = \infty.
             \end{cases}}
@@ -54,7 +54,7 @@ This identifies \(\CC\) with all the points of the sphere, except for the `North
 
     We usually just write
     \[
-        \mu\para{z} = \frac{az + b}{cz + d}
+        \mu\pqty{z} = \frac{az + b}{cz + d}
     \]
     and interpret the different cases appropriately.
 
@@ -63,32 +63,26 @@ This identifies \(\CC\) with all the points of the sphere, except for the `North
 
 We compute the composition of two M\"{o}bius transformations. Let
 \[
-    \mu_{1} \para{z} = \frac{a_1 z + b_1}{c_1 z + d_1}, \mu_{2} \para{z} = \frac{a_2 z + b_2}{c_2 z + d_2},
+    \mu_{1} \pqty{z} = \frac{a_1 z + b_1}{c_1 z + d_1}, \mu_{2} \pqty{z} = \frac{a_2 z + b_2}{c_2 z + d_2},
 \]
 then
 \[
-    \mu_{1} \circ \mu_{2} \para{z} = \frac{\para{a_1 a_2 + b_1 c_2} z + \para{a_1 b_2 + b_1 d_2}}{\para{c_1 a_2 + d_1 c_2} z + \para{c_1 b_2 + d_1 d_2}}.
+    \mu_{1} \circ \mu_{2} \pqty{z} = \frac{\pqty{a_1 a_2 + b_1 c_2} z + \pqty{a_1 b_2 + b_1 d_2}}{\pqty{c_1 a_2 + d_1 c_2} z + \pqty{c_1 b_2 + d_1 d_2}}.
 \]
 
 We may compare this with matrix multiplication:
 \[
-    \begin{pmatrix}
-        a_1 & b_1 \\ c_1 & d_1
-    \end{pmatrix}
-    \begin{pmatrix}
-        a_2 & b_2 \\ c_2 & d_2
-    \end{pmatrix}
+    \pmqty{a_1 & b_1 \\ c_1 & d_1}
+    \pmqty{a_2 & b_2 \\ c_2 & d_2}
     =
-    \begin{pmatrix}
-        a_1 a_2 + b_1 c_2 & a_1 b_2 + b_1 d_2 \\
-        c_1 a_2 + d_1 c_2 & c_1 b_2 + d_1 d_2
-    \end{pmatrix},
+    \pmqty{a_1 a_2 + b_1 c_2 & a_1 b_2 + b_1 d_2 \\
+        c_1 a_2 + d_1 c_2 & c_1 b_2 + d_1 d_2},
 \]
 and using the fact that the determinant is multiplicative, we see that composition does define a binary operation on \(\mobius\).
 
 \begin{theorem}[M\"{o}bius Group]
     \label{thm:mobius-group}%
-    \(\para{\mobius, \circ, \identity_{\CC\compactify}}\) is a group.
+    \(\pqty{\mobius, \circ, \identity_{\CC\compactify}}\) is a group.
 \end{theorem}
 
 \begin{proof}
@@ -100,7 +94,7 @@ and using the fact that the determinant is multiplicative, we see that compositi
 
     For \(\functionmap{\mu}{z}{\frac{az + b}{cz + d}}\), let \(\functionmap{\nu}{z}{\frac{dz - b}{-cz + a}}\), then
     \[
-        \mu \nu = \frac{\para{ad - bc}{z}}{ad - bc} = z
+        \mu \nu = \frac{\pqty{ad - bc}{z}}{ad - bc} = z
     \]
     gives the identity. (Compare this to inverse of matrices.)
 \end{proof}
@@ -108,38 +102,38 @@ and using the fact that the determinant is multiplicative, we see that compositi
 There is a na\"{i}ve group action from those mappings: \(\mobius \actson \CC\compactify\) by M\"{o}bius transformations.
 
 \begin{remark}
-    The previous observation with matrix multiplication shows that the na\"{i}ve mapping is a surjective homomorphism \(\functiondomain{\phi}{\GL_{2} \para{\CC}}{\mobius}\). In fact, we see that the restriction \(\functiondomain{\rightbar{\phi}_{\SL_{2} \para{\CC}}}{\SL_{2} \para{\CC}}{\mobius}\) is surjective as well, and the kernels are
+    The previous observation with matrix multiplication shows that the na\"{i}ve mapping is a surjective homomorphism \(\functiondomain{\phi}{\GL_{2} \pqty{\CC}}{\mobius}\). In fact, we see that the restriction \(\functiondomain{\rightbar{\phi}_{\SL_{2} \pqty{\CC}}}{\SL_{2} \pqty{\CC}}{\mobius}\) is surjective as well, and the kernels are
     \[
         \ker \phi = \set{\lambda \identityM}{\lambda \in \CC},
     \]
     and
     \[
-        \ker \rightbar{\phi}_{\SL_{2} \para{\CC}} = \brce{\pm \identityM}.
+        \ker \rightbar{\phi}_{\SL_{2} \pqty{\CC}} = \Bqty{\pm \identityM}.
     \]
 
     In the future, we see by taking quotients, we have
     \[
-        \mobius \isomorphic \GL_{2}\para{\CC} / \set{\lambda \identityM}{\lambda \in \CC} = \PGL_{2} \para{\CC},
+        \mobius \isomorphic \flatfrac{\GL_{2}\pqty{\CC}}{\set{\lambda \identityM}{\lambda \in \CC}} = \PGL_{2} \pqty{\CC},
     \]
     and
     \[
-        \mobius \isomorphic \SL_{2}\para{\CC} / \brce{\pm \identityM} = \PSL_{2} \para{\CC}.
+        \mobius \isomorphic \flatfrac{\SL_{2}\pqty{\CC}}{\Bqty{\pm \identityM}} = \PSL_{2} \pqty{\CC}.
     \]
 
-    This shows \(\PGL_{2} \para{\CC} \isomorphic \PSL_{2} \para{\CC}\), and provides actions \(\PGL_{2} \para{\CC} \actson \CP^{1}\), \(\PSL_{2} \para{\CC} \actson \CP^{1}\).
+    This shows \(\PGL_{2} \pqty{\CC} \isomorphic \PSL_{2} \pqty{\CC}\), and provides actions \(\PGL_{2} \pqty{\CC} \actson \CP^{1}\), \(\PSL_{2} \pqty{\CC} \actson \CP^{1}\).
 \end{remark}
 
 One important way to study M\"{o}bius transformations is via their \emph{fixed points}.
 
 \begin{definition}[Fixed Point]
     \label{def:fixed-point}%
-    Suppose \(\functiondomain{f}{X}{X}\) is a permutation. Then any \(x \in X\) such that \(f\para{x} = x\) is called a \emph{fixed point} of \(f\). The set of all fixed points is denoted as
+    Suppose \(\functiondomain{f}{X}{X}\) is a permutation. Then any \(x \in X\) such that \(f\pqty{x} = x\) is called a \emph{fixed point} of \(f\). The set of all fixed points is denoted as
     \[
-        \Fix\para{f} = \set{x \in X}{f\para{x} = x}.
+        \Fix\pqty{f} = \set{x \in X}{f\pqty{x} = x}.
     \]
 \end{definition}
 
-Recall that for \(\Isom\para{\CC}\), there is \autoref{lem:three-point-lemma} (Three--Point Lemma). There is a similar lemma for the M\"{o}bius group.
+Recall that for \(\Isom\pqty{\CC}\), there is \autoref{lem:three-point-lemma} (Three--Point Lemma). There is a similar lemma for the M\"{o}bius group.
 
 \begin{lemma}[Three--Point Lemma for \(\mobius\)]
     \label{lem:three-point-mobius}%
@@ -147,7 +141,7 @@ Recall that for \(\Isom\para{\CC}\), there is \autoref{lem:three-point-lemma} (T
 \end{lemma}
 
 \begin{proof}
-    Let \(\mu\para{z} = \frac{az + b}{cz + d}\). Then a fixed point \(w_i\) satisfies
+    Let \(\mu\pqty{z} = \frac{az + b}{cz + d}\). Then a fixed point \(w_i\) satisfies
     \[
         w_i = \frac{a w_i + b}{c w_i + d}.
     \]
@@ -161,10 +155,10 @@ Recall that for \(\Isom\para{\CC}\), there is \autoref{lem:three-point-lemma} (T
         \]
         and hence
         \[
-            \para{a - d} w_i + b = 0.
+            \pqty{a - d} w_i + b = 0.
         \]
 
-        This gives a linear equation with \(\geq 2\) roots, so must be trivial. So \(a = d, b = 0\), and \(\mu\para{z} = z\) as desired.
+        This gives a linear equation with \(\geq 2\) roots, so must be trivial. So \(a = d, b = 0\), and \(\mu\pqty{z} = z\) as desired.
 
         \item If all \(w_i\)s are not \(\infty\), then \(w_1, w_2\) and \(w_3\) satisfy
         \[
@@ -172,10 +166,10 @@ Recall that for \(\Isom\para{\CC}\), there is \autoref{lem:three-point-lemma} (T
         \]
         and this rearranges to
         \[
-            c w_i^2 + \para{d - a} w_i - b = 0.
+            c w_i^2 + \pqty{d - a} w_i - b = 0.
         \]
 
-        This is a quadratic with \(\geq 3\) roots, so must be trivial, and hence \(b = c = 0\) and \(a = d\), so \(\mu\para{z} = z\) as desired.
+        This is a quadratic with \(\geq 3\) roots, so must be trivial, and hence \(b = c = 0\) and \(a = d\), so \(\mu\pqty{z} = z\) as desired.
     \end{itemize}
 \end{proof}
 
@@ -185,20 +179,20 @@ We can see that any M\"{o}bius transformation has at least \(1\) fixed point in 
     \begin{enumerate}
         \item The map
         \[
-            \mu\para{z} = z + 1 = \frac{1 \cdot z + 1}{0 \cdot z + 1}
+            \mu\pqty{z} = z + 1 = \frac{1 \cdot z + 1}{0 \cdot z + 1}
         \]
         fixes \(\infty\):
         \[
-            \Fix\para{\mu} = \brce{\infty}.
+            \Fix\pqty{\mu} = \Bqty{\infty}.
         \]
 
         \item If
         \[
-        \mu\para{z} = 2z = \frac{2 \cdot z + 0}{0 \cdot z + 1},
+        \mu\pqty{z} = 2z = \frac{2 \cdot z + 0}{0 \cdot z + 1},
         \]
-        then \(\mu\) fixes \(\brce{0, \infty}\):
+        then \(\mu\) fixes \(\Bqty{0, \infty}\):
         \[
-            \Fix\para{\mu} = \brce{0, \infty}.
+            \Fix\pqty{\mu} = \Bqty{0, \infty}.
         \]
     \end{enumerate}
 \end{examples*}
@@ -207,7 +201,7 @@ We can see that any M\"{o}bius transformation has at least \(1\) fixed point in 
     \label{lem:triple-transitive}%
     For any triples of distinct points \(z_1, z_2, z_3 \in \CC\compactify\) and \(w_1, w_2, w_3 \in \CC\compactify\), there is a \(\mu \in \mobius\) such that
     \[
-        \mu\para{z_i} = w_i
+        \mu\pqty{z_i} = w_i
     \]
     for \(i = 1, 2, 3\).
 \end{lemma}
@@ -242,11 +236,11 @@ This property allows us to give the following definition, which will show signif
     \label{def:cross-ratio}%
     Let \(z_1, z_2, z_3, z_4 \in \CC_{\infty}\) be distinct. Since \(\mobius \actson \CC\compactify\) sharply triply transitively, let \(\alpha \in \mobius\) be the unique M\"{o}bius transformation such that
     \[
-        \alpha\para{z_1} = 0, \alpha\para{z_2} = 1, \alpha\para{z_3} = \infty,
+        \alpha\pqty{z_1} = 0, \alpha\pqty{z_2} = 1, \alpha\pqty{z_3} = \infty,
     \]
     and the \emph{cross ratio} of \(z_1, z_2, z_3, z_4\) is then given by
     \[
-        \brac{z_1, z_2, z_3, z_4} = \alpha\para{z_4} = \frac{z_4 - z_1}{z_4 - z_3} \cdot \frac{z_2 - z_3}{z_2 - z_1}.
+        \bqty{z_1, z_2, z_3, z_4} = \alpha\pqty{z_4} = \frac{z_4 - z_1}{z_4 - z_3} \cdot \frac{z_2 - z_3}{z_2 - z_1}.
     \]
 \end{definition}
 
@@ -265,37 +259,37 @@ Similar to what we did in dihedral groups, we may use \autoref{lem:three-point-m
 Instead of showing this by explicit construction by elementary algebra, we show this similarly to what we did for dihedral groups.
 
 \begin{proof}
-    Let \(\mu \in \mobius\), and \(z_1 = \mu\para{0}\), \(z_2 = \mu\para{1}\), and \(z_3 = \mu\para{\infty}\). We `decompose' \(\mu\) by the following three steps.
+    Let \(\mu \in \mobius\), and \(z_1 = \mu\pqty{0}\), \(z_2 = \mu\pqty{1}\), and \(z_3 = \mu\pqty{\infty}\). We `decompose' \(\mu\) by the following three steps.
 
     \begin{enumerate}
-        \item Construct \(\mu_1\) such that \(\mu_1 \para{z_3} = \infty\). If \(z_3 = \infty\), we take \(\mu_1 = \identity_{\CC\compactify}\), or if \(z_3 \neq \infty\), take
+        \item Construct \(\mu_1\) such that \(\mu_1 \pqty{z_3} = \infty\). If \(z_3 = \infty\), we take \(\mu_1 = \identity_{\CC\compactify}\), or if \(z_3 \neq \infty\), take
         \[
-            \mu_{1}\para{z} = \frac{1}{z - z_3} = \gamma \circ \beta_{- z_3} \para{z}.
+            \mu_{1}\pqty{z} = \frac{1}{z - z_3} = \gamma \circ \beta_{- z_3} \pqty{z}.
         \]
 
-        Now, let \(z_1' = \mu_1 \para{z_1}\) and \(z_2' = \mu_1 \para{z_2}\).
+        Now, let \(z_1' = \mu_1 \pqty{z_1}\) and \(z_2' = \mu_1 \pqty{z_2}\).
 
         \item Let \(\mu_2 = \beta_{- z_1'}\), i.e.
         \[
-            \mu_2\para{z} = z - z_1'.
+            \mu_2\pqty{z} = z - z_1'.
         \]
 
-        Then \(\mu_2\para{\infty} = \infty\) and \(\mu_2\para{z_1'} = 0\).
+        Then \(\mu_2\pqty{\infty} = \infty\) and \(\mu_2\pqty{z_1'} = 0\).
 
         By the construction so far,
         \[
-            \mu_2 \circ \mu_1 \para{z_3} = \infty, \mu_2 \circ \mu_1 \para{z_1} = 0.
+            \mu_2 \circ \mu_1 \pqty{z_3} = \infty, \mu_2 \circ \mu_1 \pqty{z_1} = 0.
         \]
 
-        Let \(z_2'' = \mu_2 \circ \mu_1 \para{z_2} \neq 0\).
+        Let \(z_2'' = \mu_2 \circ \mu_1 \pqty{z_2} \neq 0\).
 
         \item Let \(\mu_3 = \alpha_{\frac{1}{z_2''}}\). By construction,
         \begin{align*}
-            \mu_3 \circ \mu_2 \circ \mu_1 \para{z_1} &= 0, \\
-            \mu_3 \circ \mu_2 \circ \mu_1 \para{z_2} &= 1, \\
-            \mu_3 \circ \mu_2 \circ \mu_1 \para{z_3} &= \infty,
+            \mu_3 \circ \mu_2 \circ \mu_1 \pqty{z_1} &= 0, \\
+            \mu_3 \circ \mu_2 \circ \mu_1 \pqty{z_2} &= 1, \\
+            \mu_3 \circ \mu_2 \circ \mu_1 \pqty{z_3} &= \infty,
         \end{align*}
-        so \(\para{\mu_3 \circ \mu_2 \circ \mu_1}\inverse = \mu_1\inverse \circ \mu_2\inverse \circ \mu_3\inverse\) sends
+        so \(\pqty{\mu_3 \circ \mu_2 \circ \mu_1}\inverse = \mu_1\inverse \circ \mu_2\inverse \circ \mu_3\inverse\) sends
         \begin{align*}
             0 &\mapsto z_1, \\
             1 &\mapsto z_2, \\
@@ -323,7 +317,7 @@ We consider the geometry that M\"{o}bius maps preserve.
             \set{z \in \CC}{\abs{z - c} = r}
         \]
         for \(c \in \CC, r > 0\); or
-        \item \(L \cup \brce{\infty}\) where \(L\) is a Euclidean straight line in \(\CC\), defined as
+        \item \(L \cup \Bqty{\infty}\) where \(L\) is a Euclidean straight line in \(\CC\), defined as
         \[
             \set{z \in \CC}{\abs{z - a} = \abs{z - b}}
         \]
@@ -341,7 +335,7 @@ To visualise this, a circle in \(\CC\compactify\) gives a Euclidean straight lin
 
 \begin{theorem}[M\"{o}bius Transformations Preserve Circles]
     \label{thm:mobius-preserve-circles}%
-    If \(C \subseteq \CC\compactify\) is a circle and \(\mu \in \mobius\), then \(\mu\para{C}\) is also a circle.
+    If \(C \subseteq \CC\compactify\) is a circle and \(\mu \in \mobius\), then \(\mu\pqty{C}\) is also a circle.
 \end{theorem}
 
 \begin{proof}
@@ -354,12 +348,12 @@ To visualise this, a circle in \(\CC\compactify\) gives a Euclidean straight lin
 
     This is easy for \(\alpha_a\) and \(\beta_b\), so we verify for \(\gamma\).
     \begin{itemize}
-        \item If \(C\) is a Euclidean circle, \(\gamma\para{C}\) has equation
+        \item If \(C\) is a Euclidean circle, \(\gamma\pqty{C}\) has equation
         \begin{align*}
             \abs{\frac{1}{z} - c} = r &\iff \abs{\frac{1}{z} - c}^2 = r^2 \\
-            &\iff \para{\frac{1}{z} - c} \para{\frac{1}{\conjugate{z}} - \conjugate{c}} = r^2 \\
+            &\iff \pqty{\frac{1}{z} - c} \pqty{\frac{1}{\conjugate{z}} - \conjugate{c}} = r^2 \\
             &\iff \frac{1}{\abs{z}^2} - \frac{c}{\conjugate{z}} - \frac{\conjugate{c}}{z} + \abs{c}^2 - r^2 = 0 \\
-            &\iff \para{\abs{c}^2 - r^2} \abs{z}^2 - cz - \conjugate{c} \conjugate{z} + 1 = 0.
+            &\iff \pqty{\abs{c}^2 - r^2} \abs{z}^2 - cz - \conjugate{c} \conjugate{z} + 1 = 0.
         \end{align*}
         \begin{itemize}
             \item If \(\abs{c}^2 = r^2\), i.e. when \(C\) passes through the origin, this is equivalent to
@@ -372,9 +366,9 @@ To visualise this, a circle in \(\CC\compactify\) gives a Euclidean straight lin
             gives a straight line as required.
             \item Otherwise, \(\abs{c}^2 \neq r^2\), and the equation becomes
             \begin{align*}
-                \abs{\frac{1}{z} - c} = r &\iff \abs{z}^2 - \para{\frac{c}{\abs{c}^2 - r^2}} z - \para{\frac{\conjugate{c}}{\abs{c}^2 - r^2}} \conjugate{z} + \frac{1}{\abs{c}^2 - r^2} = 0 \\
-                &\iff \abs{z - \frac{\conjugate{c}}{\abs{c}^2 - r^2}}^2 = \frac{\abs{c}^2}{\para{\abs{c}^2 - r^2}^2} - \frac{1}{\abs{c}^2 - r^2} \\
-                &\iff \abs{z - \frac{\conjugate{c}}{\abs{c}^2 - r^2}}^2 = \frac{r^2}{\para{\abs{c}^2 - r^2}^2}
+                \abs{\frac{1}{z} - c} = r &\iff \abs{z}^2 - \pqty{\frac{c}{\abs{c}^2 - r^2}} z - \pqty{\frac{\conjugate{c}}{\abs{c}^2 - r^2}} \conjugate{z} + \frac{1}{\abs{c}^2 - r^2} = 0 \\
+                &\iff \abs{z - \frac{\conjugate{c}}{\abs{c}^2 - r^2}}^2 = \frac{\abs{c}^2}{\pqty{\abs{c}^2 - r^2}^2} - \frac{1}{\abs{c}^2 - r^2} \\
+                &\iff \abs{z - \frac{\conjugate{c}}{\abs{c}^2 - r^2}}^2 = \frac{r^2}{\pqty{\abs{c}^2 - r^2}^2}
             \end{align*}
             is a Euclidean circle.
         \end{itemize}
@@ -387,28 +381,28 @@ We now relate the cross ratio defined in \autoref{def:cross-ratio} to geometry.
 \begin{corollary}[Condition for Points in \(\CC\compactify\) to lie on a Circle]
     \(4\) points \(z_1, z_2, z_3, z_4 \in \CC\compactify\) lie on a circle if and only if their cross ratio
     \[
-        \brac{z_1, z_2, z_3, z_4} \in \RR\compactify = \RR \cup \brce{\infty}.
+        \bqty{z_1, z_2, z_3, z_4} \in \RR\compactify = \RR \cup \Bqty{\infty}.
     \]
 \end{corollary}
 
 \begin{proof}
     From \autoref{def:cross-ratio}, let \(\alpha \in \mobius\) such that
     \begin{align*}
-        \alpha \para{z_1} &= 0, \\
-        \alpha \para{z_2} &= 1, \\
-        \alpha \para{z_3} &= \infty, \\
-        \alpha \para{z_4} &= \brac{z_1, z_2, z_3, z_4}.
+        \alpha \pqty{z_1} &= 0, \\
+        \alpha \pqty{z_2} &= 1, \\
+        \alpha \pqty{z_3} &= \infty, \\
+        \alpha \pqty{z_4} &= \bqty{z_1, z_2, z_3, z_4}.
     \end{align*}
 
     We prove the two directions separately.
     \begin{itemize}
-        \item \(\implies\). If \(z_1, z_2, z_3, z_4\) lie on a circle \(C\), then by \autoref{thm:mobius-preserve-circles}, \(0, 1, \infty, \alpha\para{z_4}\) lie on a circle \(\alpha\para{C}\).
+        \item \(\implies\). If \(z_1, z_2, z_3, z_4\) lie on a circle \(C\), then by \autoref{thm:mobius-preserve-circles}, \(0, 1, \infty, \alpha\pqty{z_4}\) lie on a circle \(\alpha\pqty{C}\).
         
-        But the only circle containing \(0, 1, \infty\) is the line \(\RR\compactify\), and hence \(\alpha\para{z_4} \in \RR\compactify\) as required.
+        But the only circle containing \(0, 1, \infty\) is the line \(\RR\compactify\), and hence \(\alpha\pqty{z_4} \in \RR\compactify\) as required.
 
-        \item \(\impliedby\). If \(\brac{z_1, z_2, z_3, z_4} \in \RR\compactify\), then \(\alpha\para{z_1}, \alpha\para{z_2}, \alpha\para{z_3}, \alpha\para{z_4} \in \RR\compactify\) is a circle, so
+        \item \(\impliedby\). If \(\bqty{z_1, z_2, z_3, z_4} \in \RR\compactify\), then \(\alpha\pqty{z_1}, \alpha\pqty{z_2}, \alpha\pqty{z_3}, \alpha\pqty{z_4} \in \RR\compactify\) is a circle, so
         \[
-            z_1, z_2, z_3, z_4 \in \alpha\inverse\para{\RR\compactify}
+            z_1, z_2, z_3, z_4 \in \alpha\inverse\pqty{\RR\compactify}
         \]
         which is a circle as well, by \autoref{thm:mobius-preserve-circles}.
     \end{itemize}

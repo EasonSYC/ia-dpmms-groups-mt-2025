@@ -10,12 +10,12 @@ We return to the aspect where we started, that groups describe symmetries. Group
     \label{def:group-action}%
     An \emph{action} of a group \(G\) on a set \(X\) is a map
     \[
-        \function{\alpha}{G \times X}{X}{\para{g, x}}{\alpha\para{g, x} = gx}
+        \function{\alpha}{G \times X}{X}{\pqty{g, x}}{\alpha\pqty{g, x} = gx}
     \]
     satisfying
     \begin{enumerate}
-        \item \(\alpha\para{e, x} = ex = x\) for all \(x \in X\): the identity acts as an identity;
-        \item \(\alpha\para{g \cdot h, x} = \alpha\para{g, \alpha\para{h, x}}\), or \(\para{g \cdot h}x = g \para{hx}\) for all \(g, h \in G\) and \(x \in X\): composition is compatible.
+        \item \(\alpha\pqty{e, x} = ex = x\) for all \(x \in X\): the identity acts as an identity;
+        \item \(\alpha\pqty{g \cdot h, x} = \alpha\pqty{g, \alpha\pqty{h, x}}\), or \(\pqty{g \cdot h}x = g \pqty{hx}\) for all \(g, h \in G\) and \(x \in X\): composition is compatible.
     \end{enumerate}
 
     We write \(G \actson X\) to indicate that \(G\) acts on \(X\).
@@ -28,12 +28,12 @@ We return to the aspect where we started, that groups describe symmetries. Group
             gx = x
         \]
         is the \emph{trivial action}.
-        \item \(\Sym\para{X}\) acts on \(X\) for any set \(X\) by
+        \item \(\Sym\pqty{X}\) acts on \(X\) for any set \(X\) by
         \[
-            fx = f\para{x}.
+            fx = f\pqty{x}.
         \]
         \item If \(G \actson X\) and \(H \subgroup G\), then \(H \actson X\) by restriction.
-        \item In particular, \(\Isom\para{\CC} \subgroup \Sym\para{\CC}\) acts on \(\CC\).
+        \item In particular, \(\Isom\pqty{\CC} \subgroup \Sym\pqty{\CC}\) acts on \(\CC\).
         \item Similarly, \(D_{2n}\) acts on \(X_n\), the regular \(n\)-gon. It acts on the set of vertices
         \[
             \set{z \in \CC}{z^n = 1}.
@@ -52,7 +52,7 @@ We may think of group actions in another useful way.
     \label{thm:action-homomorphism}%
     An action of a group \(G\) on a set \(X\) is the same as a homomorphism
     \[
-        \functiondomain{\phi}{G}{\Sym\para{X}}.
+        \functiondomain{\phi}{G}{\Sym\pqty{X}}.
     \]
 \end{theorem}
 
@@ -63,57 +63,57 @@ We may think of group actions in another useful way.
     \]
     for any \(g \in G\). Now,
     \begin{align*}
-        t_{g\inverse} \para{t_g x} &= t_{g\inverse} \para{gx} \\
-        &= g\inverse \para{gx} \\
-        &= \para{g\inverse g} x \\
+        t_{g\inverse} \pqty{t_g x} &= t_{g\inverse} \pqty{gx} \\
+        &= g\inverse \pqty{gx} \\
+        &= \pqty{g\inverse g} x \\
         &= ex \\
         &= x
     \end{align*}
     so \(t_{g\inverse} \circ t_g = \identity_{X}\).
 
-    Therefore, \(t_{g\inverse}\) is \(\para{t_g}\inverse\) and hence \(t_g\) is a bijection.
+    Therefore, \(t_{g\inverse}\) is \(\pqty{t_g}\inverse\) and hence \(t_g\) is a bijection.
 
     This tells us that \(t_g\) is a permutation on \(X\),
     \[
-        t_g \in \Sym\para{X}.
+        t_g \in \Sym\pqty{X}.
     \]
 
     Therefore, we define
     \[
-        \function{\phi}{G}{\Sym\para{X}}{g}{t_{g},}
+        \function{\phi}{G}{\Sym\pqty{X}}{g}{t_{g},}
     \]
     and we prove that \(\phi\) is a homomorphism. Take \(g, h \in G\), we have
     \[
-        \phi\para{g} \phi\para{h} = t_g \circ t_h,
+        \phi\pqty{g} \phi\pqty{h} = t_g \circ t_h,
     \]
     so for all \(x \in X\),
     \begin{align*}
-        \phi\para{g} \phi\para{h} \para{x} &= t_g \circ t_h \para{x} \\
-        &= t_g \para{t_h \para{x}} \\
-        &= t_g \para{hx} \\
-        &= g \para{hx} \\
-        &= \para{gh} x \\
-        &= t_{gh} \para{x} \\
-        &= \phi\para{gh} \para{x},
+        \phi\pqty{g} \phi\pqty{h} \pqty{x} &= t_g \circ t_h \pqty{x} \\
+        &= t_g \pqty{t_h \pqty{x}} \\
+        &= t_g \pqty{hx} \\
+        &= g \pqty{hx} \\
+        &= \pqty{gh} x \\
+        &= t_{gh} \pqty{x} \\
+        &= \phi\pqty{gh} \pqty{x},
     \end{align*}
-    and hence, \(\phi\para{g} \phi\para{h} = \phi\para{gh}\).
+    and hence, \(\phi\pqty{g} \phi\pqty{h} = \phi\pqty{gh}\).
 
     Therefore, \(\phi\) is a homomorphism as required.
 
     Conversely, given a homomorphism
     \[
-        \functiondomain{\phi}{G}{\Sym\para{X}}
+        \functiondomain{\phi}{G}{\Sym\pqty{X}}
     \]
-    we may define an action \(G \actson X\) by \(gx = \phi\para{g} x\). We check this is indeed an action:
+    we may define an action \(G \actson X\) by \(gx = \phi\pqty{g} x\). We check this is indeed an action:
     \begin{enumerate}
-        \item Identity: \(ex = \phi\para{e} \para{x} = \identity_{X} \para{x} = x\).
+        \item Identity: \(ex = \phi\pqty{e} \pqty{x} = \identity_{X} \pqty{x} = x\).
         \item Compatibility:
         \begin{align*}
-            \para{gh} x &= \phi\para{gh} \para{x} \\
-            &= \phi\para{g} \phi\para{h} \para{x} \\
-            &= \phi\para{g} \para{\phi\para{h} \para{x}} \\
-            &= \phi\para{g} \para{hx} \\
-            &= g \para{hx}.
+            \pqty{gh} x &= \phi\pqty{gh} \pqty{x} \\
+            &= \phi\pqty{g} \phi\pqty{h} \pqty{x} \\
+            &= \phi\pqty{g} \pqty{\phi\pqty{h} \pqty{x}} \\
+            &= \phi\pqty{g} \pqty{hx} \\
+            &= g \pqty{hx}.
         \end{align*}
     \end{enumerate}
 \end{proof}
@@ -122,20 +122,20 @@ The left regular action allows us to think of groups as subgroups of symmetric g
 
 \begin{theorem}[Cayley's Theorem]
     \label{thm:cayley}%
-    Every group \(G\) is isomorphic to a subgroup to some \(\Sym\para{X}\). Furthermore, if \(\abs{G} < \infty\), we may choose \(X\) to be \(\abs{X} < \infty\), or even stronger, \(\abs{X} \leq \abs{G}\).
+    Every group \(G\) is isomorphic to a subgroup to some \(\Sym\pqty{X}\). Furthermore, if \(\abs{G} < \infty\), we may choose \(X\) to be \(\abs{X} < \infty\), or even stronger, \(\abs{X} \leq \abs{G}\).
 \end{theorem}
 
 \begin{proof}
     We choose in particular \(X = G\), and the left regular action gives \(G \actson X = G\). By \autoref{thm:action-homomorphism}, this is equivalent to a homomorphism
     \[
-        \functiondomain{\phi}{G}{\Sym\para{X}}
+        \functiondomain{\phi}{G}{\Sym\pqty{X}}
     \]
 
-    Let \(H = \img \para{\phi} \subgroup \Sym\para{X}\) be a subgroup. Then we may think of \(\phi\) as a \emph{surjective} homomorphism
+    Let \(H = \img \pqty{\phi} \subgroup \Sym\pqty{X}\) be a subgroup. Then we may think of \(\phi\) as a \emph{surjective} homomorphism
     \[
         \functiondomain{\phi}{G}{H},
     \]
-    and we claim that this is injective. Indeed, take \(g \in \ker\para{\phi}\), then \(\phi\para{g} = \identity_{X}\), and therefore
+    and we claim that this is injective. Indeed, take \(g \in \ker\pqty{\phi}\), then \(\phi\pqty{g} = \identity_{X}\), and therefore
     \[
         g \gamma = \gamma
     \]
@@ -143,7 +143,7 @@ The left regular action allows us to think of groups as subgroups of symmetric g
 
     Therefore, the kernel is trivial, and \(\phi\) is an injection. Therefore, \(\phi\) is a bijection,
     \[
-        G \isomorphic H \subgroup \Sym\para{X},
+        G \isomorphic H \subgroup \Sym\pqty{X},
     \]
     as required.
 
@@ -161,18 +161,18 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \begin{enumerate}
         \item The \emph{orbit} of \(x\) is the set
         \[
-            \Orb_{G}\para{x} = Gx = \set{y \in X}{\exists g \in G: y = gx}.
+            \Orb_{G}\pqty{x} = Gx = \set{y \in X}{\exists g \in G: y = gx}.
         \]
         \item The \emph{stabiliser} of \(x\) is the set
         \[
-            \Stab_{G}\para{x} = \set{g \in G}{g\para{x} = x}.
+            \Stab_{G}\pqty{x} = \set{g \in G}{g\pqty{x} = x}.
         \]
     \end{enumerate}
 
     Note some authors use \(G_x\) for stabilisers, where \(x\) is a subscript.
 
     \begin{itemize}
-        \item If \(\Orb_{G}\para{x} = X\), we say the action is \emph{transitive}. (We will see soon that this statement is equivalent with for \emph{all} \(x \in X\) or for \emph{some} \(x \in X\).)
+        \item If \(\Orb_{G}\pqty{x} = X\), we say the action is \emph{transitive}. (We will see soon that this statement is equivalent with for \emph{all} \(x \in X\) or for \emph{some} \(x \in X\).)
         \item If every element \(g \in G\) (except the identity \(g = e\)) has an \(x \in X\) such that \(gx \neq x\), then we say the action is \emph{faithful}.
     \end{itemize}
 \end{definition}
@@ -185,64 +185,64 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \label{prop:stabilisers-subgroups-orbits-partition}%
     Suppose \(G \actson X\). Then
     \begin{enumerate}
-        \item \(\Stab_{G} \para{x} \subgroup G\) for any \(x \in X\).
+        \item \(\Stab_{G} \pqty{x} \subgroup G\) for any \(x \in X\).
         \item The orbits
         \[
-            \set{\Orb_{G}\para{y}}{y \in X}
+            \set{\Orb_{G}\pqty{y}}{y \in X}
         \]
         form a partition of \(X\).
     \end{enumerate}
 \end{proposition}
 
 \begin{remark}
-    The second part of \autoref{prop:stabilisers-subgroups-orbits-partition} tells us that if \(\Orb\para{x} = X\) for some \(x \in X\), then there is only one orbit, and hence \(\Orb\para{x} = X\) for all \(x \in X\).
+    The second part of \autoref{prop:stabilisers-subgroups-orbits-partition} tells us that if \(\Orb\pqty{x} = X\) for some \(x \in X\), then there is only one orbit, and hence \(\Orb\pqty{x} = X\) for all \(x \in X\).
 \end{remark}
 
 \begin{proof}
     \begin{enumerate}
-        \item We check that \(\Stab_{G} \para{x}\) satisfies \autoref{def:subgroup} (Subgroup). If \(g, h \in \Stab_{G}\para{x}\), then
+        \item We check that \(\Stab_{G} \pqty{x}\) satisfies \autoref{def:subgroup} (Subgroup). If \(g, h \in \Stab_{G}\pqty{x}\), then
         \begin{align*}
-            \para{gh} x &= g\para{h\para{x}} && \text{\autoref{def:group-action} (Group Action)} \\
-            &= g\para{x} && h \in \Stab_{G} \para{x} \\
-            &= x, && g \in \Stab_{G} \para{x}
+            \pqty{gh} x &= g\pqty{h\pqty{x}} && \text{\autoref{def:group-action} (Group Action)} \\
+            &= g\pqty{x} && h \in \Stab_{G} \pqty{x} \\
+            &= x, && g \in \Stab_{G} \pqty{x}
         \end{align*}
-        so \(gh \in \Stab_{G} \para{x}\).
+        so \(gh \in \Stab_{G} \pqty{x}\).
 
-        Also, \(ex = x\) from \autoref{def:group-action} (the definition of a group action), so \(e \in \Stab_G \para{x}\).
+        Also, \(ex = x\) from \autoref{def:group-action} (the definition of a group action), so \(e \in \Stab_G \pqty{x}\).
 
-        Finally, for \(g \in \Stab_G \para{x}\),
+        Finally, for \(g \in \Stab_G \pqty{x}\),
         \begin{align*}
-            g\inverse x &= g\inverse \para{gx} && g \in \Stab_{G} \para{x} \\
-            &= \para{g\inverse g} x && \text{\autoref{def:group-action} (Group Action)} \\
+            g\inverse x &= g\inverse \pqty{gx} && g \in \Stab_{G} \pqty{x} \\
+            &= \pqty{g\inverse g} x && \text{\autoref{def:group-action} (Group Action)} \\
             &= ex \\
             &= x, && \text{\autoref{def:group-action} (Group Action)}
         \end{align*}
-        so \(g\inverse \in \Stab_{G} \para{x}\).
+        so \(g\inverse \in \Stab_{G} \pqty{x}\).
 
-        Hence, \(\Stab_{G} \para{x} \subgroup G\).
+        Hence, \(\Stab_{G} \pqty{x} \subgroup G\).
 
         \item The proof is similar to the proof of \autoref{lem:cosets-partition} (Cosets Partition).
         \begin{itemize}
-            \item For any \(x \in X\), \(x = ex\) for \(e \in G\), so \(x \in \Orb_G \para{x}\), so indeed orbits cover \(X\).
-            \item If \(\Orb_{G} \para{x_1} \cap \Orb_{G} \para{x_2} \neq \emptyset\), then there is \(y = g_1 x_1 = g_2 x_2\) for some \(g_1, g_2 \in G\).
+            \item For any \(x \in X\), \(x = ex\) for \(e \in G\), so \(x \in \Orb_G \pqty{x}\), so indeed orbits cover \(X\).
+            \item If \(\Orb_{G} \pqty{x_1} \cap \Orb_{G} \pqty{x_2} \neq \emptyset\), then there is \(y = g_1 x_1 = g_2 x_2\) for some \(g_1, g_2 \in G\).
         
             Hence,
             \begin{align*}
-                x_1 &= \para{g_1 \inverse g_1} x_1 \\
-                &= g_1 \inverse \para{g_1 x_1} \\
-                &= g_1 \inverse \para{g_2 x_2} \\
-                &= \para{g_1 \inverse g_2} x_2 \\
-                &\in \Orb_{G} \para{x_2}.
+                x_1 &= \pqty{g_1 \inverse g_1} x_1 \\
+                &= g_1 \inverse \pqty{g_1 x_1} \\
+                &= g_1 \inverse \pqty{g_2 x_2} \\
+                &= \pqty{g_1 \inverse g_2} x_2 \\
+                &\in \Orb_{G} \pqty{x_2}.
             \end{align*}
 
             Moreover, any \(g x_1\) can be written as
             \[
-                g x_1 = g \para{g_1\inverse g_2} x_2 \in \Orb_{G} \para{x_2}.
+                g x_1 = g \pqty{g_1\inverse g_2} x_2 \in \Orb_{G} \pqty{x_2}.
             \]
 
-            Hence, \(\Orb_{G} \para{x_1} \subseteq \Orb_{G} \para{x_2}\). Likewise, \(\Orb_{G} \para{x_2} \subseteq \Orb_{G} \para{x_1}\), so we have
+            Hence, \(\Orb_{G} \pqty{x_1} \subseteq \Orb_{G} \pqty{x_2}\). Likewise, \(\Orb_{G} \pqty{x_2} \subseteq \Orb_{G} \pqty{x_1}\), so we have
             \[
-                \Orb_{G} \para{x_1} = \Orb_{G} \para{x_2}
+                \Orb_{G} \pqty{x_1} = \Orb_{G} \pqty{x_2}
             \]
             as desired.
         \end{itemize}
@@ -252,23 +252,23 @@ We in fact can learn a huge amount about groups by thinking about group actions.
 \begin{example*}[\(D_{2n} \actson X_n\), the regular \(n\)-gon]
     As in \autoref{fig:dihedral-group-action-hexagon} for the hexagon case, for any \(j\),
     \begin{align*}
-        r^j s \para{x} &= r^j \para{x} \\
+        r^j s \pqty{x} &= r^j \pqty{x} \\
         &= e^{\frac{2 \pi i j}{n}} \cdot 1 \\
         &= e^{\frac{2 \pi i j}{n}},
     \end{align*}
     so
     \begin{align*}
-        \Orb_{D_{2n}}\para{x} &= \set{e^{\frac{2 \pi i j}{n}}}{0 \leq j < n} \\
-        &= \brce{n\text{-th roots of unity}}.
+        \Orb_{D_{2n}}\pqty{x} &= \set{e^{\frac{2 \pi i j}{n}}}{0 \leq j < n} \\
+        &= \Bqty{n\text{-th roots of unity}}.
     \end{align*}
 
     The above calculation also shows that
     \[
-        gx = x \iff g \in \brce{r, s},
+        gx = x \iff g \in \Bqty{r, s},
     \]
     so
     \[
-        \Stab_{D_{2n}}\para{x} = \brce{r, s}.
+        \Stab_{D_{2n}}\pqty{x} = \Bqty{r, s}.
     \]
 \end{example*}
 
@@ -282,11 +282,11 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \label{thm:orbit-stabiliser}%
     Suppose \(G \actson X\). Let \(x \in X\), the map
     \[
-        g \Stab_{G}\para{x} \mapsto gx
+        g \Stab_{G}\pqty{x} \mapsto gx
     \]
     defines a well-defined bijection
     \[
-        G / \Stab_{G}\para{x} \to \Orb_{G}\para{x}.
+        \flatfrac{G}{\Stab_{G}\pqty{x}} \to \Orb_{G}\pqty{x}.
     \]
 \end{theorem}
 
@@ -296,18 +296,18 @@ We first prove a corollary of this theorem, naming the counting version of this.
     \label{cor:orbit-stabiliser}%
     If \(G \actson X\) and \(x \in X\), then
     \[
-        \abs{G} = \abs{\Orb_{G}\para{x}} \abs{\Stab_{G}\para{x}}.
+        \abs{G} = \abs{\Orb_{G}\pqty{x}} \abs{\Stab_{G}\pqty{x}}.
     \]
 \end{corollary}
 
 \begin{proof}
     \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem) gives
     \[
-        \abs{\Orb_{G} \para{x}} = \abs{G / \Stab_{G} \para{x}},
+        \abs{\Orb_{G} \pqty{x}} = \abs{\flatfrac{G}{\Stab_{G}} \pqty{x}},
     \]
     and \autoref{thm:lagrange} (Lagrange's Theorem) gives
     \[
-        \abs{G / \Stab_{G} \para{x}} = \abs{G} / \abs{\Stab_{G} \para{x}}.
+        \abs{\flatfrac{G}{\Stab_{G} \pqty{x}}} = \frac{\abs{G}}{\abs{\Stab_{G} \pqty{x}}}.
     \]
 
     This gives the result as desired.
@@ -318,11 +318,11 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 \begin{example*}[\(D_{2n} \actson X_n\)]
     We see that if \(x \in X_n\) is a vertex, then
     \[
-        \abs{\Orb_{D_{2n}} \para{x}} = n
+        \abs{\Orb_{D_{2n}} \pqty{x}} = n
     \]
     and
     \[
-        \abs{\Stab_{D_{2n}} \para{x}} = 2.
+        \abs{\Stab_{D_{2n}} \pqty{x}} = 2.
     \]
 
     This gives an easy (but circular) `proof' that
@@ -334,17 +334,17 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 \begin{proof}[of \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem)]
     We write
     \[
-        S = \Stab_{G} \para{x},
+        S = \Stab_{G} \pqty{x},
     \]
     and define
     \[
-        \phi \para{gS} = gx.
+        \phi \pqty{gS} = gx.
     \]
 
     We check that \(\phi\) is a well-defined bijection.
 
     \begin{itemize}
-        \item \textbf{\(\phi\) is well-defined.} Let \(g_1, g_2 \in G\) such that \(g_1 S = g_2 S\). We need to check that \(\phi\para{g_1 S} = \phi\para{g_2 S}\). Now, \(g_1 S = g_2 S\) means that
+        \item \textbf{\(\phi\) is well-defined.} Let \(g_1, g_2 \in G\) such that \(g_1 S = g_2 S\). We need to check that \(\phi\pqty{g_1 S} = \phi\pqty{g_2 S}\). Now, \(g_1 S = g_2 S\) means that
         \[
             g_1 = g_2 s
         \]
@@ -352,33 +352,33 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 
         Hence,
         \begin{align*}
-            g_1 x &= \para{g_2 s} x \\
-            &= g_2 \para{sx} \\
+            g_1 x &= \pqty{g_2 s} x \\
+            &= g_2 \pqty{sx} \\
             &= g_2 x
         \end{align*}
         since \(s \in S\) gives \(sx = x\), as required.
 
-        \item \textbf{\(\phi\) is surjective.} For any \(gx \in \Orb_{G} \para{x}\), \(g \in G\), we note
+        \item \textbf{\(\phi\) is surjective.} For any \(gx \in \Orb_{G} \pqty{x}\), \(g \in G\), we note
         \[
-            \phi\para{gS} = gx
+            \phi\pqty{gS} = gx
         \]
         so \(\phi\) is surjective.
 
-        \item \textbf{\(\phi\) is injective.} Suppose that \(\phi\para{g_1 S} = \phi\para{g_2 S}\), which is equivalent to \(g_1 x = g_2 x\). We want to show \(g_1 S = g_2 S\). Indeed, let \(g_1 = g_2 s\) for some \(s\), we want to show \(s \in S\):
+        \item \textbf{\(\phi\) is injective.} Suppose that \(\phi\pqty{g_1 S} = \phi\pqty{g_2 S}\), which is equivalent to \(g_1 x = g_2 x\). We want to show \(g_1 S = g_2 S\). Indeed, let \(g_1 = g_2 s\) for some \(s\), we want to show \(s \in S\):
         \begin{align*}
-            sx &= \para{g_2 \inverse g_1} x \\
-            &= g_2 \inverse \para{g_1 x} \\
-            &= g_2 \inverse \para{g_2 x} \\
-            &= \para{g_2 \inverse g_2} x \\
+            sx &= \pqty{g_2 \inverse g_1} x \\
+            &= g_2 \inverse \pqty{g_1 x} \\
+            &= g_2 \inverse \pqty{g_2 x} \\
+            &= \pqty{g_2 \inverse g_2} x \\
             &= ex \\
             &= x,
         \end{align*}
-        so \(s \in \Stab_{G} \para{x}\), and hence \(s \in S\).
+        so \(s \in \Stab_{G} \pqty{x}\), and hence \(s \in S\).
 
         Therefore,
         \begin{align*}
-            g_1 &= \para{g_2 g_2\inverse} g_1 \\
-            &= g_2 \para{g_2\inverse g_1} \\
+            g_1 &= \pqty{g_2 g_2\inverse} g_1 \\
+            &= g_2 \pqty{g_2\inverse g_1} \\
             &= g_2 s \\
             &= g_2 S,
         \end{align*}
@@ -391,20 +391,20 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 
     As in \autoref{fig:symmetries-of-a-cube}, let \(x\) be the centre of a face of a cube. Then
     \[
-        \abs{\Orb_{G} \para{x}} = 6,
+        \abs{\Orb_{G} \pqty{x}} = 6,
     \]
     while
     \[
-        \Stab_{G}\para{x} \isomorphic D_8,
+        \Stab_{G}\pqty{x} \isomorphic D_8,
     \]
     so
     \[
-       \abs{\Stab_{G}\para{x}} = 8.
+       \abs{\Stab_{G}\pqty{x}} = 8.
     \]
 
     Therefore,
     \begin{align*}
-        \abs{G} &= \abs{\Orb_{G} \para{x}} \abs{\Stab_{G} \para{x}} \\
+        \abs{G} &= \abs{\Orb_{G} \pqty{x}} \abs{\Stab_{G} \pqty{x}} \\
         &= 6 \cdot 8 \\
         &= 48.
     \end{align*}
@@ -422,33 +422,33 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
     \label{thm:cauchy}
     If \(\abs{G} < \infty\), and \(p\) is a prime that divides \(\abs{G}\), then there is a \(g \in G\) such that
     \[
-        \ord\para{g} = p.
+        \ord\pqty{g} = p.
     \]
 \end{theorem}
 
 \begin{proof}
     Consider the set \(X\) of \(p\)-tuples
     \[
-        X = \set{\para{g_1, \ldots, g_p}}{g_i \in G, g_1 g_2 \cdots g_p = e}.
+        X = \set{\pqty{g_1, \ldots, g_p}}{g_i \in G, g_1 g_2 \cdots g_p = e}.
     \]
 
     We define an action of \(C_p\) on \(X\), where
     \[
-        C_p = \brce{1, t, t^2, \ldots, t^{p - 1}} = \angBrac{t}
+        C_p = \Bqty{1, t, t^2, \ldots, t^{p - 1}} = \angBrac{t}
     \]
     as follows. Let
     \[
-        t^k \para{g_1, \ldots, g_p} = \para{g_{k + 1}, \ldots, g_p, g_1, \ldots, g_k}.
+        t^k \pqty{g_1, \ldots, g_p} = \pqty{g_{k + 1}, \ldots, g_p, g_1, \ldots, g_k}.
     \]
 
     It is easy to see that
     \[
-        \para{t^k \cdot t^l} \para{g_1, \ldots, g_p} = \para{t^k} \para{t^l \para{g_1, \ldots, g_p}}.
+        \pqty{t^k \cdot t^l} \pqty{g_1, \ldots, g_p} = \pqty{t^k} \pqty{t^l \pqty{g_1, \ldots, g_p}}.
     \]
 
     We also need to check that
     \[
-        \para{g_{k + 1}, \ldots, g_p, g_1, \ldots, g_k} \in X.
+        \pqty{g_{k + 1}, \ldots, g_p, g_1, \ldots, g_k} \in X.
     \]
 
     Suppose that
@@ -467,7 +467,7 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
     \]
     such that
     \[
-        \para{g_1, \ldots, g_{p - 1}, g_p} \in X.
+        \pqty{g_1, \ldots, g_{p - 1}, g_p} \in X.
     \]
 
     Therefore,
@@ -477,18 +477,18 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
 
     From \autoref{prop:stabilisers-subgroups-orbits-partition}, \(C_p \actson X\) partition \(X\) into orbits
     \[
-        X = \Orb\para{x_1} \cup \Orb\para{x_2} \cup \cdots \cup \Orb\para{x_k}.
+        X = \Orb\pqty{x_1} \cup \Orb\pqty{x_2} \cup \cdots \cup \Orb\pqty{x_k}.
     \]
 
     Hence, by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), for each \(j = 1, 2, \ldots, k\),
     \[
-        \abs{\Orb\para{x_j}} \divides \abs{C_p} = p
+        \abs{\Orb\pqty{x_j}} \divides \abs{C_p} = p
     \]
-    so either the size of \(\Orb\para{x_j}\) is \(1\), or \(p\).
+    so either the size of \(\Orb\pqty{x_j}\) is \(1\), or \(p\).
 
     Let \(l\) be the number of orbits with size \(1\). After re-numbering, we may assume that
     \[
-        \abs{\Orb\para{x_j}} = \begin{cases}
+        \abs{\Orb\pqty{x_j}} = \begin{cases}
             1, & 1 \leq j \leq l, \\
             p, & j > l.
         \end{cases}
@@ -497,18 +497,18 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
     Since the orbits partition \(X\),
     \begin{align*}
         \abs{G}^{p - 1} &= \abs{X} \\
-        &= \sum_{j = 1}^{k} \abs{\Orb\para{x_j}} \\
-        &= \sum_{j = 1}^{l} \abs{\Orb{\para{x_j}}} + \sum_{j = l + 1}^{k} \abs{\Orb{\para{x_j}}} \\
-        &= l + p \cdot \para{k - l}.
+        &= \sum_{j = 1}^{k} \abs{\Orb\pqty{x_j}} \\
+        &= \sum_{j = 1}^{l} \abs{\Orb{\pqty{x_j}}} + \sum_{j = l + 1}^{k} \abs{\Orb{\pqty{x_j}}} \\
+        &= l + p \cdot \pqty{k - l}.
     \end{align*}
 
     Since \(p \divides \abs{G}\), it follows that \(p \divides l\).
 
-    Now, note that \(x = \para{g_1, \ldots, g_p}\) has an orbit of size \(1\) if and only if \(g_1 = g_2 = \cdots = g_p\).
+    Now, note that \(x = \pqty{g_1, \ldots, g_p}\) has an orbit of size \(1\) if and only if \(g_1 = g_2 = \cdots = g_p\).
 
     In particular, there is at least one such element giving such an orbit, namely
     \[
-        \para{e, e, \ldots, e} \in X.
+        \pqty{e, e, \ldots, e} \in X.
     \]
 
     So \(l > 0\). Since \(p \divides l\), it follows that
@@ -517,11 +517,11 @@ The next theorem is a different kind of application of \autoref{cor:orbit-stabil
     \]
     so there is at least \(1\) more orbit
     \[
-        \para{g, g, \ldots, g} \in X
+        \pqty{g, g, \ldots, g} \in X
     \]
     with \(g \neq e\).
 
-    The definition of \(X\) implies that \(g^p = e\), and hence we can see \(\ord\para{g} \divides p\), and hence \(\ord\para{g} = p\) since \(p\) is prime and \(g \neq e\), as required.
+    The definition of \(X\) implies that \(g^p = e\), and hence we can see \(\ord\pqty{g} \divides p\), and hence \(\ord\pqty{g} = p\) since \(p\) is prime and \(g \neq e\), as required.
 \end{proof}
 
 This is a proof that is not very intuitive, but the result is very useful.
@@ -535,7 +535,7 @@ This is a proof that is not very intuitive, but the result is very useful.
 
     The \emph{conjugacy class} of \(g \in G\) is
     \[
-        \ccl_{G}\para{g} = \set{hgh\inverse}{h \in G}.
+        \ccl_{G}\pqty{g} = \set{hgh\inverse}{h \in G}.
     \]
 \end{definition}
 
@@ -569,7 +569,7 @@ Conjugation defines another action of \(G \actson G\):
 \]
 for \(g \in G, \gamma \in X = G\). This is \textbf{very different} to the left regular action. In terms of language in actions,
 \[
-    \ccl_{G} \para{g} = \Orb_{G\star} \para{g}.
+    \ccl_{G} \pqty{g} = \Orb_{G\star} \pqty{g}.
 \]
 
 From the example on abelian groups, we see that conjugating to an element itself is closely related to commutativity:
@@ -583,14 +583,14 @@ This leads to \autoref{def:centraliser-centre}.
     \label{def:centraliser-centre}%
     The \emph{centraliser} of \(g \in G\) is
     \[
-        C_G\para{g} = \set{h \in G}{h g h\inverse = g}.
+        C_G\pqty{g} = \set{h \in G}{h g h\inverse = g}.
     \]
 
     It is the elements that \emph{commute with \(g\)}.
 
     The \emph{centre} of \(G\) is
     \[
-        Z\para{G} = \set{h \in G}{\forall g \in G, hg = gh} = \bigcap_{g \in G} C_G \para{g}.
+        Z\pqty{G} = \set{h \in G}{\forall g \in G, hg = gh} = \bigcap_{g \in G} C_G \pqty{g}.
     \]
 
     It is the elements that \emph{commute with everything in \(G\)}.
@@ -598,14 +598,14 @@ This leads to \autoref{def:centraliser-centre}.
 
 Using the language of the conjugation action, we have
 \[
-    C_G\para{g} = \Stab_{G\star} \para{g}
+    C_G\pqty{g} = \Stab_{G\star} \pqty{g}
 \]
-and hence \(C_G\para{g} \subgroup G\) forms a group. Since \(Z\para{G}\) is an intersection of subgroups, it is itself a subgroup: \(Z\para{G} \subgroup G\).
+and hence \(C_G\pqty{g} \subgroup G\) forms a group. Since \(Z\pqty{G}\) is an intersection of subgroups, it is itself a subgroup: \(Z\pqty{G} \subgroup G\).
 
 \begin{remark}
     Another useful way to think of the centre is
     \[
-        Z\para{G} = \bigcup_{g \in G, \abs{\ccl\para{g}} = 1} \ccl\para{g} = \bigcup_{g \in G, \abs{\ccl\para{g}} = 1} \brce{g},
+        Z\pqty{G} = \bigcup_{g \in G, \abs{\ccl\pqty{g}} = 1} \ccl\pqty{g} = \bigcup_{g \in G, \abs{\ccl\pqty{g}} = 1} \Bqty{g},
     \]
-    i.e. the union of the conjugacy classes with size one. (We will see later that this means \(Z\para{G} \normalsub G\).)
+    i.e. the union of the conjugacy classes with size one. (We will see later that this means \(Z\pqty{G} \normalsub G\).)
 \end{remark}

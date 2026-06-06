@@ -5,11 +5,11 @@ Recall that a permutation of a set \(X\) is a bijection
 \[
     X \to X
 \]
-and \(\Sym\para{X}\) is the group of all such permutations.
+and \(\Sym\pqty{X}\) is the group of all such permutations.
 
 In particular, for this section, we are interested in the case where \(X\) is finite, and we need not worry about the particular details of \(X\), since only the size of \(X\) matters: for any set \(X\) with \(\abs{X} = n\),
 \[
-    S_n \isomorphic \Sym\para{X}.
+    S_n \isomorphic \Sym\pqty{X}.
 \]
 
 \begin{figure}[ht!]
@@ -27,7 +27,7 @@ In particular, for this section, we are interested in the case where \(X\) is fi
 \end{figure}
 
 \begin{example*}[Example of Elements in \(S_3\)]
-    For \(X = \brce{1, 2, 3}\), we have \(\Sym\para{X} \isomorphic S_3\). In the example \autoref{fig:examples-elements-s3}, we have \(\sigma, \tau \in \Sym\para{X}\) and \(\rho \notin \Sym\para{X}\).
+    For \(X = \Bqty{1, 2, 3}\), we have \(\Sym\pqty{X} \isomorphic S_3\). In the example \autoref{fig:examples-elements-s3}, we have \(\sigma, \tau \in \Sym\pqty{X}\) and \(\rho \notin \Sym\pqty{X}\).
 \end{example*}
 
 \begin{figure}[ht!]
@@ -53,13 +53,13 @@ In particular, for this section, we are interested in the case where \(X\) is fi
 
 \begin{definition}[Cycles]
     \label{def:cycles}%
-    Any list of \(k\) distinct elements \(a_1, a_2, \ldots, a_k \in \brce{1, 2, \ldots, k}\) determines a \emph{\(k\)-cycle}
+    Any list of \(k\) distinct elements \(a_1, a_2, \ldots, a_k \in \Bqty{1, 2, \ldots, k}\) determines a \emph{\(k\)-cycle}
     \[
         \sigma = \perm{{a_1}{a_2}{\cdots}{a_k}},
     \]
     as follows:
     \[
-        \sigma\para{b} = \begin{cases}
+        \sigma\pqty{b} = \begin{cases}
             a_{i + 1}, & b = a_i, i < b, \\
             a_1, & b = a_k, \\
             b, & \text{otherwise}.
@@ -116,27 +116,27 @@ Disjoint cycles commute:
 \begin{example*}
     As an example we have
     \begin{align*}
-        \perm{12}\perm{34}\perm{56}\perm{123456} &= \para{1} \perm{246} \para{3} \para{5} \\
+        \perm{12}\perm{34}\perm{56}\perm{123456} &= \pqty{1} \perm{246} \pqty{3} \pqty{5} \\
         &= \perm{246}.
     \end{align*}
 \end{example*}
 
 \begin{proof}
-    We consider the action of \(\angBrac{\sigma}\) on \(X = \brce{1, 2, \ldots, n}\) by permutations. This partition \(X\) into orbits
+    We consider the action of \(\angBrac{\sigma}\) on \(X = \Bqty{1, 2, \ldots, n}\) by permutations. This partition \(X\) into orbits
     \[
-        X = \Orb\para{i_1} \cup \Orb\para{i_2} \cup \cdots \cup \Orb\para{i_k}.
+        X = \Orb\pqty{i_1} \cup \Orb\pqty{i_2} \cup \cdots \cup \Orb\pqty{i_k}.
     \]
 
-    Let \(n_j = \abs{\Orb\para{i_j}}\) be the size of the \(j\)th orbit. Then we see that
+    Let \(n_j = \abs{\Orb\pqty{i_j}}\) be the size of the \(j\)th orbit. Then we see that
     \begin{align*}
-        \sigma &= \perm{{i_1} {\sigma\para{i_1}} {\sigma^{2}\para{i_1}} \cdots {\sigma^{n_1 - 1} \para{i_1}}} \\
-        &\phantom{=} \perm{{i_2} {\sigma\para{i_2}} {\sigma^{2}\para{i_2}} \cdots {\sigma^{n_2 - 1} \para{i_2}}} \\
+        \sigma &= \perm{{i_1} {\sigma\pqty{i_1}} {\sigma^{2}\pqty{i_1}} \cdots {\sigma^{n_1 - 1} \pqty{i_1}}} \\
+        &\phantom{=} \perm{{i_2} {\sigma\pqty{i_2}} {\sigma^{2}\pqty{i_2}} \cdots {\sigma^{n_2 - 1} \pqty{i_2}}} \\
         &\phantom{=} \cdots \\
-        &\phantom{=} \perm{{i_k} {\sigma\para{i_k}} {\sigma^{2}\para{i_k}} \cdots {\sigma^{n_k - 1} \para{i_k}}},
+        &\phantom{=} \perm{{i_k} {\sigma\pqty{i_k}} {\sigma^{2}\pqty{i_k}} \cdots {\sigma^{n_k - 1} \pqty{i_k}}},
     \end{align*}
     which proves the existence of the decomposition.
 
-    For the uniqueness, note that the only choices we made were the orbit representatives \(\brce{i_j}\), and the indexing function (the ordering of the orbits)
+    For the uniqueness, note that the only choices we made were the orbit representatives \(\Bqty{i_j}\), and the indexing function (the ordering of the orbits)
     \[
         j \mapsto i_j.
     \]
@@ -152,17 +152,17 @@ This allows us to characterise the type of permutation.
     \[
         \sigma = \perm{{a_1^1} \cdots {a_{k_1}^1}} \cdots \perm{{a_1^l} \cdots {a_{k_l}^l}}
     \]
-    is a product of disjoint cycles, then \(\sigma\) is called a \emph{\(\para{k_1, \ldots, k_l}\)-cycle}. The set of numbers
+    is a product of disjoint cycles, then \(\sigma\) is called a \emph{\(\pqty{k_1, \ldots, k_l}\)-cycle}. The set of numbers
     \[
-        \brce{k_1, \ldots, k_l}
+        \Bqty{k_1, \ldots, k_l}
     \]
-    is called the \emph{cycle type} of \(\sigma\). We often omit the \emph{singletons}, e.g. a \(\para{3, 2, 1}\)-cycle is also a \(\para{3, 2}\)-cycle.
+    is called the \emph{cycle type} of \(\sigma\). We often omit the \emph{singletons}, e.g. a \(\pqty{3, 2, 1}\)-cycle is also a \(\pqty{3, 2}\)-cycle.
 \end{definition}
 
 \begin{remark}
-    Note that if \(\sigma\) is a \(k\)-cycle, then \(\ord\para{\sigma} = k\). More generally, if \(\sigma\) is a \(\para{k_1, \ldots, k_l}\)-cycle, then
+    Note that if \(\sigma\) is a \(k\)-cycle, then \(\ord\pqty{\sigma} = k\). More generally, if \(\sigma\) is a \(\pqty{k_1, \ldots, k_l}\)-cycle, then
     \[
-        \ord \para{\sigma} = \lcm \brce{k_1, \ldots, k_l}.
+        \ord \pqty{\sigma} = \lcm \Bqty{k_1, \ldots, k_l}.
     \]
 \end{remark}
 
@@ -181,19 +181,19 @@ We now study a particular generating set of \(S_n\).
 \begin{proof}
     We prove by induction on \(n\). In the base case, \(n = 2\),
     \[
-        S_2 = \brce{e, \perm{12}}
+        S_2 = \Bqty{e, \perm{12}}
     \]
     and the result is obvious.
 
     For the inductive step, assume that \(S_{n - 1}\) is generated by transpositions, and let \(\sigma \in S_n\).
 
-    If \(\sigma\para{n} = n\) (i.e. \(\sigma\) fixes \(n\)), then \(\sigma \in S_{n - 1} \subgroup S_n\), and by the induction hypothesis,
+    If \(\sigma\pqty{n} = n\) (i.e. \(\sigma\) fixes \(n\)), then \(\sigma \in S_{n - 1} \subgroup S_n\), and by the induction hypothesis,
     \[
         \sigma = \tau_1 \cdots \tau_k
     \]
-    for some \(k\) and transpositions \(\tau_1, \ldots, \tau_k \in S_{n - 1}\). Otherwise, let \(\tau = \perm{n {\sigma\para{n}}}\), then
+    for some \(k\) and transpositions \(\tau_1, \ldots, \tau_k \in S_{n - 1}\). Otherwise, let \(\tau = \perm{n {\sigma\pqty{n}}}\), then
     \[
-        \tau \sigma \para{n} = \tau\para{\sigma\para{n}} = n
+        \tau \sigma \pqty{n} = \tau\pqty{\sigma\pqty{n}} = n
     \]
     so \(\tau \sigma \in S_{n - 1} \subgroup S_n\). Similar to previously, by induction hypothesis,
     \[
@@ -209,7 +209,7 @@ We now study a particular generating set of \(S_n\).
 \subsection{Signs of Permutations}
 \label{sec:signs-of-permutations}
 
-A transposition of the form \(\perm{i {i + 1}}\) is called \emph{adjacent}, and there are \(\para{n - 1}\) adjacent transpositions in \(S_n\).
+A transposition of the form \(\perm{i {i + 1}}\) is called \emph{adjacent}, and there are \(\pqty{n - 1}\) adjacent transpositions in \(S_n\).
 
 \begin{lemma}[Adjacent Transpositions]
     \label{lem:adjacent-transpositions}%
@@ -217,7 +217,7 @@ A transposition of the form \(\perm{i {i + 1}}\) is called \emph{adjacent}, and 
 \end{lemma}
 
 \begin{proof}
-    Assume \(j > i\). The proof is by induction on \(\para{j - i}\).
+    Assume \(j > i\). The proof is by induction on \(\pqty{j - i}\).
     
     \emph{Base Case.} When \(j = i + 1\), we have \(\perm{ij} = \perm{i {i + 1}}\) is itself an adjacent transposition as desired.
 
@@ -244,7 +244,7 @@ In particular, from \autoref{lem:adjacent-transpositions}, \(S\) is generated by
 \begin{proof}
     By \autoref{lem:adjacent-transpositions}, we may assume that all \(\tau_{i}\)s are adjacent transpositions.
 
-    A pair \(\brce{i, j} \subseteq \brce{1, 2, \ldots, n}\) is an \emph{inversion} of a permutation if \(i < j\) but \(\sigma\para{i} > \sigma\para{j}\).
+    A pair \(\Bqty{i, j} \subseteq \Bqty{1, 2, \ldots, n}\) is an \emph{inversion} of a permutation if \(i < j\) but \(\sigma\pqty{i} > \sigma\pqty{j}\).
     
     We first show that \(k\) is congruent to the number of inversions in \(\sigma\) modulo \(2\) by induction on \(k\).
 
@@ -255,25 +255,25 @@ In particular, from \autoref{lem:adjacent-transpositions}, \(S\) is generated by
         \sigma = \underbrace{\tau_1}_{\tau} \underbrace{\tau_2 \cdots \tau_k}_{\sigma'} = \tau \sigma' = \perm{l {l + 1}} \sigma'.
     \]
 
-    Which pairs \(\brce{i, j}\) could be inversions of \(\sigma'\) but not \(\sigma\)? The only such possible pair is the pair
+    Which pairs \(\Bqty{i, j}\) could be inversions of \(\sigma'\) but not \(\sigma\)? The only such possible pair is the pair
     \[
-        \brce{i, j}
+        \Bqty{i, j}
     \]
     where
     \[
-        \sigma'\para{i} = l, \sigma'\para{j} = l + 1.
+        \sigma'\pqty{i} = l, \sigma'\pqty{j} = l + 1.
     \]
 
     For the pair, we have
     \[
-        \sigma'\para{i} = l < l + 1 = \sigma'\para{j}
+        \sigma'\pqty{i} = l < l + 1 = \sigma'\pqty{j}
     \]
     but
     \[
-        \sigma\para{i} = \tau\sigma'\para{i} = l + 1 > l = \tau\sigma'\para{j} = \sigma{j}.
+        \sigma\pqty{i} = \tau\sigma'\pqty{i} = l + 1 > l = \tau\sigma'\pqty{j} = \sigma{j}.
     \]
 
-    Therefore, if \(i < j\), then \(\brce{i, j}\) is an inversion of \(\sigma\) but not for \(\sigma'\), and if \(i > j\), then \(\brce{i, j}\) is an inversion for \(\sigma'\) but not for \(\sigma\). The number of inversions has changed by \(\pm 1\), and
+    Therefore, if \(i < j\), then \(\Bqty{i, j}\) is an inversion of \(\sigma\) but not for \(\sigma'\), and if \(i > j\), then \(\Bqty{i, j}\) is an inversion for \(\sigma'\) but not for \(\sigma\). The number of inversions has changed by \(\pm 1\), and
     \[
         \size \text{ inversions of }\sigma = \size \text{ inversions of } \sigma' \pm 1
     \]
@@ -288,7 +288,7 @@ This enables us to define the \emph{sign homomorphism}.
     \label{thm:sign-homomorphism}%
     The map
     \[
-        \function{\sign}{S_n}{C_2 \isomorphic \para{\brce{\pm 1}, \times}}{\tau_1 \tau_2 \cdots \tau_k}{\para{-1}^k}
+        \function{\sign}{S_n}{C_2 \isomorphic \pqty{\Bqty{\pm 1}, \times}}{\tau_1 \tau_2 \cdots \tau_k}{\pqty{-1}^k}
     \]
     where \(\tau_1, \tau_2, \ldots, \tau_k\) are transpositions, is a well-defined homomorphism.
 \end{theorem}
@@ -302,13 +302,13 @@ This enables us to define the \emph{sign homomorphism}.
     \[
         \tau_k \cdots \tau_1 \tau_1' \cdots \tau_l' = e,
     \]
-    and hence \(\para{k + l}\) is even by \autoref{lem:identity-permutation-is-even}, and hence \(k \equiv l \pmod{2}\). Hence, \(\para{-1}^k = \para{-1}^l\).
+    and hence \(\pqty{k + l}\) is even by \autoref{lem:identity-permutation-is-even}, and hence \(k \equiv l \pmod{2}\). Hence, \(\pqty{-1}^k = \pqty{-1}^l\).
 
     To see this is indeed a homomorphism, notice
     \begin{align*}
-        \sign\para{\tau_1 \cdots \tau_k \tau_1' \cdots \tau_l'} &= \para{-1}^{k + l} \\
-        &= \para{-1}^k \para{-1}^l \\
-        &= \sign\para{\tau_1 \cdots \tau_k} \sign\para{\tau_1' \dots \tau_l'}.
+        \sign\pqty{\tau_1 \cdots \tau_k \tau_1' \cdots \tau_l'} &= \pqty{-1}^{k + l} \\
+        &= \pqty{-1}^k \pqty{-1}^l \\
+        &= \sign\pqty{\tau_1 \cdots \tau_k} \sign\pqty{\tau_1' \dots \tau_l'}.
     \end{align*}
 \end{proof}
 
@@ -316,18 +316,18 @@ This allows us to split the elements of \(S_n\) into two types, those with \(\si
 
 \begin{definition}[Sign of Permutations, Alternating Group]
     \label{def:sign-permutation-alternating-group}%
-    If \(\sign\para{\sigma} = 1\), then \(\sigma\) is \emph{even}. If \(\sign\para{\sigma} = -1\), then \(\sigma\) is \emph{odd}.
+    If \(\sign\pqty{\sigma} = 1\), then \(\sigma\) is \emph{even}. If \(\sign\pqty{\sigma} = -1\), then \(\sigma\) is \emph{odd}.
 
     The subgroup \(A_n \normalsub S_n\) with
     \[
-        A_n = \ker\para\sign
+        A_n = \ker\pqty{\sign}
     \]
     is the \emph{alternating group with \(n\) elements}.
 \end{definition}
 
 Note that by applying \autoref{thm:first-isomorphism} (First Isomorphism Theorem) on the sign homomorphism, for \(n \geq 2\), this homomorphism is surjective, and hence
 \[
-    S_n / A_n \isomorphic C_2
+    \flatfrac{S_n}{A_n} \isomorphic C_2
 \]
 and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
 \[
@@ -337,7 +337,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
 \begin{example*}[\(S_3\) and \(A_3\)]
     In
     \[
-        S_3 = \brce{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
+        S_3 = \Bqty{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
     \]
     we have
     \[
@@ -349,7 +349,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \]
     hence
     \[
-        A_3 = \brce{e, \perm{123}, \perm{132}} \isomorphic C_3.
+        A_3 = \Bqty{e, \perm{123}, \perm{132}} \isomorphic C_3.
     \]
 \end{example*}
 
@@ -364,14 +364,14 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \]
     so \(\perm{{a_1} {a_2} \cdots {a_k}}\) is \emph{even} if and only if \(k\) is \emph{odd}.
 
-    More generally, a \(\para{k_1, k_2, \ldots, k_l}\)-cycle is even if and only if the number of \(k_i\)s that are even, is even.
+    More generally, a \(\pqty{k_1, k_2, \ldots, k_l}\)-cycle is even if and only if the number of \(k_i\)s that are even, is even.
 \end{remark}
 
 \begin{example*}
     \begin{itemize}
-        \item \(\perm{12}\perm{34}\), a \(\para{2, 2}\)-cycle, is even.
+        \item \(\perm{12}\perm{34}\), a \(\pqty{2, 2}\)-cycle, is even.
 
-        \item \(\perm{12}\perm{34}\perm{56}\), a \(\para{2, 2, 2}\)-cycle, is odd.
+        \item \(\perm{12}\perm{34}\perm{56}\), a \(\pqty{2, 2, 2}\)-cycle, is odd.
     \end{itemize}
 \end{example*}
 
@@ -387,7 +387,7 @@ Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that con
 
 \begin{proof}
     \begin{itemize}
-        \item \(\impliedby\). Suppose that \(\sigma_1\) and \(\sigma_2\) have the same cycle type \(\para{l_1, l_2, \ldots, l_k}\), and let their disjoint cycle decompositions be
+        \item \(\impliedby\). Suppose that \(\sigma_1\) and \(\sigma_2\) have the same cycle type \(\pqty{l_1, l_2, \ldots, l_k}\), and let their disjoint cycle decompositions be
         \begin{align*}
             \sigma_1 &= \perm{{a_1^1} {a_2^1} \cdots {a_{l_1}^1}} \perm{{a_1^2} {a_2^2} \cdots {a_{l_2}^2}} \cdots \perm{{a_1^k} {a_2^k} \cdots {a_{l_k}^k}}, \\
             \sigma_2 &= \perm{{b_1^1} {b_2^1} \cdots {b_{l_1}^1}} \perm{{b_1^2} {b_2^2} \cdots {b_{l_2}^2}} \cdots \perm{{b_1^k} {b_2^k} \cdots {b_{l_k}^k}}.
@@ -395,19 +395,19 @@ Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that con
 
         Notice that
         \[
-            \sigma_1 \para{a_j^i} = a_{j +_{l_i} 1}^i, \sigma_2 \para{b_j^i} = b_{j +_{l_i} 1}^i
+            \sigma_1 \pqty{a_j^i} = a_{j +_{l_i} 1}^i, \sigma_2 \pqty{b_j^i} = b_{j +_{l_i} 1}^i
         \]
         so define the `change of basis' permutation \(\tau \in S_n\) be
         \[
-            \tau \para{a_j^i} = b_j^i,
+            \tau \pqty{a_j^i} = b_j^i,
         \]
         and hence we may verify indeed
         \[
-            \tau\sigma_1\tau\inverse \para{b_j^i} = \tau\sigma_1\para{a_j^i} = \tau\para{a_{j +_{l_i} 1}^{i}} = b_{j +_{l_i} 1}^i
+            \tau\sigma_1\tau\inverse \pqty{b_j^i} = \tau\sigma_1\pqty{a_j^i} = \tau\pqty{a_{j +_{l_i} 1}^{i}} = b_{j +_{l_i} 1}^i
         \]
         and that
         \[
-            \sigma_2\para{b_j^i} = b_{j +_{l_i} 1}^i
+            \sigma_2\pqty{b_j^i} = b_{j +_{l_i} 1}^i
         \]
         so
         \[
@@ -438,7 +438,7 @@ Now we investigate the conjugacy classes in \(S_n\) and \(A_n\). Recall that con
         \]
         i.e.,
         \[
-            \tau\para{a_j^i} = b_j^i
+            \tau\pqty{a_j^i} = b_j^i
         \]
         for \(1 \leq i \leq k, 1 \leq j \leq l_i\). Then we have
         \[
@@ -454,7 +454,7 @@ This allows us to easily count size of conjugacy classes in \(S_n\).
     \begin{enumerate}
         \item For
         \[
-            S_3 = \brce{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
+            S_3 = \Bqty{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
         \]
         we have
         \begin{itemize}
@@ -464,27 +464,27 @@ This allows us to easily count size of conjugacy classes in \(S_n\).
 
         \item Similarly, in \(S_4\), we have
         \[
-            \abs{\ccl_{S_4} \para{\perm{12} \perm{34}}} = \frac{1}{2} \binom{4}{2} = 3.
+            \abs{\ccl_{S_4} \pqty{\perm{12} \perm{34}}} = \frac{1}{2} \binom{4}{2} = 3.
         \]
     \end{enumerate}
 \end{examples*}
 
 Recall by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), under the conjugation action, we have
 \[
-    \abs{C_{S_n} \para{\gamma}} = \abs{S_n} / \abs{\ccl_{S_n} \para{\gamma}}
+    \abs{C_{S_n} \pqty{\gamma}} = \frac{\abs{S_n}}{\abs{\ccl_{S_n} \pqty{\gamma}}}
 \]
 for \(\gamma \in S_n\). Therefore, it is also easy to count the sizes of the centralisers, which contain the elements that commute with a particular element.
 
 \begin{example*}[Size of Centraliser in \(S_4\)]
     For \(\perm{12}\perm{34} \in S_4\), we have
     \begin{align*}
-        \abs{C_{S_4} \para{\perm{12} \perm{34}}} &= \abs{S_4} / \abs{\ccl_{S_4} \para{\perm{12} \perm{34}}} \\
+        \abs{C_{S_4} \pqty{\perm{12} \perm{34}}} &= \frac{\abs{S_4}}{\abs{\ccl_{S_4} \pqty{\perm{12} \perm{34}}}} \\
         &= \frac{4!}{3} \\
         &= 8,
     \end{align*}
     and we can indeed make a list of elements in this centraliser:
     \[
-        C_{S_4} \para{\perm{12}\perm{34}} = \brce{
+        C_{S_4} \pqty{\perm{12}\perm{34}} = \Bqty{
             e, \perm{12}, \perm{34}, \perm{12}\perm{34}, \perm{13}\perm{24}, \perm{14}\perm{23}, \perm{1423}, \perm{1324}
         }.
     \]
@@ -499,7 +499,7 @@ As an example, we list all the conjugacy classes in \(S_4\).
 \begin{table}[ht!]
     \centering
     \begin{tabular}{ccc}
-        Typical Element \(\gamma\) & \(\abs{\ccl_{S_4} \para{\gamma}}\) & \(\abs{C_{S_4} \para{\gamma}}\) \\
+        Typical Element \(\gamma\) & \(\abs{\ccl_{S_4} \pqty{\gamma}}\) & \(\abs{C_{S_4} \pqty{\gamma}}\) \\
         \hline\hline
         \(e\) & \(1\) & \(24\) \\
         \(\perm{12}\) & \(\binom{4}{2} = 6\) & \(4\) \\
@@ -521,11 +521,11 @@ Counting conjugacy classes in \(A_n\) can also be done with some thought.
     \begin{enumerate}
         \item If some odd element of \(S_n\) commutes with \(\gamma\), then
         \[
-            \ccl_{A_n} \para{\gamma} = \ccl_{S_n} \para{\gamma}.
+            \ccl_{A_n} \pqty{\gamma} = \ccl_{S_n} \pqty{\gamma}.
         \]
-        \item IF every element that commutes with \(\gamma\) is even, i.e., \(C_{S_n} \para{\gamma} \subgroup A_n\), then \(\ccl_{S_n} \para{\gamma}\) splits into two:
+        \item IF every element that commutes with \(\gamma\) is even, i.e., \(C_{S_n} \pqty{\gamma} \subgroup A_n\), then \(\ccl_{S_n} \pqty{\gamma}\) splits into two:
         \[
-            \ccl_{S_n} \para{\gamma} = \ccl_{A_n} \para{\gamma} \cup \ccl_{A_n} \para{\tau \gamma \tau\inverse}
+            \ccl_{S_n} \pqty{\gamma} = \ccl_{A_n} \pqty{\gamma} \cup \ccl_{A_n} \pqty{\tau \gamma \tau\inverse}
         \]
         where \(\tau\) is a transposition.
     \end{enumerate}
@@ -534,88 +534,88 @@ Counting conjugacy classes in \(A_n\) can also be done with some thought.
 \begin{proof}
     Applying \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem) on \(S_n\) and \(A_n\) gives
     \begin{align*}
-        \abs{S_n} &= \abs{\ccl_{S_n} \para{\gamma}} \abs{C_{S_n} \para{\gamma}}, \\
-        \abs{A_n} &= \abs{\ccl_{A_n} \para{\gamma}} \abs{C_{A_n} \para{\gamma}},
+        \abs{S_n} &= \abs{\ccl_{S_n} \pqty{\gamma}} \abs{C_{S_n} \pqty{\gamma}}, \\
+        \abs{A_n} &= \abs{\ccl_{A_n} \pqty{\gamma}} \abs{C_{A_n} \pqty{\gamma}},
     \end{align*}
     and since \(\abs{S_n} = 2 \cdot \abs{A_n}\), this gives
     \[
-        \abs{\ccl_{S_n} \para{\gamma}} = 2 \cdot \frac{\abs{C_{A_n} \para{\gamma}}}{\abs{C_{S_n} \para{\gamma}}} \cdot \abs{\ccl_{A_n} \para{\gamma}}.
+        \abs{\ccl_{S_n} \pqty{\gamma}} = 2 \cdot \frac{\abs{C_{A_n} \pqty{\gamma}}}{\abs{C_{S_n} \pqty{\gamma}}} \cdot \abs{\ccl_{A_n} \pqty{\gamma}}.
     \]
 
     Furthermore, we have
     \begin{align*}
-        C_{A_n} \para{\gamma} &= A_n \cap C_{S_n} \para{\gamma} \\
-        &= \ker\para{\functiondomain{\rightbar{\sign}_{C_{S_n} \para{\gamma}}}{C_{S_n}}{C_2}}
+        C_{A_n} \pqty{\gamma} &= A_n \cap C_{S_n} \pqty{\gamma} \\
+        &= \ker\pqty{\functiondomain{\rightbar{\sign}_{C_{S_n} \pqty{\gamma}}}{C_{S_n}}{C_2}}
     \end{align*}
     and we have
     \[
-        \abs{\img\para{\rightbar{\sign}_{C_{S_n}\para{\gamma}}}} \in \brce{1, 2}.
+        \abs{\img\pqty{\rightbar{\sign}_{C_{S_n}\pqty{\gamma}}}} \in \Bqty{1, 2}.
     \]
 
     Hence, by \autoref{thm:first-isomorphism} (First Isomorphism Theorem) and \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \[
-        \abs{C_{S_n} \para{\gamma}} / \abs{C_{A_n} \para{\gamma}} \in \brce{1, 2}.
+        \frac{\abs{C_{S_n} \pqty{\gamma}}}{\abs{C_{A_n} \pqty{\gamma}}} \in \Bqty{1, 2}.
     \]
 
     We consider the corresponding casework.
     \begin{enumerate}
         \item If some odd element of \(S_n\) commutes with \(\gamma\), this means that such element is in \(S_n \setminus A_n\), and
         \[
-            C_{S_n} \para{\gamma} \setminus C_{A_n} \para{\gamma} \neq \emptyset,
+            C_{S_n} \pqty{\gamma} \setminus C_{A_n} \pqty{\gamma} \neq \emptyset,
         \]
         hence this gives
         \[
-            \abs{C_{S_n} \para{\gamma}} = 2 \abs{C_{A_n} \para{\gamma}}.
+            \abs{C_{S_n} \pqty{\gamma}} = 2 \abs{C_{A_n} \pqty{\gamma}}.
         \]
 
         Hence,
         \begin{align*}
-            \abs{\ccl_{S_n} \para{\gamma}} &= 2 \cdot \frac{\abs{C_{A_n} \para{\gamma}}}{\abs{C_{S_n} \para{\gamma}}} \cdot \abs{\ccl_{A_n} \para{\gamma}} \\
-            &= \abs{\ccl_{A_n} \para{\gamma}}
+            \abs{\ccl_{S_n} \pqty{\gamma}} &= 2 \cdot \frac{\abs{C_{A_n} \pqty{\gamma}}}{\abs{C_{S_n} \pqty{\gamma}}} \cdot \abs{\ccl_{A_n} \pqty{\gamma}} \\
+            &= \abs{\ccl_{A_n} \pqty{\gamma}}
         \end{align*}
         and hence
         \[
-            \ccl_{A_n} \para{\gamma} = \ccl_{S_n} \para{\gamma}
+            \ccl_{A_n} \pqty{\gamma} = \ccl_{S_n} \pqty{\gamma}
         \]
         as desired.
 
         \item If every element of \(S_n\) that commutes with \(\gamma\) is even, then we have
         \[
-            \abs{\ccl_{S_n} \para{\gamma}} = 2 \abs{\ccl_{A_n} \para{\gamma}}
+            \abs{\ccl_{S_n} \pqty{\gamma}} = 2 \abs{\ccl_{A_n} \pqty{\gamma}}
         \]
-        and hence \(\ccl_{A_n} \para{\gamma}\) is half as big. Consider any transposition \(\tau \in S_n\). Note that
+        and hence \(\ccl_{A_n} \pqty{\gamma}\) is half as big. Consider any transposition \(\tau \in S_n\). Note that
         \[
-            \tau \gamma \tau\inverse \in \ccl_{S_n} \para{\gamma}.
+            \tau \gamma \tau\inverse \in \ccl_{S_n} \pqty{\gamma}.
         \]
 
-        If, for the sake of contradiction, that \(\tau \gamma \tau\inverse \in \ccl_{A_n}\para{\gamma}\), then
+        If, for the sake of contradiction, that \(\tau \gamma \tau\inverse \in \ccl_{A_n}\pqty{\gamma}\), then
         \[
             \tau \gamma \tau\inverse = \alpha \gamma \alpha\inverse
         \]
         for some even permutation \(\alpha in A_n\). Hence,
         \[
-            \para{\tau \alpha} \gamma \para{\tau \alpha}\inverse = \gamma
+            \pqty{\tau \alpha} \gamma \pqty{\tau \alpha}\inverse = \gamma
         \]
-        so \(\tau \alpha \in C_{S_n} \para{\gamma}\), and since \(\alpha\) is even, \(\tau\) is odd, we have \(\tau \alpha\) is odd and commutes with \(\gamma\), giving a contradiction.
+        so \(\tau \alpha \in C_{S_n} \pqty{\gamma}\), and since \(\alpha\) is even, \(\tau\) is odd, we have \(\tau \alpha\) is odd and commutes with \(\gamma\), giving a contradiction.
 
-        Hence, \(\tau \gamma \tau\inverse \notin \ccl_{A_n} \para{\gamma}\), and its conjugacy class in \(A_n\) gives the remaining elements, as desired.
+        Hence, \(\tau \gamma \tau\inverse \notin \ccl_{A_n} \pqty{\gamma}\), and its conjugacy class in \(A_n\) gives the remaining elements, as desired.
     \end{enumerate}
 \end{proof}
 
 This makes it possible to determine conjugacy classes in \(A_n\).
 
 \begin{example*}[Conjugacy Classes in \(A_4\)]
-    The even elements of \(S_4\) are \(e\), \(\para{2, 2}\)-cycles, and \(3\)-cycles.
+    The even elements of \(S_4\) are \(e\), \(\pqty{2, 2}\)-cycles, and \(3\)-cycles.
 
-    Since there is an odd number of \(\para{2, 2}\)-cycles, the conjugacy class of \(\perm{12}\perm{34}\) cannot split and remains intact in \(A_4\).
+    Since there is an odd number of \(\pqty{2, 2}\)-cycles, the conjugacy class of \(\perm{12}\perm{34}\) cannot split and remains intact in \(A_4\).
 
     For a \(3\)-cycle \(\sigma = \perm{123}\), we have
     \[
-        \abs{C_{S_4} \para{\sigma}} = 3
+        \abs{C_{S_4} \pqty{\sigma}} = 3
     \]
     is cyclic, so
     \[
-        C_{S_4} \para{\sigma} = \angBrac{\sigma} \subgroup A_4,
+        C_{S_4} \pqty{\sigma} = \angBrac{\sigma} \subgroup A_4,
     \]
     so the conjugacy class splits. (Alternatively, this means the centraliser cannot split into two equal parts, one of which in \(S_4\) but not \(A_4\), and one of which in \(A_4\), so it must be entirely contained in \(A_4\).)
 
@@ -625,7 +625,7 @@ This makes it possible to determine conjugacy classes in \(A_n\).
 \begin{table}[ht!]
     \centering
     \begin{tabular}{ccc}
-        Typical Element \(\gamma\) & \(\abs{\ccl_{A_4} \para{\gamma}}\) & \(\abs{C_{A_4} \para{\gamma}}\)\\
+        Typical Element \(\gamma\) & \(\abs{\ccl_{A_4} \pqty{\gamma}}\) & \(\abs{C_{A_4} \pqty{\gamma}}\)\\
         \hline\hline
         \(e\) & \(1\) & \(12\) \\
         \(\perm{12} \perm{34}\) & \(3\) & \(4\) \\
@@ -647,7 +647,7 @@ Now we study conjugacy classes in \(S_5\) and \(A_5\).
 \begin{table}[ht!]
     \centering
     \begin{tabular}{ccc}
-        Typical Element \(\gamma\) & \(\abs{\ccl_{S_5} \para{\gamma}}\) & \(\abs{C_{S_5} \para{\gamma}}\)\\
+        Typical Element \(\gamma\) & \(\abs{\ccl_{S_5} \pqty{\gamma}}\) & \(\abs{C_{S_5} \pqty{\gamma}}\)\\
         \hline\hline
         \(e\) & \(1\) & \(120\) \\\
         \(\perm{12}\) & \(\binom{5}{2} = 10\) & \(12\) \\
@@ -667,7 +667,7 @@ Now we study conjugacy classes in \(S_5\) and \(A_5\).
     The typical elements \(e, \perm{123}, \perm{12}\perm{34}, \perm{12345}\) are in \(A_5\).
     \begin{itemize}
         \item The conjugacy class for \(e\) does not split.
-        \item We notice that \(\perm{45} \in C_{S_5} \para{\gamma}\) so the conjugacy class for \(\perm{123}\) does not split.
+        \item We notice that \(\perm{45} \in C_{S_5} \pqty{\gamma}\) so the conjugacy class for \(\perm{123}\) does not split.
         \item The conjugacy class for \(\perm{12} \perm{34}\) has odd size so does not split.
         \item The centraliser for \(\perm{12345}\) has odd size, so the conjugacy class for \(\perm{12345}\) must split. Alternatively, the centraliser
         \[
@@ -681,7 +681,7 @@ Now we study conjugacy classes in \(S_5\) and \(A_5\).
 \begin{table}[ht!]
     \centering
     \begin{tabular}{ccc}
-        Typical Element \(\gamma\) & \(\abs{\ccl_{A_5} \para{\gamma}}\) & \(\abs{C_{A_5} \para{\gamma}}\)\\
+        Typical Element \(\gamma\) & \(\abs{\ccl_{A_5} \pqty{\gamma}}\) & \(\abs{C_{A_5} \pqty{\gamma}}\)\\
         \hline\hline
         \(e\) & \(1\) & \(60\) \\\
         \(\perm{123}\) & \(20\) & \(3\) \\

@@ -25,13 +25,13 @@ Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism, then \(\ker \phi \subgrou
         \]
         \item Suppose \(\functiondomain{\phi}{G}{G'}\) is a homomorphism. If \(h \in \ker \phi\), \(g \in G\), then
         \[
-            \phi\para{g h g\inverse} = e
+            \phi\pqty{g h g\inverse} = e
         \]
         and hence \(g h g\inverse \in \ker \phi\), so \(\ker \phi \normalsub G\).
     \end{enumerate}
 \end{examples*}
 
-From the definition, we can see that normal subgroups are subgroups which are precisely unions of conjugation classes: indeed, the condition for a subgroup to be normal is that all \(h \in H \normalsub G\) satisfy \(\ccl\para{h} \subseteq H\).
+From the definition, we can see that normal subgroups are subgroups which are precisely unions of conjugation classes: indeed, the condition for a subgroup to be normal is that all \(h \in H \normalsub G\) satisfy \(\ccl\pqty{h} \subseteq H\).
 
 Another way to think of normal subgroups is that their left and right cosets are equivalent.
 
@@ -46,7 +46,7 @@ Intuitively, this is true, since the definition of a normal subgroup is equivale
     \begin{itemize}
         \item \(\implies\). Let \(h \in H\) and \(g \in G\). Since \(H\normalsub G\), we have \(g h g\inverse \in H\). Hence,
         \[
-            gh = \para{ghg\inverse} g \in Hg,
+            gh = \pqty{ghg\inverse} g \in Hg,
         \]
         so \(gH \subseteq Hg\), and similarly \(Hg \subseteq gH\), so \(gH = Hg\) as desired.
         \item \(\impliedby\). Suppose \(gH = Hg\). Let \(h \in H\), then
@@ -105,9 +105,9 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
 \begin{theorem}[Quotient Group]
     \label{thm:quotient-group}%
-    If \(H \normalsub G\), the set of (left) cosets \(G / H\) forms a group with operation
+    If \(H \normalsub G\), the set of (left) cosets \(\flatfrac{G}{H}\) forms a group with operation
     \[
-        \para{g_1 H} \para{g_2 H} = \para{g_1 g_2} H.
+        \pqty{g_1 H} \pqty{g_2 H} = \pqty{g_1 g_2} H.
     \]
 \end{theorem}
 
@@ -119,7 +119,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
     Hence,
     \[
-        g_1 g_2 = \para{g_1' h_1} \para{h_2 g_2'} = g_1' \para{h_1 h_2} g_2' = g_1' g_2' h_3
+        g_1 g_2 = \pqty{g_1' h_1} \pqty{h_2 g_2'} = g_1' \pqty{h_1 h_2} g_2' = g_1' g_2' h_3
     \]
     again by \autoref{lem:left-right-coset-normal}, for some \(h_3 \in H\).
 
@@ -131,18 +131,18 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
     \emph{Inverse} of \(gH\) is \(g\inverse H\):
     \[
-        \para{gH} \para{g\inverse H} = \para{g g\inverse} H = eH = H
+        \pqty{gH} \pqty{g\inverse H} = \pqty{g g\inverse} H = eH = H
     \]
-    so \(\para{gH}\inverse = \para{g\inverse H}\), as required.
+    so \(\pqty{gH}\inverse = \pqty{g\inverse H}\), as required.
 \end{proof}
 
 \begin{definition}[Quotient Group, Quotient Map]
     \label{def:quotient-group-map}
-    If \(H \normalsub G\), then the quotient \(G / H\) provided by \autoref{thm:quotient-group} is called the \emph{quotient of \(G\) by \(H\)}.
+    If \(H \normalsub G\), then the quotient \(\flatfrac{G}{H}\) provided by \autoref{thm:quotient-group} is called the \emph{quotient of \(G\) by \(H\)}.
     
     The map
     \[
-        \function{\phi_{H}}{G}{G/H}{g}{gH}
+        \function{\phi_{H}}{G}{\flatfrac{G}{H}}{g}{gH}
     \]
     is the \emph{quotient map}.
 \end{definition}
@@ -153,10 +153,10 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
 
 \begin{examples*}[Examples of Quotient Groups]
     \begin{enumerate}
-        \item For any group \(G\), \(G / \trivialgp \isomorphic G\), and \(G / G \isomorphic \trivialgp\).
-        \item Since \(\ZZ\) is abelian, \(n\ZZ \normalsub \ZZ\) for any \(n \neq 0\). We see that \(\ZZ / n \ZZ\) is cyclic of order \(n\), with generator \(1 + n\ZZ\), so
+        \item For any group \(G\), \(\flatfrac{G}{\trivialgp} \isomorphic G\), and \(\flatfrac{G}{G} \isomorphic \trivialgp\).
+        \item Since \(\ZZ\) is abelian, \(n\ZZ \normalsub \ZZ\) for any \(n \neq 0\). We see that \(\flatfrac{\ZZ}{n \ZZ}\) is cyclic of order \(n\), with generator \(1 + n\ZZ\), so
         \[
-            \ZZ / n\ZZ \isomorphic C_n.
+            \flatfrac{\ZZ}{n\ZZ} \isomorphic C_n.
         \]
         \item All subgroups of index \(2\) are normal. Let \(G\) be a group and \(H \subgroup G\) with \(\abs{G : H} = 2\). Then, for any \(g \notin H\), we have
         \[
@@ -164,40 +164,40 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \]
         and \(eH = He\), so \(H \normalsub G\) by \autoref{lem:left-right-coset-normal}. Furthermore,
         \[
-            G / H \isomorphic C_2.
+            \flatfrac{G}{H} \isomorphic C_2.
         \]
-        \item In particular, \(C_n \isomorphic \angBrac{r} \normalsub D_{2n}\), and \(D_{2n} / C_n \isomorphic C_2\).
+        \item In particular, \(C_n \isomorphic \angBrac{r} \normalsub D_{2n}\), and \(\flatfrac{D_{2n}}{C_n} \isomorphic C_2\).
     \end{enumerate}
 \end{examples*}
 
 \begin{remark}
-    Note that \(C_4 / C_2 \isomorphic C_2 \isomorphic K_4 / C_2\), but \(C_4 \notisomorphic K_4\). In particular, for groups \(A, B\) and \(C\),
+    Note that \(\flatfrac{C_4}{C_2} \isomorphic C_2 \isomorphic \flatfrac{K_4}{C_2}\), but \(C_4 \notisomorphic K_4\). In particular, for groups \(A, B\) and \(C\),
     \[
-        A / B \isomorphic C \notimplies A \isomorphic B \times C.
+        \flatfrac{A}{B} \isomorphic C \notimplies A \isomorphic B \times C.
     \]
 
     However, it is indeed true that
     \[
-        A \isomorphic B \times C \implies A / \para{B \times \trivialgp} \isomorphic C, A / \para{\trivialgp \times C} \isomorphic B.
+        A \isomorphic B \times C \implies \flatfrac{A}{\pqty{B \times \trivialgp}} \isomorphic C, \flatfrac{A}{\pqty{\trivialgp \times C}} \isomorphic B.
     \]
 
     This can be easily shown by considering the projection map and applying \autoref{thm:first-isomorphism} (First Isomorphism Theorem) introduced below.
 
-    However, note that if \(H_1, H_2\) are isomorphic normal subgroups of \(G\), this does \emph{not} necessarily imply that \(G / H_1 \isomorphic G / H_2\). An infinite example would be \(\ZZ / n\ZZ\) where \(n\) can be any integer, and a finite one would be considering \(C_2 \times C_4\) where \(C_2 = \angBrac{a}\) and \(C_4 = \angBrac{b}\), and taking the quotient by \(\angBrac{\para{a, e}}\), or \(\angBrac{\para{e, b^2}}\) -- the former produces \(C_4\) and the latter produces \(C_2 \times C_2\).
+    However, note that if \(H_1, H_2\) are isomorphic normal subgroups of \(G\), this does \emph{not} necessarily imply that \(\flatfrac{G}{H_1} \isomorphic \flatfrac{G}{H_2}\). An infinite example would be \(\flatfrac{\ZZ}{n\ZZ}\) where \(n\) can be any integer, and a finite one would be considering \(C_2 \times C_4\) where \(C_2 = \angBrac{a}\) and \(C_4 = \angBrac{b}\), and taking the quotient by \(\angBrac{\pqty{a, e}}\), or \(\angBrac{\pqty{e, b^2}}\) -- the former produces \(C_4\) and the latter produces \(C_2 \times C_2\).
 \end{remark}
     
 \begin{theorem}[First Isomorphism theorem]
     \label{thm:first-isomorphism}%
     If \(\functiondomain{\phi}{G}{H}\) is a homomorphism, then
     \[
-        G / \ker \phi \isomorphic \img \phi.
+        \flatfrac{G}{\ker \phi} \isomorphic \img \phi.
     \]
 \end{theorem}
 
 \begin{proof}
-    Since \(\ker \phi \normalsub G\), we see \(G / \ker \phi\) is indeed a group. We define a map corresponding to \(\phi\) as
+    Since \(\ker \phi \normalsub G\), we see \(\flatfrac{G}{\ker \phi}\) is indeed a group. We define a map corresponding to \(\phi\) as
     \[
-        \function{\bar{\phi}}{G / \ker \phi}{\img \phi}{g \ker \phi}{\phi \para{g}.}
+        \function{\bar{\phi}}{\flatfrac{G}{\ker \phi}}{\img \phi}{g \ker \phi}{\phi \pqty{g}.}
     \]
 
     We would like to show this is a well-defined isomorphism.
@@ -208,41 +208,41 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
     \]
     for some \(k \in \ker \phi\). Then,
     \begin{align*}
-            \bar{\phi} \para{g_1 \ker \phi} &= \phi\para{g_1} \\
-            &= \phi\para{g_2 k} \\
-            &= \phi\para{g_2} \phi\para{k} \\
-            &= \phi\para{g_2} e \\
-            &= \phi\para{g_2} \\
-            &= \bar{\phi} \para{g_2 \ker \phi}
+            \bar{\phi} \pqty{g_1 \ker \phi} &= \phi\pqty{g_1} \\
+            &= \phi\pqty{g_2 k} \\
+            &= \phi\pqty{g_2} \phi\pqty{k} \\
+            &= \phi\pqty{g_2} e \\
+            &= \phi\pqty{g_2} \\
+            &= \bar{\phi} \pqty{g_2 \ker \phi}
     \end{align*}
     showing the map \(\bar{\phi}\) is well-defined as desired.
 
     \emph{\(\bar{\phi}\) is a homomorphism.} This inherits from \(\phi\) being a homomorphism: for any \(g_1, g_2 \in G\),
     \begin{align*}
-        \bar{\phi} \para{\para{g_1 \ker \phi} \para{g_2 \ker \phi}} &= \bar{\phi} \para{\para{g_1 g_2} \ker \phi} \\
-        &= \phi \para{g_1 g_2} \\
-        &= \phi \para{g_1} \phi \para{g_2} \\
-        &= \bar{\phi} \para{g_1 \ker \phi} \bar{\phi} \para{g_2 \ker \phi}.
+        \bar{\phi} \pqty{\pqty{g_1 \ker \phi} \pqty{g_2 \ker \phi}} &= \bar{\phi} \pqty{\pqty{g_1 g_2} \ker \phi} \\
+        &= \phi \pqty{g_1 g_2} \\
+        &= \phi \pqty{g_1} \phi \pqty{g_2} \\
+        &= \bar{\phi} \pqty{g_1 \ker \phi} \bar{\phi} \pqty{g_2 \ker \phi}.
     \end{align*}
 
-    \emph{\(\bar{\phi}\) is injective.} Suppose that \(\bar{\phi} \para{g \ker \phi} = e\) for some \(g \in G\).
+    \emph{\(\bar{\phi}\) is injective.} Suppose that \(\bar{\phi} \pqty{g \ker \phi} = e\) for some \(g \in G\).
     
-    Then \(\phi\para{g} = \bar{\phi} \para{g \ker \phi} = e\), which shows that \(g \in \ker \phi\), and \(g \ker \phi = \ker \phi\).
+    Then \(\phi\pqty{g} = \bar{\phi} \pqty{g \ker \phi} = e\), which shows that \(g \in \ker \phi\), and \(g \ker \phi = \ker \phi\).
 
-    Therefore, \(\ker \bar{\phi} = \brce{\ker \phi} \isomorphic \trivialgp_{G / \ker \phi}\), showing \(\bar{\phi}\) is injective.
+    Therefore, \(\ker \bar{\phi} = \Bqty{\ker \phi} \isomorphic \trivialgp_{\flatfrac{G}{\ker \phi}}\), showing \(\bar{\phi}\) is injective.
 
-    \emph{\(\bar{\phi}\) is surjective.} A typical element of \(\img \phi\) is \(\phi\para{g}\), and we have
+    \emph{\(\bar{\phi}\) is surjective.} A typical element of \(\img \phi\) is \(\phi\pqty{g}\), and we have
     \[
-        \bar{\phi} \para{g \ker \phi} = \phi\para{g}.
+        \bar{\phi} \pqty{g \ker \phi} = \phi\pqty{g}.
     \]
 
     Therefore, \(\bar{\phi}\) defines an isomorphism, so
     \[
-        G / \ker \phi \isomorphic \img \phi.
+        \flatfrac{G}{\ker \phi} \isomorphic \img \phi.
     \]
 \end{proof}
 
-\autoref{thm:first-isomorphism} (First Isomorphism Theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(G / H \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\functiondomain{\phi}{G}{K}\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
+\autoref{thm:first-isomorphism} (First Isomorphism Theorem) is very important in studying quotients of groups, and in fact, constructing a such map also shows a group being a normal, so we do not need to show \(H \normalsub G\) before showing \(\flatfrac{G}{H} \isomorphic K\) by this theorem -- simply constructing a surjective homomorphism \(\functiondomain{\phi}{G}{K}\) with \(\ker \phi = H\) immediately shows \(H\) being normal and the quotient being isomorphic.
 
 \begin{examples*}[Applications of \autoref{thm:first-isomorphism} (First Isomorphism Theorem)]
     \begin{enumerate}
@@ -252,7 +252,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \]
         is a homomorphism with \(\img \phi \isomorphic C_n\) and \(\ker \phi = n\ZZ\), so
         \[
-            \ZZ / n\ZZ \isomorphic \img \phi \isomorphic C_n
+            \flatfrac{\ZZ}{n\ZZ} \isomorphic \img \phi \isomorphic C_n
         \]
         by \autoref{thm:first-isomorphism} (First Isomorphism Theorem).
 
@@ -262,7 +262,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \]
         is a homomorphism with
         \[
-            \img \phi = \set{z \in \CC}{\abs{z} = 1} = \U\para{1}
+            \img \phi = \set{z \in \CC}{\abs{z} = 1} = \U\pqty{1}
         \]
         and
         \[
@@ -270,7 +270,7 @@ Now, normal subgroups allow us to make the set of cosets a group of its own.
         \]
         and hence
         \[
-            \RR / \ZZ \isomorphic \U\para{1}.
+            \flatfrac{\RR}{\ZZ} \isomorphic \U\pqty{1}.
         \]
     \end{enumerate}
 \end{examples*}

@@ -80,12 +80,12 @@ We first define what it means to have a binary operation on a set -- this forms 
     \]
     where \(X \times X\) is the \emph{Cartesian product} given by
     \[
-        X \times X = \set{\para{x_1, x_2}}{x_1, x_2 \in X}.
+        X \times X = \set{\pqty{x_1, x_2}}{x_1, x_2 \in X}.
     \]
     
     We denote
     \[
-        \functionmap{\cdot}{\para{x_1, x_2}}{x_1 \cdot x_2}.
+        \functionmap{\cdot}{\pqty{x_1, x_2}}{x_1 \cdot x_2}.
     \]
 \end{definition}
 
@@ -95,7 +95,7 @@ Now we are ready to define a group as an algebraic structure, using the followin
     \label{def:group}%
     A \emph{group} is a triple
     \[
-        \para{G, \cdot, e}
+        \pqty{G, \cdot, e}
     \]
     where
     \begin{itemize}
@@ -107,7 +107,7 @@ Now we are ready to define a group as an algebraic structure, using the followin
     \begin{enumerate}
         \item \emph{Closure}. For all \(a, b \in G\), \(a \cdot b \in G\).
         \item \emph{Associativity}. For all \(a, b, c \in G\), \(
-        \para{\para{a \cdot b} \cdot c} = \para{a \cdot \para{b \cdot c}}\).
+        \pqty{\pqty{a \cdot b} \cdot c} = \pqty{a \cdot \pqty{b \cdot c}}\).
         \item \emph{(Right) Identity}. For all \(a \in G\), \(a \cdot e = a\).
         \item \emph{(Right) Inverses}. For all \(a \in G\), there exists some \(b \in G\), such that \(a \cdot b = e\).
     \end{enumerate}
@@ -122,7 +122,7 @@ A group is an \textbf{algebraic structure with one operation}.
 \begin{examples*}
     \begin{itemize}
         \item \emph{Equilateral triangle.} The symmetries of an equilateral triangle forms a group, with respect to composition, and the identity symmetry is the identity element.
-        \item \emph{Integers.} \(\para{\ZZ, +, 0}\) forms a group.
+        \item \emph{Integers.} \(\pqty{\ZZ, +, 0}\) forms a group.
     \end{itemize}
 \end{examples*}
 
@@ -130,7 +130,7 @@ Some authors define the identity to be a two-sided identity, and the inverse to 
 
 \begin{proposition}[Properties on Inverses and Identities]
     \label{prop:inverse-identity}%
-    Let \(\para{G, \cdot, e}\) be a group. Let \(a, b, b', e' \in G\).
+    Let \(\pqty{G, \cdot, e}\) be a group. Let \(a, b, b', e' \in G\).
 
     \begin{enumerate}
         \item \emph{Right-inverses are also left-inverses.} If \(a \cdot b = e\), then \(b \cdot a = e\).
@@ -145,8 +145,8 @@ Some authors define the identity to be a two-sided identity, and the inverse to 
         \item We have
         \begin{align*}
             b &= b \cdot e && \text{Identity Axiom} \\
-            &= b \cdot \para{a \cdot b} && \text{Assumption} \\
-            &= \para{b \cdot a} \cdot b. && \text{Associativity Axiom}
+            &= b \cdot \pqty{a \cdot b} && \text{Assumption} \\
+            &= \pqty{b \cdot a} \cdot b. && \text{Associativity Axiom}
         \end{align*}
 
         By the Inverse Axiom, there exists \(c \in G\) such that \(b \cdot c = e\).
@@ -154,9 +154,9 @@ Some authors define the identity to be a two-sided identity, and the inverse to 
         We now right-multiply both sides by \(c\), giving
         \begin{align*}
             e &= b \cdot c && \text{Assumption on }c \\
-            &= \para{\para{b \cdot a} \cdot b} \cdot c \\
-            &= \para{b \cdot a} \cdot \para{b \cdot c} && \text{Associativity Axiom} \\
-            &= \para{b \cdot a} \cdot e && \text{Assumption on }c \\
+            &= \pqty{\pqty{b \cdot a} \cdot b} \cdot c \\
+            &= \pqty{b \cdot a} \cdot \pqty{b \cdot c} && \text{Associativity Axiom} \\
+            &= \pqty{b \cdot a} \cdot e && \text{Assumption on }c \\
             &= b \cdot a. && \text{Identity Axiom}
         \end{align*}
 
@@ -164,8 +164,8 @@ Some authors define the identity to be a two-sided identity, and the inverse to 
         
         Now, we have
         \begin{align*}
-            e \cdot a &= \para{a \cdot b} \cdot a && \text{Assumption} \\
-            &= a \cdot \para{b \cdot a} && \text{Associativity Axiom} \\
+            e \cdot a &= \pqty{a \cdot b} \cdot a && \text{Assumption} \\
+            &= a \cdot \pqty{b \cdot a} && \text{Associativity Axiom} \\
             &= a \cdot e && \text{Assumption} \\
             &= a. && \text{Identity Axiom}
         \end{align*}
@@ -173,17 +173,17 @@ Some authors define the identity to be a two-sided identity, and the inverse to 
         \item We have from the previous parts, that
         \begin{align*}
             b' &= e \cdot b' && \text{\autoref{prop:inverse-identity}, Part 2} \\
-            &= \para{b \cdot a} \cdot b' && \text{\autoref{prop:inverse-identity}, Part 1, and Assumption} \\
-            &= b \cdot \para{a \cdot b'} && \text{Associativity Axiom} \\
+            &= \pqty{b \cdot a} \cdot b' && \text{\autoref{prop:inverse-identity}, Part 1, and Assumption} \\
+            &= b \cdot \pqty{a \cdot b'} && \text{Associativity Axiom} \\
             &= b \cdot e && \text{Assumption} \\
             &= b && \text{Identity Axiom}.
         \end{align*}
 
-        \item By the Inverse Axiom, and \autoref{prop:inverse-identity} Part 1, there exists \(b \in G\) such that \(b \cdot a = e\). We are given that \(a \cdot e' = a\), and hence \(b \cdot \para{a \cdot e'} = b \cdot a\).
+        \item By the Inverse Axiom, and \autoref{prop:inverse-identity} Part 1, there exists \(b \in G\) such that \(b \cdot a = e\). We are given that \(a \cdot e' = a\), and hence \(b \cdot \pqty{a \cdot e'} = b \cdot a\).
 
         Hence,
         \begin{align*}
-            e &= \para{b \cdot a} \cdot e' && \text{Associativity Axiom} \\
+            e &= \pqty{b \cdot a} \cdot e' && \text{Associativity Axiom} \\
             &= e \cdot e' \\
             &= e' && \text{\autoref{prop:inverse-identity} Part 2}.
         \end{align*}
@@ -202,7 +202,7 @@ Part 1 of the same proposition tells us that
 \]
 which in turn means that
 \[
-    \para{a \inverse} \inverse = a.
+    \pqty{a \inverse} \inverse = a.
 \]
 
 \begin{notation}
@@ -214,31 +214,31 @@ which in turn means that
 
     Similarly, for negative integers \(n < 0\), we define
     \[
-        a^n = \para{a \inverse}^{-n}.
+        a^n = \pqty{a \inverse}^{-n}.
     \]
 \end{notation}
 
-We may show that \(a^m \cdot a^n = a^{m + n}\) and \(\para{a^m}^n = a^{mn}\), that is, the exponentiation satisfies the rules we are familiar with.
+We may show that \(a^m \cdot a^n = a^{m + n}\) and \(\pqty{a^m}^n = a^{mn}\), that is, the exponentiation satisfies the rules we are familiar with.
 
 Recall that it is \emph{not} necessarily true that \(a \cdot b = b \cdot a\) for all \(a, b \in G\).
 
 Hence, it is \emph{not} necessarily true that
 \[
-    \para{a \cdot b}\inverse = a \inverse \cdot b \inverse.
+    \pqty{a \cdot b}\inverse = a \inverse \cdot b \inverse.
 \]
 
 However, we notice that
 \begin{align*}
-    \para{a \cdot b} \cdot \para{b \inverse \cdot a \inverse} &= \para{\para{a \cdot b} \cdot b\inverse} \cdot a\inverse \\
-    &= \para{a \cdot \para{b \cdot b\inverse}} \cdot a\inverse \\
-    &= \para{a \cdot e} \cdot a\inverse \\
+    \pqty{a \cdot b} \cdot \pqty{b \inverse \cdot a \inverse} &= \pqty{\pqty{a \cdot b} \cdot b\inverse} \cdot a\inverse \\
+    &= \pqty{a \cdot \pqty{b \cdot b\inverse}} \cdot a\inverse \\
+    &= \pqty{a \cdot e} \cdot a\inverse \\
     &= a \cdot a\inverse \\
     &= e.
 \end{align*}
 
 Hence, we have that
 \[
-    \para{a \cdot b}\inverse = b \inverse \cdot a \inverse.
+    \pqty{a \cdot b}\inverse = b \inverse \cdot a \inverse.
 \]
 
 We give a special name for those groups which are commutative.
@@ -253,20 +253,20 @@ We give a special name for those groups which are commutative.
 \end{definition}
 
 \begin{example*}[Trivial Group]
-    If \(G = \brce{e}\) and \(\functionmap{\cdot}{\para{e, e}}{e}\), then \(\para{G, \cdot, e}\) is the \emph{trivial group}.
+    If \(G = \Bqty{e}\) and \(\functionmap{\cdot}{\pqty{e, e}}{e}\), then \(\pqty{G, \cdot, e}\) is the \emph{trivial group}.
 \end{example*}
 
 \begin{examples*}[Familiar Examples from Arithemetic]
     \begin{enumerate}
-        \item \(\para{\ZZ, +, 0}\), \(\para{\QQ, +, 0}\), \(\para{\RR, +, 0}\) and \(\para{\CC, +, 0}\) are all \emph{abelian} groups.
+        \item \(\pqty{\ZZ, +, 0}\), \(\pqty{\QQ, +, 0}\), \(\pqty{\RR, +, 0}\) and \(\pqty{\CC, +, 0}\) are all \emph{abelian} groups.
         
         The inverse of \(x\) in these groups are \(-x\) -- this is known as the \emph{additive notation}.
 
-        \item \(\para{\NN, +, 0}\) is \emph{not} a group, since it does not satisfy the Inverse Axiom.
+        \item \(\pqty{\NN, +, 0}\) is \emph{not} a group, since it does not satisfy the Inverse Axiom.
         
-        \item \(\para{\QQ, \times, 1}\) is \emph{not} a group because \(0 \in \QQ\) has no inverse. However, \(\para{\QQ \setminus \brce{0}, \times, 1}\) is an \emph{abelian group}, and we denote this as \(\QQ\multiplicative\).
+        \item \(\pqty{\QQ, \times, 1}\) is \emph{not} a group because \(0 \in \QQ\) has no inverse. However, \(\pqty{\QQ \setminus \Bqty{0}, \times, 1}\) is an \emph{abelian group}, and we denote this as \(\QQ\multiplicative\).
         
-        Similarly, \(\para{\RR \setminus \brce{0}, \times, 1}\) and \(\para{\CC \setminus \brce{0}, \times, 1}\) are as well, and we denote them as \(\RR\multiplicative\) and \(\CC\multiplicative\) respectively.
+        Similarly, \(\pqty{\RR \setminus \Bqty{0}, \times, 1}\) and \(\pqty{\CC \setminus \Bqty{0}, \times, 1}\) are as well, and we denote them as \(\RR\multiplicative\) and \(\CC\multiplicative\) respectively.
     \end{enumerate}
 \end{examples*}
 
@@ -276,20 +276,20 @@ We would like to define the size of a group, and the definition is as in  \autor
 
 \begin{definition}[Order of a Group, Finite Group]
     \label{def:order-group}%
-    The \emph{order} of a group \(\para{G, \cdot, e}\) is the number of elements of \(G\), denoted by \(\abs{G}\) or \(\size G\).
+    The \emph{order} of a group \(\pqty{G, \cdot, e}\) is the number of elements of \(G\), denoted by \(\abs{G}\) or \(\size G\).
 
-    If \(\abs{G} < \infty\), then we say \(\para{G, \cdot, e}\) is a \emph{finite} group.
+    If \(\abs{G} < \infty\), then we say \(\pqty{G, \cdot, e}\) is a \emph{finite} group.
 \end{definition}
 
 \begin{examples*}
     \begin{enumerate}
-        \item For any \(n \in \NN\), let \(C_n = \set{z \in \CC}{z^n = 1}\), then \(\para{C_n, \times, 1}\) is an abelian group.
-        \item Let \(\ZZ_n = \brce{0, 1, \cdots, n - 1}\). We let for \(a, b \in \ZZ_n\), we have
+        \item For any \(n \in \NN\), let \(C_n = \set{z \in \CC}{z^n = 1}\), then \(\pqty{C_n, \times, 1}\) is an abelian group.
+        \item Let \(\ZZ_n = \Bqty{0, 1, \cdots, n - 1}\). We let for \(a, b \in \ZZ_n\), we have
         \[
             a +_n b = (a + b) \modulo n.
         \]
 
-        We can see \(\para{\ZZ_n, +_n, 0}\) is an abelian group.
+        We can see \(\pqty{\ZZ_n, +_n, 0}\) is an abelian group.
     \end{enumerate}
 \end{examples*}
 
@@ -312,7 +312,7 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
 
     Here,
     \[
-        \para{f \circ g}\para{x} = f \para{g \para{x}}
+        \pqty{f \circ g}\pqty{x} = f \pqty{g \pqty{x}}
     \]
     by definition of composition.
 
@@ -321,10 +321,10 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
 
 \begin{definition}[Symmetry Group]
     \label{def:symmetry-group}%
-    \(\Sym\para{X}\) is defined to be the set of permutations of a set \(X\).
+    \(\Sym\pqty{X}\) is defined to be the set of permutations of a set \(X\).
 \end{definition}
 
-To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:composition-associative}.
+To show \(\Sym\pqty{X}\) is indeed a group, we first show \autoref{lem:composition-associative}.
 
 \begin{lemma}[Composition is Associative]
     \label{lem:composition-associative}%
@@ -334,24 +334,24 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
     \]
     we have
     \[
-        \para{h \circ g} \circ f = h \circ \para{g \circ f}.
+        \pqty{h \circ g} \circ f = h \circ \pqty{g \circ f}.
     \]
 \end{lemma}
 
 \begin{proof}
     For any \(w \in W\), we have
     \begin{align*}
-        \para{\para{h \circ g} \circ f} \para{w} &= \para{h \circ g} \para{f\para{w}} \\
-        &= h \para{g \para{f \para{w}}} \\
-        &= h \para{\para{g \circ f} \para{w}} \\
-        &= \para{h \circ \para{g \circ f}} \para{w}
+        \pqty{\pqty{h \circ g} \circ f} \pqty{w} &= \pqty{h \circ g} \pqty{f\pqty{w}} \\
+        &= h \pqty{g \pqty{f \pqty{w}}} \\
+        &= h \pqty{\pqty{g \circ f} \pqty{w}} \\
+        &= \pqty{h \circ \pqty{g \circ f}} \pqty{w}
     \end{align*}
     as required.
 \end{proof}
 
 \begin{proposition}
     \label{prop:symmetry-group}%
-    For any set \(X\), \(\para{\Sym\para{X}, \circ, \identity_X}\) is a group.
+    For any set \(X\), \(\pqty{\Sym\pqty{X}, \circ, \identity_X}\) is a group.
 \end{proposition}
 
 \begin{proof}
@@ -364,7 +364,7 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
 
 \begin{definition}[\(S_n\)]
     \label{def:s-n}%
-    If \(X = \brce{1, 2, \ldots, n}\), we write \(S_n = \Sym\para{X}\).
+    If \(X = \Bqty{1, 2, \ldots, n}\), we write \(S_n = \Sym\pqty{X}\).
 \end{definition}
 
 \begin{examples*}
@@ -379,7 +379,7 @@ To show \(\Sym\para{X}\) is indeed a group, we first show \autoref{lem:compositi
 \end{remark}
 
 \begin{notation}
-    Writing \(\para{G, \cdot, e}\) for a group is often cumbersome. Henceforth, we will normally just write \(G\) for the group.
+    Writing \(\pqty{G, \cdot, e}\) for a group is often cumbersome. Henceforth, we will normally just write \(G\) for the group.
     
     If we would like to emphasise that \(e\) is the identity element of \(G\), we will write \(e_G\) for \(e\).
 
@@ -412,7 +412,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         \item For any group \(G\),
         \[
-            \trivialgp_G = \brce{e_G}
+            \trivialgp_G = \Bqty{e_G}
         \]
         is the \emph{trivial subgroup}.
 
@@ -423,7 +423,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         \item For \(n = 0, 1, 2, 3, \cdots,\) let
         \[
-            n\ZZ = \set{nk}{k \in \ZZ} = \brce{\cdots, -2n, -n, 0, n, 2, \cdots}.
+            n\ZZ = \set{nk}{k \in \ZZ} = \Bqty{\cdots, -2n, -n, 0, n, 2, \cdots}.
         \]
 
         Now, we have
@@ -431,10 +431,10 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
             \item \(0 \in \ZZ\).
             \item Let \(x = nk, y = nl \in n\ZZ\) for \(k, l \in \ZZ\).
             
-            Then \(x + y = nk + nl = n \para{k + l} \in n\ZZ\).
+            Then \(x + y = nk + nl = n \pqty{k + l} \in n\ZZ\).
             \item Let \(x = nk \in n\ZZ\) for \(k \in \ZZ\).
             
-            Then \(-x = -nk = n \cdot \para{-k} \in n\ZZ\).
+            Then \(-x = -nk = n \cdot \pqty{-k} \in n\ZZ\).
         \end{itemize}
 
         Hence, \(n\ZZ \subgroup \ZZ\).
@@ -453,9 +453,9 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 \end{proposition}
 
 \begin{proof}
-    If \(H = \brce{0}\) then \(H = 0\ZZ\) is indeed of this form.
+    If \(H = \Bqty{0}\) then \(H = 0\ZZ\) is indeed of this form.
 
-    Otherwise, \(H \neq \brce{0}\), we may choose \(n \in H \setminus \brce{0}\) to be the smallest positive \(n \in H\).
+    Otherwise, \(H \neq \Bqty{0}\), we may choose \(n \in H \setminus \Bqty{0}\) to be the smallest positive \(n \in H\).
 
     Note that if \(x \in H\) and \(x < 0\), then \(-x \in H\) and \(x > 0\). Therefore, such positive number \(n\) must exist.
 
@@ -514,7 +514,7 @@ Specifically, the second example allows us to define `the smallest group' contai
 
 Let \(\CC\) be the complex plane, equipped with the usual notion of distance (the Euclidean norm), where
 \[
-    \abs{z - w} = \sqrt{\para{z_1 - w_1}^2 + \para{z_2 - w_2}^2}.
+    \abs{z - w} = \sqrt{\pqty{z_1 - w_1}^2 + \pqty{z_2 - w_2}^2}.
 \]
 
 \begin{figure}[ht!]
@@ -529,46 +529,46 @@ We consider a certain group of symmetries that preserves distances.
     \label{def:isometry}%
     For any subset \(X \subseteq \CC\), an \emph{isometry} of \(X\) is a bijection \(\functiondomain{f}{X}{X}\) that preserves distance, that is,
     \[
-        \abs{f\para{x} - f\para{y}} = \abs{x - y}
+        \abs{f\pqty{x} - f\pqty{y}} = \abs{x - y}
     \]
     for all \(x, y \in X\).
 \end{definition}
 
 \begin{proposition}[Isometry Groups in \(\CC\)]
     \label{prop:isometry-group-in-C}%
-    Let \(X \subseteq \CC\). The set of isometries of \(X\), denoted as \(\Isom\para{X}\), is a subgroup of \(\Sym\para{X}\):
+    Let \(X \subseteq \CC\). The set of isometries of \(X\), denoted as \(\Isom\pqty{X}\), is a subgroup of \(\Sym\pqty{X}\):
     \[
-        \Isom\para{X} \subgroup \Sym\para{X}.
+        \Isom\pqty{X} \subgroup \Sym\pqty{X}.
     \]
 
-    In particular, \(\Isom\para{X}\) is a group.
+    In particular, \(\Isom\pqty{X}\) is a group.
 \end{proposition}
 
 \begin{proof}
-    We check \autoref{def:subgroup} (Subgroup). Let \(f, h \in \Isom\para{X}\), and \(x, y \in X\).
+    We check \autoref{def:subgroup} (Subgroup). Let \(f, h \in \Isom\pqty{X}\), and \(x, y \in X\).
 
     \begin{itemize}
-        \item We see that \(\identity_{X} \in \Isom\para{X}\) since \(\identity_{X}\) is a bijection \(X \to X\), and
+        \item We see that \(\identity_{X} \in \Isom\pqty{X}\) since \(\identity_{X}\) is a bijection \(X \to X\), and
         \[
-            \abs{\identity\para{x} - \identity\para{y}} = \abs{x - y},
+            \abs{\identity\pqty{x} - \identity\pqty{y}} = \abs{x - y},
         \]
         so it is indeed an isometry.
 
         \item Since \(f, g\) are isometries,
         \begin{align*}
-            \abs{f\para{g \para{x}} - f\para{g \para{y}}} &= \abs{g\para{x} - g\para{y}} && f \in \Isom\para{X} \\
-            &= \abs{x - y}, && g \in \Isom\para{X}
+            \abs{f\pqty{g \pqty{x}} - f\pqty{g \pqty{y}}} &= \abs{g\pqty{x} - g\pqty{y}} && f \in \Isom\pqty{X} \\
+            &= \abs{x - y}, && g \in \Isom\pqty{X}
         \end{align*}
-        so \(f \circ h \in \Isom\para{X}\).
+        so \(f \circ h \in \Isom\pqty{X}\).
 
-        \item If \(f \in \Isom\para{X}\), let \(x' = f\inverse\para{x}\) and \(y' = f\inverse\para{y}\), then
+        \item If \(f \in \Isom\pqty{X}\), let \(x' = f\inverse\pqty{x}\) and \(y' = f\inverse\pqty{y}\), then
         \begin{align*}
-            \abs{x' - y'} &= \abs{f\para{x'} - f\para{y'}} && f \in \Isom\para{X} \\
-            &= \abs{f \circ f\inverse \para{x} - f \circ f\inverse \para{y}} \\
-            &= \abs{\identity_{X} \para{x} - \identity_{X} \para{y}} \\
+            \abs{x' - y'} &= \abs{f\pqty{x'} - f\pqty{y'}} && f \in \Isom\pqty{X} \\
+            &= \abs{f \circ f\inverse \pqty{x} - f \circ f\inverse \pqty{y}} \\
+            &= \abs{\identity_{X} \pqty{x} - \identity_{X} \pqty{y}} \\
             &= \abs{x - y},
         \end{align*}
-        so \(f \inverse \in \Isom\para{X}\), as desired.
+        so \(f \inverse \in \Isom\pqty{X}\), as desired.
     \end{itemize}
 \end{proof}
 
@@ -581,7 +581,7 @@ We consider a certain group of symmetries that preserves distances.
 
     The \emph{\(n\)-th Dihedral Group} \(D_{2n}\) is defined as
     \[
-        D_{2n} = \Isom\para{X_n}.
+        D_{2n} = \Isom\pqty{X_n}.
     \]
 \end{definition}
 
@@ -606,7 +606,7 @@ The proof will give us a good description of all the elements in \(D_{2n}\). How
     \label{lem:kite-lemma}%
     Let \(x_1, y_1, x_2, y_2 \in \CC\). If \(\abs{x_1 - y_1} = \abs{x_1 - y_2}\), and \(\abs{x_2 - y_1} = \abs{x_2 - y_2}\), then
     \[
-        \para{x_2 - x_1} \perp \para{y_2 - y_1}.
+        \pqty{x_2 - x_1} \perp \pqty{y_2 - y_1}.
     \]
 \end{lemma}
 
@@ -624,35 +624,35 @@ The proof will give us a good description of all the elements in \(D_{2n}\). How
 
 \begin{lemma}[Three--Point Lemma]
     \label{lem:three-point-lemma}%
-    Let \(X \subseteq \CC\) and \(f \in \Isom\para{X}\). If there exist some \(x_1, x_2, x_3 \in X\) that are not co-linear, such that
+    Let \(X \subseteq \CC\) and \(f \in \Isom\pqty{X}\). If there exist some \(x_1, x_2, x_3 \in X\) that are not co-linear, such that
     \[
-        x_i = f\para{x_i}
+        x_i = f\pqty{x_i}
     \]
     for \(i = 1, 2, 3\), then \(f = \identity_{X}\).
 \end{lemma}
 
 \begin{proof}
-    We prove by contradiction. Suppose that \(f\para{y} \neq y\) for some \(y \in X\), then
+    We prove by contradiction. Suppose that \(f\pqty{y} \neq y\) for some \(y \in X\), then
     \[
-        \abs{f\para{y} - x_i} = \abs{f\para{y} - f\para{x_i}} = \abs{y - x_i}
+        \abs{f\pqty{y} - x_i} = \abs{f\pqty{y} - f\pqty{x_i}} = \abs{y - x_i}
     \]
-    by the hypothesis and that \(f \in \Isom\para{X}\), for \(i = 1, 2, 3\).
+    by the hypothesis and that \(f \in \Isom\pqty{X}\), for \(i = 1, 2, 3\).
 
-    We apply \autoref{lem:kite-lemma} (Kite Lemma) with \(y_1 = y, y_2 = f\para{y}\), and hence \(\para{x_2 - x_1}\) is perpendicular to \(\para{f\para{y} - y} \neq 0\).
+    We apply \autoref{lem:kite-lemma} (Kite Lemma) with \(y_1 = y, y_2 = f\pqty{y}\), and hence \(\pqty{x_2 - x_1}\) is perpendicular to \(\pqty{f\pqty{y} - y} \neq 0\).
 
-    Similarly, \(\para{x_3 - x_1}\) is perpendicular to \(\para{f\para{y} - y} \neq 0\).
+    Similarly, \(\pqty{x_3 - x_1}\) is perpendicular to \(\pqty{f\pqty{y} - y} \neq 0\).
 
     Hence, \(x_1, x_2, x_3\) lie on a line, which contradicts with \(x_1, x_2, x_3\) being not co-linear.
 \end{proof}
 
 \begin{remark}
-    There is equally a \(\para{n + 1}\)-point lemma valid in \(\RR^n\) equipped with the usual notion of distance.
+    There is equally a \(\pqty{n + 1}\)-point lemma valid in \(\RR^n\) equipped with the usual notion of distance.
 \end{remark}
 
 Now, to prove \autoref{thm:size-of-dihedral-group} (\(\abs{D_{2n}} = 2n\)), we define \emph{2 elements} of \(D_{2n}\):
 \begin{align*}
-    r\para{z} &= e^{\frac{2 \pi i}{n}} z, && \text{a rotation} \\
-    s\para{z} &= \conjugate{z}. && \text{a reflection} \\
+    r\pqty{z} &= e^{\frac{2 \pi i}{n}} z, && \text{a rotation} \\
+    s\pqty{z} &= \conjugate{z}. && \text{a reflection} \\
 \end{align*}
 
 \begin{figure}[ht!]
@@ -663,7 +663,7 @@ Now, to prove \autoref{thm:size-of-dihedral-group} (\(\abs{D_{2n}} = 2n\)), we d
 
 We claim that in particular,
 \[
-    D_{2n} = \brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}
+    D_{2n} = \Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}
 \]
 and that these two elements generate the dihedral group,
 \[
@@ -672,14 +672,14 @@ and that these two elements generate the dihedral group,
 
 The proof structure would be a typical subset-superset proof, i.e.
 \begin{enumerate}
-    \item \(\brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}\);
-    \item \(D_{2n} \subseteq \brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}\).
+    \item \(\Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}\);
+    \item \(D_{2n} \subseteq \Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}\).
 \end{enumerate}
 
 \begin{proof}
     First, we show that \(r, s \in D_{2n}\). Indeed, for any \(x, y \in \CC\),
     \begin{align*}
-        \abs{r\para{x} - r\para{y}} &= \abs{e^{\frac{2 \pi i}{n}} x - e^{\frac{2 \pi i}{n}} y} \\
+        \abs{r\pqty{x} - r\pqty{y}} &= \abs{e^{\frac{2 \pi i}{n}} x - e^{\frac{2 \pi i}{n}} y} \\
         &= \abs{e^{\frac{2 \pi i}{n}}} \abs{x - y} \\
         &= \abs{X - y}
     \end{align*}
@@ -687,8 +687,8 @@ The proof structure would be a typical subset-superset proof, i.e.
 
     Also, applying \(r\) to a particular vertex,
     \begin{align*}
-        r\para{e^{\frac{2 \pi i k}{n}}} &= e^{\frac{2 \pi i}{n}} \cdot e^{\frac{2 \pi i k}{n}} \\
-        &= e^{\frac{2 \pi i}{n} \para{k + 1}}
+        r\pqty{e^{\frac{2 \pi i k}{n}}} &= e^{\frac{2 \pi i}{n}} \cdot e^{\frac{2 \pi i k}{n}} \\
+        &= e^{\frac{2 \pi i}{n} \pqty{k + 1}}
     \end{align*}
     is another vertex.
 
@@ -696,7 +696,7 @@ The proof structure would be a typical subset-superset proof, i.e.
 
     Similarly, for any \(x, y \in \CC\),
     \begin{align*}
-        \abs{s \para{x} - s \para{y}} &= \abs{\conjugate{x} - \conjugate{y}} \\
+        \abs{s \pqty{x} - s \pqty{y}} &= \abs{\conjugate{x} - \conjugate{y}} \\
         &= \abs{\conjugate{x - y}} \\
         &= \abs{x - y}
     \end{align*}
@@ -704,13 +704,13 @@ The proof structure would be a typical subset-superset proof, i.e.
 
     Furthermore, applying \(s\) to a vertex of \(X_n\), we have
     \begin{align*}
-        s\para{e^{\frac{2 \pi i k}{n}}} &= e^{- \frac{2 \pi i k}{n}} \\
-        &= e^{\frac{2 \pi i \para{n - k}}{n}}
+        s\pqty{e^{\frac{2 \pi i k}{n}}} &= e^{- \frac{2 \pi i k}{n}} \\
+        &= e^{\frac{2 \pi i \pqty{n - k}}{n}}
     \end{align*}
     is another vertex of \(X_n\).
 
-    Therefore, we have shown that \(\brce{r, s} \subseteq D_{2n}\), and therefore, by induction,
-    \[\brce{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}.\]
+    Therefore, we have shown that \(\Bqty{r, s} \subseteq D_{2n}\), and therefore, by induction,
+    \[\Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}.\]
 
     To show that indeed these elements are all the elements of \(D_{2n}\), we let \(f \in D_{2n}\) be an isometry on \(X_n\), and consider its action of three points on the polygon, as in \autoref{fig:three-points-on-polygon}.
 
@@ -724,13 +724,13 @@ The proof structure would be a typical subset-superset proof, i.e.
 
     Since \(f \in D_{2n}\), \(f(x)\) is a vertex of \(X_n\), so
     \[
-        f\para{x} = e^{\frac{2 \pi i k}{n}}
+        f\pqty{x} = e^{\frac{2 \pi i k}{n}}
     \]
     for some \(k = 0, 1, \ldots, n - 1\).
 
     Therefore,
     \begin{align*}
-        r^{-k} \circ f \para{x} &= r^{-k} \para{e^{\frac{2 \pi i k}{n}}} \\
+        r^{-k} \circ f \pqty{x} &= r^{-k} \pqty{e^{\frac{2 \pi i k}{n}}} \\
         &= e^{- \frac{2 \pi i k}{n}} \cdot e^{\frac{2 \pi i k}{n}} \\
         &= 1 \\
         &= x.
@@ -738,27 +738,27 @@ The proof structure would be a typical subset-superset proof, i.e.
 
     Now, \(r^{-k} \circ f \in D_{2n}\) since \(r^{-k}, f \in D_{2n}\). Therefore,
     \begin{align*}
-        \abs{r^{-k} \circ f \para{y} - x} &= \abs{r^{-k} \circ f \para{y} - r^{-k} \circ f \para{x}} \\
+        \abs{r^{-k} \circ f \pqty{y} - x} &= \abs{r^{-k} \circ f \pqty{y} - r^{-k} \circ f \pqty{x}} \\
         &= \abs{y - x},
     \end{align*}
-    so \(r^{-k} \circ f \para{y} \in \brce{y, z}\), and similarly \(r^{-k} \circ f \para{z} \in \brce{y, z}\) but \(r^{-k} \circ f \para{y} \neq r^{-k} \circ f \para{z}\).
+    so \(r^{-k} \circ f \pqty{y} \in \Bqty{y, z}\), and similarly \(r^{-k} \circ f \pqty{z} \in \Bqty{y, z}\) but \(r^{-k} \circ f \pqty{y} \neq r^{-k} \circ f \pqty{z}\).
 
     Therefore, there are \(2\) cases here:
     \begin{enumerate}
-        \item \(r^{-k} \circ f \para{y} = y, r^{-k} \circ f \para{z} = z.\) Then \(r^{-k} \circ f\) fixes \(x, y\) and \(z\), which are three non-collinear points. This means
+        \item \(r^{-k} \circ f \pqty{y} = y, r^{-k} \circ f \pqty{z} = z.\) Then \(r^{-k} \circ f\) fixes \(x, y\) and \(z\), which are three non-collinear points. This means
         \[
             r^{-k} \circ f = \identity_{X_n}
         \]
         by \autoref{lem:three-point-lemma} (Three--Point Lemma), and hence
         \[
-            f = r^k \in \brce{e, r, \ldots, r^{n - 1}} \subseteq \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
+            f = r^k \in \Bqty{e, r, \ldots, r^{n - 1}} \subseteq \Bqty{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
         \]
 
         \item We have
         \begin{align*}
-            r^{-k} \circ f \para{x} &= x = s\para{x}, \\
-            r^{-k} \circ f \para{y} &= z = s\para{y}, \\
-            r^{-k} \circ f \para{z} &= y = s\para{z}.
+            r^{-k} \circ f \pqty{x} &= x = s\pqty{x}, \\
+            r^{-k} \circ f \pqty{y} &= z = s\pqty{y}, \\
+            r^{-k} \circ f \pqty{z} &= y = s\pqty{z}.
         \end{align*}
 
         Hence, left-multiplying both sides by \(s\inverse = s\), we have that \(s\inverse \circ r^{-k} \circ f\) fixes \(x, y, z\).
@@ -769,27 +769,27 @@ The proof structure would be a typical subset-superset proof, i.e.
         \]
         and hence
         \[
-            f = r^k s \in \brce{s, rs, \ldots, r^{n - 1}s} \subseteq \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s},
+            f = r^k s \in \Bqty{s, rs, \ldots, r^{n - 1}s} \subseteq \Bqty{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s},
         \]
         as required.
     \end{enumerate}
 
     So far, we have shown that
     \[
-        D_{2n} = \brce{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
+        D_{2n} = \Bqty{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
     \]
 
     Now, we show that the right-hand side has size \(2n\), so we check all elements on the right-hand side are distinct from each other.
 
-    First, if \(0 \leq k, l < n\) such that \(r^k = r^l\), then in particular, \(r^k \para{1} = r^l \para{1}\), and hence \(e^{\frac{2 \pi i k}{n}} = e^{\frac{2 \pi i l}{n}}\), and hence \(k = l\).
+    First, if \(0 \leq k, l < n\) such that \(r^k = r^l\), then in particular, \(r^k \pqty{1} = r^l \pqty{1}\), and hence \(e^{\frac{2 \pi i k}{n}} = e^{\frac{2 \pi i l}{n}}\), and hence \(k = l\).
 
     If \(r^{k} = s\), then
     \[
-        e^{\frac{2 \pi i k}{n}} = r^{k} \para{1} = s \para{1} = 1,
+        e^{\frac{2 \pi i k}{n}} = r^{k} \pqty{1} = s \pqty{1} = 1,
     \]
     so \(k = 0\), and \(s = r^{0} = \identity\). But then
     \[
-        z = s\para{y} = \identity\para{y} = y,
+        z = s\pqty{y} = \identity\pqty{y} = y,
     \]
     which is impossible. So \(r^{k} \neq s\) for any \(k\).
 
@@ -813,23 +813,23 @@ To understand the group operation on \(D_{2n}\), we need to understand the diffe
 
     Indeed,
     \begin{align*}
-        sr\para{x} &= \conjugate{e^{\frac{2 \pi i}{n}}} \\
+        sr\pqty{x} &= \conjugate{e^{\frac{2 \pi i}{n}}} \\
         &= e^{-\frac{2 \pi i}{n}} \\
-        &= r\inverse \para{x} \\
-        &= r\inverse s \para{x},
+        &= r\inverse \pqty{x} \\
+        &= r\inverse s \pqty{x},
     \end{align*}
     \begin{align*}
-        sr\para{y} &= \conjugate{e^{\frac{2 \pi 2 i}{n}}} \\
+        sr\pqty{y} &= \conjugate{e^{\frac{2 \pi 2 i}{n}}} \\
         &= e^{-\frac{2 \pi 2 i}{n}} \\
-        &= r\inverse \para{e^{- \frac{2 \pi i}{n}}} \\
-        &= r\inverse s \para{y},
+        &= r\inverse \pqty{e^{- \frac{2 \pi i}{n}}} \\
+        &= r\inverse s \pqty{y},
     \end{align*}
     and
     \begin{align*}
-        sr\para{z} &= \conjugate{1} \\
+        sr\pqty{z} &= \conjugate{1} \\
         &= 1 \\
-        &= r\inverse \para{e^{\frac{2 \pi i}{n}}} \\
-        &= r\inverse s \para{z}.
+        &= r\inverse \pqty{e^{\frac{2 \pi i}{n}}} \\
+        &= r\inverse s \pqty{z}.
     \end{align*}
 
     Hence, \(sr = r\inverse s\).
@@ -841,14 +841,14 @@ To understand the group operation on \(D_{2n}\), we need to understand the diffe
 Some groups are not literally (set-theoretically) equal, but none-the-less having the same structure.
 
 \begin{example*}[Groups that seem equal]
-    We would say that \(\Sym\para{\text{deck of cards}}\) are somehow equal to \(\Sym\para{\text{52 undergraduate students}}\) in a way, since they all represent permutations on 52 objects.
+    We would say that \(\Sym\pqty{\text{deck of cards}}\) are somehow equal to \(\Sym\pqty{\text{52 undergraduate students}}\) in a way, since they all represent permutations on 52 objects.
 \end{example*}
 
 \begin{definition}[Homomorphism]
     \label{def:homomorphism}%
     A map between groups \(\functiondomain{\phi}{G}{H}\) is called a \emph{homomorphism} if it preserves the group structure, the operation:
     \[
-        \phi\para{g \cdot_{G} g'} = \phi\para{g} \cdot_{H} \phi\para{g'}
+        \phi\pqty{g \cdot_{G} g'} = \phi\pqty{g} \cdot_{H} \phi\pqty{g'}
     \]
     for all \(g, g' \in G\).
 \end{definition}
@@ -873,9 +873,9 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
         \]
         is a homomorphism.
 
-        \item Since \(\det \para{AB} = \det \para{A} \det \para{B}\), the determinant
+        \item Since \(\det \pqty{AB} = \det \pqty{A} \det \pqty{B}\), the determinant
         \[
-            \function{\det}{\GL_2\para{\RR}}{\para{\RR \setminus \brce{0}, \times} = \RR\multiplicative}{A}{\det A}
+            \function{\det}{\GL_2\pqty{\RR}}{\pqty{\RR \setminus \Bqty{0}, \times} = \RR\multiplicative}{A}{\det A}
         \]
         is a homomorphism.
     \end{enumerate}
@@ -887,8 +887,8 @@ Homomorphisms between groups must map certain elements to certain elements.
     \label{lem:homomorphism-preserve-identity-inverse}%
     If \(\functiondomain{\phi}{G}{H}\) is a homomorphism, then
     \begin{enumerate}
-        \item \(\phi\para{e_G} = e_H\),
-        \item \(\phi\para{g\inverse} = \phi\para{g}\inverse\) for all \(g \in G\).
+        \item \(\phi\pqty{e_G} = e_H\),
+        \item \(\phi\pqty{g\inverse} = \phi\pqty{g}\inverse\) for all \(g \in G\).
     \end{enumerate}
 \end{lemma}
 
@@ -896,18 +896,18 @@ Homomorphisms between groups must map certain elements to certain elements.
     \begin{enumerate}
         \item We have
         \begin{align*}
-            \phi\para{e_G} \cdot \phi\para{e_G} &= \phi\para{e_G \cdot e_G} && \phi \text{ is a homomorphism} \\
-            &= \phi\para{e_G}
+            \phi\pqty{e_G} \cdot \phi\pqty{e_G} &= \phi\pqty{e_G \cdot e_G} && \phi \text{ is a homomorphism} \\
+            &= \phi\pqty{e_G}
         \end{align*}
-        and hence \(\phi\para{e_G} = e_H\) by \autoref{prop:inverse-identity} that the inverse is unique.
+        and hence \(\phi\pqty{e_G} = e_H\) by \autoref{prop:inverse-identity} that the inverse is unique.
 
         \item We have
         \begin{align*}
-            \phi\para{g} \cdot \phi\para{g \inverse} &= \phi\para{g \cdot g\inverse} && \phi \text{ is a homomorphism} \\
-            &= \phi\para{e_G} \\
+            \phi\pqty{g} \cdot \phi\pqty{g \inverse} &= \phi\pqty{g \cdot g\inverse} && \phi \text{ is a homomorphism} \\
+            &= \phi\pqty{e_G} \\
             &= e_H,
         \end{align*}
-        so \(\phi\para{g \inverse} = \phi\para{g}\inverse\) by the definition of the inverse.
+        so \(\phi\pqty{g \inverse} = \phi\pqty{g}\inverse\) by the definition of the inverse.
     \end{enumerate}
 \end{proof}
 
@@ -929,7 +929,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
         \]
         and
         \[
-            \ZZ_n = \brce{0, 1, \ldots, n - 1}
+            \ZZ_n = \Bqty{0, 1, \ldots, n - 1}
         \]
         equipped with \(+_n\).
 
@@ -940,15 +940,15 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
 
         Clearly, \(\phi\) is bijective. Furthermore, for any \(k, l \in \ZZ_{n}\), we have
         \[
-            k + l = np + \para{k +_n l}
+            k + l = np + \pqty{k +_n l}
         \]
         for some \(p \in \ZZ\).
 
         Hence,
         \begin{align*}
-            \phi\para{k +_n l} &= e^{\frac{2 \pi i \para{k +_n l}}{n}} && \text{by definition of }\phi \\
-            &= e^{\frac{2 \pi i \para{k +_n l}}{n}} \cdot e^{\frac{2 \pi i p n}{n}} \\
-            &= e^{\frac{2 \pi i}{n} \para{k + l}} \\
+            \phi\pqty{k +_n l} &= e^{\frac{2 \pi i \pqty{k +_n l}}{n}} && \text{by definition of }\phi \\
+            &= e^{\frac{2 \pi i \pqty{k +_n l}}{n}} \cdot e^{\frac{2 \pi i p n}{n}} \\
+            &= e^{\frac{2 \pi i}{n} \pqty{k + l}} \\
             &= e^{\frac{2 \pi i k}{n}} e^{\frac{2 \pi i l}{n}} \\
             &= \phi{k} \cdot \phi{l}
         \end{align*}
@@ -962,7 +962,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
 
         \item We have
         \[
-            \para{\RR, +, 0} \isomorphic \para{\RR_{>0}, \times, 1}
+            \pqty{\RR, +, 0} \isomorphic \pqty{\RR_{>0}, \times, 1}
         \]
         by considering the exponentiation function
         \[
@@ -1001,11 +1001,11 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
     \begin{enumerate}
         \item The \emph{image} of \(\phi\) is
         \[
-            \img \phi = \set{h \in H}{\exists g \in G: \phi\para{g} = h} \subseteq H.
+            \img \phi = \set{h \in H}{\exists g \in G: \phi\pqty{g} = h} \subseteq H.
         \]
         \item The \emph{kernel} of \(\phi\) is
         \[
-            \ker \phi = \set{g \in G}{\phi\para{g} = e_H} \subseteq G.
+            \ker \phi = \set{g \in G}{\phi\pqty{g} = e_H} \subseteq G.
         \]
     \end{enumerate}
 \end{definition}
@@ -1029,15 +1029,15 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
     \begin{enumerate}
         \item For \(\img \phi\),
         \begin{itemize}
-            \item \(e_H = \phi\para{e_G}\) and \(e_G \in G\), so \(e_H \in \img \phi\).
-            \item For \(\phi\para{g_1}, \phi\para{g_2} \in \img \phi\), where \(g_1, g_2 \in G\), we have
+            \item \(e_H = \phi\pqty{e_G}\) and \(e_G \in G\), so \(e_H \in \img \phi\).
+            \item For \(\phi\pqty{g_1}, \phi\pqty{g_2} \in \img \phi\), where \(g_1, g_2 \in G\), we have
             \[
-                \phi\para{g_1} \cdot \phi\para{g_2} = \phi\para{g_1 \cdot g_2} \in \img \phi
+                \phi\pqty{g_1} \cdot \phi\pqty{g_2} = \phi\pqty{g_1 \cdot g_2} \in \img \phi
             \]
             since \(g_1 \cdot g_2 \in G\).
-            \item If \(\phi \para{g} \in \img \phi\) for some \(g \in G\),
+            \item If \(\phi \pqty{g} \in \img \phi\) for some \(g \in G\),
             \[
-                \phi\para{g}\inverse = \phi\para{g\inverse} \in \img \phi
+                \phi\pqty{g}\inverse = \phi\pqty{g\inverse} \in \img \phi
             \]
             since \(g\inverse \in G\).
         \end{itemize}
@@ -1046,15 +1046,15 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
         
         \item For \(\ker \phi\),
         \begin{itemize}
-            \item \(\phi\para{e_G} = e_H\), so \(e_G \in \ker \phi\).
+            \item \(\phi\pqty{e_G} = e_H\), so \(e_G \in \ker \phi\).
             \item If \(g_1, g_2 \in \ker \phi\),
             \[
-                \phi\para{g_1 \cdot g_2} = \phi\para{g_1} \cdot \phi\para{g_2} = e_H \cdot e_H = e_H
+                \phi\pqty{g_1 \cdot g_2} = \phi\pqty{g_1} \cdot \phi\pqty{g_2} = e_H \cdot e_H = e_H
             \]
             so \(g_1 \cdot g_2 \in \ker \phi\).
             \item If \(g \in \ker \phi\),
             \[
-                \phi\para{g\inverse} = \phi\para{g}\inverse = e_H\inverse = e_H
+                \phi\pqty{g\inverse} = \phi\pqty{g}\inverse = e_H\inverse = e_H
             \]
             so \(g \inverse \in \ker \phi\).
         \end{itemize}
@@ -1076,13 +1076,13 @@ We prove the second remark.
 \begin{proof}
     If \(\phi\) is injective, then
     \[
-        \ker \phi = \phi\inverse\para{e_H}
+        \ker \phi = \phi\inverse\pqty{e_H}
     \]
     has \(\leq 1\) element, which must be \(e_G\).
 
-    Conversely, suppose \(\ker \phi = \trivialgp_G\). If \(\phi\para{g_1} = \phi\para{g_2}\), then
+    Conversely, suppose \(\ker \phi = \trivialgp_G\). If \(\phi\pqty{g_1} = \phi\pqty{g_2}\), then
     \[
-        \phi\para{g_1 g_2\inverse} = \phi\para{g_1} \phi\para{g_2}\inverse = e_H
+        \phi\pqty{g_1 g_2\inverse} = \phi\pqty{g_1} \phi\pqty{g_2}\inverse = e_H
     \]
     and hence
     \[
@@ -1108,7 +1108,7 @@ The groups \(C_n \isomorphic \ZZ_n\) that we described above has a special prope
         G = \set{g^k}{k \in \ZZ} = \angBrac{g}.
     \]
 
-    That is, \(\brce{g}\) generates \(G\), and \(g\) is called a \emph{generator} of \(G\).
+    That is, \(\Bqty{g}\) generates \(G\), and \(g\) is called a \emph{generator} of \(G\).
 \end{definition}
 
 \begin{examples*}[Examples of Cyclic Groups]
@@ -1141,7 +1141,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
             \min S, & S \neq \emptyset, \\
             \infty, & S = \emptyset,
         \end{cases}
-        \in \NN \cup \brce{\infty}.
+        \in \NN \cup \Bqty{\infty}.
     \]
 
     \begin{itemize}
@@ -1153,15 +1153,15 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
 
         Since
         \begin{align*}
-            \phi \para{k + l} &= g^{k + l} \\
+            \phi \pqty{k + l} &= g^{k + l} \\
             &= g^k g^l \\
-            &= \phi \para{k} \phi \para{l},
+            &= \phi \pqty{k} \phi \pqty{l},
         \end{align*}
         \(\phi\) is a homomorphism. \(\phi\) is surjective since \(G\) is cyclic, and from \autoref{def:cyclic-group} (Cyclic Group).
 
         We show \(\phi\) is injective by contradiction. Suppose \(0 \neq k \in \ker \phi\), then since \(\ker \phi \subgroup \ZZ\), we may replace \(k\) by \(-k\), so we assume \(k > 0\).
 
-        Then \(k \in S\), so \(S \neq \emptyset\), which gives a contradiction. So \(\ker \phi = \brce{0}\), and \(\phi\) is injective.
+        Then \(k \in S\), so \(S \neq \emptyset\), which gives a contradiction. So \(\ker \phi = \Bqty{0}\), and \(\phi\) is injective.
 
         Therefore, \(\phi\) gives an isomorphism \(\ZZ \to G\), we have \(G \isomorphic \ZZ\).
 
@@ -1170,13 +1170,13 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
             \function{\phi}{\ZZ_n}{G}{k}{g^k.}
         \]
 
-        Since \(k + l = qn + \para{k +_n l}\) for some \(q \in \ZZ\), we have
+        Since \(k + l = qn + \pqty{k +_n l}\) for some \(q \in \ZZ\), we have
         \begin{align*}
-            \phi \para{k} \phi \para{l} &= g^k g^l \\
+            \phi \pqty{k} \phi \pqty{l} &= g^k g^l \\
             &= g^{k + l} \\
-            &= g^{qn + \para{k +_n l}} \\
+            &= g^{qn + \pqty{k +_n l}} \\
             &= g^{k +_n l} && g^n = e \\
-            &= \phi \para{k +_n l},
+            &= \phi \pqty{k +_n l},
         \end{align*}
         so \(\phi\) is a homomorphism. To show \(\ZZ_n \isomorphic G\), it remains to show that \(\phi\) is a bijection.
 
@@ -1187,19 +1187,19 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
         for some \(q \in \ZZ\) and \(r \in \ZZ_n\). Therefore,
         \begin{align*}
             g^k &= g^{nq + r} \\
-            &= \para{g^n}^q g^r \\
+            &= \pqty{g^n}^q g^r \\
             &= g^r && g^n = e \\
-            &= \phi\para{r}
+            &= \phi\pqty{r}
         \end{align*}
         so \(\phi\) is surjective.
 
-        To prove that \(\phi\) is injective, suppose \(\phi\para{k} = e\) where \(k \in \ker \phi\), for some \(k \in \ZZ_{n}\). Then \(k \in S\), so \(k = 0, 1, \ldots, n - 1\).
+        To prove that \(\phi\) is injective, suppose \(\phi\pqty{k} = e\) where \(k \in \ker \phi\), for some \(k \in \ZZ_{n}\). Then \(k \in S\), so \(k = 0, 1, \ldots, n - 1\).
 
         But if \(k \in \NN\), then \(k \geq n\), since \(n\) is the minimal element in \(S\) for \(\NN\).
 
         Therefore, it follows that \(k = 0\), and hence
         \[
-            \ker \phi = \brce{0}
+            \ker \phi = \Bqty{0}
         \]
         showing that \(\phi\) is injective.
 
@@ -1223,11 +1223,11 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \[
         \angBrac{g} \isomorphic C_n
     \]
-    for some \(n \in \NN \cup \brce{\infty}\).
+    for some \(n \in \NN \cup \Bqty{\infty}\).
 
     The \emph{order} of an element \(g \in G\), is the \(n\) above, and we denote this as
     \[
-        n = \ord \para{g} = o\para{g}.
+        n = \ord \pqty{g} = o\pqty{g}.
     \]
 \end{definition}
 
@@ -1240,8 +1240,8 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \]
     then for any \(l > 0\), we have
     \begin{align*}
-        y x^{-l} &= \para{y x \inverse} x^{1 - l} \\
-        &= x \para{y x^{1 - l}} \\
+        y x^{-l} &= \pqty{y x \inverse} x^{1 - l} \\
+        &= x \pqty{y x^{1 - l}} \\
         &= \cdots\\
         &= x^l y
     \end{align*}
@@ -1249,8 +1249,8 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
 
     If \(y^2 = e\), we also have
     \begin{align*}
-        y x^l &= y \para{x^l y} y \\
-        &= y \para{y x^{-l}} y \\
+        y x^l &= y \pqty{x^l y} y \\
+        &= y \pqty{y x^{-l}} y \\
         &= x^{-l} y
     \end{align*}
     for \(l > 0\). Therefore, \(y x^l = x^{-l} y\) for any \(l \in \ZZ\).
@@ -1266,7 +1266,7 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \end{enumerate}
     then
     \[
-    \phi \para{r^k} = a^k, \phi \para{s} = b
+    \phi \pqty{r^k} = a^k, \phi \pqty{s} = b
     \]
     defines a homomorphism
     \[
@@ -1281,33 +1281,33 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \begin{enumerate}
         \item For two rotations,
         \begin{align*}
-            \phi\para{r^k} \phi\para{r^l} &= a^k a^l \\
+            \phi\pqty{r^k} \phi\pqty{r^l} &= a^k a^l \\
             &= a^{k + l} \\
             &= a^{k +_n l} \\
-            &= \phi\para{r^{k +_n l}}.
+            &= \phi\pqty{r^{k +_n l}}.
         \end{align*}
         \item For a rotation and a reflection,
         \begin{align*}
-            \phi\para{r^k} \phi\para{r^l s} &= a^k a^l b \\
+            \phi\pqty{r^k} \phi\pqty{r^l s} &= a^k a^l b \\
             &= a^{k +_n l} n \\
-            &= \phi\para{r^{k +_n l} s}.
+            &= \phi\pqty{r^{k +_n l} s}.
         \end{align*}
         \item For a reflection and a rotation,
         \begin{align*}
-            \phi\para{r^k s} \phi\para{r^l} &= a^k b a^l \\
+            \phi\pqty{r^k s} \phi\pqty{r^l} &= a^k b a^l \\
             &= a^{k - l} b && \text{dihedral relation} \\
-            &= \phi\para{r^{k - l} s} \\
-            &= \phi\para{r^k r^{-l} s} \\
-            &= \phi\para{r^k s r^l}. && \text{dihedral relation}
+            &= \phi\pqty{r^{k - l} s} \\
+            &= \phi\pqty{r^k r^{-l} s} \\
+            &= \phi\pqty{r^k s r^l}. && \text{dihedral relation}
         \end{align*}
         \item For two reflections,
         \begin{align*}
-            \phi\para{r^k s} \phi\para{r^l s} &= a^k b a^l b \\
+            \phi\pqty{r^k s} \phi\pqty{r^l s} &= a^k b a^l b \\
             &= a^{k - l} b^2 \\
             &= a^{k - l} \\
-            &= \phi\para{r^{k - l}} \\
-            &= \phi\para{r^{k - l} s s} \\
-            &= \phi\para{r^{k} s r^{l} s}.
+            &= \phi\pqty{r^{k - l}} \\
+            &= \phi\pqty{r^{k - l} s s} \\
+            &= \phi\pqty{r^{k} s r^{l} s}.
         \end{align*}
     \end{enumerate}
 \end{proof}
@@ -1316,7 +1316,7 @@ Finally, \autoref{prop:group-isomorphic-dihedral} gives a useful condition to sh
 
 \begin{proposition}[Groups Isomorphic to the Dihedral Group]
     \label{prop:group-isomorphic-dihedral}%
-    If a group \(G\) has a generating set \(\brce{a, b}\) such that
+    If a group \(G\) has a generating set \(\Bqty{a, b}\) such that
     \begin{enumerate}
         \item \(a^n = e\),
         \item \(b^2 = e\),
@@ -1329,7 +1329,7 @@ Finally, \autoref{prop:group-isomorphic-dihedral} gives a useful condition to sh
 \begin{proof}
     By \autoref{lem:homomorphism-dihedral-group}, this gives a homomorphism \(\functiondomain{\phi}{D_{2n}}{G}\).
 
-    \(\phi\) is surjective since \(\brce{a, b}\) generates \(G\). Also, since
+    \(\phi\) is surjective since \(\Bqty{a, b}\) generates \(G\). Also, since
     \[
         \abs{D_{2n}} = 2n = \abs{G},
     \]

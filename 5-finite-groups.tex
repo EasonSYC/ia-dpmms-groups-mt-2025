@@ -22,33 +22,33 @@ We have \(C_4\) as an example of a group of order \(4\). For another group of th
     \label{def:direct-product}%
     If \(G, H\) are groups, the \emph{direct product} is
     \[
-        G \times H = \set{\para{g, h}}{g \in G, h \in H}
+        G \times H = \set{\pqty{g, h}}{g \in G, h \in H}
     \]
     equipped with the group operation
     \[
-        \para{g_1, h_1} \cdot_{G \times H} \para{g_2, h_2} = \para{g_1 \cdot_G g_2, h_1 \cdot_H h_2}.
+        \pqty{g_1, h_1} \cdot_{G \times H} \pqty{g_2, h_2} = \pqty{g_1 \cdot_G g_2, h_1 \cdot_H h_2}.
     \]
 
     Note that the element \(e_G, e_H\) is the identity, and for the inverse
     \[
-        \para{g, h}\inverse = \para{g\inverse, h\inverse}.
+        \pqty{g, h}\inverse = \pqty{g\inverse, h\inverse}.
     \]
 \end{definition}
 
 The direct product of two groups is a group, and it is easy to see for any group \(G, H, K\),
 \begin{itemize}
     \item \(G \times H \isomorphic H \times G\): the direct product is \emph{commutative} up to isomorphism;
-    \item \(\para{G \times H} \times K \isomorphic G \times \para{H \times K}\): the direct product is \emph{associative} up to isomorphism;
+    \item \(\pqty{G \times H} \times K \isomorphic G \times \pqty{H \times K}\): the direct product is \emph{associative} up to isomorphism;
     \item \(\trivialgp \times G \isomorphic G \times \trivialgp \isomorphic G\): the trivial group is \textbf{an} \emph{identity} up to isomorphism (for infinite groups, \(G \times H \isomorphic G\) \textbf{does not require} \(H\) to be trivial, for example \(\RR \times \RR \isomorphic \RR\), since they are isomorphic when viewed as \(\QQ\)-vector spaces);
     \item If \(G \isomorphic H\), then \(G \times K \isomorphic H \times K\): we may replace elements in the direct product up to isomorphism;
     \item \(\abs{G \times H} = \abs{G} \times \abs{H}\): the order of the direct product is the product of the orders;
-    \item \(\ord\para{g, h} = \lcm\brce{\ord\para{g}, \ord\para{h}}\): the order of an element is the least common multiple of the order of the separate elements.
+    \item \(\ord\pqty{g, h} = \lcm\Bqty{\ord\pqty{g}, \ord\pqty{h}}\): the order of an element is the least common multiple of the order of the separate elements.
 \end{itemize}
 
 \begin{remark}
     The direct product \(H_1 \times H_2\) provides a \emph{projection map}, defined as
     \[
-        \function{\pi}{H_1 \times H_2}{H_1}{\para{h_1, h_2}}{h_1}
+        \function{\pi}{H_1 \times H_2}{H_1}{\pqty{h_1, h_2}}{h_1}
     \]
     and obviously this map is surjective with kernel
     \[
@@ -63,9 +63,9 @@ The direct product of two groups is a group, and it is easy to see for any group
     \]
     is called the \emph{Klein--4 Group}. It can be thought of the dihedral group \(D_4\).
 
-    For any \(\para{a, b} \in K_4\), we have
+    For any \(\pqty{a, b} \in K_4\), we have
     \[
-        \para{a, b}^2 = \para{a^2, b^2} = \para{e, e} = e,
+        \pqty{a, b}^2 = \pqty{a^2, b^2} = \pqty{e, e} = e,
     \]
     so every element has order \(1\) or order \(2\). In particular, \(K_4 \notisomorphic C_4\).
 \end{example*}
@@ -76,7 +76,7 @@ To show these are the only groups of order \(4\), it is useful to introduce a th
     \label{thm:dpt-direct-product-theorem}%
     If \(H_1, H_2 \subgroup G\), and
     \begin{enumerate}
-        \item \(H_1 \cap H_2 = \brce{e}\): \(H_1\) and \(H_2\) \emph{intersect trivially};
+        \item \(H_1 \cap H_2 = \Bqty{e}\): \(H_1\) and \(H_2\) \emph{intersect trivially};
         \item \(h_1 h_2 = h_2 h_1\) for all \(h_1 \in H_1, h_2 \in H_2\): elements in \(H_1\) and \(H_2\) \emph{commute}; and
         \item \(G = H_1 H_2\): for all \(g \in G\), \(g = h_1 h_2\) for some \(h_1 \in H_1\) and \(h_2 \in H_2\);
     \end{enumerate}
@@ -86,28 +86,28 @@ To show these are the only groups of order \(4\), it is useful to introduce a th
 \begin{proof}
     We consider the na\"{i}ve map
     \[
-        \function{\phi}{H_1 \times H_2}{G}{\para{h_1, h_2}}{h_1 h_2.}
+        \function{\phi}{H_1 \times H_2}{G}{\pqty{h_1, h_2}}{h_1 h_2.}
     \]
 
     We show that \(\phi\) is an isomorphism.
 
-    \emph{\(\phi\) is a homomorphism.} For any \(\para{h_1, h_2}, \para{h_1', h_2'} \in H_1 \times H_2\), we have
+    \emph{\(\phi\) is a homomorphism.} For any \(\pqty{h_1, h_2}, \pqty{h_1', h_2'} \in H_1 \times H_2\), we have
     \begin{align*}
-        \phi\para{\para{h_1, h_2}} \phi\para{\para{h_1', h_2'}} &= \para{h_1 h_2} \para{h_1' h_2'} \\
-        &= \para{h_1 h_1'} \para{h_2 h_2'} && \text{by condition (iii)} \\
-        &= \phi\para{\para{h_1 h_1', h_2 h_2'}} \\
-        &= \phi\para{\para{h_1, h_2} \cdot \para{h_1', h_2'}}.
+        \phi\pqty{\pqty{h_1, h_2}} \phi\pqty{\pqty{h_1', h_2'}} &= \pqty{h_1 h_2} \pqty{h_1' h_2'} \\
+        &= \pqty{h_1 h_1'} \pqty{h_2 h_2'} && \text{by condition (iii)} \\
+        &= \phi\pqty{\pqty{h_1 h_1', h_2 h_2'}} \\
+        &= \phi\pqty{\pqty{h_1, h_2} \cdot \pqty{h_1', h_2'}}.
     \end{align*}
 
     \emph{\(\phi\) is injective.} Recall this is equivalent to showing that the kernel \(\ker \phi = \trivialgp\) is trivial.
 
-    Suppose \(\para{h_1, h_2} \in H_1 \times H_2\) is such that \(\phi\para{\para{h_1, h_2}} = e = h_1 h_2\), i.e. \(\para{h_1, h_2} \in \ker\phi\).
+    Suppose \(\pqty{h_1, h_2} \in H_1 \times H_2\) is such that \(\phi\pqty{\pqty{h_1, h_2}} = e = h_1 h_2\), i.e. \(\pqty{h_1, h_2} \in \ker\phi\).
 
     Then we have
     \[
         H_1 \ni h_1 = h_2\inverse \in H_2
     \]
-    so \(h_2\inverse = h_1 \in H_1 \cap H_2 = \trivialgp\) by condition (i). Hence, \(h_1 = h_2 = e\) and \(\para{h_1, h_2} = \para{e, e}\), showing \(\ker \phi = \trivialgp\) as desired.
+    so \(h_2\inverse = h_1 \in H_1 \cap H_2 = \trivialgp\) by condition (i). Hence, \(h_1 = h_2 = e\) and \(\pqty{h_1, h_2} = \pqty{e, e}\), showing \(\ker \phi = \trivialgp\) as desired.
 
     \emph{\(\phi\) is surjective.} This is from condition (iii).
 
@@ -125,11 +125,11 @@ To show these are the only groups of order \(4\), it is useful to introduce a th
 \begin{remark}
     For any group \(G \isomorphic H_1 \times H_2\), we may choose the natural copies of \(H_1\) and \(H_2\) in \(G\), \(H_1'\) and \(H_2'\):
     \[
-        H_1' = H_1 \times \trivialgp = \set{\para{h_1, e}}{h_1 \in H_1} \isomorphic H_1
+        H_1' = H_1 \times \trivialgp = \set{\pqty{h_1, e}}{h_1 \in H_1} \isomorphic H_1
     \]
     and
     \[
-        H_2' = \trivialgp \times H_2 = \set{\para{e, h_2}}{h_2 \in H_2} \isomorphic H_2,
+        H_2' = \trivialgp \times H_2 = \set{\pqty{e, h_2}}{h_2 \in H_2} \isomorphic H_2,
     \]
     and we have \(G \isomorphic H_1' \times H_2'\). \(H_1'\) and \(H_2'\) here satisfy the condition for \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem). Therefore, this theorem is, in a sense, `if and only if', up to isomorphism.
 \end{remark}
@@ -145,16 +145,16 @@ Now we are ready to classify all groups of order 4.
     By \autoref{cor:order-of-element-divides} (Corollary of Lagrange's Theorem), every non-trivial element in \(G\) has order \(2\) or \(4\).
     
     \begin{itemize}
-        \item If there is some \(g \in G\) such that \(\ord\para{g} = 4\), then \(G = \angBrac{g} \isomorphic C_4\).
+        \item If there is some \(g \in G\) such that \(\ord\pqty{g} = 4\), then \(G = \angBrac{g} \isomorphic C_4\).
         \item Otherwise, every non-trivial element has order \(2\). Let \(a, b \in G\) be distinct elements such that \(\ord{a} = \ord{b} = 2\).
         
         Let \(H_1 = \angBrac{a} \isomorphic C_2\), \(H_2 = \angBrac{b} \isomorphic C_2\). We aim to show that \(G \isomorphic H_1 \times H_2 \isomorphic C_2 \times C_2\).
 
         First, \(H_1 \cap H_2 = \trivialgp_{G}\) since \(a \neq b\), giving condition (i). Then, \(\abs{G} = \abs{H_1} \abs{H_2}\), which gives condition (iii).
 
-        Finally, since \(\ord\para{ab} = 2\) (since \(ab \neq e\)), then
+        Finally, since \(\ord\pqty{ab} = 2\) (since \(ab \neq e\)), then
         \[
-            ab = \para{ab}\inverse = b\inverse a\inverse = ba,
+            ab = \pqty{ab}\inverse = b\inverse a\inverse = ba,
         \]
         as required for (ii).
 
@@ -166,7 +166,7 @@ It is useful to see when/whether a direct product of cyclic groups is cyclic -- 
 
 \begin{theorem}[Chinese Remainder Theorem]
     \label{thm:crt-chinese-remainder-theorem}%
-    If \(\gcd\brce{m, n} = 1\), then
+    If \(\gcd\Bqty{m, n} = 1\), then
     \[
         C_m \times C_n \isomorphic C_{mn}.
     \]
@@ -183,9 +183,9 @@ It is useful to see when/whether a direct product of cyclic groups is cyclic -- 
 
     Hence, \(g^k \in H_1 \cap H_2\) if and only if \(m \divides k\) and \(n \divides k\). This is equivalent to
     \[
-        \lcm\brce{m, n} \divides k,
+        \lcm\Bqty{m, n} \divides k,
     \]
-    and since \(\gcd\brce{m, n} = 1\), we have \(\lcm\brce{m, n} = mn\), and hence this is equivalent to
+    and since \(\gcd\Bqty{m, n} = 1\), we have \(\lcm\Bqty{m, n} = mn\), and hence this is equivalent to
     \[
         mn \divides k,
     \]
@@ -207,7 +207,7 @@ We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the c
 \end{lemma}
 
 \begin{proof}
-    By \autoref{thm:cauchy} (Cauchy's Theorem), there are \(r, s \in G\) such that \(\ord\para{r} = 3, \ord\para{s} = 2\).
+    By \autoref{thm:cauchy} (Cauchy's Theorem), there are \(r, s \in G\) such that \(\ord\pqty{r} = 3, \ord\pqty{s} = 2\).
 
     Since \(\abs{\angBrac{r}} = 3\), we have from \autoref{thm:lagrange} (Lagrange's Theorem), that \(\abs{G : \angBrac{r}} = 2\), i.e. there are two cosets of \(\angBrac{r}\). One of them is \(\angBrac{r}\), and since \(s \notin \angBrac{r}\), the other left coset is \(s\angBrac{r}\). Similarly, for right cosets, the right coset other than the trivial one is \(\angBrac{r}s\). Therefore, we have
     \[
@@ -217,7 +217,7 @@ We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the c
     Hence, \(sr = r^i s\) for some \(i = 0, 1, 2\).
 
     \begin{itemize}
-        \item \(i = 0\). Then \(sr = s\), so \(r = e\) which is impossible since \(\ord\para{r} = 3\).
+        \item \(i = 0\). Then \(sr = s\), so \(r = e\) which is impossible since \(\ord\pqty{r} = 3\).
         \item \(i = 1\). Then \(sr = rs\), so elements in \(\angBrac{r}\) and \(\angBrac{s}\) commute. By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem),
         \[
             G \isomorphic \angBrac{r} \times \angBrac{s} \isomorphic C_3 \times C_2 \isomorphic C_6.
@@ -240,49 +240,33 @@ Another example of a group of order 8 is the quaternion group \(Q_8\).
 \begin{examples*}[The Quaternion Group \(Q_8\)]
     The \emph{quaternion group} is
     \begin{align*}
-        Q_8 &= \brce{
-            \begin{pmatrix}
-                \pm 1 & 0 \\ 0 & \pm 1
-            \end{pmatrix},
-            \begin{pmatrix}
-                \pm i & 0 \\ 0 & \mp i
-            \end{pmatrix},
-            \begin{pmatrix}
-                0 & \pm 1 \\ \mp 1 & 0
-            \end{pmatrix},
-            \begin{pmatrix}
-                0 & \pm i \\ \pm i & 0
-            \end{pmatrix}} \\
-        &\leq \SU\para{2} \leq \SL_2\para{\CC} \leq \GL_2\para{\CC}.
+        Q_8 &= \Bqty{
+            \pmqty{\pm 1 & 0 \\ 0 & \pm 1},
+            \pmqty{\pm i & 0 \\ 0 & \mp i},
+            \pmqty{0 & \pm 1 \\ \mp 1 & 0},
+            \pmqty{0 & \pm i \\ \pm i & 0}} \\
+        &\leq \SU\pqty{2} \leq \SL_2\pqty{\CC} \leq \GL_2\pqty{\CC}.
     \end{align*}
 
     This is a group under matrix multiplication.
 
     We usually use Hamilton's notation to simplify this: let
     \begin{align*}
-        1 &= \begin{pmatrix}
-            1 & 0 \\ 0 & 1
-        \end{pmatrix}, \\
-        i &= \begin{pmatrix}
-            i & 0 \\ 0 & -i
-        \end{pmatrix},\\
-        j &= \begin{pmatrix}
-            0 & 1 \\ -1 & 0
-        \end{pmatrix},\\
-        k &= \begin{pmatrix}
-            0 & i \\ i & 0
-        \end{pmatrix},
+        1 &= \pmqty{1 & 0 \\ 0 & 1}, \\
+        i &= \pmqty{i & 0 \\ 0 & -i},\\
+        j &= \pmqty{0 & 1 \\ -1 & 0},\\
+        k &= \pmqty{0 & i \\ i & 0},
     \end{align*}
     then we have
     \[
-        Q_i = \brce{\pm 1, \pm i, \pm j, \pm k}
+        Q_i = \Bqty{\pm 1, \pm i, \pm j, \pm k}
     \]
     satisfying
     \begin{itemize}
         \item \(i^2 = j^2 = k^2 = -1\),
-        \item \(\para{-1} i = -i\), etc.,
+        \item \(\pqty{-1} i = -i\), etc.,
         \item \(ij = k, jk = i, ki = j\), and
-        \item \(\para{-1}\) commutes with everything.
+        \item \(\pqty{-1}\) commutes with everything.
     \end{itemize}
 \end{examples*}
 
@@ -321,7 +305,7 @@ In fact these are all groups of order 8.
             &\isomorphic C_2 \times C_2 \times C_2.
         \end{align*}
 
-        \item We now suppose that there is an \(a \in G\) such that \(\ord\para{a} = 4\). Let \(b \in G \setminus \angBrac{a}\), and we have from \autoref{thm:lagrange} (Lagrange's Theorem) that
+        \item We now suppose that there is an \(a \in G\) such that \(\ord\pqty{a} = 4\). Let \(b \in G \setminus \angBrac{a}\), and we have from \autoref{thm:lagrange} (Lagrange's Theorem) that
         \[
             \abs{G : \angBrac{a}} = 2
         \]
@@ -345,7 +329,7 @@ In fact these are all groups of order 8.
             \]
             and the left-hand side has order 4:
             \[
-                \ord\para{b a b \inverse} = \ord\para{a} = 4,
+                \ord\pqty{b a b \inverse} = \ord\pqty{a} = 4,
             \]
             while the right-hand side has order 2. This is impossible.
             \item If \(i = 3\), this gives \(ba = a^3 b = a\inverse b\), the dihedral relation. We leave this case here.
@@ -354,20 +338,20 @@ In fact these are all groups of order 8.
         On the other hand, note that if \(b^2 \in b \angBrac{a}\), then \(b \in \angBrac{a}\), which is not true. So \(b^2 \in \angBrac{a}\), and we get several cases here.
         \begin{itemize}
             \item \(b^2 = e\). We leave this for future discussion.
-            \item \(b^2 = a\). Hence, \(\ord\para{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).
+            \item \(b^2 = a\). Hence, \(\ord\pqty{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).
             \item \(b^2 = a^2\). We leave this for future discussion.
-            \item \(b^2 = a^3 = a\inverse\). Hence, \(\ord\para{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).
+            \item \(b^2 = a^3 = a\inverse\). Hence, \(\ord\pqty{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).
         \end{itemize}
 
         Now, we have 4 remaining combinations to discuss.
         \begin{itemize}
-            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\angBrac{b} \isomorphic C_2\), \(\angBrac{a} \isomorphic C_4\), and \(\angBrac{a} \cap \angBrac{b} = \brce{e}\), we have
+            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\angBrac{b} \isomorphic C_2\), \(\angBrac{a} \isomorphic C_4\), and \(\angBrac{a} \cap \angBrac{b} = \Bqty{e}\), we have
             \[
                 G \isomorphic C_2 \times C_4.
             \]
-            \item \(G\) being abelian, and \(b^2 = a^2\), and therefore \(\para{a b \inverse}^2 = e\), so \(\ord \para{a b \inverse} = 2\). Similarly, by \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), we have \(G \isomorphic C_2 \times C_4\).
-            \item \(\ord\para{a} = 4\), \(\ord\para{b} = 2\), \(ba = a\inverse b\). By \autoref{prop:group-isomorphic-dihedral}, we see \(G \isomorphic D_8\).
-            \item \(\ord\para{a} = 4\), \(b^2 = a^2\) and \(b a = a \inverse b\). We set \(i = a\), \(j = b\), \(k = ab\), \(-1 = a^2 = b^2\), then this defines an isomorphism \(Q_8 \to G\) as in \autoref{tab:quartonian-group-isomorphism}.
+            \item \(G\) being abelian, and \(b^2 = a^2\), and therefore \(\pqty{a b \inverse}^2 = e\), so \(\ord \pqty{a b \inverse} = 2\). Similarly, by \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), we have \(G \isomorphic C_2 \times C_4\).
+            \item \(\ord\pqty{a} = 4\), \(\ord\pqty{b} = 2\), \(ba = a\inverse b\). By \autoref{prop:group-isomorphic-dihedral}, we see \(G \isomorphic D_8\).
+            \item \(\ord\pqty{a} = 4\), \(b^2 = a^2\) and \(b a = a \inverse b\). We set \(i = a\), \(j = b\), \(k = ab\), \(-1 = a^2 = b^2\), then this defines an isomorphism \(Q_8 \to G\) as in \autoref{tab:quartonian-group-isomorphism}.
 
             \begin{table}[ht!]
                 \centering

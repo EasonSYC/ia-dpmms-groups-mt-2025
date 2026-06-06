@@ -8,10 +8,10 @@ Amazingly, while there are infinitely many regular 2-dimensional polygons, in 3 
     A convex polyhedron \(X \subseteq \RR^3\) is a \emph{platonic solid} if
     \begin{itemize}
         \item every face is a regular \(n\)-gon;
-        \item \(G = \Isom\para{X}\) acts transitively on the faces; and
+        \item \(G = \Isom\pqty{X}\) acts transitively on the faces; and
         \item if \(x \in X\) is the midpoint of a face, then
         \[
-            \Stab_{G} \para{x} \isomorphic D_{2n}.
+            \Stab_{G} \pqty{x} \isomorphic D_{2n}.
         \]
     \end{itemize}
 \end{definition}
@@ -55,20 +55,20 @@ Two solids \(X, Y\) are \emph{dual} if \(Y\) can be constructed from \(X\) by pu
 
 In particular, if \(X\) and \(Y\) are dual, then
 \[
-    \Isom\para{X} \isomorphic \Isom\para{Y}
+    \Isom\pqty{X} \isomorphic \Isom\pqty{Y}
 \]
 so we only 3 isometry groups to identity.
 
-Before we continue, note that the isometry group of any such platonic solid \(G\) satisfies \(G \subgroup \Or\para{3}\), and hence \(G_0 = G \cap \SO\para{3}\) being the subgroup preserving orientation satisfies that
+Before we continue, note that the isometry group of any such platonic solid \(G\) satisfies \(G \subgroup \Or\pqty{3}\), and hence \(G_0 = G \cap \SO\pqty{3}\) being the subgroup preserving orientation satisfies that
 \[
-    G_0 = \ker \para{\functiondomain{\rightbar{\det}_{G}}{G}{C_2}}
+    G_0 = \ker \pqty{\functiondomain{\rightbar{\det}_{G}}{G}{C_2}}
 \]
 and hence by \autoref{thm:first-isomorphism} (First Isomorphism Theorem)
 \[
-    \abs{G : G_0} = \img \para{\rightbar{\det}_{G}} \leq 2.
+    \abs{G : G_0} = \img \pqty{\rightbar{\det}_{G}} \leq 2.
 \]
 
-For any platonic solid, there are reflectional symmetries which belong to \(\Or\para{3} \setminus \SO\para{3}\), so we must have
+For any platonic solid, there are reflectional symmetries which belong to \(\Or\pqty{3} \setminus \SO\pqty{3}\), so we must have
 \[
     \abs{G : G_0} = 2
 \]
@@ -78,7 +78,7 @@ and hence by \autoref{sec:lagranges-theorem} (Lagrange's theorem),
 \]
 
 \begin{example*}[Symmetries of Tetrahedron]
-    Let \(G = \Isom\para{\text{tetrahedron}}\). From \autoref{def:platonic-solid}, \(G\) acts transitively on the \(4\) surfaces, and each stabiliser has size \(6\), so by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), we have
+    Let \(G = \Isom\pqty{\text{tetrahedron}}\). From \autoref{def:platonic-solid}, \(G\) acts transitively on the \(4\) surfaces, and each stabiliser has size \(6\), so by \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem), we have
     \[
         \abs{G} = 4 \times 6 = 24.
     \]
@@ -90,7 +90,7 @@ and hence by \autoref{sec:lagranges-theorem} (Lagrange's theorem),
 
     We prove that \(\theta\) is injective. Suppose for some \(g \in G\), that
     \[
-        \theta\para{g} = e.
+        \theta\pqty{g} = e.
     \]
 
     Then \(g\) fixes the \(4\) vertices which are not co-planar, and hence by the 3-dimensional version (four point lemma) of \autoref{lem:three-point-lemma} (three point lemma), we have \(g = \identity\).
@@ -103,7 +103,7 @@ and hence by \autoref{sec:lagranges-theorem} (Lagrange's theorem),
 
 To identify the group of \emph{rotational symmetries}
 \[
-    G_0 = G \cap \SO\para{3}
+    G_0 = G \cap \SO\pqty{3}
 \]
 where the tetrahedron is centred on the origin, we conjecture \(G_0 \isomorphic A_4\).
 
@@ -115,18 +115,18 @@ where the tetrahedron is centred on the origin, we conjecture \(G_0 \isomorphic 
 \begin{proof}
     Because \(\abs{S_n : H} = 2\), then \(H \subgroup S_n\) is normal, hence \(H \normalsub S_n\), and by taking quotients,
     \[
-        S_n / H \isomorphic C_2.
+        \flatfrac{S_n}{H} \isomorphic C_2.
     \]
 
     We therefore have the quotient map as a surjective homomorphism
     \[
-        \functiondomain{\theta}{S_n}{C_2 = \brce{\pm 1}}
+        \functiondomain{\theta}{S_n}{C_2 = \Bqty{\pm 1}}
     \]
     and hence \(\ker \theta = H\).
 
     Since transpositions generate \(S_n\) and \(\theta\) is surjective, there is some transposition \(\tau_0\) such that
     \[
-        \theta \para{\tau_0} = -1.
+        \theta \pqty{\tau_0} = -1.
     \]
 
     Since all transpositions are conjugate to \(\tau_0\), for any transposition \(\tau\),
@@ -135,8 +135,8 @@ where the tetrahedron is centred on the origin, we conjecture \(G_0 \isomorphic 
     \]
     for some \(\sigma \in S_n\), then
     \begin{align*}
-        \theta \para{\sigma \tau_0 \sigma\inverse} &= \theta\para{\sigma} \theta\para{\tau_0} \theta\para{\sigma}\inverse \\
-        &= \theta\para{\tau_0} \\
+        \theta \pqty{\sigma \tau_0 \sigma\inverse} &= \theta\pqty{\sigma} \theta\pqty{\tau_0} \theta\pqty{\sigma}\inverse \\
+        &= \theta\pqty{\tau_0} \\
         &= -1,
     \end{align*}
     so \(\theta\) and \(\sign\) (the sign homomorphism) agree on a generating set of \(S_n\), and hence they are identical, so
@@ -151,7 +151,7 @@ Therefore, in particular, we have \(\abs{G : G_0} = 2\), so
 \]
 
 \begin{example*}[Cube/Octahedron]
-    Let \(G = \Isom\para{\text{cube}}\). Similarly, applying \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem) on the midpoints of faces gives
+    Let \(G = \Isom\pqty{\text{cube}}\). Similarly, applying \autoref{cor:orbit-stabiliser} (Orbit--Stabiliser Theorem) on the midpoints of faces gives
     \[
         \abs{G} = 6 \times 8 = 48.
     \]
@@ -188,7 +188,7 @@ Therefore, in particular, we have \(\abs{G : G_0} = 2\), so
 Finally, we examine the isometry group of a dodecahedron/icosahedron. (This is non-examinable in the course.)
 
 \begin{example*}[Dodecahedron/Icosahedron]
-    Let \(G = \Isom \para{\text{dodecahedron}}\) and \(G_0\) be the rotational subgroup with index 2.
+    Let \(G = \Isom \pqty{\text{dodecahedron}}\) and \(G_0\) be the rotational subgroup with index 2.
 
     Similar to the examples above, we have
     \[

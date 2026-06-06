@@ -24,7 +24,7 @@ The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \emph{co
     \]
     and the set of all left cosets of \(H\) in \(G\) is
     \[
-        G / H = \set{gH}{g \in G}.
+        \flatfrac{G}{H} = \set{gH}{g \in G}.
     \]
 \end{definition}
 
@@ -47,9 +47,9 @@ The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \emph{co
     \begin{enumerate}
         \item \(G\) is the union of all left-cosets:
         \[
-            G = \bigcup_{gH \in G / H} \para{gH};
+            G = \bigcup_{gH \in \flatfrac{G}{H}} \pqty{gH};
         \]
-        \item Cosets are either disjoint or equal: for any \(g_1 H, g_2 H \in G / H\), if \(g_1 H \cap g_2 H \neq \emptyset\), then \(g_1 H = g_2 H\).
+        \item Cosets are either disjoint or equal: for any \(g_1 H, g_2 H \in \flatfrac{G}{H}\), if \(g_1 H \cap g_2 H \neq \emptyset\), then \(g_1 H = g_2 H\).
     \end{enumerate}
 \end{lemma}
 
@@ -68,14 +68,14 @@ The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \emph{co
 
         Therefore,
         \[
-            g_1 = \para{g_2 h_2} h_1\inverse = g_2 \para{h_2 h_1\inverse}
+            g_1 = \pqty{g_2 h_2} h_1\inverse = g_2 \pqty{h_2 h_1\inverse}
         \]
         so \(g_1 \in g_2 H\).
 
         Furthermore, for any \(h \in H\), we have
         \begin{align*}
-            g_1 h &= \para{g_2 \para{h_2 h_1\inverse}} h \\
-            &= g_2 \para{\para{h_2 h_1\inverse} h} \\
+            g_1 h &= \pqty{g_2 \pqty{h_2 h_1\inverse}} h \\
+            &= g_2 \pqty{\pqty{h_2 h_1\inverse} h} \\
             &\in g_2 H,
         \end{align*}
         and therefore \(g_1 H \subseteq g_2 H\).
@@ -110,7 +110,7 @@ But in fact, those cosets have the same size!
     \]
     and this has inverse
     \[
-        \function{\phi\inverse}{gH}{H}{gh}{\para{g\inverse \para{gh}} = h.}
+        \function{\phi\inverse}{gH}{H}{gh}{\pqty{g\inverse \pqty{gh}} = h.}
     \]
 \end{proof}
 
@@ -126,11 +126,11 @@ Therefore, the picture is more like \autoref{fig:cosets-partition-equally}.
     \label{def:index-of-subgroup}%
     The \emph{index} of a subgroup \(H \subgroup G\) is the size of the set of left-cosets
     \[
-        \abs{G : H} = \abs{G / H}.
+        \abs{G : H} = \abs{\flatfrac{G}{H}}.
     \]
 \end{definition}
 
-We may show that the index of a subgroup is the same, whether using left-cosets or right-cosets. In fact, there is always a bijection between \(G / H\) and \(H \backslash G\), even in the infinite case.
+We may show that the index of a subgroup is the same, whether using left-cosets or right-cosets. In fact, there is always a bijection between \(\flatfrac{G}{H}\) and \(H \backslash G\), even in the infinite case.
 
 \subsection{Lagrange's Theorem and its Consequences}
 \label{sec:lagrange-consequences}
@@ -149,8 +149,8 @@ We are ready to state the stronger version of \autoref{thm:lagrange-weak} (Lagra
 \begin{proof}
     By \autoref{lem:cosets-partition}, the set of left cosets partition \(G\), hence
     \begin{align*}
-        \abs{G} &= \sum_{gH \in G / H} \abs{gH} \\
-        &= \sum_{gH \in G / H} \abs{H} && \text{\autoref{lem:cosets-size}} \\
+        \abs{G} &= \sum_{gH \in \flatfrac{G}{H}} \abs{gH} \\
+        &= \sum_{gH \in \flatfrac{G}{H}} \abs{H} && \text{\autoref{lem:cosets-size}} \\
         &= \abs{H} \abs{G : H}
     \end{align*}
     as desired.
@@ -162,13 +162,13 @@ We next give some group-theoretic consequences of \autoref{thm:lagrange} (Lagran
     \label{cor:order-of-element-divides}%
     If \(\abs{G} < \infty\), then
     \[
-        \ord\para{g} \divides \abs{G}
+        \ord\pqty{g} \divides \abs{G}
     \]
     for any \(g \in G\).
 \end{corollary}
 
 \begin{proof}
-    Recall that \(\ord\para{g} = \abs{\angBrac{g}}\) and that \(\angBrac{g} \subgroup G\), and we have \(\abs{\angBrac{g}} \divides \abs{G}\) by \autoref{thm:lagrange} (Lagrange's Theorem).
+    Recall that \(\ord\pqty{g} = \abs{\angBrac{g}}\) and that \(\angBrac{g} \subgroup G\), and we have \(\abs{\angBrac{g}} \divides \abs{G}\) by \autoref{thm:lagrange} (Lagrange's Theorem).
 \end{proof}
 
 \begin{corollary}[Element raised to the Order of Group]
@@ -183,14 +183,14 @@ We next give some group-theoretic consequences of \autoref{thm:lagrange} (Lagran
 \begin{proof}
     \autoref{cor:order-of-element-divides} shows that
     \[
-        \abs{G} = k \ord \para{g}
+        \abs{G} = k \ord \pqty{g}
     \]
     for some \(k \in \ZZ\).
 
     Hence,
     \begin{align*}
-        g^{\abs{G}} &= g^{k \ord \para{g}} \\
-        &= \para{g^{\ord \para{g}}}^{k} \\
+        g^{\abs{G}} &= g^{k \ord \pqty{g}} \\
+        &= \pqty{g^{\ord \pqty{g}}}^{k} \\
         &= e^k \\
         &= e.
     \end{align*}
@@ -204,12 +204,12 @@ We next give some group-theoretic consequences of \autoref{thm:lagrange} (Lagran
 \begin{proof}
     We choose any \(g \in G\), \(g \neq e\). Then by \autoref{cor:order-of-element-divides}
     \[
-        \ord \para{g} \divides \abs{G}.
+        \ord \pqty{g} \divides \abs{G}.
     \]
 
-    Therefore, since \(\abs{G}\) is prime, either \(\ord \para{g} = 1\) or \(\ord \para{g} = \abs{G}\).
+    Therefore, since \(\abs{G}\) is prime, either \(\ord \pqty{g} = 1\) or \(\ord \pqty{g} = \abs{G}\).
 
-    Since \(g \neq e\), we have \(\ord \para{g} \neq 1\), and hence \(\ord \para{g} = \abs{G}\).
+    Since \(g \neq e\), we have \(\ord \pqty{g} \neq 1\), and hence \(\ord \pqty{g} = \abs{G}\).
 
     Therefore, \(\angBrac{g} = G\), so \(g\) generates \(G\) and \(G\) is cyclic.
 \end{proof}
@@ -223,25 +223,25 @@ We can apply these results to elementary number theory, and this gives an import
     \label{def:euler-totient}%
     The \emph{Euler Totient Function} is defined as
     \[
-        \totient\para{n} = \abs{\set{x \in \ZZ_{n}}{\gcd\para{x, n} = 1}}.
+        \totient\pqty{n} = \abs{\set{x \in \ZZ_{n}}{\gcd\pqty{x, n} = 1}}.
     \]
 \end{definition}
 
 Let \(\times_{n}\) denote multiplication modulo \(n\) on \(\ZZ_n\), which is associative with identity \(1 \in \ZZ_n\).
 
-Recall that, by the division algorithm, \(x \in \ZZ_n\) has a multiplicative inverse modulo \(n\), if and only if there exists \(y, m \in \ZZ\) such that \(xy + mn = 1\), if and only if \(\gcd\para{x, n} = 1\).
+Recall that, by the division algorithm, \(x \in \ZZ_n\) has a multiplicative inverse modulo \(n\), if and only if there exists \(y, m \in \ZZ\) such that \(xy + mn = 1\), if and only if \(\gcd\pqty{x, n} = 1\).
 
 Therefore,
 \[
-    \ZZ_n^{\times} = \set{x \in \ZZ_n}{\gcd\para{x, n} = 1}
+    \ZZ_n^{\times} = \set{x \in \ZZ_n}{\gcd\pqty{x, n} = 1}
 \]
 is a group with operation \(\times_n\).
 
 \begin{theorem}[Fermat--Euler Theorem]
     \label{thm:fermat-euler}%
-    Let \(x, n \in \ZZ\). If \(\gcd\para{x, n} = 1\), then
+    Let \(x, n \in \ZZ\). If \(\gcd\pqty{x, n} = 1\), then
     \[
-        x^{\totient\para{n}} \equiv 1 \pmod{n}.
+        x^{\totient\pqty{n}} \equiv 1 \pmod{n}.
     \]
 \end{theorem}
 
@@ -250,5 +250,5 @@ is a group with operation \(\times_n\).
     \[
         x^{\abs{\ZZ_n^{\times}}} = 1,
     \]
-    and from \autoref{def:euler-totient} (Euler Totient Function), \(\totient\para{n} = \abs{\ZZ_n^{\times}}\), so the result follows.
+    and from \autoref{def:euler-totient} (Euler Totient Function), \(\totient\pqty{n} = \abs{\ZZ_n^{\times}}\), so the result follows.
 \end{proof}
