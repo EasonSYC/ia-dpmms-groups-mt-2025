@@ -20,6 +20,63 @@ The geometric explanation of a `sphere' is as follows. Consider the map defined 
 
 \begin{figure}[ht!]
     \centering
+    \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round,scale=1.75]
+        % ---- coordinates (1 unit = 1cm; sphere center C, radius R) ----
+        \def\R{1.75}
+        \coordinate (C) at (3.9,2.13);    % origin of the complex plane
+        \coordinate (N) at (3.9,3.88);    % north pole
+        \coordinate (S) at (3.9,0.38);    % south pole = point corresponding to 0
+        \coordinate (P) at (4.85,3.27);
+        \coordinate (sP) at (7.78,1.33);
+        \coordinate (Q) at (2.98,1.12);
+        \coordinate (sQ) at (3.34,2.19);
+
+        % ---- the plane ----
+        \draw (1.78,3.52) -- (8.52,3.52) -- (8.00,0.65) -- (0.55,0.65) -- cycle;
+
+        % ---- hide the plane behind the front of the sphere ----
+        \fill[white] (C) ++(-\R,0) arc[start angle=180,end angle=0,radius=\R]
+            arc[start angle=0,end angle=-180,x radius=\R,y radius=0.52] -- cycle;
+
+        % ---- sphere: hidden parts dashed ----
+        \draw[dashed] (C) ++(-\R,0) arc[start angle=180,end angle=360,x radius=\R,y radius=0.52]
+            arc[start angle=0,end angle=180,x radius=\R,y radius=0.52] -- cycle; % full equator (dashed)
+        \draw[dashed] (C) circle (\R);
+
+        % ---- sphere: visible parts thick ----
+        \draw[line width=1.6pt] (C) ++(-\R,0) arc[start angle=180,end angle=0,radius=\R];       % upper half
+        \draw[line width=1.6pt] (C) ++(\R,0) arc[start angle=0,end angle=-180,x radius=\R,y radius=0.52]; % front equator
+        \draw[line width=1.6pt] (C) ++(-122:\R) arc[start angle=-122,end angle=-58,radius=\R];  % bottom cap below plane
+
+        % ---- z-axis (dashed inside the sphere, solid arrow above N) ----
+        \draw (3.9, -0.49) -- (S);
+        \draw[dashed] (S) -- (N);
+        \draw[->] (N) -- (3.9,4.75);
+
+        % ---- projection lines ----
+        \draw (N) -- (sP);
+        \draw (N) -- (Q);
+
+        % ---- points ----
+        \fill (P)  circle (1.3pt);
+        \fill (sP) circle (1.3pt);
+        \fill (Q)  circle (1.3pt);
+        \fill (sQ) circle (1.3pt);
+        \fill (C)  circle (1.3pt);   % 0 in the complex plane
+        \fill (S)  circle (1.3pt);   % 0 on the Riemann sphere
+        \draw[fill=white] (N) circle (1.3pt);
+
+        % ---- labels ----
+        \node[above left]  at (3.88,3.90) {\(\infty\)};
+        \node at (4.58,2.98) {\(P\)};
+        \node[left]        at (3.25,2.19) {\(w\)};
+        \node at (3.48,1.00) {\(\pi\pqty{w}\)};
+        \node at (7.68,1.05) {\(\pi\pqty{z}\)};
+        \node[below right] at (C) {\(0\)};
+        \node[below left]       at (S) {\(\pi\pqty{0}\)};
+        \node at (1.25,0.98) {\Large\(\CC\)};
+        \node at (2.5,4) {\Large \(\CC\compactify\)};
+    \end{tikzpicture}
     \caption{Stereographic Projection for the Riemann Sphere}
     \label{fig:stereographic-projection-riemann-sphere}
 \end{figure}
