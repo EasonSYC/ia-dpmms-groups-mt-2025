@@ -5,7 +5,7 @@ There are two ways to view groups, \emph{algebra} and \emph{symmetry}. We first 
 
 \begin{figure}[ht!]
     \centering
-    
+    \includegraphics[width=0.8\textwidth]{fig/equilateral-triangle-symmetries.png}
     \caption{Symmetries of an Equilateral Triangle}
     \label{fig:equilateral-triangle-symmetry}
 \end{figure}
@@ -13,13 +13,14 @@ There are two ways to view groups, \emph{algebra} and \emph{symmetry}. We first 
 \begin{example*}[Equilateral Triangle]
     As in \autoref{fig:equilateral-triangle-symmetry}, an equilateral triangle has rotational symmetries and reflective symmetries.
     
-    Note that there is the \emph{trivial symmetry} which is the \emph{identity}, that does not move the triangle and keeps it in place.
+    Note that there is the \emph{trivial symmetry} which is the \term{identity}, that does not move the triangle and keeps it in place.
 
     An equilateral triangle has 6 symmetries, as listed in \autoref{fig:equilateral-triangle-symmetry-list}
 \end{example*}
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/equilateral-triangle-symmetries-list.png}
     \caption{List of Symmetries of an Equilateral Triangle}
     \label{fig:equilateral-triangle-symmetry-list}
 \end{figure}
@@ -30,6 +31,7 @@ We can define `multiplication' on symmetries, specifically by composing the symm
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/equilateral-triangle-symmetries-composition.png}
     \caption{Composition of Symmetries}
     \label{fig:symmetry-composition}
 \end{figure}
@@ -39,23 +41,18 @@ We note the following features (and non-features) arise in the previous example.
 \noindent
 \textbf{Important features.}
 \begin{itemize}
-    \item There is an \emph{identity}.
-    \item Every symmetry has an \emph{inverse}, as shown in \autoref{fig:symmetry-inverse}.
+    \item There is an \term{identity}.
+    \item Every symmetry has an \term{inverse}, as shown in \autoref{fig:symmetry-inverse}.
 
     \begin{figure}[ht!]
         \centering
-        \caption{Symmetries are invertible}
+        \includegraphics[width=0.7\textwidth]{fig/equilateral-triangle-symmetries-inverse.png}
+        \caption{Symmetries are Invertible}
         \label{fig:symmetry-inverse}
     \end{figure}
 
-    \item Symmetries can be \emph{composed} (to form another symmetry).
-    \item Composition of symmetries are \emph{associative}, as shown in \autoref{fig:symmetry-associative}.
-
-    \begin{figure}[ht!]
-        \centering
-        \caption{Compositions of Symmetry are Associative}
-        \label{fig:symmetry-associative}
-    \end{figure}
+    \item Symmetries can be \term{composed} (to form another symmetry).
+    \item Composition of symmetries are \term{associative}.
 \end{itemize}
 
 \noindent
@@ -63,6 +60,7 @@ We note the following features (and non-features) arise in the previous example.
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/equilateral-triangle-symmetries-non-commutative.png}
     \caption{Compositions of Symmetry are Not Commutative}
     \label{fig:symmetry-non-commutative}
 \end{figure}
@@ -74,11 +72,11 @@ We first define what it means to have a binary operation on a set -- this forms 
 
 \begin{definition}[Binary Operation]
     \label{def:binary-operation}%
-    A \emph{binary operation} on a set \(X\) is a function
+    A \term{binary operation} on a set \(X\) is a function
     \[
         \functiondomain{\cdot}{X \times X}{X}
     \]
-    where \(X \times X\) is the \emph{Cartesian product} given by
+    where \(X \times X\) is the \term{Cartesian product} given by
     \[
         X \times X = \set{\pqty{x_1, x_2}}{x_1, x_2 \in X}.
     \]
@@ -93,7 +91,7 @@ Now we are ready to define a group as an algebraic structure, using the followin
 
 \begin{definition}[Group]
     \label{def:group}%
-    A \emph{group} is a triple
+    A \term{group} is a triple
     \[
         \pqty{G, \cdot, e}
     \]
@@ -105,11 +103,11 @@ Now we are ready to define a group as an algebraic structure, using the followin
     \end{itemize}
     such that the following 4 axioms are satisfied:
     \begin{enumerate}
-        \item \emph{Closure}. For all \(a, b \in G\), \(a \cdot b \in G\).
-        \item \emph{Associativity}. For all \(a, b, c \in G\), \(
+        \item \term{Closure}. For all \(a, b \in G\), \(a \cdot b \in G\).
+        \item \term{Associativity}. For all \(a, b, c \in G\), \(
         \pqty{\pqty{a \cdot b} \cdot c} = \pqty{a \cdot \pqty{b \cdot c}}\).
-        \item \emph{(Right) Identity}. For all \(a \in G\), \(a \cdot e = a\).
-        \item \emph{(Right) Inverses}. For all \(a \in G\), there exists some \(b \in G\), such that \(a \cdot b = e\).
+        \item \term{(Right) Identity}. For all \(a \in G\), \(a \cdot e = a\).
+        \item \term{(Right) Inverses}. For all \(a \in G\), there exists some \(b \in G\), such that \(a \cdot b = e\).
     \end{enumerate}
 \end{definition}
 
@@ -249,18 +247,18 @@ We give a special name for those groups which are commutative.
     \[
         a \cdot b = b \cdot a
     \]
-    for all \(a, b \in G\), then \(G\) is \emph{commutative}, and \(G\) is called an \emph{abelian group}.
+    for all \(a, b \in G\), then \(G\) is \term{commutative}, and \(G\) is called an \term{abelian group}.
 \end{definition}
 
 \begin{example*}[Trivial Group]
-    If \(G = \Bqty{e}\) and \(\functionmap{\cdot}{\pqty{e, e}}{e}\), then \(\pqty{G, \cdot, e}\) is the \emph{trivial group}.
+    If \(G = \Bqty{e}\) and \(\functionmap{\cdot}{\pqty{e, e}}{e}\), then \(\pqty{G, \cdot, e}\) is the \term{trivial group}.
 \end{example*}
 
 \begin{examples*}[Familiar Examples from Arithemetic]
     \begin{enumerate}
         \item \(\pqty{\ZZ, +, 0}\), \(\pqty{\QQ, +, 0}\), \(\pqty{\RR, +, 0}\) and \(\pqty{\CC, +, 0}\) are all \emph{abelian} groups.
         
-        The inverse of \(x\) in these groups are \(-x\) -- this is known as the \emph{additive notation}.
+        The inverse of \(x\) in these groups are \(-x\) -- this is known as the \term{additive notation}.
 
         \item \(\pqty{\NN, +, 0}\) is \emph{not} a group, since it does not satisfy the Inverse Axiom.
         
@@ -276,9 +274,9 @@ We would like to define the size of a group, and the definition is as in  \autor
 
 \begin{definition}[Order of a Group, Finite Group]
     \label{def:order-group}%
-    The \emph{order} of a group \(\pqty{G, \cdot, e}\) is the number of elements of \(G\), denoted by \(\abs{G}\) or \(\size G\).
+    The \term{order} of a group \(\pqty{G, \cdot, e}\) is the number of elements of \(G\), denoted by \(\abs{G}\) or \(\size G\).
 
-    If \(\abs{G} < \infty\), then we say \(\pqty{G, \cdot, e}\) is a \emph{finite} group.
+    If \(\abs{G} < \infty\), then we say \(\pqty{G, \cdot, e}\) is a \term{finite} group.
 \end{definition}
 
 \begin{examples*}
@@ -300,7 +298,7 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
 
 \begin{definition}[Bijection, Permutation]
     \label{def:bijection-permutation}%
-    Let \(X, Y\) be sets. A \emph{bijection} is a map \(\functiondomain{f}{X}{Y}\) that has an inverse \(\functiondomain{g}{Y}{X}\) such that
+    Let \(X, Y\) be sets. A \term{bijection} is a map \(\functiondomain{f}{X}{Y}\) that has an inverse \(\functiondomain{g}{Y}{X}\) such that
     \[
         f \circ g = \identity_Y, g \circ f = \identity_X
     \]
@@ -308,7 +306,7 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
     \[
         \function{\identity_S}{S}{S}{x}{x}
     \]
-    for all \(x \in S\) is the \emph{identity map}.
+    for all \(x \in S\) is the \term{identity map}.
 
     Here,
     \[
@@ -316,7 +314,7 @@ Symmetries on a set (with no additional constraints) are naturally interpreted a
     \]
     by definition of composition.
 
-    A bijection \(X \to X\) is called a \emph{permutation}.
+    A bijection \(X \to X\) is called a \term{permutation}.
 \end{definition}
 
 \begin{definition}[Symmetry Group]
@@ -395,11 +393,11 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
     \label{def:subgroup}%
     Let \(G\) be a group, and \(H \subseteq G\). If we have
     \begin{itemize}
-        \item \emph{Identity.} \(e \in H\);
-        \item \emph{Closure.} \(a \cdot b \in H\) for all \(a, b \in H\);
-        \item \emph{Inverse.} \(a \in H\) implies \(a\inverse \in H\);
+        \item \term{Identity.} \(e \in H\);
+        \item \term{Closure.} \(a \cdot b \in H\) for all \(a, b \in H\);
+        \item \term{Inverse.} \(a \in H\) implies \(a\inverse \in H\);
     \end{itemize}
-    we say \(H\) is a \emph{subgroup} of \(G\), and we write \(H \subgroup G\).
+    we say \(H\) is a \term{subgroup} of \(G\), and we write \(H \subgroup G\).
 \end{definition}
 
 \begin{remark}
@@ -414,7 +412,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
         \[
             \trivialgp_G = \Bqty{e_G}
         \]
-        is the \emph{trivial subgroup}.
+        is the \term{trivial subgroup}.
 
         \item \(\ZZ \subseteq \QQ \subseteq \RR \subseteq \CC\), and in fact
         \[
@@ -444,7 +442,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 \end{examples*}
 
 \begin{remark}
-    All subgroups of a group \(G\) that are not trivial (\(\trivialgp_G\)) or the group \(G\) itself are referred to as its \emph{proper subgroups}.
+    All subgroups of a group \(G\) that are not trivial (\(\trivialgp_G\)) or the group \(G\) itself are referred to as its \term{proper subgroups}.
 \end{remark}
 
 \begin{proposition}
@@ -496,13 +494,13 @@ Specifically, the second example allows us to define `the smallest group' contai
     \]
     is the smallest subgroup of \(G\) containing \(X\).
 
-    It is the intersection of all subgroups of \(G\) that contains \(X\), and this is called \emph{the subgroup generated by \(X\)}.
+    It is the intersection of all subgroups of \(G\) that contains \(X\), and this is called \term{the subgroup generated by \(X\)}.
 
-    If \(G = \angBrac{X}\) we say \(X\) \emph{generates} \(G\), or \(X\) is a \emph{generating set} for \(G\).
+    If \(G = \angBrac{X}\) we say \(X\) \term{generates} \(G\), or \(X\) is a \term{generating set} for \(G\).
 \end{definition}
 
 \begin{remark}
-    Intuitively, \(\angBrac{X}\) is the \emph{smallest} subgroup containing \(X\), and if \(X\) generates \(G\), this means every element in \(g \in G\) can be written as
+    Intuitively, \(\angBrac{X}\) is the \term{smallest} subgroup containing \(X\), and if \(X\) generates \(G\), this means every element in \(g \in G\) can be written as
     \[
         g = x_1^{\pm 1} \cdot x_2^{\pm 1} \cdots x_n^{\pm 1}
     \]
@@ -519,6 +517,7 @@ Let \(\CC\) be the complex plane, equipped with the usual notion of distance (th
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.9\textwidth]{fig/complex-numbers-distance.png}
     \caption{Distance on \(\CC\)}
     \label{fig:distance-on-C}
 \end{figure}
@@ -527,7 +526,7 @@ We consider a certain group of symmetries that preserves distances.
 
 \begin{definition}[Isometry]
     \label{def:isometry}%
-    For any subset \(X \subseteq \CC\), an \emph{isometry} of \(X\) is a bijection \(\functiondomain{f}{X}{X}\) that preserves distance, that is,
+    For any subset \(X \subseteq \CC\), an \term{isometry} of \(X\) is a bijection \(\functiondomain{f}{X}{X}\) that preserves distance, that is,
     \[
         \abs{f\pqty{x} - f\pqty{y}} = \abs{x - y}
     \]
@@ -579,7 +578,7 @@ We consider a certain group of symmetries that preserves distances.
     \]
     for \(n \geq 3\), as in \autoref{fig:regular-n-gon-on-C}.
 
-    The \emph{\(n\)-th Dihedral Group} \(D_{2n}\) is defined as
+    The \term{\(n\)-th Dihedral Group} \(D_{2n}\) is defined as
     \[
         D_{2n} = \Isom\pqty{X_n}.
     \]
@@ -587,6 +586,7 @@ We consider a certain group of symmetries that preserves distances.
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/regular-n-gon.png}
     \caption{The regular \(n\)-gon on \(\CC\)}
     \label{fig:regular-n-gon-on-C}
 \end{figure}
@@ -612,6 +612,7 @@ The proof will give us a good description of all the elements in \(D_{2n}\). How
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/kite-lemma.png}
     \caption{The Kite Lemma}
     \label{fig:kite-lemma}
 \end{figure}
@@ -657,6 +658,7 @@ Now, to prove \autoref{thm:size-of-dihedral-group} (\(\abs{D_{2n}} = 2n\)), we d
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/two-elements-d2n.png}
     \caption{Two Elements of \(D_{2n}\)}
     \label{fig:two-elements-of-d-2n}
 \end{figure}
@@ -716,6 +718,7 @@ The proof structure would be a typical subset-superset proof, i.e.
 
     \begin{figure}[ht!]
         \centering
+        \includegraphics[width=0.8\textwidth]{fig/three-points-n-gon.png}
         \caption{Three Points on the Polygon}
         \label{fig:three-points-on-polygon}
     \end{figure}
@@ -846,7 +849,7 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
 
 \begin{definition}[Homomorphism]
     \label{def:homomorphism}%
-    A map between groups \(\functiondomain{\phi}{G}{H}\) is called a \emph{homomorphism} if it preserves the group structure, the operation:
+    A map between groups \(\functiondomain{\phi}{G}{H}\) is called a \term{homomorphism} if it preserves the group structure, the operation:
     \[
         \phi\pqty{g \cdot_{G} g'} = \phi\pqty{g} \cdot_{H} \phi\pqty{g'}
     \]
@@ -859,13 +862,13 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
         \[
             \function{\phi}{G}{H}{g}{e_{H}}
         \]
-        is a homomorphism. This is the \emph{trivial homomorphism}.
+        is a homomorphism. This is the \term{trivial homomorphism}.
         
         \item If \(H \subgroup G\), the map
         \[
             \function{i}{H}{G}{h}{h}
         \]
-        is a homomorphism. This is the \emph{inclusion homomorphism}.
+        is a homomorphism. This is the \term{inclusion homomorphism}.
 
         \item Recall \(C_n = \set{z \in \CC}{z^n = 1}\) for \(n \in \NN\). If \(n \divides m\), then the map
         \[
@@ -913,7 +916,7 @@ Homomorphisms between groups must map certain elements to certain elements.
 
 \begin{definition}[Isomorphism]
     \label{def:isomorphism}%
-    If a homomorphism \(\functiondomain{\phi}{G}{H}\) is also a \emph{bijection} (a map with an inverse), then \(\phi\) is an \emph{isomorphism}, and we write
+    If a homomorphism \(\functiondomain{\phi}{G}{H}\) is also a \term{bijection} (a map with an inverse), then \(\phi\) is an \term{isomorphism}, and we write
     \[
         G \isomorphic H. 
     \]
@@ -999,11 +1002,11 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
     Let \(\functiondomain{\phi}{G}{H}\) be a homomorphism.
 
     \begin{enumerate}
-        \item The \emph{image} of \(\phi\) is
+        \item The \term{image} of \(\phi\) is
         \[
             \img \phi = \set{h \in H}{\exists g \in G: \phi\pqty{g} = h} \subseteq H.
         \]
-        \item The \emph{kernel} of \(\phi\) is
+        \item The \term{kernel} of \(\phi\) is
         \[
             \ker \phi = \set{g \in G}{\phi\pqty{g} = e_H} \subseteq G.
         \]
@@ -1012,6 +1015,7 @@ We saw that every subgroup leads to an inclusion homomorphism. It is also true t
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/kernel-image.png}
     \caption{Image and Kernel}
     \label{fig:image-and-kernel}
 \end{figure}
@@ -1103,12 +1107,12 @@ The groups \(C_n \isomorphic \ZZ_n\) that we described above has a special prope
 
 \begin{definition}[Cyclic Group]
     \label{def:cyclic-group}%
-    A group \(G\) is \emph{cyclic} if there is \(g \in G\) and that
+    A group \(G\) is \term{cyclic} if there is \(g \in G\) and that
     \[
         G = \set{g^k}{k \in \ZZ} = \angBrac{g}.
     \]
 
-    That is, \(\Bqty{g}\) generates \(G\), and \(g\) is called a \emph{generator} of \(G\).
+    That is, \(\Bqty{g}\) generates \(G\), and \(g\) is called a \term{generator} of \(G\).
 \end{definition}
 
 \begin{examples*}[Examples of Cyclic Groups]
@@ -1225,7 +1229,7 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \]
     for some \(n \in \NN \cup \Bqty{\infty}\).
 
-    The \emph{order} of an element \(g \in G\), is the \(n\) above, and we denote this as
+    The \term{order} of an element \(g \in G\), is the \(n\) above, and we denote this as
     \[
         n = \ord \pqty{g} = o\pqty{g}.
     \]

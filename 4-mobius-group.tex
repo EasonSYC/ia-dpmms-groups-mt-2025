@@ -7,13 +7,13 @@ This section is about a fantastically interesting group. It is \emph{almost} a g
 
 \begin{definition}[Riemann Sphere]
     \label{def:riemann-sphere}%
-    The \emph{Riemann Sphere} is
+    The \term{Riemann Sphere} is
     \[
         \CC\compactify = \CC \cup \Bqty{\infty}.
     \]
 \end{definition}
 
-The geometric explanation of a `sphere' is as follows. Consider the map defined in \autoref{fig:stereographic-projection-riemann-sphere}, the \emph{stereographic projection}
+The geometric explanation of a `sphere' is as follows. Consider the map defined in \autoref{fig:stereographic-projection-riemann-sphere}, the \term{stereographic projection}
 \[
     \functiondomain{\pi}{\CC}{S^2}.
 \]
@@ -27,12 +27,12 @@ The geometric explanation of a `sphere' is as follows. Consider the map defined 
 This identifies \(\CC\) with all the points of the sphere, except for the `North Pole' of the sphere, which corresponds to \(\infty\).
 
 \begin{remark}
-    In geometry terms, we may also think of this as the \emph{complex projective line}, \(\CP^{1}\).
+    In geometry terms, we may also think of this as the \term{complex projective line}, \(\CP^{1}\).
 \end{remark}
 
 \begin{definition}[M\"{o}bius Transformation]
     \label{def:mobius-transformation}%
-    Let \(a, b, c, d \in \CC\), and \(ad - bc \neq 0\). We define the corresponding \emph{M\"{o}bius Transformation} \(\functiondomain{\mu}{\CC\compactify}{\CC\compactify}\) as follows.
+    Let \(a, b, c, d \in \CC\), and \(ad - bc \neq 0\). We define the corresponding \term{M\"{o}bius Transformation} \(\functiondomain{\mu}{\CC\compactify}{\CC\compactify}\) as follows.
 
     \begin{itemize}
         \item If \(c \neq 0\), then
@@ -127,7 +127,7 @@ One important way to study M\"{o}bius transformations is via their \emph{fixed p
 
 \begin{definition}[Fixed Point]
     \label{def:fixed-point}%
-    Suppose \(\functiondomain{f}{X}{X}\) is a permutation. Then any \(x \in X\) such that \(f\pqty{x} = x\) is called a \emph{fixed point} of \(f\). The set of all fixed points is denoted as
+    Suppose \(\functiondomain{f}{X}{X}\) is a permutation. Then any \(x \in X\) such that \(f\pqty{x} = x\) is called a \term{fixed point} of \(f\). The set of all fixed points is denoted as
     \[
         \Fix\pqty{f} = \set{x \in X}{f\pqty{x} = x}.
     \]
@@ -238,7 +238,7 @@ This property allows us to give the following definition, which will show signif
     \[
         \alpha\pqty{z_1} = 0, \alpha\pqty{z_2} = 1, \alpha\pqty{z_3} = \infty,
     \]
-    and the \emph{cross ratio} of \(z_1, z_2, z_3, z_4\) is then given by
+    and the \term{cross ratio} of \(z_1, z_2, z_3, z_4\) is then given by
     \[
         \bqty{z_1, z_2, z_3, z_4} = \alpha\pqty{z_4} = \frac{z_4 - z_1}{z_4 - z_3} \cdot \frac{z_2 - z_3}{z_2 - z_1}.
     \]
@@ -310,7 +310,7 @@ We consider the geometry that M\"{o}bius maps preserve.
 
 \begin{definition}[Circle in \(\CC\compactify\)]
     \label{def:circle-riemann}%
-    A \emph{circle} in \(\CC\compactify\) is:
+    A \term{circle} in \(\CC\compactify\) is:
     \begin{enumerate}
         \item a Euclidean circle in \(\CC\), defined as
         \[
@@ -327,6 +327,7 @@ We consider the geometry that M\"{o}bius maps preserve.
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.6\textwidth]{fig/circles-in-riemann-sphere.png}
     \caption{Circles in \(\CC\compactify\)}
     \label{fig:circles-in-riemann-sphere}
 \end{figure}

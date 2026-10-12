@@ -8,7 +8,7 @@ We return to the aspect where we started, that groups describe symmetries. Group
 
 \begin{definition}[Group Action]
     \label{def:group-action}%
-    An \emph{action} of a group \(G\) on a set \(X\) is a map
+    An \term{action} of a group \(G\) on a set \(X\) is a map
     \[
         \function{\alpha}{G \times X}{X}{\pqty{g, x}}{\alpha\pqty{g, x} = gx}
     \]
@@ -27,7 +27,7 @@ We return to the aspect where we started, that groups describe symmetries. Group
         \[
             gx = x
         \]
-        is the \emph{trivial action}.
+        is the \term{trivial action}.
         \item \(\Sym\pqty{X}\) acts on \(X\) for any set \(X\) by
         \[
             fx = f\pqty{x}.
@@ -42,7 +42,7 @@ We return to the aspect where we started, that groups describe symmetries. Group
         \[
             g\gamma = g \cdot \gamma
         \]
-        for \(g \in G\), \(\gamma \in X = G\). This is the \emph{left regular action}.
+        for \(g \in G\), \(\gamma \in X = G\). This is the \term{left regular action}.
     \end{enumerate}
 \end{examples*}
 
@@ -159,11 +159,11 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     \label{def:orbit-stabiliser}%
     Let \(G \actson X\) and let \(x \in X\).
     \begin{enumerate}
-        \item The \emph{orbit} of \(x\) is the set
+        \item The \term{orbit} of \(x\) is the set
         \[
             \Orb_{G}\pqty{x} = Gx = \set{y \in X}{\exists g \in G: y = gx}.
         \]
-        \item The \emph{stabiliser} of \(x\) is the set
+        \item The \term{stabiliser} of \(x\) is the set
         \[
             \Stab_{G}\pqty{x} = \set{g \in G}{g\pqty{x} = x}.
         \]
@@ -172,8 +172,8 @@ We in fact can learn a huge amount about groups by thinking about group actions.
     Note some authors use \(G_x\) for stabilisers, where \(x\) is a subscript.
 
     \begin{itemize}
-        \item If \(\Orb_{G}\pqty{x} = X\), we say the action is \emph{transitive}. (We will see soon that this statement is equivalent with for \emph{all} \(x \in X\) or for \emph{some} \(x \in X\).)
-        \item If every element \(g \in G\) (except the identity \(g = e\)) has an \(x \in X\) such that \(gx \neq x\), then we say the action is \emph{faithful}.
+        \item If \(\Orb_{G}\pqty{x} = X\), we say the action is \term{transitive}. (We will see soon that this statement is equivalent with for \emph{all} \(x \in X\) or for \emph{some} \(x \in X\).)
+        \item If every element \(g \in G\) (except the identity \(g = e\)) has an \(x \in X\) such that \(gx \neq x\), then we say the action is \term{faithful}.
     \end{itemize}
 \end{definition}
 
@@ -274,6 +274,7 @@ We in fact can learn a huge amount about groups by thinking about group actions.
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/two-elements-d2n.png}
     \caption{\(D_{2n} \actson X_n\) for \(n = 6\), the regular hexagon}
     \label{fig:dihedral-group-action-hexagon}
 \end{figure}
@@ -412,6 +413,7 @@ Before we prove \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem), we f
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.5\textwidth]{fig/centre-of-face-cube.png}
     \caption{A Cube and the Centre of a Face}
     \label{fig:symmetries-of-a-cube}
 \end{figure}
@@ -531,9 +533,9 @@ This is a proof that is not very intuitive, but the result is very useful.
 
 \begin{definition}[Conjugate, Conjugacy Class]
     \label{def:conjugate-ccl}%
-    Let \(G\) be a group, and \(g \in G\). For any \(h \in G\), the element \(hgh\inverse \in G\) is called \emph{the conjugate of \(g\) by \(h\)}.
+    Let \(G\) be a group, and \(g \in G\). For any \(h \in G\), the element \(hgh\inverse \in G\) is called \term{the conjugate of \(g\) by \(h\)}.
 
-    The \emph{conjugacy class} of \(g \in G\) is
+    The \term{conjugacy class} of \(g \in G\) is
     \[
         \ccl_{G}\pqty{g} = \set{hgh\inverse}{h \in G}.
     \]
@@ -559,6 +561,7 @@ Conjugacy classes of reflections in a dihedral group demonstrates the intuition 
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.9\textwidth]{fig/conjugacy-d2n.png}
     \caption{Conjugacy in Dihedral Groups}
     \label{fig:ccl-dihedral}
 \end{figure}
@@ -581,14 +584,14 @@ This leads to \autoref{def:centraliser-centre}.
 
 \begin{definition}[Centraliser, Centre]
     \label{def:centraliser-centre}%
-    The \emph{centraliser} of \(g \in G\) is
+    The \term{centraliser} of \(g \in G\) is
     \[
         C_G\pqty{g} = \set{h \in G}{h g h\inverse = g}.
     \]
 
     It is the elements that \emph{commute with \(g\)}.
 
-    The \emph{centre} of \(G\) is
+    The \term{centre} of \(G\) is
     \[
         Z\pqty{G} = \set{h \in G}{\forall g \in G, hg = gh} = \bigcap_{g \in G} C_G \pqty{g}.
     \]

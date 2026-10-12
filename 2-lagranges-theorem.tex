@@ -11,14 +11,14 @@ This very important theorem in group theory helps us to think about the order of
     \]
 \end{theorem}
 
-The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \emph{cosets}.
+The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \term{cosets}.
 
 \subsection{Cosets}
 \label{sec:cosets}
 
 \begin{definition}[Left Coset]
     \label{def:left-coset}%
-    Let \(H \subgroup G\) and \(g \in G\). The corresponding \emph{left-coset} is
+    Let \(H \subgroup G\) and \(g \in G\). The corresponding \term{left-coset} is
     \[
         gH = \set{gh}{h \in H} \subseteq G,
     \]
@@ -43,7 +43,7 @@ The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \emph{co
 
 \begin{lemma}[Cosets Partition]
     \label{lem:cosets-partition}%
-    If \(H \subgroup G\), the left-cosets of \(H\) \emph{partition} \(G\). That is,
+    If \(H \subgroup G\), the left-cosets of \(H\) \term{partition} \(G\). That is,
     \begin{enumerate}
         \item \(G\) is the union of all left-cosets:
         \[
@@ -84,15 +84,7 @@ The proof is to `cut' \(G\) up into `copies' of \(H\), which are called \emph{co
     \end{enumerate}
 \end{proof}
 
-Therefore, we may visualise that cosets partition as in \autoref{fig:cosets-partition}.
-
-\begin{figure}[ht!]
-    \centering
-    \caption{Cosets of a subset partition a group}
-    \label{fig:cosets-partition}
-\end{figure}
-
-But in fact, those cosets have the same size!
+In fact, those cosets have the same size!
 
 \begin{lemma}[Cosets have same size as subgroup]
     \label{lem:cosets-size}%
@@ -114,17 +106,9 @@ But in fact, those cosets have the same size!
     \]
 \end{proof}
 
-Therefore, the picture is more like \autoref{fig:cosets-partition-equally}.
-
-\begin{figure}[ht!]
-    \centering
-    \caption{Cosets of a subset partition a group equally}
-    \label{fig:cosets-partition-equally}
-\end{figure}
-
 \begin{definition}[Index of Subgroup]
     \label{def:index-of-subgroup}%
-    The \emph{index} of a subgroup \(H \subgroup G\) is the size of the set of left-cosets
+    The \term{index} of a subgroup \(H \subgroup G\) is the size of the set of left-cosets
     \[
         \abs{G : H} = \abs{\flatfrac{G}{H}}.
     \]
@@ -221,7 +205,7 @@ We can apply these results to elementary number theory, and this gives an import
 
 \begin{definition}[Euler Totient Function]
     \label{def:euler-totient}%
-    The \emph{Euler Totient Function} is defined as
+    The \term{Euler Totient Function} is defined as
     \[
         \totient\pqty{n} = \abs{\set{x \in \ZZ_{n}}{\gcd\pqty{x, n} = 1}}.
     \]

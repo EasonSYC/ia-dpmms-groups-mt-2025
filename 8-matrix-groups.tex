@@ -26,7 +26,7 @@ gives an identity. However, we know not all matrices are invertible.
     \[
         \GL_n\pqty{\RR} = \set{\vb{M} \in \matrixset_n \pqty{\RR}}{\det \vb{M} \neq 0}
     \]
-    is the \emph{general linear group of \(n \times n\) matrices over \(\RR\)}.
+    is the \term{general linear group of \(n \times n\) matrices over \(\RR\)}.
 \end{definition}
 
 \begin{lemma}[The Determinant is a Homomorphism]
@@ -47,7 +47,7 @@ gives an identity. However, we know not all matrices are invertible.
     \[
         \SL_n\pqty{\RR} = \ker \det = \set{\vb{M} \in \matrixset_n \pqty{\RR}}{\det \vb{M} = 1}
     \]
-    is the \emph{special linear group of \(n \times n\) matrices over \(\RR\)}.
+    is the \term{special linear group of \(n \times n\) matrices over \(\RR\)}.
 \end{definition}
 
 By \autoref{thm:first-isomorphism} (First Isomorphism Theorem), we have
@@ -196,17 +196,17 @@ We write \(\norm{\cdot}\) for the usual notion of length in \(\RR^n\): let
 \[
     \norm{\vb{u}} = \sqrt{\sum_{i = 1}^{n} u_i^2}
 \]
-be the \emph{Euclidean norm}.
+be the \term{Euclidean norm}.
 
 \begin{definition}[Orthogonal Group]
     \label{def:orthogonal-group}%
-    The \emph{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_n\pqty{\RR}\) that preserve distance in \(\RR^n\):
+    The \term{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_n\pqty{\RR}\) that preserve distance in \(\RR^n\):
     \[
         \Or\pqty{n} = \set{\vb{M} \in \GL_n\pqty{\RR}}{\forall \vb{v} \in \RR^n: \norm{\vb{Mv}} = \norm{\vb{v}}}.
     \]
 \end{definition}
 
-In fact, the \emph{dot product}
+In fact, the \term{dot product}
 \[
     \vb{u} \vdot \vb{v} = \sum_{i = 1}^{n} u_i v_i
 \]
@@ -234,30 +234,30 @@ We can characterise \(\Or\pqty{n}\) using the dot product.
     \label{lem:orthogonal-dot-product}%
     Orthogonal matrices are precisely those matrices preserving the dot product, i.e.,
     \[
-        \Or\pqty{n} = \set{\vb{M} \in \GL_n\pqty{\RR}}{\forall \vb{x}, \vb{y} \in \RR^n: \pqty{\vb{Mx}} \cdot \pqty{\vb{My}} = \vb{x} \cdot \vb{y}}.
+        \Or\pqty{n} = \set{\vb{M} \in \GL_n\pqty{\RR}}{\forall \vb{x}, \vb{y} \in \RR^n: \pqty{\vb{Mx}} \vdot \pqty{\vb{My}} = \vb{x} \vdot \vb{y}}.
     \]
 
     Equivalently, for \(\vb{M} \in \GL_{n} \pqty{\RR}\), \(\vb{M} \in \Or\pqty{n}\) if and only if \(\vb{M}\) preserves dot product.
 \end{lemma}
 
 \begin{proof}
-    \(\impliedby\). If \(\pqty{\vb{Mx}} \cdot \pqty{\vb{My}} = \vb{x} \cdot \vb{y}\) for all \(\vb{x}, \vb{y} \in \RR^n\), then for any \(\vb{v} \in \RR^n\), we have
+    \(\impliedby\). If \(\pqty{\vb{Mx}} \vdot \pqty{\vb{My}} = \vb{x} \vdot \vb{y}\) for all \(\vb{x}, \vb{y} \in \RR^n\), then for any \(\vb{v} \in \RR^n\), we have
     \begin{align*}
-        \norm{\vb{Mv}}^2 &= \pqty{\vb{Mv}} \cdot \pqty{\vb{Mv}} \\
-        &=\vb{v} \cdot \vb{v} \\
+        \norm{\vb{Mv}}^2 &= \pqty{\vb{Mv}} \vdot \pqty{\vb{Mv}} \\
+        &=\vb{v} \vdot \vb{v} \\
         &= \norm{\vb{v}}^2,
     \end{align*}
     so \(\norm{\vb{Mv}} = \norm{\vb{v}}\), and hence \(\vb{M} \in \Or\pqty{n}\).
 
     \(\implies\). Conversely, for any \(\vb{M} \in \Or\pqty{n}\) and \(\vb{x}, \vb{y} \in \RR^n\), we have
     \begin{align*}
-        2 \pqty{\vb{Mx} \cdot \vb{My}} &= \norm{\vb{Mx}}^2 + \norm{\vb{My}}^2 - \norm{\vb{Mx} - \vb{My}}^2 && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)} \\
+        2 \pqty{\vb{Mx} \vdot \vb{My}} &= \norm{\vb{Mx}}^2 + \norm{\vb{My}}^2 - \norm{\vb{Mx} - \vb{My}}^2 && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)} \\
         &= \norm{\vb{Mx}}^2 + \norm{\vb{My}}^2 - \norm{\vb{M} \pqty{\vb{x} - \vb{y}}}^2 \\
         &= \norm{\vb{x}}^2 + \norm{\vb{y}}^2 - \norm{\vb{x} - \vb{y}}^2 && \vb{M} \in \Or\pqty{n} \\
-        &= 2 \pqty{\vb{x} \cdot \vb{y}}. && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)}
+        &= 2 \pqty{\vb{x} \vdot \vb{y}}. && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)}
     \end{align*}
 
-    Therefore, \(\pqty{\vb{Mx}} \cdot \pqty{\vb{My}} = \vb{x} \cdot \vb{y}\), and \(\vb{M}\) preserves dot product as desired.
+    Therefore, \(\pqty{\vb{Mx}} \vdot \pqty{\vb{My}} = \vb{x} \vdot \vb{y}\), and \(\vb{M}\) preserves dot product as desired.
 \end{proof}
 
 This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
@@ -275,7 +275,7 @@ This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
 \begin{proof}
     \emph{(i) \(\implies\) (ii).} Let \(\Bqty{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). The \(i\)-th column of \(\vb{M}\) is the column vector \(\vb{M} \unitv{e}_i\), since
     \[
-        \pqty{\vb{M} \unitv{e}_i} \cdot \pqty{\vb{M} \unitv{e}_j} = \unitv{e}_i \cdot \unitv{e}_j = \kronecker_{ij} = \begin{cases}
+        \pqty{\vb{M} \unitv{e}_i} \vdot \pqty{\vb{M} \unitv{e}_j} = \unitv{e}_i \vdot \unitv{e}_j = \kronecker_{ij} = \begin{cases}
             1, & i = j, \\
             0, & i \neq j.
         \end{cases}
@@ -285,10 +285,10 @@ This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
 
     \emph{(ii) \(\implies\) (iii).} As explained above, (ii) is equivalent to
     \[
-        \pqty{\vb{M} \unitv{e}_i} \cdot \pqty{\vb{M} \unitv{e}_j }= \kronecker_{ij}.
+        \pqty{\vb{M} \unitv{e}_i} \vdot \pqty{\vb{M} \unitv{e}_j }= \kronecker_{ij}.
     \]
 
-    Since \(\vb{u} \cdot \vb{v} = \vb{u} \transpose \vb{v}\), this means
+    Since \(\vb{u} \vdot \vb{v} = \vb{u} \transpose \vb{v}\), this means
     \[
         \pqty{\vb{M} \unitv{e}_i}\transpose \pqty{\vb{M} \unitv{e}_j} = \kronecker_{ij}.
     \]
@@ -305,11 +305,11 @@ This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
 
     \emph{(iii) \(\implies\) (i).} Suppose \(\vb{u}, \vb{v} \in \RR^n\), then
     \begin{align*}
-        \pqty{\vb{Mu}} \cdot \pqty{\vb{Mv}} &= \pqty{\vb{Mu}}\transpose \pqty{\vb{Mv}} \\
+        \pqty{\vb{Mu}} \vdot \pqty{\vb{Mv}} &= \pqty{\vb{Mu}}\transpose \pqty{\vb{Mv}} \\
         &= \vb{u}\transpose \vb{M}\transpose \vb{M} \vb{v} \\
         &= \vb{u}\transpose \identityM \vb{v} \\
         &= \vb{u}\transpose \vb{v} \\
-        &= \vb{u} \cdot \vb{v},
+        &= \vb{u} \vdot \vb{v},
     \end{align*}
     so we have \(\vb{M} \in \Or\pqty{n}\) by \autoref{lem:orthogonal-dot-product}.
 \end{proof}
@@ -330,7 +330,7 @@ and hence \(\det \vb{M} = \pm 1\).
         \functiondomain{\rightbar{\det}_{\Or\pqty{n}}}{\Or\pqty{n}}{C_2 \isomorphic \Bqty{\pm 1}}.
     \]
 
-    Define the \emph{\(n\)-dimensional special orthogonal group} as
+    Define the \term{\(n\)-dimensional special orthogonal group} as
     \[
         \SO\pqty{n} = \ker \rightbar{\det}_{\Or\pqty{n}} = \Or\pqty{n} \cap \SL_n\pqty{\RR}.
     \]
@@ -341,18 +341,18 @@ Note that such restriction of the determinant is surjective, hence by \autoref{t
     \abs{\Or\pqty{n} : \SO\pqty{n}} = \abs{\ker \rightbar{\det}_{\Or\pqty{n}}} = 2.
 \]
 
-Recall that a positive determinant preserved orientation, and a negative determinant reverses orientation. Examples of elements of \(\Or\pqty{n} \setminus \SO\pqty{n}\) are provided by \emph{reflections}.
+Recall that a positive determinant preserved orientation, and a negative determinant reverses orientation. Examples of elements of \(\Or\pqty{n} \setminus \SO\pqty{n}\) are provided by \term{reflections}.
 
 \begin{definition}[Reflections]
     \label{def:reflections}%
-    Any \(\vb{v} \in \RR^n \setminus \Bqty{\vb{0}}\) defines an \emph{orthogonal plane}
+    Any \(\vb{v} \in \RR^n \setminus \Bqty{\vb{0}}\) defines an \term{orthogonal plane}
     \[
-        \vb{v}\perppl = P_{\vb{v}} = \set{\vb{u} \in \RR^n}{\vb{u} \cdot \vb{v} = 0}.
+        \vb{v}\perppl = P_{\vb{v}} = \set{\vb{u} \in \RR^n}{\vb{u} \vdot \vb{v} = 0}.
     \]
 
-    The \emph{reflection} in \(P_{\vb{v}}\) is defined to be
+    The \term{reflection} in \(P_{\vb{v}}\) is defined to be
     \[
-        S_{\vb{v}} \pqty{\vb{x}} = \vb{x} - \frac{2 \pqty{\vb{x} \cdot \vb{v}}}{\norm{\vb{v}}^2} \vb{v}.
+        S_{\vb{v}} \pqty{\vb{x}} = \vb{x} - \frac{2 \pqty{\vb{x} \vdot \vb{v}}}{\norm{\vb{v}}^2} \vb{v}.
     \]
 \end{definition}
 
@@ -360,6 +360,7 @@ Recall that a positive determinant preserved orientation, and a negative determi
 
 \begin{figure}[ht!]
     \centering
+    \includegraphics[width=0.8\textwidth]{fig/reflection-in-a-plane.png}
     \caption{Reflection in a Plane}
     \label{fig:reflection-in-plane}
 \end{figure}
@@ -369,7 +370,7 @@ Recall that a positive determinant preserved orientation, and a negative determi
         \item We sometimes use \(S_P\) for the reflection in the plane \(P\).
         \item If we replace \(\vb{v}\) by \(\frac{\vb{v}}{\norm{\vb{v}}}\), and assume \(\norm{\vb{v}} = 1\) (i.e. use the unit vector in \(\vb{v}\) direction, \(\unitv{v}\)), then \(P_{\vb{v}} = P_{\unitv{v}}\), and we have
         \[
-        S_{\vb{v}} \pqty{\vb{x}} = \vb{x} - 2 \pqty{\vb{x} \cdot \vb{v}} \vb{v}.
+        S_{\vb{v}} \pqty{\vb{x}} = \vb{x} - 2 \pqty{\vb{x} \vdot \vb{v}} \vb{v}.
         \]
     \end{enumerate}
 \end{remarks}
@@ -389,13 +390,13 @@ We study some properties on those reflections.
 
     Now, we have for any \(\vb{x} \in \RR^n\), we have
     \begin{align*}
-        S_{\vb{v}} \pqty{\vb{x}} \cdot \vb{v} &= \pqty{\vb{x} \cdot \vb{v}} - 2 \pqty{\vb{x} \cdot \vb{v}} \cdot \pqty{\vb{v} \cdot \vb{v}} \\
-        &= - \pqty{\vb{x} \cdot \vb{v}},
+        S_{\vb{v}} \pqty{\vb{x}} \vdot \vb{v} &= \pqty{\vb{x} \vdot \vb{v}} - 2 \pqty{\vb{x} \vdot \vb{v}} \vdot \pqty{\vb{v} \vdot \vb{v}} \\
+        &= - \pqty{\vb{x} \vdot \vb{v}},
     \end{align*}
     and hence
     \begin{align*}
-        S_{\vb{v}}^2 \pqty{\vb{x}} &= S_{\vb{v}} \pqty{\vb{x}} - 2 \pqty{S_{\vb{v}} \pqty{\vb{x}} \cdot \vb{v}} \vb{v} \\
-        &= \vb{x} - 2\pqty{\vb{x} \cdot \vb{v}} \vb{v} + 2 \pqty{\vb{x} \cdot \vb{v}} \vb{v} \\
+        S_{\vb{v}}^2 \pqty{\vb{x}} &= S_{\vb{v}} \pqty{\vb{x}} - 2 \pqty{S_{\vb{v}} \pqty{\vb{x}} \vdot \vb{v}} \vb{v} \\
+        &= \vb{x} - 2\pqty{\vb{x} \vdot \vb{v}} \vb{v} + 2 \pqty{\vb{x} \vdot \vb{v}} \vb{v} \\
         &= \vb{x},
     \end{align*}
     and hence \(S_{\vb{v}}^2 = \identityM\). Hence, we see \(S_{\vb{v}}\) is non-singular, and hence
@@ -405,8 +406,8 @@ We study some properties on those reflections.
 
     Finally, we verify that reflections indeed preserve lengths. For any \(\vb{x} \in \RR^n\),
     \begin{align*}
-        \norm{S_{\vb{v}} \pqty{\vb{x}}}^2 &= \pqty{\vb{x} - 2 \pqty{\vb{x} \cdot \vb{v}} \vb{v}} \cdot \pqty{\vb{x} - 2 \pqty{\vb{x} \cdot \vb{v}} \vb{v}} \\
-        &= \norm{\vb{x}}^2 - 4 \pqty{\vb{x} \cdot \vb{v}}^2 + 4 \pqty{\vb{x} \cdot \vb{v}}^2 \\
+        \norm{S_{\vb{v}} \pqty{\vb{x}}}^2 &= \pqty{\vb{x} - 2 \pqty{\vb{x} \vdot \vb{v}} \vb{v}} \vdot \pqty{\vb{x} - 2 \pqty{\vb{x} \vdot \vb{v}} \vb{v}} \\
+        &= \norm{\vb{x}}^2 - 4 \pqty{\vb{x} \vdot \vb{v}}^2 + 4 \pqty{\vb{x} \vdot \vb{v}}^2 \\
         &= \norm{\vb{x}}^2,
     \end{align*}
     and hence \(S_{\vb{v}} \in \Or\pqty{n}\) as desired.
@@ -449,6 +450,7 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
 
     \begin{figure}[ht!]
         \centering
+        \includegraphics[width=0.6\textwidth]{fig/choice-of-v.png}
         \caption{Choice of \(\vb{v}\) for \(\vb{M} \in \Or\pqty{n}\)}
         \label{fig:choice-of-v-for-on}
     \end{figure}
