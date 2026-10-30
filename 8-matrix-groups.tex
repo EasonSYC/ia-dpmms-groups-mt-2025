@@ -33,7 +33,7 @@ gives an identity. However, we know not all matrices are invertible.
     \label{lem:determinant}%
     For matrices \(\vb{A}, \vb{B} \in \matrixset_n\pqty{\RR}\), we have
     \[
-        \det\pqty{\vb{A}, \vb{B}} = \det\vb{A} \det\vb{B}
+        \det\pqty{\vb{A}\vb{B}} = \det\vb{A} \det\vb{B}
     \]
     so \(\det\) is a homomorphism
     \[
@@ -82,7 +82,7 @@ There is a natural action by conjugation \(\GL_n\pqty{\RR} \actson \matrixset_n\
 \]
 for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
 
-\begin{proposition}[Conjugation represent Change of Basis]
+\begin{proposition}[Conjugation Represents Change of Basis]
     \label{prop:conjugation-change-of-basis}%
     Let \(\mathcal{V}\) be an \(n\)-dimensional vector space over \(\RR\) and \(\functiondomain{\alpha}{\mathcal{V}}{\mathcal{V}}\) be a linear map/endomorphism (not necessarily injective/surjective). If \(\vb{A} \in \matrixset_n\pqty{\RR}\) represents \(\alpha\) with respect to some basis, then the orbit
     \[
@@ -144,7 +144,7 @@ for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
     \]
     we get a basis
     \[
-        \Bqty{\vb{u}_i = \phi\pqty{\unitv{e}_i}}
+        \Bqty{\vb{u}_i = \psi\pqty{\unitv{e}_i}}
     \]
     where \(\unitv{e}_i\) is the standard basis for \(\RR^n\). In this basis, \(\vb{B}\) represents \(\alpha\), as desired.
 \end{proof}
@@ -156,7 +156,7 @@ Recall that multiplication in \(\mobius\) looks similar to multiplication of \(2
 
 \begin{proposition}[Identification of \(\mobius\)]
     \label{prop:identification-of-mobius-group}%
-    Identity
+    Identify
     \[
         \CC\multiplicative = \set{\pmqty{\dmat[0]{\lambda, \lambda}}}{\lambda \in \CC \setminus \Bqty{0}} \subgroup \GL_2\pqty{\CC}.
     \]
@@ -200,7 +200,7 @@ be the \term{Euclidean norm}.
 
 \begin{definition}[Orthogonal Group]
     \label{def:orthogonal-group}%
-    The \term{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_n\pqty{\RR}\) that preserve distance in \(\RR^n\):
+    The \term{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_n\pqty{\RR}\) that preserves distance in \(\RR^n\):
     \[
         \Or\pqty{n} = \set{\vb{M} \in \GL_n\pqty{\RR}}{\forall \vb{v} \in \RR^n: \norm{\vb{Mv}} = \norm{\vb{v}}}.
     \]
@@ -379,7 +379,7 @@ We study some properties on those reflections.
 
 \begin{lemma}[Reflections are Orthogonal and have Order 2]
     \label{lem:reflections-orthogonal-order-2}%
-    For any \(\vb{v} \in \RR^n\), we have \(S_{\vb{v}}^2 = \identityM\), and \(S_{\vb{v}} \in \Or\pqty{n}\).    
+    For any \(\vb{v} \in \RR^n\setminus\Bqty{\vb{0}}\), we have \(S_{\vb{v}}^2 = \identityM\), and \(S_{\vb{v}} \in \Or\pqty{n}\).
 \end{lemma}
 
 \begin{proof}
@@ -388,9 +388,9 @@ We study some properties on those reflections.
         S_{\vb{v}} \in \matrixset_n \pqty{\RR}.
     \]
 
-    Now, we have for any \(\vb{x} \in \RR^n\), we have
+    For any \(\vb{x} \in \RR^n\), we have
     \begin{align*}
-        S_{\vb{v}} \pqty{\vb{x}} \vdot \vb{v} &= \pqty{\vb{x} \vdot \vb{v}} - 2 \pqty{\vb{x} \vdot \vb{v}} \vdot \pqty{\vb{v} \vdot \vb{v}} \\
+        S_{\vb{v}} \pqty{\vb{x}} \vdot \vb{v} &= \pqty{\vb{x} \vdot \vb{v}} - 2 \pqty{\vb{x} \vdot \vb{v}} \pqty{\vb{v} \vdot \vb{v}} \\
         &= - \pqty{\vb{x} \vdot \vb{v}},
     \end{align*}
     and hence
@@ -442,11 +442,11 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
 
     \emph{Base Case.} For \(n = 1\), \(\Or\pqty{1} = \Bqty{\pm 1} = \angBrac{S_1} \isomorphic C_2\) and every element is indeed a product of at most \(1\) reflection. Note here \(S_1 \in \Or\pqty{1} \setminus \SO\pqty{1}\) is the reflection in the plane perpendicular to \(\pqty{-1}\), not the trivial group.
 
-    \emph{Induction Step.} Let \(\Bqty{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). Let
+    \emph{Induction Step.} Let \(\Bqty{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). If \(\vb{A} \unitv{e}_n = \unitv{e}_n\), set \(\vb{B} = \vb{A}\), so no reflection is needed. Otherwise, let
     \[
-        \vb{v} = \unitv{e}_n - \vb{A} \unitv{e}_n,
+        \vb{v} = \unitv{e}_n - \vb{A} \unitv{e}_n \neq \vb{0}
     \]
-    then \(\pqty{S_{\vb{v}} \vb{A}} \unitv{e}_n = \unitv{e}_n\), as in \autoref{fig:choice-of-v-for-on}.
+    and set \(\vb{B} = S_{\vb{v}} \vb{A}\). Then \(\vb{B} \unitv{e}_n = \unitv{e}_n\), as in \autoref{fig:choice-of-v-for-on}.
 
     \begin{figure}[ht!]
         \centering
@@ -455,7 +455,7 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
         \label{fig:choice-of-v-for-on}
     \end{figure}
 
-    Since \(\pqty{S_{\vb{v}} \vb{A}}\) is orthogonal, \(\pqty{S_{\vb{v}} \vb{A}}\) preserves \(P_{\unitv{e}_n} = \RR^{n - 1} \times \Bqty{\vb{0}}\).
+    Since \(\vb{B}\) is orthogonal, \(\vb{B}\) preserves \(P_{\unitv{e}_n} = \RR^{n - 1} \times \Bqty{\vb{0}}\).
 
     By induction hypothesis, there exists
     \[
@@ -463,15 +463,19 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
     \]
     such that when restricted to \(P_{\unitv{e}_n} = \RR^{n - 1} \times \Bqty{\vb{0}}\),
     \[
-        S_{\vb{v}} \vb{A} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
+        \vb{B} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
     \]
     and since both sides fix \(\vb{e}_n \notin P_{\unitv{e}_n}\), they agree on the whole of \(\RR^n\) as well. Hence,
     \[
-        S_{\vb{v}} \vb{A} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
+        \vb{B} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
     \]
     and hence
     \[
-        \vb{A} = S_{\vb{v}} S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
+        \vb{A} =
+        \begin{cases}
+            S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}, & \vb{B} = \vb{A}, \\
+            S_{\vb{v}} S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}, & \vb{B} = S_{\vb{v}}\vb{A}.
+        \end{cases}
     \]
 \end{proof}
 
@@ -544,7 +548,7 @@ We next aim to characterise elements of \(\Or\pqty{n}\) and \(\SO\pqty{n}\) in l
     \[
         P_{\vb{u}} \cap P_{\vb{v}} = l
     \]
-    for a line \(l\), so \(A\) fixes \(l\).
+    for a line \(l\), so \(\vb{M}\) fixes \(l\).
 
     Also, proceeding similarly as in \autoref{lem:elements-in-o2} shows us either \(S_{\vb{u}} = S_{\vb{v}}\) giving \(\vb{M} = \identityM\) or the fixed point is in \(P_{\vb{u}} \cap P_{\vb{v}} = l\).
 

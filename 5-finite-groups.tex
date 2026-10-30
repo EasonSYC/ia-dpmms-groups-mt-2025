@@ -94,7 +94,7 @@ To show these are the only groups of order \(4\), it is useful to introduce a th
     \emph{\(\phi\) is a homomorphism.} For any \(\pqty{h_1, h_2}, \pqty{h_1', h_2'} \in H_1 \times H_2\), we have
     \begin{align*}
         \phi\pqty{\pqty{h_1, h_2}} \phi\pqty{\pqty{h_1', h_2'}} &= \pqty{h_1 h_2} \pqty{h_1' h_2'} \\
-        &= \pqty{h_1 h_1'} \pqty{h_2 h_2'} && \text{by condition (iii)} \\
+        &= \pqty{h_1 h_1'} \pqty{h_2 h_2'} && \text{by condition (ii)} \\
         &= \phi\pqty{\pqty{h_1 h_1', h_2 h_2'}} \\
         &= \phi\pqty{\pqty{h_1, h_2} \cdot \pqty{h_1', h_2'}}.
     \end{align*}
@@ -222,7 +222,7 @@ We may guess the groups of order \(6\) are the dihedral group \(D_6\), and the c
         \[
             G \isomorphic \angBrac{r} \times \angBrac{s} \isomorphic C_3 \times C_2 \isomorphic C_6.
         \]
-        \item \(i = 2\). Then \(sr = r^2 s = r\inverse s\) give the \emph{dihedral relation}. Therefore, by \autoref{prop:group-isomorphic-dihedral}, we have \(G \isomorphic D_6\).
+        \item \(i = 2\). Then \(sr = r^2 s = r\inverse s\), giving the \emph{dihedral relation}. Therefore, by \autoref{prop:group-isomorphic-dihedral}, we have \(G \isomorphic D_6\).
     \end{itemize}
 \end{proof}
 
@@ -259,7 +259,7 @@ Another example of a group of order 8 is the quaternion group \(Q_8\).
     \end{align*}
     then we have
     \[
-        Q_i = \Bqty{\pm 1, \pm i, \pm j, \pm k}
+        Q_8 = \Bqty{\pm 1, \pm i, \pm j, \pm k}
     \]
     satisfying
     \begin{itemize}
@@ -335,7 +335,7 @@ In fact these are all groups of order 8.
             \item If \(i = 3\), this gives \(ba = a^3 b = a\inverse b\), the dihedral relation. We leave this case here.
         \end{itemize}
 
-        On the other hand, note that if \(b^2 \in b \angBrac{a}\), then \(b \in \angBrac{a}\), which is not true. So \(b^2 \in \angBrac{a}\), and we get several cases here.
+        On the other hand, note that if \(b^2 \in b \angBrac{a}\), then \(b \in \angBrac{a}\), which is not true. Hence \(b^2 \notin b \angBrac{a}\), and therefore \(b^2 \in \angBrac{a}\), and we get several cases here.
         \begin{itemize}
             \item \(b^2 = e\). We leave this for future discussion.
             \item \(b^2 = a\). Hence, \(\ord\pqty{b} = 8\), and hence \(G = \angBrac{b} \isomorphic C_8\).

@@ -122,7 +122,7 @@ The left regular action allows us to think of groups as subgroups of symmetric g
 
 \begin{theorem}[Cayley's Theorem]
     \label{thm:cayley}%
-    Every group \(G\) is isomorphic to a subgroup to some \(\Sym\pqty{X}\). Furthermore, if \(\abs{G} < \infty\), we may choose \(X\) to be \(\abs{X} < \infty\), or even stronger, \(\abs{X} \leq \abs{G}\).
+    Every group \(G\) is isomorphic to a subgroup of some \(\Sym\pqty{X}\). Furthermore, if \(\abs{G} < \infty\), we may choose \(X\) with \(\abs{X} < \infty\), or even stronger, \(\abs{X} \leq \abs{G}\).
 \end{theorem}
 
 \begin{proof}
@@ -178,7 +178,7 @@ We in fact can learn a huge amount about groups by thinking about group actions.
 \end{definition}
 
 \begin{remark}
-    An action \(G \actson X\) is faithful is equivalent to that the associated homomorphism has a trivial kernel/is injective.
+    An action \(G \actson X\) is faithful if and only if the associated homomorphism has a trivial kernel (equivalently, is injective).
 \end{remark}
 
 \begin{proposition}[Stabilisers are Subgroups, Orbits Partition]
@@ -295,7 +295,7 @@ We first prove a corollary of this theorem, naming the counting version of this.
 
 \begin{corollary}[Orbit--Stabiliser]
     \label{cor:orbit-stabiliser}%
-    If \(G \actson X\) and \(x \in X\), then
+    If \(G \actson X\), \(x \in X\), and \(\abs{G}<\infty\), then
     \[
         \abs{G} = \abs{\Orb_{G}\pqty{x}} \abs{\Stab_{G}\pqty{x}}.
     \]
@@ -304,7 +304,7 @@ We first prove a corollary of this theorem, naming the counting version of this.
 \begin{proof}
     \autoref{thm:orbit-stabiliser} (Orbit--Stabiliser Theorem) gives
     \[
-        \abs{\Orb_{G} \pqty{x}} = \abs{\flatfrac{G}{\Stab_{G}} \pqty{x}},
+        \abs{\Orb_{G} \pqty{x}} = \abs{\flatfrac{G}{\Stab_{G}\pqty{x}}},
     \]
     and \autoref{thm:lagrange} (Lagrange's Theorem) gives
     \[

@@ -119,7 +119,7 @@ A group is an \textbf{algebraic structure with one operation}.
 
 \begin{examples*}
     \begin{itemize}
-        \item \emph{Equilateral triangle.} The symmetries of an equilateral triangle forms a group, with respect to composition, and the identity symmetry is the identity element.
+        \item \emph{Equilateral triangle.} The symmetries of an equilateral triangle form a group, with respect to composition, and the identity symmetry is the identity element.
         \item \emph{Integers.} \(\pqty{\ZZ, +, 0}\) forms a group.
     \end{itemize}
 \end{examples*}
@@ -254,7 +254,7 @@ We give a special name for those groups which are commutative.
     If \(G = \Bqty{e}\) and \(\functionmap{\cdot}{\pqty{e, e}}{e}\), then \(\pqty{G, \cdot, e}\) is the \term{trivial group}.
 \end{example*}
 
-\begin{examples*}[Familiar Examples from Arithemetic]
+\begin{examples*}[Familiar Examples from Arithmetic]
     \begin{enumerate}
         \item \(\pqty{\ZZ, +, 0}\), \(\pqty{\QQ, +, 0}\), \(\pqty{\RR, +, 0}\) and \(\pqty{\CC, +, 0}\) are all \emph{abelian} groups.
         
@@ -367,7 +367,7 @@ To show \(\Sym\pqty{X}\) is indeed a group, we first show \autoref{lem:compositi
 
 \begin{examples*}
     \begin{itemize}
-        \item \(S_3\) may represent the groups to rearrange three flower pits.
+        \item \(S_3\) may represent the groups to rearrange three flower pots.
         \item \(S_{52}\) may represent the group of ways to shuffle a deck of cards.
     \end{itemize}
 \end{examples*}
@@ -416,12 +416,12 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         \item \(\ZZ \subseteq \QQ \subseteq \RR \subseteq \CC\), and in fact
         \[
-            \ZZ \subgroup \QQ \subgroup \RR \subgroup \ZZ.
+            \ZZ \subgroup \QQ \subgroup \RR \subgroup \CC.
         \]
 
         \item For \(n = 0, 1, 2, 3, \cdots,\) let
         \[
-            n\ZZ = \set{nk}{k \in \ZZ} = \Bqty{\cdots, -2n, -n, 0, n, 2, \cdots}.
+            n\ZZ = \set{nk}{k \in \ZZ} = \Bqty{\cdots, -2n, -n, 0, n, 2n, \cdots}.
         \]
 
         Now, we have
@@ -512,8 +512,9 @@ Specifically, the second example allows us to define `the smallest group' contai
 
 Let \(\CC\) be the complex plane, equipped with the usual notion of distance (the Euclidean norm), where
 \[
-    \abs{z - w} = \sqrt{\pqty{z_1 - w_1}^2 + \pqty{z_2 - w_2}^2}.
+    \abs{z - w} = \sqrt{\pqty{z_1 - w_1}^2 + \pqty{z_2 - w_2}^2}
 \]
+for all \(z, w \in \CC\) with \(z = z_1 + i z_2\) and \(w = w_1 + i w_2\), for \(z_1, z_2, w_1, w_2 \in \RR\).
 
 \begin{figure}[ht!]
     \centering
@@ -544,7 +545,7 @@ We consider a certain group of symmetries that preserves distances.
 \end{proposition}
 
 \begin{proof}
-    We check \autoref{def:subgroup} (Subgroup). Let \(f, h \in \Isom\pqty{X}\), and \(x, y \in X\).
+    We check \autoref{def:subgroup} (Subgroup). Let \(f, g \in \Isom\pqty{X}\), and \(x, y \in X\).
 
     \begin{itemize}
         \item We see that \(\identity_{X} \in \Isom\pqty{X}\) since \(\identity_{X}\) is a bijection \(X \to X\), and
@@ -558,7 +559,7 @@ We consider a certain group of symmetries that preserves distances.
             \abs{f\pqty{g \pqty{x}} - f\pqty{g \pqty{y}}} &= \abs{g\pqty{x} - g\pqty{y}} && f \in \Isom\pqty{X} \\
             &= \abs{x - y}, && g \in \Isom\pqty{X}
         \end{align*}
-        so \(f \circ h \in \Isom\pqty{X}\).
+        so \(f \circ g \in \Isom\pqty{X}\).
 
         \item If \(f \in \Isom\pqty{X}\), let \(x' = f\inverse\pqty{x}\) and \(y' = f\inverse\pqty{y}\), then
         \begin{align*}
@@ -574,7 +575,7 @@ We consider a certain group of symmetries that preserves distances.
 \begin{definition}[Dihedral Group]
     Let \(X_n \subseteq \CC\) be the \(n\)-gon with vertices
     \[
-        \set{e^{\frac{2 \pi i}{n}}}{k = 0, 1, \ldots, n - 1}
+        \set{e^{\frac{2 \pi i k}{n}}}{k = 0, 1, \ldots, n - 1}
     \]
     for \(n \geq 3\), as in \autoref{fig:regular-n-gon-on-C}.
 
@@ -1103,11 +1104,11 @@ We prove the second remark.
 \subsection{Cyclic Groups}
 \label{sec:cyclic-groups}
 
-The groups \(C_n \isomorphic \ZZ_n\) that we described above has a special property.
+The groups \(C_n \isomorphic \ZZ_n\) that we described above have a special property.
 
 \begin{definition}[Cyclic Group]
     \label{def:cyclic-group}%
-    A group \(G\) is \term{cyclic} if there is \(g \in G\) and that
+    A group \(G\) is \term{cyclic} if there is \(g \in G\) such that
     \[
         G = \set{g^k}{k \in \ZZ} = \angBrac{g}.
     \]
@@ -1135,7 +1136,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
 \end{theorem}
 
 \begin{proof}
-    Let \(G\) by a cyclic group with generator \(g\), and let
+    Let \(G\) be a cyclic group with generator \(g\), and let
     \[
         S = \set{k \in \NN}{g^k = e}
     \]

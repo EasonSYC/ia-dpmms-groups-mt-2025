@@ -161,7 +161,7 @@ There is a na\"{i}ve group action from those mappings: \(\mobius \actson \CC\com
 \begin{remark}
     The previous observation with matrix multiplication shows that the na\"{i}ve mapping is a surjective homomorphism \(\functiondomain{\phi}{\GL_{2} \pqty{\CC}}{\mobius}\). In fact, we see that the restriction \(\functiondomain{\rightbar{\phi}_{\SL_{2} \pqty{\CC}}}{\SL_{2} \pqty{\CC}}{\mobius}\) is surjective as well, and the kernels are
     \[
-        \ker \phi = \set{\lambda \identityM}{\lambda \in \CC},
+        \ker \phi = \set{\lambda \identityM}{\lambda \in \CC^\times},
     \]
     and
     \[
@@ -198,36 +198,45 @@ Recall that for \(\Isom\pqty{\CC}\), there is \autoref{lem:three-point-lemma} (T
 \end{lemma}
 
 \begin{proof}
-    Let \(\mu\pqty{z} = \frac{az + b}{cz + d}\). Then a fixed point \(w_i\) satisfies
+    Let
     \[
-        w_i = \frac{a w_i + b}{c w_i + d}.
+        \mu\pqty{z} = \frac{az + b}{cz + d},
+        \qquad ad-bc\neq 0.
     \]
 
-    We consider the following cases.
+    Suppose first that one of the fixed points is \(\infty\), say
+    \(w_1 = \infty\). By the definition of a M\"{o}bius transformation,
+    \(\mu\pqty{\infty} = \infty\) implies \(c = 0\). Since \(ad - bc \neq 0\),
+    we also have \(d \neq 0\). The other two fixed points \(w_2, w_3\) are finite and distinct, and satisfy
+    \[
+        w_i = \frac{a w_i + b}{d}
+    \]
+    for \(i=2,3\). Hence,
+    \[
+        (a - d) w_i + b = 0
+    \]
+    for two distinct values of \(w_i\). Therefore this linear polynomial is identically zero, so \(a = d\) and \(b = 0\), so \(\mu = \identity\).
 
-    \begin{itemize}
-        \item If there is some \(w_i = \infty\), say \(w_1\), then \(c = 0\). Hence, \(w_2\) and \(w_3\) are such that
-        \[
-            w_i = \frac{a w_i + b}{d}
-        \]
-        and hence
-        \[
-            \pqty{a - d} w_i + b = 0.
-        \]
-
-        This gives a linear equation with \(\geq 2\) roots, so must be trivial. So \(a = d, b = 0\), and \(\mu\pqty{z} = z\) as desired.
-
-        \item If all \(w_i\)s are not \(\infty\), then \(w_1, w_2\) and \(w_3\) satisfy
-        \[
-            w_i = \frac{a w_i + b}{c w_i + d}
-        \]
-        and this rearranges to
-        \[
-            c w_i^2 + \pqty{d - a} w_i - b = 0.
-        \]
-
-        This is a quadratic with \(\geq 3\) roots, so must be trivial, and hence \(b = c = 0\) and \(a = d\), so \(\mu\pqty{z} = z\) as desired.
-    \end{itemize}
+    Now suppose that all three fixed points \(w_1, w_2, w_3\) are finite.
+    For each \(i\), the denominator \(c w_i + d\) is non-zero, since otherwise
+    \(\mu\pqty{w_i} = \infty \neq w_i\). Therefore
+    \[
+        w_i = \frac{a w_i + b}{c w_i + d}
+    \]
+    can be rearranged into
+    \[
+        c w_i^2 + (d - a) w_i - b = 0.
+    \]
+    Hence the quadratic
+    \[
+        c z^2 + (d - a) z - b
+    \]
+    has three distinct roots, hence must be the zero polynomial, so
+    \[
+        c = 0, d - a = 0, b = 0.
+    \]
+    
+    Hence, \(\mu = \identity\).
 \end{proof}
 
 We can see that any M\"{o}bius transformation has at least \(1\) fixed point in \(\CC\compactify\). In fact, a M\"{o}bius transformation can have \(1, 2\) or \(\infty\)-many fixed points (in the case where it has at least \(3\), it must be the identity and hence trivial).
@@ -291,7 +300,7 @@ This property allows us to give the following definition, which will show signif
 
 \begin{definition}[Cross Ratio]
     \label{def:cross-ratio}%
-    Let \(z_1, z_2, z_3, z_4 \in \CC_{\infty}\) be distinct. Since \(\mobius \actson \CC\compactify\) sharply triply transitively, let \(\alpha \in \mobius\) be the unique M\"{o}bius transformation such that
+    Let \(z_1, z_2, z_3, z_4 \in \CC\compactify\) be distinct. Since \(\mobius \actson \CC\compactify\) sharply triply transitively, let \(\alpha \in \mobius\) be the unique M\"{o}bius transformation such that
     \[
         \alpha\pqty{z_1} = 0, \alpha\pqty{z_2} = 1, \alpha\pqty{z_3} = \infty,
     \]
@@ -378,7 +387,7 @@ We consider the geometry that M\"{o}bius maps preserve.
         \[
             \set{z \in \CC}{\abs{z - a} = \abs{z - b}}
         \]
-        for \(a, b \in \CC\).
+        for \(a, b \in \CC\) with \(a \neq b\).
     \end{enumerate}
 \end{definition}
 
