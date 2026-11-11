@@ -27,7 +27,7 @@ In particular, for this section, we are interested in the case where \(X\) is fi
 \end{figure}
 
 \begin{example*}[Example of Elements in \(S_3\)]
-    For \(X = \Bqty{1, 2, 3}\), we have \(\Sym\pqty{X} \isomorphic S_3\). In the example \autoref{fig:examples-elements-s3}, we have \(\sigma, \tau \in \Sym\pqty{X}\) and \(\rho \notin \Sym\pqty{X}\).
+    For \(X = \set{1, 2, 3}\), we have \(\Sym\pqty{X} \isomorphic S_3\). In the example \autoref{fig:examples-elements-s3}, we have \(\sigma, \tau \in \Sym\pqty{X}\) and \(\rho \notin \Sym\pqty{X}\).
 \end{example*}
 
 \begin{figure}[ht!]
@@ -53,7 +53,7 @@ In particular, for this section, we are interested in the case where \(X\) is fi
 
 \begin{definition}[Cycles]
     \label{def:cycles}%
-    Any list of \(k\) distinct elements \(a_1, a_2, \ldots, a_k \in \Bqty{1, 2, \ldots, n}\) determines a \term{\(k\)-cycle}
+    Any list of \(k\) distinct elements \(a_1, a_2, \ldots, a_k \in \set{1, 2, \ldots, n}\) determines a \term{\(k\)-cycle}
     \[
         \sigma = \perm{{a_1}{a_2}{\cdots}{a_k}},
     \]
@@ -122,7 +122,7 @@ Disjoint cycles commute:
 \end{example*}
 
 \begin{proof}
-    We consider the action of \(\angBrac{\sigma}\) on \(X = \Bqty{1, 2, \ldots, n}\) by permutations. This partition \(X\) into orbits
+    We consider the action of \(\angBrac{\sigma}\) on \(X = \set{1, 2, \ldots, n}\) by permutations. This partition \(X\) into orbits
     \[
         X = \Orb\pqty{i_1} \cup \Orb\pqty{i_2} \cup \cdots \cup \Orb\pqty{i_k}.
     \]
@@ -136,7 +136,7 @@ Disjoint cycles commute:
     \end{align*}
     which proves the existence of the decomposition.
 
-    For the uniqueness, note that the only choices we made were the orbit representatives \(\Bqty{i_j}\), and the indexing function (the ordering of the orbits)
+    For the uniqueness, note that the only choices we made were the orbit representatives \(\set{i_j}\), and the indexing function (the ordering of the orbits)
     \[
         j \mapsto i_j.
     \]
@@ -154,7 +154,7 @@ This allows us to characterise the type of permutation.
     \]
     is a product of disjoint cycles, then \(\sigma\) is called a \term{\(\pqty{k_1, \ldots, k_l}\)-cycle}. The set of numbers
     \[
-        \Bqty{k_1, \ldots, k_l}
+        \set{k_1, \ldots, k_l}
     \]
     is called the \term{cycle type} of \(\sigma\). We often omit the \term{singletons}, e.g. a \(\pqty{3, 2, 1}\)-cycle is also a \(\pqty{3, 2}\)-cycle.
 \end{definition}
@@ -162,7 +162,7 @@ This allows us to characterise the type of permutation.
 \begin{remark}
     Note that if \(\sigma\) is a \(k\)-cycle, then \(\ord\pqty{\sigma} = k\). More generally, if \(\sigma\) is a \(\pqty{k_1, \ldots, k_l}\)-cycle, then
     \[
-        \ord \pqty{\sigma} = \lcm \Bqty{k_1, \ldots, k_l}.
+        \ord \pqty{\sigma} = \lcm \set{k_1, \ldots, k_l}.
     \]
 \end{remark}
 
@@ -181,7 +181,7 @@ We now study a particular generating set of \(S_n\).
 \begin{proof}
     We prove by induction on \(n\). In the base case, \(n = 2\),
     \[
-        S_2 = \Bqty{e, \perm{12}}
+        S_2 = \set{e, \perm{12}}
     \]
     and the result is obvious.
 
@@ -244,7 +244,7 @@ In particular, from \autoref{lem:adjacent-transpositions}, \(S_n\) is generated 
 \begin{proof}
     By \autoref{lem:adjacent-transpositions}, we may assume that all \(\tau_{i}\)s are adjacent transpositions.
 
-    A pair \(\Bqty{i, j} \subseteq \Bqty{1, 2, \ldots, n}\) is an \term{inversion} of a permutation if \(i < j\) but \(\sigma\pqty{i} > \sigma\pqty{j}\).
+    A pair \(\set{i, j} \subseteq \set{1, 2, \ldots, n}\) is an \term{inversion} of a permutation if \(i < j\) but \(\sigma\pqty{i} > \sigma\pqty{j}\).
     
     We first show that \(k\) is congruent to the number of inversions in \(\sigma\) modulo \(2\) by induction on \(k\).
 
@@ -255,9 +255,9 @@ In particular, from \autoref{lem:adjacent-transpositions}, \(S_n\) is generated 
         \sigma = \underbrace{\tau_1}_{\tau} \underbrace{\tau_2 \cdots \tau_k}_{\sigma'} = \tau \sigma' = \perm{l {l + 1}} \sigma'.
     \]
 
-    Which pairs \(\Bqty{i, j}\) could be inversions of \(\sigma'\) but not \(\sigma\)? The only such possible pair is the pair
+    Which pairs \(\set{i, j}\) could be inversions of \(\sigma'\) but not \(\sigma\)? The only such possible pair is the pair
     \[
-        \Bqty{i, j}
+        \set{i, j}
     \]
     where
     \[
@@ -273,7 +273,7 @@ In particular, from \autoref{lem:adjacent-transpositions}, \(S_n\) is generated 
         \sigma\pqty{i} = \tau\sigma'\pqty{i} = l + 1 > l = \tau\sigma'\pqty{j} = \sigma\pqty{j}.
     \]
 
-    Therefore, if \(i < j\), then \(\Bqty{i, j}\) is an inversion of \(\sigma\) but not for \(\sigma'\), and if \(i > j\), then \(\Bqty{i, j}\) is an inversion for \(\sigma'\) but not for \(\sigma\). The number of inversions has changed by \(\pm 1\), and
+    Therefore, if \(i < j\), then \(\set{i, j}\) is an inversion of \(\sigma\) but not for \(\sigma'\), and if \(i > j\), then \(\set{i, j}\) is an inversion for \(\sigma'\) but not for \(\sigma\). The number of inversions has changed by \(\pm 1\), and
     \[
         \size \text{ inversions of }\sigma = \size \text{ inversions of } \sigma' \pm 1
     \]
@@ -288,7 +288,7 @@ This enables us to define the \term{sign homomorphism}.
     \label{thm:sign-homomorphism}%
     The map
     \[
-        \function{\sign}{S_n}{C_2 \isomorphic \pqty{\Bqty{\pm 1}, \times}}{\tau_1 \tau_2 \cdots \tau_k}{\pqty{-1}^k}
+        \function{\sign}{S_n}{C_2 \isomorphic \pqty{\set{\pm 1}, \times}}{\tau_1 \tau_2 \cdots \tau_k}{\pqty{-1}^k}
     \]
     where \(\tau_1, \tau_2, \ldots, \tau_k\) are transpositions, is a well-defined homomorphism.
 \end{theorem}
@@ -337,7 +337,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
 \begin{example*}[\(S_3\) and \(A_3\)]
     In
     \[
-        S_3 = \Bqty{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
+        S_3 = \set{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
     \]
     we have
     \[
@@ -349,7 +349,7 @@ and hence by \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \]
     hence
     \[
-        A_3 = \Bqty{e, \perm{123}, \perm{132}} \isomorphic C_3.
+        A_3 = \set{e, \perm{123}, \perm{132}} \isomorphic C_3.
     \]
 \end{example*}
 
@@ -454,7 +454,7 @@ This allows us to easily count size of conjugacy classes in \(S_n\).
     \begin{enumerate}
         \item For
         \[
-            S_3 = \Bqty{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
+            S_3 = \set{e, \perm{12}, \perm{13}, \perm{23}, \perm{123}, \perm{132}},
         \]
         we have
         \begin{itemize}
@@ -484,7 +484,7 @@ for \(\gamma \in S_n\). Therefore, it is also easy to count the sizes of the cen
     \end{align*}
     and we can indeed make a list of elements in this centraliser:
     \[
-        C_{S_4} \pqty{\perm{12}\perm{34}} = \Bqty{
+        C_{S_4} \pqty{\perm{12}\perm{34}} = \set{
             e, \perm{12}, \perm{34}, \perm{12}\perm{34}, \perm{13}\perm{24}, \perm{14}\perm{23}, \perm{1423}, \perm{1324}
         }.
     \]
@@ -549,12 +549,12 @@ Counting conjugacy classes in \(A_n\) can also be done with some thought.
     \end{align*}
     and we have
     \[
-        \abs{\img\pqty{\rightbar{\sign}_{C_{S_n}\pqty{\gamma}}}} \in \Bqty{1, 2}.
+        \abs{\img\pqty{\rightbar{\sign}_{C_{S_n}\pqty{\gamma}}}} \in \set{1, 2}.
     \]
 
     Hence, by \autoref{thm:first-isomorphism} (First Isomorphism Theorem) and \autoref{thm:lagrange} (Lagrange's Theorem), we have
     \[
-        \frac{\abs{C_{S_n} \pqty{\gamma}}}{\abs{C_{A_n} \pqty{\gamma}}} \in \Bqty{1, 2}.
+        \frac{\abs{C_{S_n} \pqty{\gamma}}}{\abs{C_{A_n} \pqty{\gamma}}} \in \set{1, 2}.
     \]
 
     We consider the corresponding casework.

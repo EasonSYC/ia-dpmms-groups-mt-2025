@@ -3,7 +3,7 @@
 
 Let
 \[
-    \matrixset_n\pqty{\RR} = \Bqty{n \times n \text{ matrices with entries in } \RR}.
+    \matrixset_n\pqty{\RR} = \set{n \times n \text{ matrices with entries in } \RR}.
 \]
 
 Matrix multiplication is associative and the matrix
@@ -110,14 +110,14 @@ for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
 
     \autoref{fig:change-of-basis-conjugation} shows an outline of the proof.
 
-    A choice of basis \(\Bqty{\vb{v}_1, \vb{v}_2, \ldots, \vb{v}_n}\) for \(\mathcal{V}\) defines an isomorphism of vector spaces
+    A choice of basis \(\set{\vb{v}_1, \vb{v}_2, \ldots, \vb{v}_n}\) for \(\mathcal{V}\) defines an isomorphism of vector spaces
     \[
         \function{\phi}{\RR^n}{\mathcal{V}}{\pqty{\lambda_1, \lambda_2, \ldots, \lambda_n}\transpose}{\sum_{i = 1}^{n} \lambda_i \vb{v}_i}.
     \]
 
     This claims that \(\vb{A}\) represents \(\alpha\) in this basis means that \(\alpha = \phi \vb{A} \phi\inverse\).
 
-    Likewise, another basis \(\Bqty{\vb{u}_1, \vb{u}_2, \ldots, \vb{u}_n}\) for \(\mathcal{V}\) defines an isomorphism
+    Likewise, another basis \(\set{\vb{u}_1, \vb{u}_2, \ldots, \vb{u}_n}\) for \(\mathcal{V}\) defines an isomorphism
     \[
         \functiondomain{\psi}{\RR^n}{\mathcal{V}}
     \]
@@ -144,7 +144,7 @@ for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
     \]
     we get a basis
     \[
-        \Bqty{\vb{u}_i = \psi\pqty{\unitv{e}_i}}
+        \set{\vb{u}_i = \psi\pqty{\unitv{e}_i}}
     \]
     where \(\unitv{e}_i\) is the standard basis for \(\RR^n\). In this basis, \(\vb{B}\) represents \(\alpha\), as desired.
 \end{proof}
@@ -158,7 +158,7 @@ Recall that multiplication in \(\mobius\) looks similar to multiplication of \(2
     \label{prop:identification-of-mobius-group}%
     Identify
     \[
-        \CC\multiplicative = \set{\pmqty{\dmat[0]{\lambda, \lambda}}}{\lambda \in \CC \setminus \Bqty{0}} \subgroup \GL_2\pqty{\CC}.
+        \CC\multiplicative = \set{\pmqty{\dmat[0]{\lambda, \lambda}}}{\lambda \in \CC \setminus \set{0}} \subgroup \GL_2\pqty{\CC}.
     \]
 
     Then \(\CC\multiplicative \normalsub \GL_2\pqty{\CC}\), and
@@ -273,7 +273,7 @@ This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
 \end{lemma}
 
 \begin{proof}
-    \emph{(i) \(\implies\) (ii).} Let \(\Bqty{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). The \(i\)-th column of \(\vb{M}\) is the column vector \(\vb{M} \unitv{e}_i\), since
+    \emph{(i) \(\implies\) (ii).} Let \(\set{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). The \(i\)-th column of \(\vb{M}\) is the column vector \(\vb{M} \unitv{e}_i\), since
     \[
         \pqty{\vb{M} \unitv{e}_i} \vdot \pqty{\vb{M} \unitv{e}_j} = \unitv{e}_i \vdot \unitv{e}_j = \kronecker_{ij} = \begin{cases}
             1, & i = j, \\
@@ -327,7 +327,7 @@ and hence \(\det \vb{M} = \pm 1\).
     \label{def:special-orthogonal-group}%
     Consider the restriction of \(\det\) on \(\Or\pqty{n}\), giving
     \[
-        \functiondomain{\rightbar{\det}_{\Or\pqty{n}}}{\Or\pqty{n}}{C_2 \isomorphic \Bqty{\pm 1}}.
+        \functiondomain{\rightbar{\det}_{\Or\pqty{n}}}{\Or\pqty{n}}{C_2 \isomorphic \set{\pm 1}}.
     \]
 
     Define the \term{\(n\)-dimensional special orthogonal group} as
@@ -345,7 +345,7 @@ Recall that a positive determinant preserved orientation, and a negative determi
 
 \begin{definition}[Reflections]
     \label{def:reflections}%
-    Any \(\vb{v} \in \RR^n \setminus \Bqty{\vb{0}}\) defines an \term{orthogonal plane}
+    Any \(\vb{v} \in \RR^n \setminus \set{\vb{0}}\) defines an \term{orthogonal plane}
     \[
         \vb{v}\perppl = P_{\vb{v}} = \set{\vb{u} \in \RR^n}{\vb{u} \vdot \vb{v} = 0}.
     \]
@@ -379,7 +379,7 @@ We study some properties on those reflections.
 
 \begin{lemma}[Reflections are Orthogonal and have Order 2]
     \label{lem:reflections-orthogonal-order-2}%
-    For any \(\vb{v} \in \RR^n\setminus\Bqty{\vb{0}}\), we have \(S_{\vb{v}}^2 = \identityM\), and \(S_{\vb{v}} \in \Or\pqty{n}\).
+    For any \(\vb{v} \in \RR^n\setminus\set{\vb{0}}\), we have \(S_{\vb{v}}^2 = \identityM\), and \(S_{\vb{v}} \in \Or\pqty{n}\).
 \end{lemma}
 
 \begin{proof}
@@ -416,11 +416,11 @@ We study some properties on those reflections.
 \begin{remark}
     To see that reflections are in \(\Or\pqty{n} \setminus \SO\pqty{n}\) indeed, let \(\norm{\vb{v}} = 1\), and we pick an orthonormal basis
     \[
-        \Bqty{\vb{v}_1, \vb{v}_2, \ldots, \vb{v}_{n - 1}}
+        \set{\vb{v}_1, \vb{v}_2, \ldots, \vb{v}_{n - 1}}
     \]
     for the \(\pqty{n-1}\)-dimensional subspace \(P_{\vb{v}}\). Then, in the basis
     \[
-        \Bqty{\vb{v}_1, \vb{v}_2, \ldots, \vb{v}_{n - 1}, \vb{v}}
+        \set{\vb{v}_1, \vb{v}_2, \ldots, \vb{v}_{n - 1}, \vb{v}}
     \]
     for \(\RR^n\), \(S_{\vb{v}}\) is represented by the matrix
     \[
@@ -440,9 +440,9 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
 \begin{proof}
     We proceed by induction on \(n\).
 
-    \emph{Base Case.} For \(n = 1\), \(\Or\pqty{1} = \Bqty{\pm 1} = \angBrac{S_1} \isomorphic C_2\) and every element is indeed a product of at most \(1\) reflection. Note here \(S_1 \in \Or\pqty{1} \setminus \SO\pqty{1}\) is the reflection in the plane perpendicular to \(\pqty{-1}\), not the trivial group.
+    \emph{Base Case.} For \(n = 1\), \(\Or\pqty{1} = \set{\pm 1} = \angBrac{S_1} \isomorphic C_2\) and every element is indeed a product of at most \(1\) reflection. Note here \(S_1 \in \Or\pqty{1} \setminus \SO\pqty{1}\) is the reflection in the plane perpendicular to \(\pqty{-1}\), not the trivial group.
 
-    \emph{Induction Step.} Let \(\Bqty{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). If \(\vb{A} \unitv{e}_n = \unitv{e}_n\), set \(\vb{B} = \vb{A}\), so no reflection is needed. Otherwise, let
+    \emph{Induction Step.} Let \(\set{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). If \(\vb{A} \unitv{e}_n = \unitv{e}_n\), set \(\vb{B} = \vb{A}\), so no reflection is needed. Otherwise, let
     \[
         \vb{v} = \unitv{e}_n - \vb{A} \unitv{e}_n \neq \vb{0}
     \]
@@ -455,13 +455,13 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
         \label{fig:choice-of-v-for-on}
     \end{figure}
 
-    Since \(\vb{B}\) is orthogonal, \(\vb{B}\) preserves \(P_{\unitv{e}_n} = \RR^{n - 1} \times \Bqty{\vb{0}}\).
+    Since \(\vb{B}\) is orthogonal, \(\vb{B}\) preserves \(P_{\unitv{e}_n} = \RR^{n - 1} \times \set{\vb{0}}\).
 
     By induction hypothesis, there exists
     \[
         \vb{v}_1, \vb{v}_2, \ldots, \vb{v}_{n - 1} \in \RR^{n - 1}
     \]
-    such that when restricted to \(P_{\unitv{e}_n} = \RR^{n - 1} \times \Bqty{\vb{0}}\),
+    such that when restricted to \(P_{\unitv{e}_n} = \RR^{n - 1} \times \set{\vb{0}}\),
     \[
         \vb{B} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
     \]

@@ -42,7 +42,7 @@ The direct product of two groups is a group, and it is easy to see for any group
     \item \(\trivialgp \times G \isomorphic G \times \trivialgp \isomorphic G\): the trivial group is \textbf{an} \emph{identity} up to isomorphism (for infinite groups, \(G \times H \isomorphic G\) \textbf{does not require} \(H\) to be trivial, for example \(\RR \times \RR \isomorphic \RR\), since they are isomorphic when viewed as \(\QQ\)-vector spaces);
     \item If \(G \isomorphic H\), then \(G \times K \isomorphic H \times K\): we may replace elements in the direct product up to isomorphism;
     \item \(\abs{G \times H} = \abs{G} \times \abs{H}\): the order of the direct product is the product of the orders;
-    \item \(\ord\pqty{g, h} = \lcm\Bqty{\ord\pqty{g}, \ord\pqty{h}}\): the order of an element is the least common multiple of the order of the separate elements.
+    \item \(\ord\pqty{g, h} = \lcm\set{\ord\pqty{g}, \ord\pqty{h}}\): the order of an element is the least common multiple of the order of the separate elements.
 \end{itemize}
 
 \begin{remark}
@@ -76,7 +76,7 @@ To show these are the only groups of order \(4\), it is useful to introduce a th
     \label{thm:dpt-direct-product-theorem}%
     If \(H_1, H_2 \subgroup G\), and
     \begin{enumerate}
-        \item \(H_1 \cap H_2 = \Bqty{e}\): \(H_1\) and \(H_2\) \term{intersect trivially};
+        \item \(H_1 \cap H_2 = \set{e}\): \(H_1\) and \(H_2\) \term{intersect trivially};
         \item \(h_1 h_2 = h_2 h_1\) for all \(h_1 \in H_1, h_2 \in H_2\): elements in \(H_1\) and \(H_2\) \term{commute}; and
         \item \(G = H_1 H_2\): for all \(g \in G\), \(g = h_1 h_2\) for some \(h_1 \in H_1\) and \(h_2 \in H_2\);
     \end{enumerate}
@@ -166,7 +166,7 @@ It is useful to see when/whether a direct product of cyclic groups is cyclic -- 
 
 \begin{theorem}[Chinese Remainder Theorem]
     \label{thm:crt-chinese-remainder-theorem}%
-    If \(\gcd\Bqty{m, n} = 1\), then
+    If \(\gcd\set{m, n} = 1\), then
     \[
         C_m \times C_n \isomorphic C_{mn}.
     \]
@@ -183,9 +183,9 @@ It is useful to see when/whether a direct product of cyclic groups is cyclic -- 
 
     Hence, \(g^k \in H_1 \cap H_2\) if and only if \(m \divides k\) and \(n \divides k\). This is equivalent to
     \[
-        \lcm\Bqty{m, n} \divides k,
+        \lcm\set{m, n} \divides k,
     \]
-    and since \(\gcd\Bqty{m, n} = 1\), we have \(\lcm\Bqty{m, n} = mn\), and hence this is equivalent to
+    and since \(\gcd\set{m, n} = 1\), we have \(\lcm\set{m, n} = mn\), and hence this is equivalent to
     \[
         mn \divides k,
     \]
@@ -240,7 +240,7 @@ Another example of a group of order 8 is the quaternion group \(Q_8\).
 \begin{examples*}[The Quaternion Group \(Q_8\)]
     The \term{quaternion group} is
     \begin{align*}
-        Q_8 &= \Bqty{
+        Q_8 &= \set{
             \pmqty{\pm 1 & 0 \\ 0 & \pm 1},
             \pmqty{\pm i & 0 \\ 0 & \mp i},
             \pmqty{0 & \pm 1 \\ \mp 1 & 0},
@@ -259,7 +259,7 @@ Another example of a group of order 8 is the quaternion group \(Q_8\).
     \end{align*}
     then we have
     \[
-        Q_8 = \Bqty{\pm 1, \pm i, \pm j, \pm k}
+        Q_8 = \set{\pm 1, \pm i, \pm j, \pm k}
     \]
     satisfying
     \begin{itemize}
@@ -345,7 +345,7 @@ In fact these are all groups of order 8.
 
         Now, we have 4 remaining combinations to discuss.
         \begin{itemize}
-            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\angBrac{b} \isomorphic C_2\), \(\angBrac{a} \isomorphic C_4\), and \(\angBrac{a} \cap \angBrac{b} = \Bqty{e}\), we have
+            \item \(G\) being abelian, and \(b^2 = e\). By \autoref{thm:dpt-direct-product-theorem} (Direct Product Theorem), since \(\angBrac{b} \isomorphic C_2\), \(\angBrac{a} \isomorphic C_4\), and \(\angBrac{a} \cap \angBrac{b} = \set{e}\), we have
             \[
                 G \isomorphic C_2 \times C_4.
             \]

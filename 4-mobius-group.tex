@@ -9,7 +9,7 @@ This section is about a fantastically interesting group. It is \emph{almost} a g
     \label{def:riemann-sphere}%
     The \term{Riemann Sphere} is
     \[
-        \CC\compactify = \CC \cup \Bqty{\infty}.
+        \CC\compactify = \CC \cup \set{\infty}.
     \]
 \end{definition}
 
@@ -95,7 +95,7 @@ This identifies \(\CC\) with all the points of the sphere, except for the `North
         \item If \(c \neq 0\), then
         \[
             \functionmap{\mu}{z}{\begin{cases}
-                \frac{az + b}{cz + d}, & z \in \CC \setminus \Bqty{-\frac{d}{c}}, \\
+                \frac{az + b}{cz + d}, & z \in \CC \setminus \set{-\frac{d}{c}}, \\
                 \infty, & z = - \frac{d}{c} \\
                 \frac{a}{c}, & z = \infty.
             \end{cases}}
@@ -165,7 +165,7 @@ There is a na\"{i}ve group action from those mappings: \(\mobius \actson \CC\com
     \]
     and
     \[
-        \ker \rightbar{\phi}_{\SL_{2} \pqty{\CC}} = \Bqty{\pm \identityM}.
+        \ker \rightbar{\phi}_{\SL_{2} \pqty{\CC}} = \set{\pm \identityM}.
     \]
 
     In the future, we see by taking quotients, we have
@@ -174,7 +174,7 @@ There is a na\"{i}ve group action from those mappings: \(\mobius \actson \CC\com
     \]
     and
     \[
-        \mobius \isomorphic \flatfrac{\SL_{2}\pqty{\CC}}{\Bqty{\pm \identityM}} = \PSL_{2} \pqty{\CC}.
+        \mobius \isomorphic \flatfrac{\SL_{2}\pqty{\CC}}{\set{\pm \identityM}} = \PSL_{2} \pqty{\CC}.
     \]
 
     This shows \(\PGL_{2} \pqty{\CC} \isomorphic \PSL_{2} \pqty{\CC}\), and provides actions \(\PGL_{2} \pqty{\CC} \actson \CP^{1}\), \(\PSL_{2} \pqty{\CC} \actson \CP^{1}\).
@@ -249,16 +249,16 @@ We can see that any M\"{o}bius transformation has at least \(1\) fixed point in 
         \]
         fixes \(\infty\):
         \[
-            \Fix\pqty{\mu} = \Bqty{\infty}.
+            \Fix\pqty{\mu} = \set{\infty}.
         \]
 
         \item If
         \[
         \mu\pqty{z} = 2z = \frac{2 \cdot z + 0}{0 \cdot z + 1},
         \]
-        then \(\mu\) fixes \(\Bqty{0, \infty}\):
+        then \(\mu\) fixes \(\set{0, \infty}\):
         \[
-            \Fix\pqty{\mu} = \Bqty{0, \infty}.
+            \Fix\pqty{\mu} = \set{0, \infty}.
         \]
     \end{enumerate}
 \end{examples*}
@@ -383,7 +383,7 @@ We consider the geometry that M\"{o}bius maps preserve.
             \set{z \in \CC}{\abs{z - c} = r}
         \]
         for \(c \in \CC, r > 0\); or
-        \item \(L \cup \Bqty{\infty}\) where \(L\) is a Euclidean straight line in \(\CC\), defined as
+        \item \(L \cup \set{\infty}\) where \(L\) is a Euclidean straight line in \(\CC\), defined as
         \[
             \set{z \in \CC}{\abs{z - a} = \abs{z - b}}
         \]
@@ -448,7 +448,7 @@ We now relate the cross ratio defined in \autoref{def:cross-ratio} to geometry.
 \begin{corollary}[Condition for Points in \(\CC\compactify\) to lie on a Circle]
     \(4\) points \(z_1, z_2, z_3, z_4 \in \CC\compactify\) lie on a circle if and only if their cross ratio
     \[
-        \bqty{z_1, z_2, z_3, z_4} \in \RR\compactify = \RR \cup \Bqty{\infty}.
+        \bqty{z_1, z_2, z_3, z_4} \in \RR\compactify = \RR \cup \set{\infty}.
     \]
 \end{corollary}
 

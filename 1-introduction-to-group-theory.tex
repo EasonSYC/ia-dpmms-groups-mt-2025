@@ -251,7 +251,7 @@ We give a special name for those groups which are commutative.
 \end{definition}
 
 \begin{example*}[Trivial Group]
-    If \(G = \Bqty{e}\) and \(\functionmap{\cdot}{\pqty{e, e}}{e}\), then \(\pqty{G, \cdot, e}\) is the \term{trivial group}.
+    If \(G = \set{e}\) and \(\functionmap{\cdot}{\pqty{e, e}}{e}\), then \(\pqty{G, \cdot, e}\) is the \term{trivial group}.
 \end{example*}
 
 \begin{examples*}[Familiar Examples from Arithmetic]
@@ -262,9 +262,9 @@ We give a special name for those groups which are commutative.
 
         \item \(\pqty{\NN, +, 0}\) is \emph{not} a group, since it does not satisfy the Inverse Axiom.
         
-        \item \(\pqty{\QQ, \times, 1}\) is \emph{not} a group because \(0 \in \QQ\) has no inverse. However, \(\pqty{\QQ \setminus \Bqty{0}, \times, 1}\) is an \emph{abelian group}, and we denote this as \(\QQ\multiplicative\).
+        \item \(\pqty{\QQ, \times, 1}\) is \emph{not} a group because \(0 \in \QQ\) has no inverse. However, \(\pqty{\QQ \setminus \set{0}, \times, 1}\) is an \emph{abelian group}, and we denote this as \(\QQ\multiplicative\).
         
-        Similarly, \(\pqty{\RR \setminus \Bqty{0}, \times, 1}\) and \(\pqty{\CC \setminus \Bqty{0}, \times, 1}\) are as well, and we denote them as \(\RR\multiplicative\) and \(\CC\multiplicative\) respectively.
+        Similarly, \(\pqty{\RR \setminus \set{0}, \times, 1}\) and \(\pqty{\CC \setminus \set{0}, \times, 1}\) are as well, and we denote them as \(\RR\multiplicative\) and \(\CC\multiplicative\) respectively.
     \end{enumerate}
 \end{examples*}
 
@@ -282,7 +282,7 @@ We would like to define the size of a group, and the definition is as in  \autor
 \begin{examples*}
     \begin{enumerate}
         \item For any \(n \in \NN\), let \(C_n = \set{z \in \CC}{z^n = 1}\), then \(\pqty{C_n, \times, 1}\) is an abelian group.
-        \item Let \(\ZZ_n = \Bqty{0, 1, \cdots, n - 1}\). We let for \(a, b \in \ZZ_n\), we have
+        \item Let \(\ZZ_n = \set{0, 1, \cdots, n - 1}\). We let for \(a, b \in \ZZ_n\), we have
         \[
             a +_n b = (a + b) \modulo n.
         \]
@@ -362,7 +362,7 @@ To show \(\Sym\pqty{X}\) is indeed a group, we first show \autoref{lem:compositi
 
 \begin{definition}[\(S_n\)]
     \label{def:s-n}%
-    If \(X = \Bqty{1, 2, \ldots, n}\), we write \(S_n = \Sym\pqty{X}\).
+    If \(X = \set{1, 2, \ldots, n}\), we write \(S_n = \Sym\pqty{X}\).
 \end{definition}
 
 \begin{examples*}
@@ -410,7 +410,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         \item For any group \(G\),
         \[
-            \trivialgp_G = \Bqty{e_G}
+            \trivialgp_G = \set{e_G}
         \]
         is the \term{trivial subgroup}.
 
@@ -421,7 +421,7 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 
         \item For \(n = 0, 1, 2, 3, \cdots,\) let
         \[
-            n\ZZ = \set{nk}{k \in \ZZ} = \Bqty{\cdots, -2n, -n, 0, n, 2n, \cdots}.
+            n\ZZ = \set{nk}{k \in \ZZ} = \set{\cdots, -2n, -n, 0, n, 2n, \cdots}.
         \]
 
         Now, we have
@@ -451,9 +451,9 @@ Sometimes we want to restrict our attention to smaller groups rather than the wh
 \end{proposition}
 
 \begin{proof}
-    If \(H = \Bqty{0}\) then \(H = 0\ZZ\) is indeed of this form.
+    If \(H = \set{0}\) then \(H = 0\ZZ\) is indeed of this form.
 
-    Otherwise, \(H \neq \Bqty{0}\), we may choose \(n \in H \setminus \Bqty{0}\) to be the smallest positive \(n \in H\).
+    Otherwise, \(H \neq \set{0}\), we may choose \(n \in H \setminus \set{0}\) to be the smallest positive \(n \in H\).
 
     Note that if \(x \in H\) and \(x < 0\), then \(-x \in H\) and \(x > 0\). Therefore, such positive number \(n\) must exist.
 
@@ -666,7 +666,7 @@ Now, to prove \autoref{thm:size-of-dihedral-group} (\(\abs{D_{2n}} = 2n\)), we d
 
 We claim that in particular,
 \[
-    D_{2n} = \Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}
+    D_{2n} = \set{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}
 \]
 and that these two elements generate the dihedral group,
 \[
@@ -675,8 +675,8 @@ and that these two elements generate the dihedral group,
 
 The proof structure would be a typical subset-superset proof, i.e.
 \begin{enumerate}
-    \item \(\Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}\);
-    \item \(D_{2n} \subseteq \Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}\).
+    \item \(\set{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}\);
+    \item \(D_{2n} \subseteq \set{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s}\).
 \end{enumerate}
 
 \begin{proof}
@@ -712,8 +712,8 @@ The proof structure would be a typical subset-superset proof, i.e.
     \end{align*}
     is another vertex of \(X_n\).
 
-    Therefore, we have shown that \(\Bqty{r, s} \subseteq D_{2n}\), and therefore, by induction,
-    \[\Bqty{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}.\]
+    Therefore, we have shown that \(\set{r, s} \subseteq D_{2n}\), and therefore, by induction,
+    \[\set{e, r, r^2, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1} s} \subseteq D_{2n}.\]
 
     To show that indeed these elements are all the elements of \(D_{2n}\), we let \(f \in D_{2n}\) be an isometry on \(X_n\), and consider its action of three points on the polygon, as in \autoref{fig:three-points-on-polygon}.
 
@@ -745,7 +745,7 @@ The proof structure would be a typical subset-superset proof, i.e.
         \abs{r^{-k} \circ f \pqty{y} - x} &= \abs{r^{-k} \circ f \pqty{y} - r^{-k} \circ f \pqty{x}} \\
         &= \abs{y - x},
     \end{align*}
-    so \(r^{-k} \circ f \pqty{y} \in \Bqty{y, z}\), and similarly \(r^{-k} \circ f \pqty{z} \in \Bqty{y, z}\) but \(r^{-k} \circ f \pqty{y} \neq r^{-k} \circ f \pqty{z}\).
+    so \(r^{-k} \circ f \pqty{y} \in \set{y, z}\), and similarly \(r^{-k} \circ f \pqty{z} \in \set{y, z}\) but \(r^{-k} \circ f \pqty{y} \neq r^{-k} \circ f \pqty{z}\).
 
     Therefore, there are \(2\) cases here:
     \begin{enumerate}
@@ -755,7 +755,7 @@ The proof structure would be a typical subset-superset proof, i.e.
         \]
         by \autoref{lem:three-point-lemma} (Three--Point Lemma), and hence
         \[
-            f = r^k \in \Bqty{e, r, \ldots, r^{n - 1}} \subseteq \Bqty{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
+            f = r^k \in \set{e, r, \ldots, r^{n - 1}} \subseteq \set{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
         \]
 
         \item We have
@@ -773,14 +773,14 @@ The proof structure would be a typical subset-superset proof, i.e.
         \]
         and hence
         \[
-            f = r^k s \in \Bqty{s, rs, \ldots, r^{n - 1}s} \subseteq \Bqty{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s},
+            f = r^k s \in \set{s, rs, \ldots, r^{n - 1}s} \subseteq \set{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s},
         \]
         as required.
     \end{enumerate}
 
     So far, we have shown that
     \[
-        D_{2n} = \Bqty{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
+        D_{2n} = \set{e, r, \ldots, r^{n - 1}, s, rs, \ldots, r^{n - 1}s}.
     \]
 
     Now, we show that the right-hand side has size \(2n\), so we check all elements on the right-hand side are distinct from each other.
@@ -879,7 +879,7 @@ Some groups are not literally (set-theoretically) equal, but none-the-less havin
 
         \item Since \(\det \pqty{AB} = \det \pqty{A} \det \pqty{B}\), the determinant
         \[
-            \function{\det}{\GL_2\pqty{\RR}}{\pqty{\RR \setminus \Bqty{0}, \times} = \RR\multiplicative}{A}{\det A}
+            \function{\det}{\GL_2\pqty{\RR}}{\pqty{\RR \setminus \set{0}, \times} = \RR\multiplicative}{A}{\det A}
         \]
         is a homomorphism.
     \end{enumerate}
@@ -933,7 +933,7 @@ From the perspective of group theory, \(G\) and \(H\) are \textbf{the same}.
         \]
         and
         \[
-            \ZZ_n = \Bqty{0, 1, \ldots, n - 1}
+            \ZZ_n = \set{0, 1, \ldots, n - 1}
         \]
         equipped with \(+_n\).
 
@@ -1113,7 +1113,7 @@ The groups \(C_n \isomorphic \ZZ_n\) that we described above have a special prop
         G = \set{g^k}{k \in \ZZ} = \angBrac{g}.
     \]
 
-    That is, \(\Bqty{g}\) generates \(G\), and \(g\) is called a \term{generator} of \(G\).
+    That is, \(\set{g}\) generates \(G\), and \(g\) is called a \term{generator} of \(G\).
 \end{definition}
 
 \begin{examples*}[Examples of Cyclic Groups]
@@ -1146,7 +1146,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
             \min S, & S \neq \emptyset, \\
             \infty, & S = \emptyset,
         \end{cases}
-        \in \NN \cup \Bqty{\infty}.
+        \in \NN \cup \set{\infty}.
     \]
 
     \begin{itemize}
@@ -1166,7 +1166,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
 
         We show \(\phi\) is injective by contradiction. Suppose \(0 \neq k \in \ker \phi\), then since \(\ker \phi \subgroup \ZZ\), we may replace \(k\) by \(-k\), so we assume \(k > 0\).
 
-        Then \(k \in S\), so \(S \neq \emptyset\), which gives a contradiction. So \(\ker \phi = \Bqty{0}\), and \(\phi\) is injective.
+        Then \(k \in S\), so \(S \neq \emptyset\), which gives a contradiction. So \(\ker \phi = \set{0}\), and \(\phi\) is injective.
 
         Therefore, \(\phi\) gives an isomorphism \(\ZZ \to G\), we have \(G \isomorphic \ZZ\).
 
@@ -1204,7 +1204,7 @@ We will see in \autoref{thm:classification-cyclic-groups} that these are in fact
 
         Therefore, it follows that \(k = 0\), and hence
         \[
-            \ker \phi = \Bqty{0}
+            \ker \phi = \set{0}
         \]
         showing that \(\phi\) is injective.
 
@@ -1228,7 +1228,7 @@ Because of \autoref{thm:classification-cyclic-groups}, we can write \(C_n\) for 
     \[
         \angBrac{g} \isomorphic C_n
     \]
-    for some \(n \in \NN \cup \Bqty{\infty}\).
+    for some \(n \in \NN \cup \set{\infty}\).
 
     The \term{order} of an element \(g \in G\), is the \(n\) above, and we denote this as
     \[
@@ -1321,7 +1321,7 @@ Finally, \autoref{prop:group-isomorphic-dihedral} gives a useful condition to sh
 
 \begin{proposition}[Groups Isomorphic to the Dihedral Group]
     \label{prop:group-isomorphic-dihedral}%
-    If a group \(G\) has a generating set \(\Bqty{a, b}\) such that
+    If a group \(G\) has a generating set \(\set{a, b}\) such that
     \begin{enumerate}
         \item \(a^n = e\),
         \item \(b^2 = e\),
@@ -1334,7 +1334,7 @@ Finally, \autoref{prop:group-isomorphic-dihedral} gives a useful condition to sh
 \begin{proof}
     By \autoref{lem:homomorphism-dihedral-group}, this gives a homomorphism \(\functiondomain{\phi}{D_{2n}}{G}\).
 
-    \(\phi\) is surjective since \(\Bqty{a, b}\) generates \(G\). Also, since
+    \(\phi\) is surjective since \(\set{a, b}\) generates \(G\). Also, since
     \[
         \abs{D_{2n}} = 2n = \abs{G},
     \]
