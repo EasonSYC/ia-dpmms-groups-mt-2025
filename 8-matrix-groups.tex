@@ -8,7 +8,7 @@ Let
 
 Matrix multiplication is associative and the matrix
 \[
-    \identityM = \diag\pqty{1, 1, \ldots, 1} = \pmqty{\dmat{1, 1, \ddots, 1}}
+    I = \diag\pqty{1, 1, \ldots, 1} = \pmqty{\dmat{1, 1, \ddots, 1}}
 \]
 gives an identity. However, we know not all matrices are invertible.
 
@@ -17,27 +17,27 @@ gives an identity. However, we know not all matrices are invertible.
 
 \begin{lemma}[Invertible Matrices]
     \label{lem:invertible-matrices}%
-    \(\vb{M} \in \matrixset_n\pqty{\RR}\) has an inverse if and only if \(\det \vb{M} \neq 0\).
+    \(M \in \matrixset_n\pqty{\RR}\) has an inverse if and only if \(\det M \neq 0\).
 \end{lemma}
 
 \begin{definition}[General Linear Group]
     \label{def:general-linear}%
     Let
     \[
-        \GL_n\pqty{\RR} = \set{\vb{M} \in \matrixset_n \pqty{\RR}}{\det \vb{M} \neq 0}
+        \GL_n\pqty{\RR} = \set{M \in \matrixset_n \pqty{\RR}}{\det M \neq 0}
     \]
     is the \term{general linear group of \(n \times n\) matrices over \(\RR\)}.
 \end{definition}
 
 \begin{lemma}[The Determinant is a Homomorphism]
     \label{lem:determinant}%
-    For matrices \(\vb{A}, \vb{B} \in \matrixset_n\pqty{\RR}\), we have
+    For matrices \(A, B \in \matrixset_n\pqty{\RR}\), we have
     \[
-        \det\pqty{\vb{A}\vb{B}} = \det\vb{A} \det\vb{B}
+        \det\pqty{AB} = \det A \det B
     \]
     so \(\det\) is a homomorphism
     \[
-        \function{\det}{\GL_n\pqty{\RR}}{\RR\multiplicative}{\vb{M}}{\det\vb{M}}.
+        \function{\det}{\GL_n\pqty{\RR}}{\RR\multiplicative}{M}{\det M}.
     \]
 \end{lemma}
 
@@ -45,7 +45,7 @@ gives an identity. However, we know not all matrices are invertible.
     \label{def:special-linear}%
     The subgroup
     \[
-        \SL_n\pqty{\RR} = \ker \det = \set{\vb{M} \in \matrixset_n \pqty{\RR}}{\det \vb{M} = 1}
+        \SL_n\pqty{\RR} = \ker \det = \set{M \in \matrixset_n \pqty{\RR}}{\det M = 1}
     \]
     is the \term{special linear group of \(n \times n\) matrices over \(\RR\)}.
 \end{definition}
@@ -78,15 +78,15 @@ Everything above makes sense as well when \(\RR\) is replaced by \(\CC\), so we 
 
 There is a natural action by conjugation \(\GL_n\pqty{\RR} \actson \matrixset_n\pqty{\RR}\) where
 \[
-    \vb{P}\pqty{\vb{A}} = \vb{P} \vb{A} \vb{P}\inverse
+    P\pqty{A} = P A P\inverse
 \]
-for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
+for \(P \in \GL_n\pqty{\RR}\) and \(A \in \matrixset_n\pqty{\RR}\).
 
 \begin{proposition}[Conjugation Represents Change of Basis]
     \label{prop:conjugation-change-of-basis}%
-    Let \(\mathcal{V}\) be an \(n\)-dimensional vector space over \(\RR\) and \(\functiondomain{\alpha}{\mathcal{V}}{\mathcal{V}}\) be a linear map/endomorphism (not necessarily injective/surjective). If \(\vb{A} \in \matrixset_n\pqty{\RR}\) represents \(\alpha\) with respect to some basis, then the orbit
+    Let \(\mathcal{V}\) be an \(n\)-dimensional vector space over \(\RR\) and \(\functiondomain{\alpha}{\mathcal{V}}{\mathcal{V}}\) be a linear map/endomorphism (not necessarily injective/surjective). If \(A \in \matrixset_n\pqty{\RR}\) represents \(\alpha\) with respect to some basis, then the orbit
     \[
-        \Orb_{\GL_n\pqty{\RR}} \pqty{\vb{A}} = \set{\vb{P} \vb{A} \vb{P}\inverse}{\vb{P} \in \GL_n\pqty{\RR}}
+        \Orb_{\GL_n\pqty{\RR}} \pqty{A} = \set{P A P\inverse}{P \in \GL_n\pqty{\RR}}
     \]
     consists of \emph{all} the matrices that represent \(\alpha\) in some basis.
 \end{proposition}
@@ -95,12 +95,12 @@ for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
     \begin{figure}[ht!]
         \centering
         \begin{tikzcd}
-            \RR^n \arrow[r, "\phi", "\isomorphic"'] \arrow[d, "\vb{A}"']
-            \arrow[rr, bend left, "\vb{P}"]
+            \RR^n \arrow[r, "\phi", "\isomorphic"'] \arrow[d, "A"']
+            \arrow[rr, bend left, "P"]
             & \mathcal{V} \arrow[d, "\alpha"] 
-            & \RR^n \arrow[l, "\psi"', "\isomorphic"] \arrow[d, "\vb{B}"]\\
+            & \RR^n \arrow[l, "\psi"', "\isomorphic"] \arrow[d, "B"]\\
             \RR^n \arrow[r, "\phi", "\isomorphic"']
-            \arrow[rr, bend right, "\vb{P}"']
+            \arrow[rr, bend right, "P"']
             & \mathcal{V}
             & \RR^n \arrow[l, "\psi"', "\isomorphic"]
         \end{tikzcd}
@@ -115,38 +115,38 @@ for \(\vb{P} \in \GL_n\pqty{\RR}\) and \(\vb{A} \in \matrixset_n\pqty{\RR}\).
         \function{\phi}{\RR^n}{\mathcal{V}}{\pqty{\lambda_1, \lambda_2, \ldots, \lambda_n}\transpose}{\sum_{i = 1}^{n} \lambda_i \vb{v}_i}.
     \]
 
-    This claims that \(\vb{A}\) represents \(\alpha\) in this basis means that \(\alpha = \phi \vb{A} \phi\inverse\).
+    This claims that \(A\) represents \(\alpha\) in this basis means that \(\alpha = \phi A \phi\inverse\).
 
     Likewise, another basis \(\set{\vb{u}_1, \vb{u}_2, \ldots, \vb{u}_n}\) for \(\mathcal{V}\) defines an isomorphism
     \[
         \functiondomain{\psi}{\RR^n}{\mathcal{V}}
     \]
-    and a matrix \(\vb{B}\) represents \(\alpha\) in the coordinates
+    and a matrix \(B\) represents \(\alpha\) in the coordinates
     \[
-        \alpha = \psi \vb{B} \psi\inverse.
+        \alpha = \psi B \psi\inverse.
     \]
 
     Therefore,
     \begin{align*}
-        \vb{B} &= \psi\inverse \alpha \psi \\
-        &= \pqty{\psi\inverse \circ \phi} \vb{A} \pqty{\phi\inverse \circ \psi} \\
-        &= \vb{P} \vb{A} \vb{P}\inverse
+        B &= \psi\inverse \alpha \psi \\
+        &= \pqty{\psi\inverse \circ \phi} A \pqty{\phi\inverse \circ \psi} \\
+        &= P A P\inverse
     \end{align*}
-    for some \(\vb{P} \in \GL_n\pqty{\RR}\) representing
+    for some \(P \in \GL_n\pqty{\RR}\) representing
     \[
         \functiondomain{\psi\inverse \circ \phi}{\RR^n}{\RR^n}
     \]
     since this mapping is invertible. Thus, the set of all matrices representing \(\alpha\) is indeed contained in the orbit.
 
-    Conversely, if \(\vb{B} = \vb{P} \vb{A} \vb{P}\inverse\) for some \(\vb{P} \in \GL_n\pqty{\RR}\), then let
+    Conversely, if \(B = P A P\inverse\) for some \(P \in \GL_n\pqty{\RR}\), then let
     \[
-        \functiondomain{\psi = \phi \circ \vb{P}\inverse}{\RR^n}{\mathcal{V}},
+        \functiondomain{\psi = \phi \circ P\inverse}{\RR^n}{\mathcal{V}},
     \]
     we get a basis
     \[
         \set{\vb{u}_i = \psi\pqty{\unitv{e}_i}}
     \]
-    where \(\unitv{e}_i\) is the standard basis for \(\RR^n\). In this basis, \(\vb{B}\) represents \(\alpha\), as desired.
+    where \(\unitv{e}_i\) is the standard basis for \(\RR^n\). In this basis, \(B\) represents \(\alpha\), as desired.
 \end{proof}
 
 \subsection{M\"{o}bius Transformations Revisited}
@@ -202,7 +202,7 @@ be the \term{Euclidean norm}.
     \label{def:orthogonal-group}%
     The \term{\(n\)-dimensional orthogonal group} is the subgroup of \(\GL_n\pqty{\RR}\) that preserves distance in \(\RR^n\):
     \[
-        \Or\pqty{n} = \set{\vb{M} \in \GL_n\pqty{\RR}}{\forall \vb{v} \in \RR^n: \norm{\vb{Mv}} = \norm{\vb{v}}}.
+        \Or\pqty{n} = \set{M \in \GL_n\pqty{\RR}}{\forall \vb{v} \in \RR^n: \norm{M\vb{v}} = \norm{\vb{v}}}.
     \]
 \end{definition}
 
@@ -234,48 +234,48 @@ We can characterise \(\Or\pqty{n}\) using the dot product.
     \label{lem:orthogonal-dot-product}%
     Orthogonal matrices are precisely those matrices preserving the dot product, i.e.,
     \[
-        \Or\pqty{n} = \set{\vb{M} \in \GL_n\pqty{\RR}}{\forall \vb{x}, \vb{y} \in \RR^n: \pqty{\vb{Mx}} \vdot \pqty{\vb{My}} = \vb{x} \vdot \vb{y}}.
+        \Or\pqty{n} = \set{M \in \GL_n\pqty{\RR}}{\forall \vb{x}, \vb{y} \in \RR^n: \pqty{M\vb{x}} \vdot \pqty{M\vb{y}} = \vb{x} \vdot \vb{y}}.
     \]
 
-    Equivalently, for \(\vb{M} \in \GL_{n} \pqty{\RR}\), \(\vb{M} \in \Or\pqty{n}\) if and only if \(\vb{M}\) preserves dot product.
+    Equivalently, for \(M \in \GL_{n} \pqty{\RR}\), \(M \in \Or\pqty{n}\) if and only if \(M\) preserves dot product.
 \end{lemma}
 
 \begin{proof}
-    \(\impliedby\). If \(\pqty{\vb{Mx}} \vdot \pqty{\vb{My}} = \vb{x} \vdot \vb{y}\) for all \(\vb{x}, \vb{y} \in \RR^n\), then for any \(\vb{v} \in \RR^n\), we have
+    \(\impliedby\). If \(\pqty{M\vb{x}} \vdot \pqty{M\vb{y}} = \vb{x} \vdot \vb{y}\) for all \(\vb{x}, \vb{y} \in \RR^n\), then for any \(\vb{v} \in \RR^n\), we have
     \begin{align*}
-        \norm{\vb{Mv}}^2 &= \pqty{\vb{Mv}} \vdot \pqty{\vb{Mv}} \\
+        \norm{M\vb{v}}^2 &= \pqty{M\vb{v}} \vdot \pqty{M\vb{v}} \\
         &=\vb{v} \vdot \vb{v} \\
         &= \norm{\vb{v}}^2,
     \end{align*}
-    so \(\norm{\vb{Mv}} = \norm{\vb{v}}\), and hence \(\vb{M} \in \Or\pqty{n}\).
+    so \(\norm{M\vb{v}} = \norm{\vb{v}}\), and hence \(M \in \Or\pqty{n}\).
 
-    \(\implies\). Conversely, for any \(\vb{M} \in \Or\pqty{n}\) and \(\vb{x}, \vb{y} \in \RR^n\), we have
+    \(\implies\). Conversely, for any \(M \in \Or\pqty{n}\) and \(\vb{x}, \vb{y} \in \RR^n\), we have
     \begin{align*}
-        2 \pqty{\vb{Mx} \vdot \vb{My}} &= \norm{\vb{Mx}}^2 + \norm{\vb{My}}^2 - \norm{\vb{Mx} - \vb{My}}^2 && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)} \\
-        &= \norm{\vb{Mx}}^2 + \norm{\vb{My}}^2 - \norm{\vb{M} \pqty{\vb{x} - \vb{y}}}^2 \\
-        &= \norm{\vb{x}}^2 + \norm{\vb{y}}^2 - \norm{\vb{x} - \vb{y}}^2 && \vb{M} \in \Or\pqty{n} \\
+        2 \pqty{M\vb{x} \vdot M\vb{y}} &= \norm{M\vb{x}}^2 + \norm{M\vb{y}}^2 - \norm{M\vb{x} - M\vb{y}}^2 && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)} \\
+        &= \norm{M\vb{x}}^2 + \norm{M\vb{y}}^2 - \norm{M \pqty{\vb{x} - \vb{y}}}^2 \\
+        &= \norm{\vb{x}}^2 + \norm{\vb{y}}^2 - \norm{\vb{x} - \vb{y}}^2 && M \in \Or\pqty{n} \\
         &= 2 \pqty{\vb{x} \vdot \vb{y}}. && \text{by \autoref{lem:polarisation-identity} (Polarisation Identity)}
     \end{align*}
 
-    Therefore, \(\pqty{\vb{Mx}} \vdot \pqty{\vb{My}} = \vb{x} \vdot \vb{y}\), and \(\vb{M}\) preserves dot product as desired.
+    Therefore, \(\pqty{M\vb{x}} \vdot \pqty{M\vb{y}} = \vb{x} \vdot \vb{y}\), and \(M\) preserves dot product as desired.
 \end{proof}
 
 This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
 
 \begin{lemma}[Matrices in \(\Or\pqty{n}\)]
     \label{lem:orthogonal-matrices-orthonormal-transpose}%
-    For \(\vb{M} \in \matrixset_n \pqty{\RR}\). The following are equivalent:
+    For \(M \in \matrixset_n \pqty{\RR}\). The following are equivalent:
     \begin{enumerate}
-        \item \(\vb{M} \in \Or\pqty{n}\);
-        \item The columns of \(\vb{M}\) form an orthonormal basis;
-        \item \(\vb{M}\transpose \vb{M} = \identityM\).
+        \item \(M \in \Or\pqty{n}\);
+        \item The columns of \(M\) form an orthonormal basis;
+        \item \(M\transpose M = I\).
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-    \emph{(i) \(\implies\) (ii).} Let \(\set{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). The \(i\)-th column of \(\vb{M}\) is the column vector \(\vb{M} \unitv{e}_i\), since
+    \emph{(i) \(\implies\) (ii).} Let \(\set{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). The \(i\)-th column of \(M\) is the column vector \(M \unitv{e}_i\), since
     \[
-        \pqty{\vb{M} \unitv{e}_i} \vdot \pqty{\vb{M} \unitv{e}_j} = \unitv{e}_i \vdot \unitv{e}_j = \kronecker_{ij} = \begin{cases}
+        \pqty{M \unitv{e}_i} \vdot \pqty{M \unitv{e}_j} = \unitv{e}_i \vdot \unitv{e}_j = \kronecker_{ij} = \begin{cases}
             1, & i = j, \\
             0, & i \neq j.
         \end{cases}
@@ -285,43 +285,43 @@ This quickly leads to a nice characterisation of matrices in \(\Or\pqty{n}\).
 
     \emph{(ii) \(\implies\) (iii).} As explained above, (ii) is equivalent to
     \[
-        \pqty{\vb{M} \unitv{e}_i} \vdot \pqty{\vb{M} \unitv{e}_j }= \kronecker_{ij}.
+        \pqty{M \unitv{e}_i} \vdot \pqty{M \unitv{e}_j }= \kronecker_{ij}.
     \]
 
     Since \(\vb{u} \vdot \vb{v} = \vb{u} \transpose \vb{v}\), this means
     \[
-        \pqty{\vb{M} \unitv{e}_i}\transpose \pqty{\vb{M} \unitv{e}_j} = \kronecker_{ij}.
+        \pqty{M \unitv{e}_i}\transpose \pqty{M \unitv{e}_j} = \kronecker_{ij}.
     \]
     
     The left-hand side satisfies
     \begin{align*}
-        \pqty{\vb{M} \unitv{e}_i}\transpose \pqty{\vb{M} \unitv{e}_j} &= \unitv{e}_i\transpose \vb{M}\transpose \vb{M} \unitv{e}_j \\
-        &= \pqty{\vb{M}\transpose \vb{M}}_{ij},
+        \pqty{M \unitv{e}_i}\transpose \pqty{M \unitv{e}_j} &= \unitv{e}_i\transpose M\transpose M \unitv{e}_j \\
+        &= \pqty{M\transpose M}_{ij},
     \end{align*}
-    since for any square matrix \(\vb{N}\), \(\unitv{e}_i \transpose \vb{N} \unitv{e}_j = \pqty{\vb{N}}_{ij}\) gives the \(\pqty{i, j}\)-th element of \(\vb{N}\). Therefore,
+    since for any square matrix \(N\), \(\unitv{e}_i \transpose N \unitv{e}_j = \pqty{N}_{ij}\) gives the \(\pqty{i, j}\)-th element of \(N\). Therefore,
     \[
-        \vb{M}\transpose \vb{M} = \identityM.
+        M\transpose M = I.
     \]
 
     \emph{(iii) \(\implies\) (i).} Suppose \(\vb{u}, \vb{v} \in \RR^n\), then
     \begin{align*}
-        \pqty{\vb{Mu}} \vdot \pqty{\vb{Mv}} &= \pqty{\vb{Mu}}\transpose \pqty{\vb{Mv}} \\
-        &= \vb{u}\transpose \vb{M}\transpose \vb{M} \vb{v} \\
-        &= \vb{u}\transpose \identityM \vb{v} \\
+        \pqty{M\vb{u}} \vdot \pqty{M\vb{v}} &= \pqty{M\vb{u}}\transpose \pqty{M\vb{v}} \\
+        &= \vb{u}\transpose M\transpose M \vb{v} \\
+        &= \vb{u}\transpose I \vb{v} \\
         &= \vb{u}\transpose \vb{v} \\
         &= \vb{u} \vdot \vb{v},
     \end{align*}
-    so we have \(\vb{M} \in \Or\pqty{n}\) by \autoref{lem:orthogonal-dot-product}.
+    so we have \(M \in \Or\pqty{n}\) by \autoref{lem:orthogonal-dot-product}.
 \end{proof}
 
-Recall that for any matrix \(\vb{M} \in \matrixset_{n} \pqty{\RR}\), we have \(\det \pqty{\vb{M}\transpose} = \det \pqty{\vb{M}}\). Hence, for any \(\vb{M} \in \Or\pqty{n}\),
+Recall that for any matrix \(M \in \matrixset_{n} \pqty{\RR}\), we have \(\det \pqty{M\transpose} = \det \pqty{M}\). Hence, for any \(M \in \Or\pqty{n}\),
 \begin{align*}
-    1 &= \det \identityM \\
-    &= \det \pqty{\vb{M}\transpose\vb{M}} \\
-    &= \pqty{\det \vb{M}\transpose} \pqty{\det \vb{M}} \\
-    &= \pqty{\det \vb{M}}^2,
+    1 &= \det I \\
+    &= \det \pqty{M\transpose M} \\
+    &= \pqty{\det M\transpose} \pqty{\det M} \\
+    &= \pqty{\det M}^2,
 \end{align*}
-and hence \(\det \vb{M} = \pm 1\).
+and hence \(\det M = \pm 1\).
 
 \begin{definition}[Special Orthogonal Group]
     \label{def:special-orthogonal-group}%
@@ -379,7 +379,7 @@ We study some properties on those reflections.
 
 \begin{lemma}[Reflections are Orthogonal and have Order 2]
     \label{lem:reflections-orthogonal-order-2}%
-    For any \(\vb{v} \in \RR^n\setminus\set{\vb{0}}\), we have \(S_{\vb{v}}^2 = \identityM\), and \(S_{\vb{v}} \in \Or\pqty{n}\).
+    For any \(\vb{v} \in \RR^n\setminus\set{\vb{0}}\), we have \(S_{\vb{v}}^2 = I\), and \(S_{\vb{v}} \in \Or\pqty{n}\).
 \end{lemma}
 
 \begin{proof}
@@ -399,7 +399,7 @@ We study some properties on those reflections.
         &= \vb{x} - 2\pqty{\vb{x} \vdot \vb{v}} \vb{v} + 2 \pqty{\vb{x} \vdot \vb{v}} \vb{v} \\
         &= \vb{x},
     \end{align*}
-    and hence \(S_{\vb{v}}^2 = \identityM\). Hence, we see \(S_{\vb{v}}\) is non-singular, and hence
+    and hence \(S_{\vb{v}}^2 = I\). Hence, we see \(S_{\vb{v}}\) is non-singular, and hence
     \[
         S_{\vb{v}} \in \GL_n \pqty{\RR}.
     \]
@@ -434,7 +434,7 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
 
 \begin{theorem}[Reflections Generate \(\Or\pqty{n}\)]
     \label{thm:reflections-generate}%
-    Every \(\vb{A} \in \Or\pqty{n}\) is a product of at most \(n\) reflections.
+    Every \(A \in \Or\pqty{n}\) is a product of at most \(n\) reflections.
 \end{theorem}
 
 \begin{proof}
@@ -442,20 +442,20 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
 
     \emph{Base Case.} For \(n = 1\), \(\Or\pqty{1} = \set{\pm 1} = \angBrac{S_1} \isomorphic C_2\) and every element is indeed a product of at most \(1\) reflection. Note here \(S_1 \in \Or\pqty{1} \setminus \SO\pqty{1}\) is the reflection in the plane perpendicular to \(\pqty{-1}\), not the trivial group.
 
-    \emph{Induction Step.} Let \(\set{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). If \(\vb{A} \unitv{e}_n = \unitv{e}_n\), set \(\vb{B} = \vb{A}\), so no reflection is needed. Otherwise, let
+    \emph{Induction Step.} Let \(\set{\unitv{e}_1, \unitv{e}_2, \ldots, \unitv{e}_n}\) be the standard basis for \(\RR^n\). If \(A \unitv{e}_n = \unitv{e}_n\), set \(B = A\), so no reflection is needed. Otherwise, let
     \[
-        \vb{v} = \unitv{e}_n - \vb{A} \unitv{e}_n \neq \vb{0}
+        \vb{v} = \unitv{e}_n - A \unitv{e}_n \neq \vb{0}
     \]
-    and set \(\vb{B} = S_{\vb{v}} \vb{A}\). Then \(\vb{B} \unitv{e}_n = \unitv{e}_n\), as in \autoref{fig:choice-of-v-for-on}.
+    and set \(B = S_{\vb{v}} A\). Then \(B \unitv{e}_n = \unitv{e}_n\), as in \autoref{fig:choice-of-v-for-on}.
 
     \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.6\textwidth]{fig/choice-of-v.png}
-        \caption{Choice of \(\vb{v}\) for \(\vb{M} \in \Or\pqty{n}\)}
+        \caption{Choice of \(\vb{v}\) for \(M \in \Or\pqty{n}\)}
         \label{fig:choice-of-v-for-on}
     \end{figure}
 
-    Since \(\vb{B}\) is orthogonal, \(\vb{B}\) preserves \(P_{\unitv{e}_n} = \RR^{n - 1} \times \set{\vb{0}}\).
+    Since \(B\) is orthogonal, \(B\) preserves \(P_{\unitv{e}_n} = \RR^{n - 1} \times \set{\vb{0}}\).
 
     By induction hypothesis, there exists
     \[
@@ -463,18 +463,18 @@ Reflections are in general not the only elements of \(\Or\pqty{n} \setminus \SO\
     \]
     such that when restricted to \(P_{\unitv{e}_n} = \RR^{n - 1} \times \set{\vb{0}}\),
     \[
-        \vb{B} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
+        B = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
     \]
     and since both sides fix \(\vb{e}_n \notin P_{\unitv{e}_n}\), they agree on the whole of \(\RR^n\) as well. Hence,
     \[
-        \vb{B} = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
+        B = S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}
     \]
     and hence
     \[
-        \vb{A} =
+        A =
         \begin{cases}
-            S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}, & \vb{B} = \vb{A}, \\
-            S_{\vb{v}} S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}, & \vb{B} = S_{\vb{v}}\vb{A}.
+            S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}, & B = A, \\
+            S_{\vb{v}} S_{\vb{v}_1} S_{\vb{v}_2} \cdots S_{\vb{v}_{n - 1}}, & B = S_{\vb{v}}A.
         \end{cases}
     \]
 \end{proof}
@@ -483,10 +483,10 @@ We next aim to characterise elements of \(\Or\pqty{n}\) and \(\SO\pqty{n}\) in l
 
 \begin{lemma}[Elements in \(\Or\pqty{2}\)]
     \label{lem:elements-in-o2}%
-    Let \(\vb{M} \in \Or\pqty{2}\).
+    Let \(M \in \Or\pqty{2}\).
     \begin{enumerate}
-        \item If \(\vb{M} \notin \SO\pqty{2}\), then \(\vb{M}\) is a reflection.
-        \item If \(\vb{M} \in \SO\pqty{2}\), then \(\vb{M}\) is a rotation about \(O\).
+        \item If \(M \notin \SO\pqty{2}\), then \(M\) is a reflection.
+        \item If \(M \in \SO\pqty{2}\), then \(M\) is a rotation about \(O\).
     \end{enumerate}
 \end{lemma}
 
@@ -498,59 +498,59 @@ We next aim to characterise elements of \(\Or\pqty{n}\) and \(\SO\pqty{n}\) in l
 
     By \autoref{thm:reflections-generate}, we may take \(k \leq 2\).
     \begin{enumerate}
-        \item If \(\vb{M} \notin \SO\pqty{2}\), then \(k\) is odd, and hence \(k = 1\) giving \(\vb{M}\) is a reflection.
-        \item If \(\vb{M} \in \SO\pqty{2}\), then \(k\) is even, so unless \(\vb{M} = \identityM\), then 
+        \item If \(M \notin \SO\pqty{2}\), then \(k\) is odd, and hence \(k = 1\) giving \(M\) is a reflection.
+        \item If \(M \in \SO\pqty{2}\), then \(k\) is even, so unless \(M = I\), then 
         \[
-            \vb{M} = S_{\vb{u}} S_{\vb{v}}
+            M = S_{\vb{u}} S_{\vb{v}}
         \]
         for some \(\vb{u}, \vb{v} \in \RR^2\) not parallel.
 
-        Now we claim that \(\vb{M}\) only fixes the origin and hence is a rotation. Suppose for contradiction, that for some \(\vb{x} \neq \vb{0}\), we have that \(\vb{M}\) fixes \(\vb{x}\), note that
+        Now we claim that \(M\) only fixes the origin and hence is a rotation. Suppose for contradiction, that for some \(\vb{x} \neq \vb{0}\), we have that \(M\) fixes \(\vb{x}\), note that
         \[
             S_{\vb{u}} S_{\vb{v}} \vb{x} = \vb{x} \iff S_{\vb{u}} \vb{x} = S_{\vb{v}} \vb{x}.
         \]
 
         \(\vb{v}\) is parallel to \(\vb{x} - S_{\vb{v}} \vb{x}\), and \(\vb{u}\) is parallel to \(\vb{x} - S_{\vb{u}} \vb{x}\). But since \(\vb{x} \neq \vb{0}\), we have \(\vb{x} \neq S_{\vb{v}} \vb{x} = S_{\vb{u}} \vb{x}\), and hence \(\vb{u}\) is parallel to \(\vb{v}\), which is not possible.
 
-        Therefore, \(\vb{M}\) only fixes the origin \(O\), as desired.
+        Therefore, \(M\) only fixes the origin \(O\), as desired.
     \end{enumerate}
 \end{proof}
 
 \begin{remark}
-    Let \(\vb{M} \in \SO\pqty{2}\), since the columns form an orthonormal basis, we have
+    Let \(M \in \SO\pqty{2}\), since the columns form an orthonormal basis, we have
     \[
-        \vb{M} = \pmqty{a & b \\ -b & a}
+        M = \pmqty{a & b \\ -b & a}
     \]
-    with \(a, b \in \RR\) and \(a^2 + b^2 = \det \vb{M} = 1\). Then, let \(a = \cos \theta, b = \sin \theta\) for some \(\theta \in \RR\), and hence we have
+    with \(a, b \in \RR\) and \(a^2 + b^2 = \det M = 1\). Then, let \(a = \cos \theta, b = \sin \theta\) for some \(\theta \in \RR\), and hence we have
     \[
-        \vb{M} = \pmqty{\cos \theta & \sin \theta \\ - \sin \theta & \cos \theta}.
+        M = \pmqty{\cos \theta & \sin \theta \\ - \sin \theta & \cos \theta}.
     \]
 
-    Similarly, if \(\vb{M} \in \Or\pqty{2} \setminus \SO\pqty{2}\) is some reflection, we have
+    Similarly, if \(M \in \Or\pqty{2} \setminus \SO\pqty{2}\) is some reflection, we have
     \[
-        \vb{M} = \pmqty{a & b \\ b & -a}
+        M = \pmqty{a & b \\ b & -a}
     \]
-    with \(a, b \in \RR\) and \(-a^2 - b^2 = \det \vb{M} = -1\). Then, let \(a = \cos \theta, b = \sin \theta\) for some \(\theta \in \RR\), and hence we have
+    with \(a, b \in \RR\) and \(-a^2 - b^2 = \det M = -1\). Then, let \(a = \cos \theta, b = \sin \theta\) for some \(\theta \in \RR\), and hence we have
     \[
-        \vb{M} = \pmqty{\cos \theta & \sin \theta \\ \sin \theta & -\cos \theta}.
+        M = \pmqty{\cos \theta & \sin \theta \\ \sin \theta & -\cos \theta}.
     \]
 \end{remark}
 
 \begin{lemma}[Elements in \(\SO\pqty{3}\)]
     \label{lem:elements-in-so3}%
-    If \(\vb{M} \in \SO\pqty{3}\), then \(\vb{M}\) is a rotation.
+    If \(M \in \SO\pqty{3}\), then \(M\) is a rotation.
 \end{lemma}
 
 \begin{proof}
-    Similarly to the proof of \autoref{lem:elements-in-o2}, \(\vb{M}\) is a product of at most \(3\) reflections. So either \(\vb{M} = \identityM\), or \(\vb{M} = S_{\vb{u}} S_{\vb{v}}\) for some non-parallel \(\vb{u}, \vb{v} \in \RR^3\).
+    Similarly to the proof of \autoref{lem:elements-in-o2}, \(M\) is a product of at most \(3\) reflections. So either \(M = I\), or \(M = S_{\vb{u}} S_{\vb{v}}\) for some non-parallel \(\vb{u}, \vb{v} \in \RR^3\).
 
     Since \(n = 3\), we have
     \[
         P_{\vb{u}} \cap P_{\vb{v}} = l
     \]
-    for a line \(l\), so \(\vb{M}\) fixes \(l\).
+    for a line \(l\), so \(M\) fixes \(l\).
 
-    Also, proceeding similarly as in \autoref{lem:elements-in-o2} shows us either \(S_{\vb{u}} = S_{\vb{v}}\) giving \(\vb{M} = \identityM\) or the fixed point is in \(P_{\vb{u}} \cap P_{\vb{v}} = l\).
+    Also, proceeding similarly as in \autoref{lem:elements-in-o2} shows us either \(S_{\vb{u}} = S_{\vb{v}}\) giving \(M = I\) or the fixed point is in \(P_{\vb{u}} \cap P_{\vb{v}} = l\).
 
-    Therefore, any non-trivial \(\vb{M}\) only fixes a line \(l\), hence a rotation.
+    Therefore, any non-trivial \(M\) only fixes a line \(l\), hence a rotation.
 \end{proof}
